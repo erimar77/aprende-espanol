@@ -7,7 +7,7 @@ import Button from '@/components/ui/Button';
 import FlashCard from '@/components/ui/FlashCard';
 import ProgressBar from '@/components/ui/ProgressBar';
 import TeacherBubble from '@/components/layout/TeacherBubble';
-import { getTeacherBySpecialty } from '@/data/teachers';
+import { useTeachers } from '@/hooks/useTeachers';
 import { nouns, getRandomNouns } from '@/data/nouns';
 import { adjectives, getRandomAdjectives } from '@/data/adjectives';
 import { adverbs, getRandomAdverbs } from '@/data/adverbs';
@@ -82,6 +82,7 @@ export default function FlashcardsPage() {
   const [sessionComplete, setSessionComplete] = useState(false);
 
   const { updateFlashcardProgress } = useProgress();
+  const { getTeacherBySpecialty } = useTeachers();
   const teacher = getTeacherBySpecialty('flashcards');
 
   const [deck, setDeck] = useState<FlashcardItem[]>([]);

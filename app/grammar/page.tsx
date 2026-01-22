@@ -6,7 +6,7 @@ import Card, { CardContent, CardTitle, CardDescription } from '@/components/ui/C
 import Button from '@/components/ui/Button';
 import ProgressBar from '@/components/ui/ProgressBar';
 import TeacherBubble from '@/components/layout/TeacherBubble';
-import { getTeacherBySpecialty } from '@/data/teachers';
+import { useTeachers } from '@/hooks/useTeachers';
 import { grammarLessons, getLessonById } from '@/data/grammar-lessons';
 import { GrammarLesson, Exercise, ContentBlock } from '@/lib/types';
 import { useProgress } from '@/context/ProgressContext';
@@ -212,6 +212,7 @@ function LessonView({
   const [showExercises, setShowExercises] = useState(false);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [exerciseComplete, setExerciseComplete] = useState(false);
+  const { getTeacherBySpecialty } = useTeachers();
 
   const teacher = getTeacherBySpecialty('grammar');
 
@@ -344,6 +345,7 @@ function LessonView({
 export default function GrammarPage() {
   const [selectedLesson, setSelectedLesson] = useState<GrammarLesson | null>(null);
   const { markGrammarLessonComplete, isGrammarLessonComplete } = useProgress();
+  const { getTeacherBySpecialty } = useTeachers();
   const teacher = getTeacherBySpecialty('grammar');
 
   const handleComplete = () => {

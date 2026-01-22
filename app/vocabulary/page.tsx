@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { BookOpen, Tag, Sparkles, Zap } from 'lucide-react';
 import Card, { CardContent, CardDescription, CardTitle } from '@/components/ui/Card';
 import TeacherBubble from '@/components/layout/TeacherBubble';
-import { getTeacherBySpecialty } from '@/data/teachers';
+import { useTeachers } from '@/hooks/useTeachers';
 import { nouns } from '@/data/nouns';
 import { adjectives } from '@/data/adjectives';
 import { adverbs } from '@/data/adverbs';
@@ -40,6 +40,7 @@ const vocabularySections = [
 ];
 
 export default function VocabularyPage() {
+  const { getTeacherBySpecialty } = useTeachers();
   const teacher = getTeacherBySpecialty('vocabulary');
   const totalWords = nouns.length + adjectives.length + adverbs.length;
 

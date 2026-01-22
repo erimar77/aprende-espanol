@@ -1,13 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { MessageCircle, Volume2, CheckCircle, XCircle, ChevronRight, RotateCcw, Lock } from 'lucide-react';
+import { MessageCircle, Volume2, CheckCircle, XCircle, ChevronRight, RotateCcw, Lock, Globe, Coffee, Filter } from 'lucide-react';
 import Card, { CardContent, CardTitle, CardDescription } from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import TeacherBubble from '@/components/layout/TeacherBubble';
 import CulturalNote from '@/components/ui/CulturalNote';
-import { getTeacherBySpecialty } from '@/data/teachers';
-import { conversations, getConversationById } from '@/data/conversations';
+import { useTeachers } from '@/hooks/useTeachers';
+import { conversations, getConversationById, getEverydayConversations, getCulturalConversations } from '@/data/conversations';
 import { ConversationScenario, DialogueNode, DialogueResponse } from '@/lib/types';
 import { useProgress } from '@/context/ProgressContext';
 import { speak } from '@/lib/speech';
@@ -28,6 +28,7 @@ function ConversationPlayer({
   }>>([]);
   const [feedback, setFeedback] = useState<{text: string; translation: string; isCorrect: boolean} | null>(null);
   const [isComplete, setIsComplete] = useState(false);
+  const { getTeacherBySpecialty } = useTeachers();
 
   const teacher = getTeacherBySpecialty('conversations');
   const currentNode = scenario.dialogue.find(d => d.id === currentNodeId);
@@ -178,8 +179,14 @@ function ConversationPlayer({
 
 export default function ConversationsPage() {
   const [selectedScenario, setSelectedScenario] = useState<ConversationScenario | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<'all' | 'everyday' | 'cultural'>('all');
   const { markConversationComplete, isConversationComplete, isConversationUnlocked } = useProgress();
-  const teacher = getTeacherBySpecialty('conversations');
+  const { getTeacherBySpecialty } = useTeachers();
+
+  // Use different teachers based on category
+  const conversationsTeacher = getTeacherBySpecialty('conversations');
+  const culturalTeacher = getTeacherBySpecialty('cultural');
+  const teacher = selectedCategory === 'cultural' ? culturalTeacher : conversationsTeacher;
 
   const handleComplete = () => {
     if (selectedScenario) {
@@ -195,8 +202,22 @@ export default function ConversationsPage() {
     advanced: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200',
   };
 
-  // Sort conversations by order
-  const sortedConversations = [...conversations].sort((a, b) => a.order - b.order);
+  // Get filtered conversations based on category
+  const getFilteredConversations = () => {
+    let filtered;
+    if (selectedCategory === 'cultural') {
+      filtered = getCulturalConversations();
+    } else if (selectedCategory === 'everyday') {
+      filtered = getEverydayConversations();
+    } else {
+      filtered = conversations;
+    }
+    return [...filtered].sort((a, b) => a.order - b.order);
+  };
+
+  const sortedConversations = getFilteredConversations();
+  const everydayCount = getEverydayConversations().length;
+  const culturalCount = getCulturalConversations().length;
 
   // Get prerequisite title for locked message
   const getPrerequisiteTitle = (conversationId: string): string | null => {
@@ -242,10 +263,53 @@ export default function ConversationsPage() {
 
       <TeacherBubble
         teacher={teacher}
-        message="Practicar conversaciones es la mejor manera de aprender un idioma! Elige un escenario y vamos a hablar!"
-        messageTranslation="Practicing conversations is the best way to learn a language! Choose a scenario and let's talk!"
+        message={selectedCategory === 'cultural'
+          ? "La cultura espanola es fascinante! Vamos a explorar tradiciones, comida y costumbres juntos!"
+          : "Practicar conversaciones es la mejor manera de aprender un idioma! Elige un escenario y vamos a hablar!"
+        }
+        messageTranslation={selectedCategory === 'cultural'
+          ? "Spanish culture is fascinating! Let's explore traditions, food and customs together!"
+          : "Practicing conversations is the best way to learn a language! Choose a scenario and let's talk!"
+        }
         size="medium"
       />
+
+      {/* Category Filter */}
+      <div className="flex flex-wrap gap-3">
+        <button
+          onClick={() => setSelectedCategory('all')}
+          className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
+            selectedCategory === 'all'
+              ? 'bg-gray-900 text-white dark:bg-white dark:text-gray-900'
+              : 'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+          }`}
+        >
+          <Filter className="w-4 h-4" />
+          All ({conversations.length})
+        </button>
+        <button
+          onClick={() => setSelectedCategory('everyday')}
+          className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
+            selectedCategory === 'everyday'
+              ? 'bg-primary-500 text-white'
+              : 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-900/50'
+          }`}
+        >
+          <Coffee className="w-4 h-4" />
+          Everyday ({everydayCount})
+        </button>
+        <button
+          onClick={() => setSelectedCategory('cultural')}
+          className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
+            selectedCategory === 'cultural'
+              ? 'bg-accent-500 text-white'
+              : 'bg-accent-100 text-accent-700 dark:bg-accent-900/30 dark:text-accent-400 hover:bg-accent-200 dark:hover:bg-accent-900/50'
+          }`}
+        >
+          <Globe className="w-4 h-4" />
+          Cultural ({culturalCount})
+        </button>
+      </div>
 
       <div className="grid md:grid-cols-2 gap-6">
         {sortedConversations.map((scenario) => {
@@ -273,9 +337,11 @@ export default function ConversationsPage() {
                     {completed && (
                       <CheckCircle className="w-5 h-5 text-green-500" />
                     )}
-                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${scenario.order}`}>
-                      #{scenario.order}
-                    </span>
+                    {scenario.category === 'cultural' && (
+                      <span className="px-2 py-1 rounded-full text-xs font-medium bg-accent-100 text-accent-700 dark:bg-accent-900/30 dark:text-accent-400">
+                        Cultural
+                      </span>
+                    )}
                     <span className={`px-2 py-1 rounded-full text-xs font-medium capitalize ${difficultyColors[scenario.difficulty] || difficultyColors.medium}`}>
                       {scenario.difficulty}
                     </span>

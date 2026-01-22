@@ -1722,6 +1722,517 @@ export const conversations: ConversationScenario[] = [
       },
     ],
   },
+  // Cultural Immersion Scenarios
+  {
+    id: 'cultural001',
+    title: 'Spanish Tapas Culture',
+    titleSpanish: 'La Cultura de las Tapas',
+    description: 'Experience authentic tapas bar culture',
+    difficulty: 'easy',
+    location: 'A tapas bar',
+    participants: ['You', 'Bartender', 'Local'],
+    order: 18,
+    category: 'cultural',
+    culturalNote: {
+      title: 'Tapas Tradition',
+      content: 'Tapas originated as small plates to cover drinks (tapar means "to cover"). In some regions like Granada, tapas are still free with drinks! The tradition of "ir de tapas" means hopping from bar to bar, having a drink and a tapa at each. Standing at the bar is often cheaper than sitting at a table.'
+    },
+    dialogue: [
+      {
+        id: 'd1',
+        speaker: 'teacher',
+        text: 'Buenas tardes! Que le pongo? Aqui en Granada la tapa es gratis con la bebida.',
+        translation: 'Good afternoon! What can I get you? Here in Granada the tapa is free with the drink.',
+        responses: [
+          {
+            id: 'r1a',
+            text: 'Ah, que bien! Pongame una cana y que tapa me recomienda?',
+            translation: 'Oh, how nice! Give me a small beer and what tapa do you recommend?',
+            isCorrect: true,
+            feedback: 'Hoy tenemos croquetas caseras muy buenas. Tambien hay tortilla.',
+            feedbackTranslation: 'Today we have very good homemade croquettes. There is also tortilla.',
+            nextNodeId: 'd2',
+          },
+        ],
+      },
+      {
+        id: 'd2',
+        speaker: 'npc',
+        text: 'Perdoname, eres turista? Aqui en Granada hacemos las mejores tapas de Espana!',
+        translation: 'Excuse me, are you a tourist? Here in Granada we make the best tapas in Spain!',
+        responses: [
+          {
+            id: 'r2a',
+            text: 'Si, es mi primera vez aqui. Cual es la especialidad de este bar?',
+            translation: 'Yes, it is my first time here. What is the specialty of this bar?',
+            isCorrect: true,
+            feedback: 'Las patatas bravas y el jamon. Tienes que probarlos!',
+            feedbackTranslation: 'The spicy potatoes and the ham. You have to try them!',
+            nextNodeId: 'd3',
+          },
+        ],
+      },
+      {
+        id: 'd3',
+        speaker: 'npc',
+        text: 'Sabes lo que significa "ir de tapas"? Es ir de bar en bar, probando diferentes tapas.',
+        translation: 'Do you know what "ir de tapas" means? It is going from bar to bar, trying different tapas.',
+        responses: [
+          {
+            id: 'r3a',
+            text: 'Que buena tradicion! Hay algun bar cerca que tambien recomiendas?',
+            translation: 'What a great tradition! Is there a nearby bar you also recommend?',
+            isCorrect: true,
+            feedback: 'Si! El bar de la esquina tiene las mejores gambas al ajillo. Te acompano?',
+            feedbackTranslation: 'Yes! The bar on the corner has the best garlic shrimp. Shall I accompany you?',
+            nextNodeId: 'd4',
+          },
+        ],
+      },
+      {
+        id: 'd4',
+        speaker: 'teacher',
+        text: 'Aqui tiene su cuenta. Son solo dos euros por la cana. La tapa va incluida.',
+        translation: 'Here is your bill. It is only two euros for the beer. The tapa is included.',
+        responses: [
+          {
+            id: 'r4a',
+            text: 'Increible! En mi pais las tapas cuestan mucho mas. Muchas gracias!',
+            translation: 'Incredible! In my country tapas cost much more. Thank you very much!',
+            isCorrect: true,
+            feedback: 'De nada! Vuelva pronto. Y disfrute del paseo de tapas!',
+            feedbackTranslation: 'You\'re welcome! Come back soon. And enjoy your tapas crawl!',
+            nextNodeId: 'end',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'cultural002',
+    title: 'La Siesta Tradition',
+    titleSpanish: 'La Tradicion de la Siesta',
+    description: 'Learn about the famous Spanish siesta',
+    difficulty: 'beginner',
+    location: 'A Spanish home',
+    participants: ['You', 'Host family'],
+    order: 19,
+    category: 'cultural',
+    culturalNote: {
+      title: 'The Art of Siesta',
+      content: 'The siesta tradition comes from Spain\'s hot climate. Historically, workers rested during the hottest hours (2-5 PM). While fewer people take siestas today due to modern work schedules, many shops still close in the afternoon. Studies show short naps (20-30 min) boost productivity!'
+    },
+    dialogue: [
+      {
+        id: 'd1',
+        speaker: 'teacher',
+        text: 'Bueno, acabamos de comer. Aqui en Espana solemos descansar un poco despues del almuerzo.',
+        translation: 'Well, we just finished eating. Here in Spain we usually rest a bit after lunch.',
+        responses: [
+          {
+            id: 'r1a',
+            text: 'Ah si, he oido hablar de la siesta! Es una tradicion muy espanola, no?',
+            translation: 'Ah yes, I have heard about the siesta! It is a very Spanish tradition, right?',
+            isCorrect: true,
+            feedback: 'Exacto! Despues de comer, el cuerpo necesita descansar. Quieres echarte una siesta?',
+            feedbackTranslation: 'Exactly! After eating, the body needs to rest. Do you want to take a siesta?',
+            nextNodeId: 'd2',
+          },
+        ],
+      },
+      {
+        id: 'd2',
+        speaker: 'teacher',
+        text: 'La siesta no tiene que ser larga. Veinte minutos es suficiente para recargar energia.',
+        translation: 'The siesta does not have to be long. Twenty minutes is enough to recharge energy.',
+        responses: [
+          {
+            id: 'r2a',
+            text: 'Es verdad que todas las tiendas cierran durante la siesta?',
+            translation: 'Is it true that all the shops close during siesta?',
+            isCorrect: true,
+            feedback: 'Muchas si, especialmente en pueblos pequenos. En las grandes ciudades es diferente.',
+            feedbackTranslation: 'Many do, especially in small towns. In big cities it is different.',
+            nextNodeId: 'd3',
+          },
+        ],
+      },
+      {
+        id: 'd3',
+        speaker: 'teacher',
+        text: 'El secreto es no dormir mas de treinta minutos. Si no, te despiertas mas cansado.',
+        translation: 'The secret is not to sleep more than thirty minutes. Otherwise, you wake up more tired.',
+        responses: [
+          {
+            id: 'r3a',
+            text: 'Que buen consejo! Creo que voy a intentar la siesta hoy.',
+            translation: 'What good advice! I think I am going to try the siesta today.',
+            isCorrect: true,
+            feedback: 'Muy bien! Tu habitacion esta fresca y tranquila. Dulces suenos!',
+            feedbackTranslation: 'Very good! Your room is cool and quiet. Sweet dreams!',
+            nextNodeId: 'd4',
+          },
+        ],
+      },
+      {
+        id: 'd4',
+        speaker: 'teacher',
+        text: 'Ya son las cinco. Que tal la siesta? Te sientes con mas energia?',
+        translation: 'It is five o\'clock now. How was the siesta? Do you feel more energetic?',
+        responses: [
+          {
+            id: 'r4a',
+            text: 'Increible! Me siento como nuevo. Ahora entiendo por que es tan popular!',
+            translation: 'Incredible! I feel like new. Now I understand why it is so popular!',
+            isCorrect: true,
+            feedback: 'Ja ja! Ya eres un poco espanol. Ahora tomamos un cafe y salimos a pasear.',
+            feedbackTranslation: 'Ha ha! You are already a bit Spanish. Now we\'ll have a coffee and go for a walk.',
+            nextNodeId: 'end',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'cultural003',
+    title: 'Spanish Festivals',
+    titleSpanish: 'Las Fiestas Espanolas',
+    description: 'Experience a traditional Spanish festival',
+    difficulty: 'easy',
+    location: 'A town plaza',
+    participants: ['You', 'Festival goers'],
+    order: 20,
+    category: 'cultural',
+    culturalNote: {
+      title: 'Fiestas Patronales',
+      content: 'Every Spanish town has its own "fiestas patronales" celebrating their patron saint. Famous festivals include La Tomatina (tomato fight), San Fermin (running of the bulls), and Las Fallas (burning monuments). Festivals feature processions, fireworks, music, and lots of food!'
+    },
+    dialogue: [
+      {
+        id: 'd1',
+        speaker: 'teacher',
+        text: 'Bienvenido a las fiestas del pueblo! Hoy celebramos a nuestro santo patron.',
+        translation: 'Welcome to the town festival! Today we celebrate our patron saint.',
+        responses: [
+          {
+            id: 'r1a',
+            text: 'Que emocionante! Es mi primera fiesta espanola. Que actividades hay?',
+            translation: 'How exciting! It is my first Spanish festival. What activities are there?',
+            isCorrect: true,
+            feedback: 'Hay de todo! Procesiones, musica en directo, fuegos artificiales y comida tradicional.',
+            feedbackTranslation: 'There is everything! Processions, live music, fireworks, and traditional food.',
+            nextNodeId: 'd2',
+          },
+        ],
+      },
+      {
+        id: 'd2',
+        speaker: 'teacher',
+        text: 'A las doce sale la procesion de la iglesia. Todos acompanan al santo por las calles.',
+        translation: 'At twelve the procession leaves the church. Everyone accompanies the saint through the streets.',
+        responses: [
+          {
+            id: 'r2a',
+            text: 'Que interesante! Y hay alguna comida tipica de estas fiestas?',
+            translation: 'How interesting! And is there any typical food from these festivals?',
+            isCorrect: true,
+            feedback: 'Si! Tenemos churros con chocolate, bunoelos y sangria. Quieres probar?',
+            feedbackTranslation: 'Yes! We have churros with chocolate, fritters, and sangria. Do you want to try?',
+            nextNodeId: 'd3',
+          },
+        ],
+      },
+      {
+        id: 'd3',
+        speaker: 'npc',
+        text: 'Oye! Ven a bailar con nosotros! Esto es sevillanas, el baile tradicional de Andalucia.',
+        translation: 'Hey! Come dance with us! This is sevillanas, the traditional dance of Andalucia.',
+        responses: [
+          {
+            id: 'r3a',
+            text: 'No se bailar sevillanas, pero me encantaria aprender!',
+            translation: 'I do not know how to dance sevillanas, but I would love to learn!',
+            isCorrect: true,
+            feedback: 'Es muy facil! Solo sigue mis pasos. Uno, dos, tres... perfecto!',
+            feedbackTranslation: 'It is very easy! Just follow my steps. One, two, three... perfect!',
+            nextNodeId: 'd4',
+          },
+        ],
+      },
+      {
+        id: 'd4',
+        speaker: 'teacher',
+        text: 'Mira! Ya empiezan los fuegos artificiales. Es el momento mas bonito de la fiesta.',
+        translation: 'Look! The fireworks are starting now. It is the most beautiful moment of the festival.',
+        responses: [
+          {
+            id: 'r4a',
+            text: 'Es impresionante! Nunca olvidare esta experiencia. Viva la fiesta!',
+            translation: 'It is impressive! I will never forget this experience. Long live the festival!',
+            isCorrect: true,
+            feedback: 'Eso es! Ya eres uno de nosotros. Que viva!',
+            feedbackTranslation: 'That\'s it! You are already one of us. Long live!',
+            nextNodeId: 'end',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'cultural004',
+    title: 'Family Sunday Lunch',
+    titleSpanish: 'El Almuerzo Familiar del Domingo',
+    description: 'Experience a traditional Spanish family gathering',
+    difficulty: 'easy',
+    location: 'Grandmother\'s house',
+    participants: ['You', 'Spanish family'],
+    order: 21,
+    category: 'cultural',
+    culturalNote: {
+      title: 'Sobremesa',
+      content: 'The "sobremesa" is the time spent talking at the table after a meal. It can last for hours! Sunday family meals are sacred in Spain - multiple generations gather at the grandparents\' house for long lunches, conversation, and connection. It\'s considered rude to rush away after eating.'
+    },
+    dialogue: [
+      {
+        id: 'd1',
+        speaker: 'teacher',
+        text: 'Bienvenido a nuestra casa! Los domingos siempre comemos toda la familia junta.',
+        translation: 'Welcome to our house! On Sundays we always eat all together as a family.',
+        responses: [
+          {
+            id: 'r1a',
+            text: 'Muchas gracias por invitarme! Que buena tradicion tienen.',
+            translation: 'Thank you very much for inviting me! What a nice tradition you have.',
+            isCorrect: true,
+            feedback: 'Es lo mas importante para nosotros. Ven, te presento a la abuela.',
+            feedbackTranslation: 'It is the most important thing for us. Come, I\'ll introduce you to grandmother.',
+            nextNodeId: 'd2',
+          },
+        ],
+      },
+      {
+        id: 'd2',
+        speaker: 'npc',
+        text: 'Ay, bienvenido hijo! Sientate, sientate. Tienes que comer mucho, estas muy delgado!',
+        translation: 'Oh, welcome dear! Sit down, sit down. You have to eat a lot, you are very thin!',
+        responses: [
+          {
+            id: 'r2a',
+            text: 'Gracias, abuela! Huele delicioso. Que esta cocinando?',
+            translation: 'Thank you, grandma! It smells delicious. What are you cooking?',
+            isCorrect: true,
+            feedback: 'Paella! La receta de mi madre. Tardamos tres horas en hacerla.',
+            feedbackTranslation: 'Paella! My mother\'s recipe. It takes us three hours to make it.',
+            nextNodeId: 'd3',
+          },
+        ],
+      },
+      {
+        id: 'd3',
+        speaker: 'teacher',
+        text: 'Ahora viene lo mejor: la sobremesa. Nos quedamos hablando en la mesa durante horas.',
+        translation: 'Now comes the best part: the sobremesa. We stay talking at the table for hours.',
+        responses: [
+          {
+            id: 'r3a',
+            text: 'En mi pais no tenemos esta costumbre. Me parece muy bonito.',
+            translation: 'In my country we do not have this custom. It seems very nice to me.',
+            isCorrect: true,
+            feedback: 'Es el momento de conectar con la familia. Toma, un cafe y un chupito de licor.',
+            feedbackTranslation: 'It is the moment to connect with family. Here, a coffee and a shot of liquor.',
+            nextNodeId: 'd4',
+          },
+        ],
+      },
+      {
+        id: 'd4',
+        speaker: 'npc',
+        text: 'Ya son las seis! El tiempo vuela cuando estamos juntos. Te quedas a cenar?',
+        translation: 'It is six already! Time flies when we are together. Are you staying for dinner?',
+        responses: [
+          {
+            id: 'r4a',
+            text: 'Me encantaria! Ha sido una experiencia maravillosa. Gracias por acogerme.',
+            translation: 'I would love to! It has been a wonderful experience. Thank you for welcoming me.',
+            isCorrect: true,
+            feedback: 'Ya eres parte de la familia! Vuelve cuando quieras.',
+            feedbackTranslation: 'You are already part of the family! Come back whenever you want.',
+            nextNodeId: 'end',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'cultural005',
+    title: 'Spanish Coffee Culture',
+    titleSpanish: 'La Cultura del Cafe',
+    description: 'Learn the art of Spanish coffee ordering',
+    difficulty: 'beginner',
+    location: 'A Spanish cafe',
+    participants: ['You', 'Waiter'],
+    order: 22,
+    category: 'cultural',
+    culturalNote: {
+      title: 'Coffee Vocabulary',
+      content: 'Spain has specific coffee terminology: "cafe solo" (espresso), "cortado" (espresso with a dash of milk), "cafe con leche" (half coffee, half steamed milk), "cafe bombon" (espresso with condensed milk). In the afternoon, try a "carajillo" (coffee with brandy). Sitting at the bar is usually cheaper than at a table.'
+    },
+    dialogue: [
+      {
+        id: 'd1',
+        speaker: 'teacher',
+        text: 'Buenos dias! Que va a tomar? Solo le aviso, en la barra es mas barato.',
+        translation: 'Good morning! What will you have? I\'ll just let you know, at the bar it is cheaper.',
+        responses: [
+          {
+            id: 'r1a',
+            text: 'Ah, gracias por el consejo! Que tipos de cafe tienen?',
+            translation: 'Ah, thanks for the advice! What types of coffee do you have?',
+            isCorrect: true,
+            feedback: 'Tenemos cafe solo, cortado, con leche, bombon... cual prefiere?',
+            feedbackTranslation: 'We have espresso, cortado, with milk, bombon... which do you prefer?',
+            nextNodeId: 'd2',
+          },
+        ],
+      },
+      {
+        id: 'd2',
+        speaker: 'teacher',
+        text: 'El cortado lleva un poquito de leche. El cafe con leche es mitad y mitad.',
+        translation: 'The cortado has a little bit of milk. The cafe con leche is half and half.',
+        responses: [
+          {
+            id: 'r2a',
+            text: 'Pongame un cortado entonces. Y que es un cafe bombon?',
+            translation: 'Give me a cortado then. And what is a cafe bombon?',
+            isCorrect: true,
+            feedback: 'Es cafe solo con leche condensada. Es muy dulce pero delicioso!',
+            feedbackTranslation: 'It is espresso with condensed milk. It is very sweet but delicious!',
+            nextNodeId: 'd3',
+          },
+        ],
+      },
+      {
+        id: 'd3',
+        speaker: 'teacher',
+        text: 'Aqui tiene su cortado. Si quiere algo mas fuerte, pruebe el carajillo.',
+        translation: 'Here is your cortado. If you want something stronger, try the carajillo.',
+        responses: [
+          {
+            id: 'r3a',
+            text: 'Que es un carajillo? Suena interesante.',
+            translation: 'What is a carajillo? It sounds interesting.',
+            isCorrect: true,
+            feedback: 'Es cafe con un chorro de coñac o ron. Perfecto para las tardes frias!',
+            feedbackTranslation: 'It is coffee with a splash of cognac or rum. Perfect for cold afternoons!',
+            nextNodeId: 'd4',
+          },
+        ],
+      },
+      {
+        id: 'd4',
+        speaker: 'teacher',
+        text: 'Ya sabe pedir cafe como un espanol! El cafe es parte de nuestra vida social.',
+        translation: 'Now you know how to order coffee like a Spaniard! Coffee is part of our social life.',
+        responses: [
+          {
+            id: 'r4a',
+            text: 'Es verdad! He visto que la gente pasa mucho tiempo en las cafeterias charlando.',
+            translation: 'It is true! I have seen that people spend a lot of time in cafes chatting.',
+            isCorrect: true,
+            feedback: 'Si! Un cafe es una excusa para hablar. Eso es la vida espanola!',
+            feedbackTranslation: 'Yes! A coffee is an excuse to talk. That is Spanish life!',
+            nextNodeId: 'end',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'cultural006',
+    title: 'Late Night Dining',
+    titleSpanish: 'Cenar Tarde',
+    description: 'Understand Spanish dining schedule',
+    difficulty: 'beginner',
+    location: 'A restaurant',
+    participants: ['You', 'Spanish friend'],
+    order: 23,
+    category: 'cultural',
+    culturalNote: {
+      title: 'Spanish Meal Schedule',
+      content: 'Spaniards eat later than most countries. Lunch (la comida) is around 2-3 PM and is the main meal. Dinner (la cena) is usually 9-10 PM or later. Most restaurants don\'t open for dinner until 8:30 PM. On weekends, it\'s common to eat dinner after 10 PM!'
+    },
+    dialogue: [
+      {
+        id: 'd1',
+        speaker: 'teacher',
+        text: 'Son las siete. Quieres cenar? Aunque es un poco pronto todavia...',
+        translation: 'It is seven. Do you want to have dinner? Although it is a bit early still...',
+        responses: [
+          {
+            id: 'r1a',
+            text: 'Las siete es pronto? En mi pais ya cenamos a esta hora.',
+            translation: 'Seven is early? In my country we already have dinner at this time.',
+            isCorrect: true,
+            feedback: 'En Espana cenamos a las nueve o diez. Los restaurantes abren a las ocho y media.',
+            feedbackTranslation: 'In Spain we have dinner at nine or ten. Restaurants open at eight thirty.',
+            nextNodeId: 'd2',
+          },
+        ],
+      },
+      {
+        id: 'd2',
+        speaker: 'teacher',
+        text: 'Por eso comemos mucho al mediodia. La comida es la meal principal aqui.',
+        translation: 'That is why we eat a lot at noon. Lunch is the main meal here.',
+        responses: [
+          {
+            id: 'r2a',
+            text: 'Entonces, que hacemos hasta las nueve?',
+            translation: 'So, what do we do until nine?',
+            isCorrect: true,
+            feedback: 'Podemos dar un paseo y tomar algo. Es lo que hacemos normalmente.',
+            feedbackTranslation: 'We can go for a walk and have a drink. It is what we normally do.',
+            nextNodeId: 'd3',
+          },
+        ],
+      },
+      {
+        id: 'd3',
+        speaker: 'teacher',
+        text: 'Ya son las nueve y media. Ahora los restaurantes estan empezando a llenarse.',
+        translation: 'It is nine thirty now. Now the restaurants are starting to fill up.',
+        responses: [
+          {
+            id: 'r3a',
+            text: 'Tienes razon! Antes estaban vacios y ahora hay mucha gente.',
+            translation: 'You are right! Before they were empty and now there are many people.',
+            isCorrect: true,
+            feedback: 'Los fines de semana cenamos incluso mas tarde, a las diez u once!',
+            feedbackTranslation: 'On weekends we have dinner even later, at ten or eleven!',
+            nextNodeId: 'd4',
+          },
+        ],
+      },
+      {
+        id: 'd4',
+        speaker: 'teacher',
+        text: 'No te preocupes si tienes hambre entre horas. Para eso tenemos la merienda!',
+        translation: 'Don\'t worry if you are hungry between meals. That is what we have the merienda for!',
+        responses: [
+          {
+            id: 'r4a',
+            text: 'La merienda! Es como un snack por la tarde, verdad?',
+            translation: 'The merienda! It is like an afternoon snack, right?',
+            isCorrect: true,
+            feedback: 'Exacto! Asi no llegamos a la cena con mucha hambre. Es perfecto!',
+            feedbackTranslation: 'Exactly! That way we don\'t arrive at dinner very hungry. It is perfect!',
+            nextNodeId: 'end',
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export function getConversationById(id: string): ConversationScenario | undefined {
@@ -1740,4 +2251,19 @@ export function getNextConversation(currentId: string): ConversationScenario | u
   const current = getConversationById(currentId);
   if (!current) return undefined;
   return getConversationByOrder(current.order + 1);
+}
+
+export function getConversationsByCategory(category: string): ConversationScenario[] {
+  if (category === 'all') return conversations;
+  if (category === 'cultural') return conversations.filter(c => c.category === 'cultural');
+  if (category === 'everyday') return conversations.filter(c => !c.category || c.category === 'everyday');
+  return conversations;
+}
+
+export function getCulturalConversations(): ConversationScenario[] {
+  return conversations.filter(c => c.category === 'cultural');
+}
+
+export function getEverydayConversations(): ConversationScenario[] {
+  return conversations.filter(c => !c.category || c.category !== 'cultural');
 }

@@ -5,7 +5,7 @@ import { Hash, Clock, Calendar, Calculator, CheckCircle, XCircle, RotateCcw, Vol
 import Card, { CardContent, CardTitle, CardDescription } from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import TeacherBubble from '@/components/layout/TeacherBubble';
-import { getTeacherBySpecialty } from '@/data/teachers';
+import { useTeachers } from '@/hooks/useTeachers';
 import {
   cardinalNumbers,
   ordinalNumbers,
@@ -310,7 +310,8 @@ function DrillGame({ drillType, onBack }: { drillType: DrillType; onBack: () => 
 
 export default function PracticePage() {
   const [selectedDrill, setSelectedDrill] = useState<DrillType | null>(null);
-  const teacher = getTeacherBySpecialty('numbers');
+  const { getTeacherBySpecialty } = useTeachers();
+  const teacher = getTeacherBySpecialty('practice');
 
   const drills = [
     {

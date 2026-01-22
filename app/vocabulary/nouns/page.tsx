@@ -6,7 +6,7 @@ import Card, { CardContent } from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import WordCard from '@/components/ui/WordCard';
 import TeacherBubble from '@/components/layout/TeacherBubble';
-import { getTeacherBySpecialty } from '@/data/teachers';
+import { useTeachers } from '@/hooks/useTeachers';
 import { nouns, getCategories, getNounsByCategory } from '@/data/nouns';
 import { WORD_CATEGORIES, WordCategory } from '@/lib/types';
 import { speak } from '@/lib/speech';
@@ -16,6 +16,7 @@ export default function NounsPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [showTeacher, setShowTeacher] = useState(true);
+  const { getTeacherBySpecialty } = useTeachers();
 
   const teacher = getTeacherBySpecialty('vocabulary');
   const categories = getCategories();

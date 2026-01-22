@@ -5,7 +5,7 @@ import { Search, Volume2, Filter, ChevronDown, ChevronUp } from 'lucide-react';
 import Card, { CardContent, CardTitle } from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import TeacherBubble from '@/components/layout/TeacherBubble';
-import { getTeacherBySpecialty } from '@/data/teachers';
+import { useTeachers } from '@/hooks/useTeachers';
 import { allVerbs, getVerbsByType, searchVerbs } from '@/data/verbs';
 import { Verb, ConjugationSet } from '@/lib/types';
 import { speak } from '@/lib/speech';
@@ -163,6 +163,7 @@ export default function VerbsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [typeFilter, setTypeFilter] = useState<string>('all');
   const [expandedVerb, setExpandedVerb] = useState<string | null>(null);
+  const { getTeacherBySpecialty } = useTeachers();
 
   const teacher = getTeacherBySpecialty('verbs');
 

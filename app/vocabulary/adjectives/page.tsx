@@ -6,7 +6,7 @@ import Card, { CardContent } from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import WordCard from '@/components/ui/WordCard';
 import TeacherBubble from '@/components/layout/TeacherBubble';
-import { getTeacherBySpecialty } from '@/data/teachers';
+import { useTeachers } from '@/hooks/useTeachers';
 import { adjectives, getAdjectiveCategories, getAdjectivesByCategory } from '@/data/adjectives';
 
 const categoryLabels: Record<string, string> = {
@@ -27,8 +27,9 @@ export default function AdjectivesPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const { getTeacherBySpecialty } = useTeachers();
 
-  const teacher = getTeacherBySpecialty('grammar');
+  const teacher = getTeacherBySpecialty('vocabulary');
   const categories = getAdjectiveCategories();
 
   const filteredAdjectives = useMemo(() => {

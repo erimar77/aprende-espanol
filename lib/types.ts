@@ -103,6 +103,7 @@ export interface ConversationScenario {
   order: number;
   prerequisiteId?: string;
   culturalNote?: CulturalNote;
+  category?: 'everyday' | 'cultural' | 'travel' | 'social' | 'professional';
 }
 
 export interface DialogueNode {

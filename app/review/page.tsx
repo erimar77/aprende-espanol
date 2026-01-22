@@ -6,7 +6,7 @@ import Card, { CardContent, CardTitle, CardDescription } from '@/components/ui/C
 import Button from '@/components/ui/Button';
 import ProgressBar from '@/components/ui/ProgressBar';
 import TeacherBubble from '@/components/layout/TeacherBubble';
-import { getTeacherBySpecialty } from '@/data/teachers';
+import { useTeachers } from '@/hooks/useTeachers';
 import { nouns } from '@/data/nouns';
 import { adjectives } from '@/data/adjectives';
 import { adverbs } from '@/data/adverbs';
@@ -30,8 +30,9 @@ export default function ReviewPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
   const [sessionStats, setSessionStats] = useState({ correct: 0, incorrect: 0 });
+  const { getTeacherBySpecialty } = useTeachers();
 
-  const teacher = getTeacherBySpecialty('flashcards');
+  const teacher = getTeacherBySpecialty('review');
 
   // Get items that need review (low accuracy or marked as needing practice)
   const itemsToReview = useMemo(() => {

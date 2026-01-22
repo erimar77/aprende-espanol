@@ -6,7 +6,7 @@ import Card, { CardContent, CardTitle, CardDescription } from '@/components/ui/C
 import Button from '@/components/ui/Button';
 import ProgressBar from '@/components/ui/ProgressBar';
 import TeacherBubble from '@/components/layout/TeacherBubble';
-import { getTeacherBySpecialty } from '@/data/teachers';
+import { useTeachers } from '@/hooks/useTeachers';
 import { testQuestions, getTestQuestions, calculateScore } from '@/data/test-questions';
 import { TestQuestion } from '@/lib/types';
 import { useProgress } from '@/context/ProgressContext';
@@ -106,7 +106,8 @@ export default function TestPage() {
   const [showExplanations, setShowExplanations] = useState(true);
 
   const { addTestScore } = useProgress();
-  const teacher = getTeacherBySpecialty('grammar');
+  const { getTeacherBySpecialty } = useTeachers();
+  const teacher = getTeacherBySpecialty('test');
 
   // Timer effect
   useEffect(() => {

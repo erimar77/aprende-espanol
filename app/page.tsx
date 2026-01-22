@@ -11,12 +11,13 @@ import {
   RefreshCw,
   ClipboardCheck,
   Sparkles,
+  Book,
 } from 'lucide-react';
 import Card, { CardContent, CardDescription, CardTitle } from '@/components/ui/Card';
 import TeacherBubble from '@/components/layout/TeacherBubble';
 import ProgressBar from '@/components/ui/ProgressBar';
 import { useProgress } from '@/context/ProgressContext';
-import { teachers } from '@/data/teachers';
+import { useTeachers } from '@/hooks/useTeachers';
 
 const sections = [
   {
@@ -26,6 +27,14 @@ const sections = [
     href: '/conversations',
     icon: MessageCircle,
     color: 'bg-primary-500',
+  },
+  {
+    title: 'Stories',
+    titleSpanish: 'Cuentos',
+    description: '35+ graded reading stories',
+    href: '/stories',
+    icon: Book,
+    color: 'bg-teal-500',
   },
   {
     title: 'Vocabulary',
@@ -79,6 +88,7 @@ const sections = [
 
 export default function Home() {
   const { progress } = useProgress();
+  const { teachers, loading: teachersLoading } = useTeachers();
 
   // Calculate overall progress
   const totalLessons = 10; // Grammar lessons
@@ -87,7 +97,7 @@ export default function Home() {
   const conversationsProgress = (progress.conversationsCompleted.length / totalConversations) * 100;
   const wordsLearned = Object.keys(progress.flashcardProgress).length;
 
-  const teacher = teachers[0]; // Maria for homepage
+  const teacher = teachers[0]; // First teacher for homepage
 
   return (
     <div className="space-y-12">
@@ -239,10 +249,10 @@ export default function Home() {
       {/* Meet the Teachers */}
       <section>
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-          Tus Profesoras / Your Teachers
+          Tus Profesores / Your Teachers
         </h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {teachers.slice(0, 6).map((teacher) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          {teachers.slice(0, 10).map((teacher) => (
             <Card key={teacher.id} className="text-center">
               <CardContent>
                 <div className="relative w-24 h-24 mx-auto mb-4">
