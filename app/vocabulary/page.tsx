@@ -3,8 +3,6 @@
 import Link from 'next/link';
 import { BookOpen, Tag, Sparkles, Zap } from 'lucide-react';
 import Card, { CardContent, CardDescription, CardTitle } from '@/components/ui/Card';
-import TeacherBubble from '@/components/layout/TeacherBubble';
-import { useTeachers } from '@/hooks/useTeachers';
 import { nouns } from '@/data/nouns';
 import { adjectives } from '@/data/adjectives';
 import { adverbs } from '@/data/adverbs';
@@ -40,8 +38,6 @@ const vocabularySections = [
 ];
 
 export default function VocabularyPage() {
-  const { getTeacherBySpecialty } = useTeachers();
-  const teacher = getTeacherBySpecialty('vocabulary');
   const totalWords = nouns.length + adjectives.length + adverbs.length;
 
   return (
@@ -55,12 +51,6 @@ export default function VocabularyPage() {
         </p>
       </div>
 
-      <TeacherBubble
-        teacher={teacher}
-        message="Bienvenido a la seccion de vocabulario! Aqui puedes aprender mas de 700 palabras en espanol. Empieza con los sustantivos - son la base del idioma."
-        messageTranslation="Welcome to the vocabulary section! Here you can learn over 700 Spanish words. Start with the nouns - they are the foundation of the language."
-        size="medium"
-      />
 
       <div className="grid md:grid-cols-3 gap-6">
         {vocabularySections.map((section) => {

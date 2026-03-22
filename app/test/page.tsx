@@ -5,11 +5,10 @@ import { ClipboardCheck, Clock, ChevronRight, CheckCircle, XCircle, Award, Rotat
 import Card, { CardContent, CardTitle, CardDescription } from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import ProgressBar from '@/components/ui/ProgressBar';
-import TeacherBubble from '@/components/layout/TeacherBubble';
-import { useTeachers } from '@/hooks/useTeachers';
 import { testQuestions, getTestQuestions, calculateScore } from '@/data/test-questions';
-import { TestQuestion } from '@/lib/types';
+import type { TestQuestion as TestQuestionType } from '@/lib/types';
 import { useProgress } from '@/context/ProgressContext';
+import { useGamification } from '@/context/GamificationContext';
 
 function TestQuestion({
   question,
@@ -18,7 +17,7 @@ function TestQuestion({
   userAnswer,
   showExplanation,
 }: {
-  question: TestQuestion;
+  question: TestQuestionType;
   onAnswer: (answer: string) => void;
   answered: boolean;
   userAnswer: string | null;
@@ -98,7 +97,7 @@ function TestQuestion({
 export default function TestPage() {
   const [testStarted, setTestStarted] = useState(false);
   const [testComplete, setTestComplete] = useState(false);
-  const [questions, setQuestions] = useState<TestQuestion[]>([]);
+  const [questions, setQuestions] = useState<TestQuestionType[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [timedMode, setTimedMode] = useState(false);
@@ -106,8 +105,7 @@ export default function TestPage() {
   const [showExplanations, setShowExplanations] = useState(true);
 
   const { addTestScore } = useProgress();
-  const { getTeacherBySpecialty } = useTeachers();
-  const teacher = getTeacherBySpecialty('test');
+  const { earnXP, recordSkill } = useGamification();
 
   // Timer effect
   useEffect(() => {
@@ -155,6 +153,20 @@ export default function TestPage() {
       totalQuestions: score.total,
       completedAt: new Date().toISOString(),
       timeSpent: timedMode ? (30 * 60 - timeRemaining) : 0,
+    });
+    // Award XP for lesson completion + bonus for perfect score
+    earnXP('lesson_complete', undefined, { testId: 'a1-final', score: score.percentage });
+    if (score.percentage === 100) {
+      earnXP('perfect_score', undefined, { testId: 'a1-final' });
+    }
+    // Record skill results based on per-question accuracy
+    questions.forEach((q) => {
+      const area = q.category === 'vocabulary' ? 'vocabulary'
+        : q.category === 'grammar' ? 'grammar'
+        : q.category === 'conjugation' ? 'conjugation'
+        : 'translation';
+      const correct = answers[q.id] === q.correctAnswer;
+      recordSkill(area, correct);
     });
     setTestComplete(true);
   };
@@ -277,12 +289,6 @@ export default function TestPage() {
           </p>
         </div>
 
-        <TeacherBubble
-          teacher={teacher}
-          message="Este examen evaluara todo lo que has aprendido. No te preocupes, puedes tomarlo las veces que quieras. Buena suerte!"
-          messageTranslation="This test will evaluate everything you've learned. Don't worry, you can take it as many times as you want. Good luck!"
-          size="medium"
-        />
 
         <Card>
           <CardContent>

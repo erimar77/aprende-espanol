@@ -3,8 +3,9 @@
 import Image from 'next/image';
 import { Volume2, VolumeX } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { speak, stopSpeaking, isSpeaking } from '@/lib/speech';
+import { speak, stopSpeaking } from '@/lib/speech';
 import { Teacher } from '@/lib/types';
+import { useTeacherVisibility } from '@/hooks/useTeacherVisibility';
 
 interface TeacherBubbleProps {
   teacher: Teacher;
@@ -23,8 +24,21 @@ export default function TeacherBubble({
   size = 'medium',
   className = '',
 }: TeacherBubbleProps) {
+  // All hooks must be called before any conditional returns
+  const { showTeachers } = useTeacherVisibility();
   const [speaking, setSpeaking] = useState(false);
   const [showTrans, setShowTrans] = useState(false);
+
+  useEffect(() => {
+    return () => {
+      stopSpeaking();
+    };
+  }, []);
+
+  // Now we can safely return early after all hooks are called
+  if (!showTeachers) {
+    return null;
+  }
 
   const sizeClasses = {
     small: {
@@ -60,12 +74,6 @@ export default function TeacherBubble({
       setSpeaking(false);
     }
   };
-
-  useEffect(() => {
-    return () => {
-      stopSpeaking();
-    };
-  }, []);
 
   return (
     <div className={`flex items-end ${sizes.container} ${className}`}>

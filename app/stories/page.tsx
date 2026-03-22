@@ -3,10 +3,8 @@
 import Link from 'next/link';
 import { BookOpen, Clock, Star, Filter } from 'lucide-react';
 import Card, { CardContent, CardDescription, CardTitle } from '@/components/ui/Card';
-import TeacherBubble from '@/components/layout/TeacherBubble';
-import { useTeachers } from '@/hooks/useTeachers';
-import { stories } from '@/data/stories';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import type { Story } from '@/data/stories';
 
 const levelColors = {
   beginner: 'bg-green-500',
@@ -21,9 +19,24 @@ const levelLabels = {
 };
 
 export default function StoriesPage() {
-  const { getTeacherBySpecialty } = useTeachers();
-  const teacher = getTeacherBySpecialty('stories');
   const [selectedLevel, setSelectedLevel] = useState<string>('all');
+  const [stories, setStories] = useState<Story[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadStories = async () => {
+      try {
+        const { stories: loadedStories } = await import('@/data/stories');
+        setStories(loadedStories);
+      } catch (error) {
+        console.error('Failed to load stories:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadStories();
+  }, []);
 
   const filteredStories = selectedLevel === 'all'
     ? stories
@@ -32,6 +45,17 @@ export default function StoriesPage() {
   const beginnerCount = stories.filter(s => s.level === 'beginner').length;
   const elementaryCount = stories.filter(s => s.level === 'elementary').length;
   const intermediateCount = stories.filter(s => s.level === 'intermediate').length;
+
+  if (isLoading) {
+    return (
+      <div className="text-center py-12">
+        <div className="inline-block">
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary-500 mb-4"></div>
+          <p className="text-gray-600 dark:text-gray-400">Loading stories...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-8">
@@ -44,12 +68,6 @@ export default function StoriesPage() {
         </p>
       </div>
 
-      <TeacherBubble
-        teacher={teacher}
-        message="Leer en voz alta es una de las mejores formas de mejorar tu espanol! Empieza con las historias para principiantes y ve subiendo de nivel."
-        messageTranslation="Reading out loud is one of the best ways to improve your Spanish! Start with the beginner stories and work your way up."
-        size="medium"
-      />
 
       {/* Level Filter */}
       <div className="flex flex-wrap gap-3">

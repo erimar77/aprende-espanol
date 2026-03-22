@@ -8,10 +8,10 @@ async function isAdminRequest(): Promise<boolean> {
   const sessionToken = cookieStore.get('spanish_session')?.value;
   if (!sessionToken) return false;
 
-  const session = getSessionByToken(sessionToken);
+  const session = await getSessionByToken(sessionToken);
   if (!session) return false;
 
-  const user = getUserById(session.userId);
+  const user = await getUserById(session.userId);
   return user?.role === 'ADMIN';
 }
 
@@ -22,7 +22,7 @@ export async function GET() {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  const users = getUsers();
+  const users = await getUsers();
 
   // Remove sensitive data
   const safeUsers = users.map(({ providerId, ...user }) => user);

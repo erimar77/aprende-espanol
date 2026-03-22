@@ -5,11 +5,11 @@ import { BookOpen, ChevronRight, CheckCircle, XCircle, RotateCcw, Award } from '
 import Card, { CardContent, CardTitle, CardDescription } from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import ProgressBar from '@/components/ui/ProgressBar';
-import TeacherBubble from '@/components/layout/TeacherBubble';
-import { useTeachers } from '@/hooks/useTeachers';
 import { grammarLessons, getLessonById } from '@/data/grammar-lessons';
 import { GrammarLesson, Exercise, ContentBlock } from '@/lib/types';
 import { useProgress } from '@/context/ProgressContext';
+import { useGamification } from '@/context/GamificationContext';
+import InteractiveLessonView from '@/components/grammar/InteractiveLessonView';
 
 function ContentRenderer({ block }: { block: ContentBlock }) {
   switch (block.type) {
@@ -212,9 +212,6 @@ function LessonView({
   const [showExercises, setShowExercises] = useState(false);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [exerciseComplete, setExerciseComplete] = useState(false);
-  const { getTeacherBySpecialty } = useTeachers();
-
-  const teacher = getTeacherBySpecialty('grammar');
 
   const handleAnswer = (exerciseId: string, answer: string) => {
     setAnswers((prev) => ({ ...prev, [exerciseId]: answer }));
@@ -253,13 +250,6 @@ function LessonView({
         <>
           <Card>
             <CardContent>
-              <TeacherBubble
-                teacher={teacher}
-                message="Lee con atencion y toma notas. La gramatica es la base del idioma!"
-                messageTranslation="Read carefully and take notes. Grammar is the foundation of the language!"
-                size="small"
-              />
-
               <div className="mt-6">
                 {lesson.content.map((block, idx) => (
                   <ContentRenderer key={idx} block={block} />
@@ -345,16 +335,39 @@ function LessonView({
 export default function GrammarPage() {
   const [selectedLesson, setSelectedLesson] = useState<GrammarLesson | null>(null);
   const { markGrammarLessonComplete, isGrammarLessonComplete } = useProgress();
-  const { getTeacherBySpecialty } = useTeachers();
-  const teacher = getTeacherBySpecialty('grammar');
+  const { earnXP, recordSkill } = useGamification();
 
   const handleComplete = () => {
     if (selectedLesson) {
       markGrammarLessonComplete(selectedLesson.id);
+      earnXP('grammar_lesson_complete', undefined, { lessonId: selectedLesson.id });
+      recordSkill('grammar', true);
+    }
+  };
+
+  const handleInteractiveComplete = (correctCount: number, totalPractice: number) => {
+    if (selectedLesson) {
+      markGrammarLessonComplete(selectedLesson.id);
+      earnXP('grammar_lesson_complete', undefined, { lessonId: selectedLesson.id, correctCount, totalPractice });
+      // Record per-question skill accuracy
+      for (let i = 0; i < totalPractice; i++) {
+        recordSkill('grammar', i < correctCount);
+      }
     }
   };
 
   if (selectedLesson) {
+    // Use interactive view when available, fall back to classic text view
+    if (selectedLesson.interactiveSteps && selectedLesson.interactiveSteps.length > 0) {
+      return (
+        <InteractiveLessonView
+          lesson={selectedLesson}
+          onBack={() => setSelectedLesson(null)}
+          onComplete={handleInteractiveComplete}
+        />
+      );
+    }
+
     return (
       <LessonView
         lesson={selectedLesson}
@@ -379,12 +392,6 @@ export default function GrammarPage() {
         </p>
       </div>
 
-      <TeacherBubble
-        teacher={teacher}
-        message="La gramatica puede parecer dificil, pero con practica se vuelve natural. Empecemos!"
-        messageTranslation="Grammar can seem difficult, but with practice it becomes natural. Let's begin!"
-        size="medium"
-      />
 
       <Card>
         <CardContent>

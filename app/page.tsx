@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import {
   MessageCircle,
   BookOpen,
@@ -12,12 +11,20 @@ import {
   ClipboardCheck,
   Sparkles,
   Book,
+  Headphones,
+  Puzzle,
+  Mic,
+  Library,
+  Zap,
+  MessageSquare,
+  Timer,
+  Search,
+  Pencil,
+  Music,
 } from 'lucide-react';
 import Card, { CardContent, CardDescription, CardTitle } from '@/components/ui/Card';
-import TeacherBubble from '@/components/layout/TeacherBubble';
 import ProgressBar from '@/components/ui/ProgressBar';
 import { useProgress } from '@/context/ProgressContext';
-import { useTeachers } from '@/hooks/useTeachers';
 
 const sections = [
   {
@@ -53,8 +60,16 @@ const sections = [
     color: 'bg-accent-500',
   },
   {
+    title: 'Verb Trainer',
+    titleSpanish: 'Entrenador de Verbos',
+    description: 'Learn verbs in real sentences',
+    href: '/verb-trainer',
+    icon: Zap,
+    color: 'bg-lime-500',
+  },
+  {
     title: 'Grammar',
-    titleSpanish: 'Gramatica',
+    titleSpanish: 'Gramática',
     description: 'A1 grammar lessons',
     href: '/grammar',
     icon: Brain,
@@ -88,108 +103,29 @@ const sections = [
 
 export default function Home() {
   const { progress } = useProgress();
-  const { teachers, loading: teachersLoading } = useTeachers();
 
   // Calculate overall progress
   const totalLessons = 10; // Grammar lessons
   const totalConversations = 10; // Conversation scenarios
-  const lessonsProgress = (progress.lessonsCompleted.length / totalLessons) * 100;
-  const conversationsProgress = (progress.conversationsCompleted.length / totalConversations) * 100;
   const wordsLearned = Object.keys(progress.flashcardProgress).length;
-
-  const teacher = teachers[0]; // First teacher for homepage
 
   return (
     <div className="space-y-12">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden rounded-3xl gradient-hero p-8 md:p-12">
-        <div className="relative z-10 max-w-2xl">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Bienvenido a tu viaje de espanol!
-          </h1>
-          <p className="text-xl text-white/90 mb-6">
-            Welcome to your Spanish journey! Start learning with interactive lessons,
-            engaging conversations, and helpful teachers.
+      {/* Hero Section - Theme-aware, adapts to color scheme */}
+      <section className="relative overflow-hidden rounded-3xl theme-hero p-6 md:p-9">
+        <div className="relative z-10 w-full max-w-[80%]">
+          <p className="text-white/80 text-sm font-medium mb-2 tracking-wide uppercase">
+            A1 Level · Beginner Spanish
           </p>
-          <Link
-            href="/conversations"
-            className="inline-flex items-center gap-2 bg-white text-primary-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors"
-          >
-            <MessageCircle className="w-5 h-5" />
-            Start Learning
-          </Link>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">
+            ¡Bienvenido a tu viaje de español!
+          </h1>
+          <p className="text-lg text-white/90 mb-6 leading-relaxed">
+            Start your Spanish journey with interactive lessons, real conversations, and more!
+          </p>
         </div>
-        <div className="absolute right-0 bottom-0 opacity-20">
-          <GraduationCap className="w-64 h-64 text-white" />
-        </div>
-      </section>
-
-      {/* Teacher Welcome */}
-      <section>
-        <TeacherBubble
-          teacher={teacher}
-          message={teacher.greeting}
-          messageTranslation={teacher.greetingTranslation}
-          size="large"
-        />
-      </section>
-
-      {/* Progress Overview */}
-      <section>
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-          Tu Progreso / Your Progress
-        </h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          <Card>
-            <CardContent>
-              <CardTitle>Lessons</CardTitle>
-              <CardDescription>Grammar lessons completed</CardDescription>
-              <div className="mt-4">
-                <ProgressBar
-                  value={progress.lessonsCompleted.length}
-                  max={totalLessons}
-                  showPercentage
-                  color="primary"
-                />
-                <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
-                  {progress.lessonsCompleted.length} of {totalLessons} complete
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent>
-              <CardTitle>Conversations</CardTitle>
-              <CardDescription>Dialogue scenarios practiced</CardDescription>
-              <div className="mt-4">
-                <ProgressBar
-                  value={progress.conversationsCompleted.length}
-                  max={totalConversations}
-                  showPercentage
-                  color="secondary"
-                />
-                <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
-                  {progress.conversationsCompleted.length} of {totalConversations} complete
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent>
-              <CardTitle>Words Learned</CardTitle>
-              <CardDescription>Vocabulary in your flashcard deck</CardDescription>
-              <div className="mt-4">
-                <div className="text-4xl font-bold text-accent-500">
-                  {wordsLearned}
-                </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
-                  words practiced
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+        <div className="absolute right-4 bottom-4 md:right-6 md:bottom-6 opacity-10">
+          <GraduationCap className="w-40 h-40 md:w-52 md:h-52 text-white" />
         </div>
       </section>
 
@@ -221,54 +157,270 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Quick Stats */}
-      <section className="bg-white dark:bg-gray-800 rounded-2xl p-6 md:p-8 border border-gray-200 dark:border-gray-700">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-          Que vas a aprender / What You Will Learn
+      {/* Fluency Corner */}
+      <section>
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+          🗣️ Fluency Corner / Rincón de Fluidez
         </h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="text-center">
-            <div className="text-4xl font-bold text-primary-500">500+</div>
-            <div className="text-gray-600 dark:text-gray-400">Nouns</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-secondary-500">100+</div>
-            <div className="text-gray-600 dark:text-gray-400">Verbs</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-accent-500">10+</div>
-            <div className="text-gray-600 dark:text-gray-400">Grammar Lessons</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-purple-500">10+</div>
-            <div className="text-gray-600 dark:text-gray-400">Conversations</div>
-          </div>
+        <p className="text-gray-600 dark:text-gray-400 mb-6">
+          Bridge the gap between knowing words and speaking fluently
+        </p>
+        {/* Featured: Workshop */}
+        <Link href="/workshop" className="block mb-6">
+          <Card hover className="border-2 border-orange-300 dark:border-orange-700 bg-gradient-to-r from-orange-50 to-yellow-50 dark:from-orange-900/20 dark:to-yellow-900/20">
+            <CardContent className="flex items-center gap-4">
+              <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-orange-500 to-red-500">
+                <Timer className="w-8 h-8 text-white" />
+              </div>
+              <div className="flex-grow">
+                <CardTitle className="text-lg">⚡ Fluency Workshop</CardTitle>
+                <p className="text-sm text-orange-600 dark:text-orange-400 font-medium">Taller de Fluidez</p>
+                <CardDescription>
+                  Got 5, 10, or 20 minutes? Get a mixed practice session combining all exercises!
+                </CardDescription>
+              </div>
+              <div className="hidden sm:flex flex-col gap-1 text-xs text-orange-600 dark:text-orange-400">
+                <span className="px-2 py-1 bg-white dark:bg-gray-800 rounded">5 min</span>
+                <span className="px-2 py-1 bg-white dark:bg-gray-800 rounded">10 min</span>
+                <span className="px-2 py-1 bg-white dark:bg-gray-800 rounded">20 min</span>
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          <Link href="/sentence-builder">
+            <Card hover className="h-full border-2 border-dashed border-primary-200 dark:border-primary-800 hover:border-primary-400 dark:hover:border-primary-600">
+              <CardContent>
+                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 mb-4">
+                  <Puzzle className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Sentence Builder</CardTitle>
+                <p className="text-sm text-primary-500 font-medium mb-1">Constructor de Oraciones</p>
+                <CardDescription>
+                  Practice constructing sentences with common patterns
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </Link>
+
+          <Link href="/prompts">
+            <Card hover className="h-full border-2 border-dashed border-secondary-200 dark:border-secondary-800 hover:border-secondary-400 dark:hover:border-secondary-600">
+              <CardContent>
+                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-secondary-500 to-accent-500 mb-4">
+                  <Mic className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Speaking Prompts</CardTitle>
+                <p className="text-sm text-secondary-600 dark:text-secondary-400 font-medium mb-1">Temas de Conversación</p>
+                <CardDescription>
+                  Random topics with guiding questions
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </Link>
+
+          <Link href="/phrases">
+            <Card hover className="h-full border-2 border-dashed border-accent-200 dark:border-accent-800 hover:border-accent-400 dark:hover:border-accent-600">
+              <CardContent>
+                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-accent-500 to-primary-500 mb-4">
+                  <Library className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Phrase Bank</CardTitle>
+                <p className="text-sm text-accent-600 dark:text-accent-400 font-medium mb-1">Banco de Frases</p>
+                <CardDescription>
+                  Essential phrases by situation
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </Link>
+
+          <Link href="/quick-response">
+            <Card hover className="h-full border-2 border-dashed border-yellow-200 dark:border-yellow-800 hover:border-yellow-400 dark:hover:border-yellow-600">
+              <CardContent>
+                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-yellow-500 to-orange-500 mb-4">
+                  <Zap className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Quick Response</CardTitle>
+                <p className="text-sm text-yellow-600 dark:text-yellow-400 font-medium mb-1">Respuestas Rápidas</p>
+                <CardDescription>
+                  Timed drills for instant reactions
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </Link>
+
+          <Link href="/inner-monologue">
+            <Card hover className="h-full border-2 border-dashed border-purple-200 dark:border-purple-800 hover:border-purple-400 dark:hover:border-purple-600">
+              <CardContent>
+                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-500 mb-4">
+                  <Brain className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Inner Monologue</CardTitle>
+                <p className="text-sm text-purple-600 dark:text-purple-400 font-medium mb-1">Monólogo Interior</p>
+                <CardDescription>
+                  Practice thinking in Spanish
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </Link>
+
+          <Link href="/scenarios">
+            <Card hover className="h-full border-2 border-dashed border-teal-200 dark:border-teal-800 hover:border-teal-400 dark:hover:border-teal-600">
+              <CardContent>
+                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-teal-500 to-cyan-500 mb-4">
+                  <MessageSquare className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Scenarios</CardTitle>
+                <p className="text-sm text-teal-600 dark:text-teal-400 font-medium mb-1">Simulaciones</p>
+                <CardDescription>
+                  Immersive branching conversations
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </Link>
+
+          <Link href="/immersion">
+            <Card hover className="h-full border-2 border-dashed border-pink-200 dark:border-pink-800 hover:border-pink-400 dark:hover:border-pink-600">
+              <CardContent>
+                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-pink-500 to-rose-500 mb-4">
+                  <Headphones className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Immersion</CardTitle>
+                <p className="text-sm text-pink-600 dark:text-pink-400 font-medium mb-1">Inmersión</p>
+                <CardDescription>
+                  Spanish media: YouTube, podcasts, music & more
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </Link>
         </div>
       </section>
 
-      {/* Meet the Teachers */}
+      {/* Word Games */}
       <section>
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-          Tus Profesores / Your Teachers
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+          🎮 Word Games / Juegos de Palabras
         </h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
-          {teachers.slice(0, 10).map((teacher) => (
-            <Card key={teacher.id} className="text-center">
+        <p className="text-gray-600 dark:text-gray-400 mb-6">
+          Learn vocabulary through fun, interactive games
+        </p>
+        <div className="grid sm:grid-cols-2 gap-5">
+          <Link href="/madlibs">
+            <Card hover className="h-full border-2 border-dashed border-green-200 dark:border-green-800 hover:border-green-400 dark:hover:border-green-600">
               <CardContent>
-                <div className="relative w-24 h-24 mx-auto mb-4">
-                  <Image
-                    src={teacher.imageUrl}
-                    alt={teacher.name}
-                    fill
-                    className="rounded-full object-cover border-4 border-secondary-400"
-                    sizes="96px"
-                  />
+                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 mb-4">
+                  <Pencil className="w-6 h-6 text-white" />
                 </div>
-                <CardTitle>{teacher.name}</CardTitle>
-                <CardDescription>{teacher.specialty}</CardDescription>
+                <CardTitle>Mad Libs</CardTitle>
+                <p className="text-sm text-green-600 dark:text-green-400 font-medium mb-1">Palabras Locas</p>
+                <CardDescription>
+                  Fill in blanks with nouns, verbs, and adjectives to create hilarious stories in Spanish
+                </CardDescription>
               </CardContent>
             </Card>
-          ))}
+          </Link>
+
+          <Link href="/wordfind">
+            <Card hover className="h-full border-2 border-dashed border-blue-200 dark:border-blue-800 hover:border-blue-400 dark:hover:border-blue-600">
+              <CardContent>
+                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 mb-4">
+                  <Search className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Word Find</CardTitle>
+                <p className="text-sm text-blue-600 dark:text-blue-400 font-medium mb-1">Sopa de Letras</p>
+                <CardDescription>
+                  Search for hidden Spanish words in a letter grid — 6 categories to explore
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </Link>
+        </div>
+      </section>
+
+      {/* Guitar & Spanish */}
+      <section>
+        <Link href="/guitarra">
+          <Card hover className="border-2 border-dashed border-amber-200 dark:border-amber-800 hover:border-amber-400 dark:hover:border-amber-600">
+            <CardContent>
+              <div className="flex items-center gap-4">
+                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex-shrink-0">
+                  <Music className="w-7 h-7 text-white" />
+                </div>
+                <div>
+                  <CardTitle>🎸 Guitarra y Español</CardTitle>
+                  <p className="text-sm text-amber-600 dark:text-amber-400 font-medium mb-1">Guitar & Spanish</p>
+                  <CardDescription>
+                    Learn Spanish while playing guitar — 8 original songs with 3-4 chord progressions, strum patterns, tablature, and lyrics with translations
+                  </CardDescription>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
+      </section>
+
+      {/* Progress Overview */}
+      <section>
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+          Tu Progreso / Your Progress
+        </h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <Link href="/grammar">
+            <Card hover>
+              <CardContent>
+                <CardTitle>Lessons</CardTitle>
+                <CardDescription>Grammar lessons completed</CardDescription>
+                <div className="mt-4">
+                  <ProgressBar
+                    value={progress.lessonsCompleted.length}
+                    max={totalLessons}
+                    showPercentage
+                    color="primary"
+                  />
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                    {progress.lessonsCompleted.length} of {totalLessons} complete
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
+
+          <Link href="/conversations">
+            <Card hover>
+              <CardContent>
+                <CardTitle>Conversations</CardTitle>
+                <CardDescription>Dialogue scenarios practiced</CardDescription>
+                <div className="mt-4">
+                  <ProgressBar
+                    value={progress.conversationsCompleted.length}
+                    max={totalConversations}
+                    showPercentage
+                    color="secondary"
+                  />
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                    {progress.conversationsCompleted.length} of {totalConversations} complete
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
+
+          <Link href="/flashcards">
+            <Card hover>
+              <CardContent>
+                <CardTitle>Words Learned</CardTitle>
+                <CardDescription>Vocabulary in your flashcard deck</CardDescription>
+                <div className="mt-4">
+                  <div className="text-4xl font-bold text-accent-500">
+                    {wordsLearned}
+                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                    words practiced
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
         </div>
       </section>
     </div>

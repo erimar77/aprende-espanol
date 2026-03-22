@@ -3,6 +3,7 @@
 
 import fs from 'fs';
 import path from 'path';
+import crypto from 'crypto';
 
 const DB_DIR = path.join(process.cwd(), 'data', 'db');
 
@@ -14,15 +15,18 @@ function ensureDbDir() {
 }
 
 // Generic read function
-function readDb<T>(filename: string, defaultValue: T): T {
+async function readDb<T>(filename: string, defaultValue: T): Promise<T> {
   ensureDbDir();
   const filepath = path.join(DB_DIR, filename);
-  if (!fs.existsSync(filepath)) {
-    writeDb(filename, defaultValue);
+  try {
+    await fs.promises.access(filepath);
+  } catch {
+    // File doesn't exist, write default value
+    await writeDb(filename, defaultValue);
     return defaultValue;
   }
   try {
-    const data = fs.readFileSync(filepath, 'utf-8');
+    const data = await fs.promises.readFile(filepath, 'utf-8');
     return JSON.parse(data) as T;
   } catch {
     return defaultValue;
@@ -30,10 +34,10 @@ function readDb<T>(filename: string, defaultValue: T): T {
 }
 
 // Generic write function
-function writeDb<T>(filename: string, data: T): void {
+async function writeDb<T>(filename: string, data: T): Promise<void> {
   ensureDbDir();
   const filepath = path.join(DB_DIR, filename);
-  fs.writeFileSync(filepath, JSON.stringify(data, null, 2), 'utf-8');
+  await fs.promises.writeFile(filepath, JSON.stringify(data, null, 2), 'utf-8');
 }
 
 // User types
@@ -42,7 +46,7 @@ export interface DbUser {
   email: string;
   name: string;
   image?: string;
-  provider: 'google' | 'github';
+  provider: 'google' | 'github' | 'discord';
   providerId: string;
   role: 'USER' | 'ADMIN';
   approved: boolean;
@@ -80,27 +84,27 @@ export interface DbSettings {
 }
 
 // User functions
-export function getUsers(): DbUser[] {
-  return readDb<DbUser[]>('users.json', []);
+export async function getUsers(): Promise<DbUser[]> {
+  return await readDb<DbUser[]>('users.json', []);
 }
 
-export function getUserById(id: string): DbUser | null {
-  const users = getUsers();
+export async function getUserById(id: string): Promise<DbUser | null> {
+  const users = await getUsers();
   return users.find(u => u.id === id) || null;
 }
 
-export function getUserByEmail(email: string): DbUser | null {
-  const users = getUsers();
+export async function getUserByEmail(email: string): Promise<DbUser | null> {
+  const users = await getUsers();
   return users.find(u => u.email === email) || null;
 }
 
-export function getUserByProviderId(provider: string, providerId: string): DbUser | null {
-  const users = getUsers();
+export async function getUserByProviderId(provider: string, providerId: string): Promise<DbUser | null> {
+  const users = await getUsers();
   return users.find(u => u.provider === provider && u.providerId === providerId) || null;
 }
 
-export function createUser(user: Omit<DbUser, 'id' | 'createdAt' | 'updatedAt'>): DbUser {
-  const users = getUsers();
+export async function createUser(user: Omit<DbUser, 'id' | 'createdAt' | 'updatedAt'>): Promise<DbUser> {
+  const users = await getUsers();
   const newUser: DbUser = {
     ...user,
     id: generateId(),
@@ -108,12 +112,12 @@ export function createUser(user: Omit<DbUser, 'id' | 'createdAt' | 'updatedAt'>)
     updatedAt: new Date().toISOString(),
   };
   users.push(newUser);
-  writeDb('users.json', users);
+  await writeDb('users.json', users);
   return newUser;
 }
 
-export function updateUser(id: string, updates: Partial<Omit<DbUser, 'id' | 'createdAt'>>): DbUser | null {
-  const users = getUsers();
+export async function updateUser(id: string, updates: Partial<Omit<DbUser, 'id' | 'createdAt'>>): Promise<DbUser | null> {
+  const users = await getUsers();
   const index = users.findIndex(u => u.id === id);
   if (index === -1) return null;
 
@@ -122,41 +126,42 @@ export function updateUser(id: string, updates: Partial<Omit<DbUser, 'id' | 'cre
     ...updates,
     updatedAt: new Date().toISOString(),
   };
-  writeDb('users.json', users);
+  await writeDb('users.json', users);
   return users[index];
 }
 
-export function deleteUser(id: string): boolean {
-  const users = getUsers();
+export async function deleteUser(id: string): Promise<boolean> {
+  const users = await getUsers();
   const filtered = users.filter(u => u.id !== id);
   if (filtered.length === users.length) return false;
-  writeDb('users.json', filtered);
+  await writeDb('users.json', filtered);
   // Also delete associated sessions
-  const sessions = getSessions().filter(s => s.userId !== id);
-  writeDb('sessions.json', sessions);
+  const sessions = await getSessions();
+  const filteredSessions = sessions.filter(s => s.userId !== id);
+  await writeDb('sessions.json', filteredSessions);
   return true;
 }
 
 // Session functions
-export function getSessions(): DbSession[] {
-  return readDb<DbSession[]>('sessions.json', []);
+export async function getSessions(): Promise<DbSession[]> {
+  return await readDb<DbSession[]>('sessions.json', []);
 }
 
-export function getSessionByToken(token: string): DbSession | null {
-  const sessions = getSessions();
+export async function getSessionByToken(token: string): Promise<DbSession | null> {
+  const sessions = await getSessions();
   const session = sessions.find(s => s.token === token);
   if (!session) return null;
 
   // Check if expired
   if (new Date(session.expiresAt) < new Date()) {
-    deleteSession(session.id);
+    await deleteSession(session.id);
     return null;
   }
   return session;
 }
 
-export function createSession(userId: string): DbSession {
-  const sessions = getSessions();
+export async function createSession(userId: string): Promise<DbSession> {
+  const sessions = await getSessions();
   const newSession: DbSession = {
     id: generateId(),
     userId,
@@ -165,40 +170,40 @@ export function createSession(userId: string): DbSession {
     createdAt: new Date().toISOString(),
   };
   sessions.push(newSession);
-  writeDb('sessions.json', sessions);
+  await writeDb('sessions.json', sessions);
   return newSession;
 }
 
-export function deleteSession(id: string): boolean {
-  const sessions = getSessions();
+export async function deleteSession(id: string): Promise<boolean> {
+  const sessions = await getSessions();
   const filtered = sessions.filter(s => s.id !== id);
   if (filtered.length === sessions.length) return false;
-  writeDb('sessions.json', filtered);
+  await writeDb('sessions.json', filtered);
   return true;
 }
 
-export function deleteSessionByToken(token: string): boolean {
-  const sessions = getSessions();
+export async function deleteSessionByToken(token: string): Promise<boolean> {
+  const sessions = await getSessions();
   const filtered = sessions.filter(s => s.token !== token);
   if (filtered.length === sessions.length) return false;
-  writeDb('sessions.json', filtered);
+  await writeDb('sessions.json', filtered);
   return true;
 }
 
 // Teacher functions
-export function getTeachers(includeInactive = false): DbTeacher[] {
-  const teachers = readDb<DbTeacher[]>('teachers.json', []);
+export async function getTeachers(includeInactive = false): Promise<DbTeacher[]> {
+  const teachers = await readDb<DbTeacher[]>('teachers.json', []);
   if (includeInactive) return teachers;
   return teachers.filter(t => t.isActive).sort((a, b) => a.order - b.order);
 }
 
-export function getTeacherById(id: string): DbTeacher | null {
-  const teachers = readDb<DbTeacher[]>('teachers.json', []);
+export async function getTeacherById(id: string): Promise<DbTeacher | null> {
+  const teachers = await readDb<DbTeacher[]>('teachers.json', []);
   return teachers.find(t => t.id === id) || null;
 }
 
-export function createTeacher(teacher: Omit<DbTeacher, 'id' | 'createdAt' | 'updatedAt'>): DbTeacher {
-  const teachers = readDb<DbTeacher[]>('teachers.json', []);
+export async function createTeacher(teacher: Omit<DbTeacher, 'id' | 'createdAt' | 'updatedAt'>): Promise<DbTeacher> {
+  const teachers = await readDb<DbTeacher[]>('teachers.json', []);
   const newTeacher: DbTeacher = {
     ...teacher,
     id: generateId(),
@@ -206,12 +211,12 @@ export function createTeacher(teacher: Omit<DbTeacher, 'id' | 'createdAt' | 'upd
     updatedAt: new Date().toISOString(),
   };
   teachers.push(newTeacher);
-  writeDb('teachers.json', teachers);
+  await writeDb('teachers.json', teachers);
   return newTeacher;
 }
 
-export function updateTeacher(id: string, updates: Partial<Omit<DbTeacher, 'id' | 'createdAt'>>): DbTeacher | null {
-  const teachers = readDb<DbTeacher[]>('teachers.json', []);
+export async function updateTeacher(id: string, updates: Partial<Omit<DbTeacher, 'id' | 'createdAt'>>): Promise<DbTeacher | null> {
+  const teachers = await readDb<DbTeacher[]>('teachers.json', []);
   const index = teachers.findIndex(t => t.id === id);
   if (index === -1) return null;
 
@@ -220,36 +225,31 @@ export function updateTeacher(id: string, updates: Partial<Omit<DbTeacher, 'id' 
     ...updates,
     updatedAt: new Date().toISOString(),
   };
-  writeDb('teachers.json', teachers);
+  await writeDb('teachers.json', teachers);
   return teachers[index];
 }
 
-export function deleteTeacher(id: string): boolean {
+export async function deleteTeacher(id: string): Promise<boolean> {
   // Soft delete - just set isActive to false
-  const result = updateTeacher(id, { isActive: false });
+  const result = await updateTeacher(id, { isActive: false });
   return result !== null;
 }
 
-export function hardDeleteTeacher(id: string): boolean {
-  const teachers = readDb<DbTeacher[]>('teachers.json', []);
+export async function hardDeleteTeacher(id: string): Promise<boolean> {
+  const teachers = await readDb<DbTeacher[]>('teachers.json', []);
   const filtered = teachers.filter(t => t.id !== id);
   if (filtered.length === teachers.length) return false;
-  writeDb('teachers.json', filtered);
+  await writeDb('teachers.json', filtered);
   return true;
 }
 
 // Helper functions
 function generateId(): string {
-  return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+  return crypto.randomUUID();
 }
 
 function generateToken(): string {
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let token = '';
-  for (let i = 0; i < 64; i++) {
-    token += chars.charAt(Math.floor(Math.random() * chars.length));
-  }
-  return token;
+  return crypto.randomBytes(32).toString('hex');
 }
 
 // Settings functions
@@ -258,24 +258,24 @@ const defaultSettings: DbSettings = {
   updatedAt: new Date().toISOString(),
 };
 
-export function getSettings(): DbSettings {
-  return readDb<DbSettings>('settings.json', defaultSettings);
+export async function getSettings(): Promise<DbSettings> {
+  return await readDb<DbSettings>('settings.json', defaultSettings);
 }
 
-export function updateSettings(updates: Partial<Omit<DbSettings, 'updatedAt'>>): DbSettings {
-  const current = getSettings();
+export async function updateSettings(updates: Partial<Omit<DbSettings, 'updatedAt'>>): Promise<DbSettings> {
+  const current = await getSettings();
   const updated: DbSettings = {
     ...current,
     ...updates,
     updatedAt: new Date().toISOString(),
   };
-  writeDb('settings.json', updated);
+  await writeDb('settings.json', updated);
   return updated;
 }
 
 // Initialize teachers from static data if database is empty
-export function initializeTeachersFromStatic() {
-  const teachers = readDb<DbTeacher[]>('teachers.json', []);
+export async function initializeTeachersFromStatic(): Promise<void> {
+  const teachers = await readDb<DbTeacher[]>('teachers.json', []);
   if (teachers.length > 0) return; // Already initialized
 
   // Import will be done separately to avoid circular dependencies

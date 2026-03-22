@@ -2,10 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import { Hash, Clock, Calendar, Calculator, CheckCircle, XCircle, RotateCcw, Volume2 } from 'lucide-react';
+import { useGamification } from '@/context/GamificationContext';
 import Card, { CardContent, CardTitle, CardDescription } from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
-import TeacherBubble from '@/components/layout/TeacherBubble';
-import { useTeachers } from '@/hooks/useTeachers';
 import {
   cardinalNumbers,
   ordinalNumbers,
@@ -156,6 +155,7 @@ function getOrdinalSuffix(n: number): string {
 }
 
 function DrillGame({ drillType, onBack }: { drillType: DrillType; onBack: () => void }) {
+  const { earnXP, recordSkill } = useGamification();
   const [currentQuestion, setCurrentQuestion] = useState<DrillQuestion | null>(null);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [score, setScore] = useState(0);
@@ -182,12 +182,17 @@ function DrillGame({ drillType, onBack }: { drillType: DrillType; onBack: () => 
   const handleAnswer = (answer: string) => {
     if (selectedAnswer) return;
 
+    const isCorrect = answer === currentQuestion?.correctAnswer;
     setSelectedAnswer(answer);
     setTotalQuestions(prev => prev + 1);
-    if (answer === currentQuestion?.correctAnswer) {
+    if (isCorrect) {
       setScore(prev => prev + 1);
     }
     setShowResult(true);
+
+    // Record skill and award XP
+    recordSkill('vocabulary', isCorrect);
+    earnXP('exercise_complete');
 
     setTimeout(() => {
       setSelectedAnswer(null);
@@ -310,8 +315,6 @@ function DrillGame({ drillType, onBack }: { drillType: DrillType; onBack: () => 
 
 export default function PracticePage() {
   const [selectedDrill, setSelectedDrill] = useState<DrillType | null>(null);
-  const { getTeacherBySpecialty } = useTeachers();
-  const teacher = getTeacherBySpecialty('practice');
 
   const drills = [
     {
@@ -363,12 +366,6 @@ export default function PracticePage() {
         </p>
       </div>
 
-      <TeacherBubble
-        teacher={teacher}
-        message="Los numeros son muy importantes! Practica conmigo para dominarlos."
-        messageTranslation="Numbers are very important! Practice with me to master them."
-        size="medium"
-      />
 
       <div className="grid md:grid-cols-2 gap-6">
         {drills.map((drill) => {

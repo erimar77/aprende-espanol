@@ -11,10 +11,10 @@ async function isAdminRequest(): Promise<boolean> {
   const sessionToken = cookieStore.get('spanish_session')?.value;
   if (!sessionToken) return false;
 
-  const session = getSessionByToken(sessionToken);
+  const session = await getSessionByToken(sessionToken);
   if (!session) return false;
 
-  const user = getUserById(session.userId);
+  const user = await getUserById(session.userId);
   return user?.role === 'ADMIN';
 }
 

@@ -8,10 +8,10 @@ async function isAdminRequest(): Promise<boolean> {
   const sessionToken = cookieStore.get('spanish_session')?.value;
   if (!sessionToken) return false;
 
-  const session = getSessionByToken(sessionToken);
+  const session = await getSessionByToken(sessionToken);
   if (!session) return false;
 
-  const user = getUserById(session.userId);
+  const user = await getUserById(session.userId);
   return user?.role === 'ADMIN';
 }
 
@@ -22,7 +22,7 @@ export async function GET() {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  const teachers = getTeachers(true); // Include inactive
+  const teachers = await getTeachers(true); // Include inactive
   return NextResponse.json(teachers);
 }
 
@@ -44,18 +44,98 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Validation: name must be a string, max 100 chars, trimmed
+    if (typeof name !== 'string' || name.trim().length === 0) {
+      return NextResponse.json(
+        { error: 'Name must be a non-empty string' },
+        { status: 400 }
+      );
+    }
+    if (name.trim().length > 100) {
+      return NextResponse.json(
+        { error: 'Name must be at most 100 characters' },
+        { status: 400 }
+      );
+    }
+
+    // Validation: imageUrl must be a string that starts with '/' or 'http'
+    if (typeof imageUrl !== 'string') {
+      return NextResponse.json(
+        { error: 'Image URL must be a string' },
+        { status: 400 }
+      );
+    }
+    if (!imageUrl.startsWith('/') && !imageUrl.startsWith('http')) {
+      return NextResponse.json(
+        { error: 'Image URL must start with "/" or "http"' },
+        { status: 400 }
+      );
+    }
+
+    // Validation: greeting must be a string, max 500 chars
+    if (typeof greeting !== 'string' || greeting.trim().length === 0) {
+      return NextResponse.json(
+        { error: 'Greeting must be a non-empty string' },
+        { status: 400 }
+      );
+    }
+    if (greeting.trim().length > 500) {
+      return NextResponse.json(
+        { error: 'Greeting must be at most 500 characters' },
+        { status: 400 }
+      );
+    }
+
+    // Validation: greetingTranslation must be a string, max 500 chars
+    if (typeof greetingTranslation !== 'string' || greetingTranslation.trim().length === 0) {
+      return NextResponse.json(
+        { error: 'Greeting translation must be a non-empty string' },
+        { status: 400 }
+      );
+    }
+    if (greetingTranslation.trim().length > 500) {
+      return NextResponse.json(
+        { error: 'Greeting translation must be at most 500 characters' },
+        { status: 400 }
+      );
+    }
+
+    // Validation: specialty must be a string, max 200 chars
+    if (typeof specialty !== 'string' || specialty.trim().length === 0) {
+      return NextResponse.json(
+        { error: 'Specialty must be a non-empty string' },
+        { status: 400 }
+      );
+    }
+    if (specialty.trim().length > 200) {
+      return NextResponse.json(
+        { error: 'Specialty must be at most 200 characters' },
+        { status: 400 }
+      );
+    }
+
+    // Validation: gender if provided must be 'male' or 'female'
+    if (gender !== undefined && gender !== null) {
+      if (typeof gender !== 'string' || !['male', 'female'].includes(gender)) {
+        return NextResponse.json(
+          { error: 'Gender must be either "male" or "female"' },
+          { status: 400 }
+        );
+      }
+    }
+
     // Get current teacher count for order
-    const existingTeachers = getTeachers(true);
+    const existingTeachers = await getTeachers(true);
     const maxOrder = existingTeachers.length > 0
       ? Math.max(...existingTeachers.map(t => t.order))
       : -1;
 
-    const teacher = createTeacher({
-      name,
+    const teacher = await createTeacher({
+      name: name.trim(),
       imageUrl,
-      greeting,
-      greetingTranslation,
-      specialty,
+      greeting: greeting.trim(),
+      greetingTranslation: greetingTranslation.trim(),
+      specialty: specialty.trim(),
       gender: gender || undefined,
       order: maxOrder + 1,
       isActive: true,

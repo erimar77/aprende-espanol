@@ -9,8 +9,12 @@ import {
   deleteSessionByToken,
   DbUser,
 } from '@/lib/db';
+import { rateLimit } from '@/lib/rate-limit';
 
 const SESSION_COOKIE_NAME = 'spanish_session';
+
+// Rate limiter: 10 requests per minute per IP
+const authLimiter = rateLimit({ interval: 60000, limit: 10 });
 
 // GET /api/auth - Get current session
 export async function GET() {
@@ -21,12 +25,12 @@ export async function GET() {
     return NextResponse.json({ user: null });
   }
 
-  const session = getSessionByToken(sessionToken);
+  const session = await getSessionByToken(sessionToken);
   if (!session) {
     return NextResponse.json({ user: null });
   }
 
-  const user = getUserById(session.userId);
+  const user = await getUserById(session.userId);
   if (!user) {
     return NextResponse.json({ user: null });
   }
@@ -46,6 +50,17 @@ export async function GET() {
 
 // POST /api/auth - Sign in (simulated OAuth callback)
 export async function POST(request: NextRequest) {
+  // Get client IP for rate limiting
+  const ip = request.headers.get('x-forwarded-for') || 'unknown';
+  const limitResult = authLimiter(ip);
+
+  if (!limitResult.success) {
+    return NextResponse.json(
+      { error: 'Rate limit exceeded: 10 requests per minute allowed' },
+      { status: 429 }
+    );
+  }
+
   try {
     const body = await request.json();
     const { provider, email, name, image, providerId } = body;
@@ -58,11 +73,11 @@ export async function POST(request: NextRequest) {
     }
 
     // Check if user exists
-    let user = getUserByEmail(email);
+    let user = await getUserByEmail(email);
 
     if (!user) {
       // Create new user
-      user = createUser({
+      user = await createUser({
         email,
         name,
         image: image || undefined,
@@ -74,7 +89,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Create session
-    const session = createSession(user.id);
+    const session = await createSession(user.id);
 
     // Set cookie
     const response = NextResponse.json({
@@ -112,7 +127,7 @@ export async function DELETE() {
   const sessionToken = cookieStore.get(SESSION_COOKIE_NAME)?.value;
 
   if (sessionToken) {
-    deleteSessionByToken(sessionToken);
+    await deleteSessionByToken(sessionToken);
   }
 
   const response = NextResponse.json({ success: true });

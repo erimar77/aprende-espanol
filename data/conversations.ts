@@ -7,23 +7,23 @@ export const conversations: ConversationScenario[] = [
     titleSpanish: 'Conocer a Alguien Nuevo',
     description: 'Learn to introduce yourself and greet people',
     difficulty: 'beginner',
-    location: 'A cafe',
+    location: 'A café',
     participants: ['You', 'Maria'],
     order: 1,
     culturalNote: {
-      title: 'Spanish Greetings',
-      content: 'In Spanish-speaking countries, greetings are very important. People often greet with a kiss on each cheek (or one, depending on the country) among friends and family. "Mucho gusto" is a polite way to say "nice to meet you."'
+      title: 'Latin American Greetings',
+      content: 'In Latin America, including Peru, greetings are warm and personal. Peruvian friends often greet with a kiss on the cheek, while handshakes are common in professional settings. "Mucho gusto" is universally appreciated. Peruvians value personal connection and often ask "¿Cómo está?" with genuine interest in your wellbeing.'
     },
     dialogue: [
       {
         id: 'd1',
         speaker: 'teacher',
-        text: 'Hola! Me llamo Maria. Y tu, como te llamas?',
+        text: '¡Hola! Me llamo María. ¿Y tú, cómo te llamas?',
         translation: 'Hello! My name is Maria. And you, what is your name?',
         responses: [
           {
             id: 'r1a',
-            text: 'Hola Maria! Me llamo [your name]. Mucho gusto!',
+            text: '¡Hola María! Me llamo [your name]. Mucho gusto!',
             translation: 'Hello Maria! My name is [your name]. Nice to meet you!',
             isCorrect: true,
             feedback: 'Perfecto! Muy bien! You introduced yourself correctly.',
@@ -32,7 +32,7 @@ export const conversations: ConversationScenario[] = [
           },
           {
             id: 'r1b',
-            text: 'Buenos dias. Estoy bien.',
+            text: 'Buenos días. Estoy bien.',
             translation: 'Good morning. I am fine.',
             isCorrect: false,
             feedback: 'Hmm, eso no es correcto. Debes decir tu nombre.',
@@ -44,7 +44,7 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd2',
         speaker: 'teacher',
-        text: 'Mucho gusto! De donde eres?',
+        text: 'Mucho gusto! ¿De dónde eres?',
         translation: 'Nice to meet you! Where are you from?',
         responses: [
           {
@@ -52,16 +52,16 @@ export const conversations: ConversationScenario[] = [
             text: 'Soy de Estados Unidos.',
             translation: 'I am from the United States.',
             isCorrect: true,
-            feedback: 'Excelente! Ahora se de donde eres.',
+            feedback: '¡Excelente! Ahora sé de dónde eres.',
             feedbackTranslation: 'Excellent! Now I know where you are from.',
             nextNodeId: 'd3',
           },
           {
             id: 'r2b',
-            text: 'Soy de Espana.',
+            text: 'Soy de España.',
             translation: 'I am from Spain.',
             isCorrect: true,
-            feedback: 'Ah, eres espanol/a! Que bien!',
+            feedback: 'Ah, eres español/a! ¡Qué bien!',
             feedbackTranslation: "Ah, you're Spanish! How nice!",
             nextNodeId: 'd3',
           },
@@ -70,7 +70,7 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd3',
         speaker: 'teacher',
-        text: 'Que interesante! Y que haces? Trabajas o estudias?',
+        text: '¡Qué interesante! ¿Y qué haces? ¿Trabajas o estudias?',
         translation: 'How interesting! And what do you do? Do you work or study?',
         responses: [
           {
@@ -78,16 +78,16 @@ export const conversations: ConversationScenario[] = [
             text: 'Trabajo en una oficina.',
             translation: 'I work in an office.',
             isCorrect: true,
-            feedback: 'Muy bien! Trabajar es importante.',
+            feedback: '¡Muy bien! Trabajar es importante.',
             feedbackTranslation: 'Very good! Working is important.',
             nextNodeId: 'd4',
           },
           {
             id: 'r3b',
-            text: 'Estudio espanol!',
+            text: 'Estudio español!',
             translation: 'I study Spanish!',
             isCorrect: true,
-            feedback: 'Fantastico! Por eso estas aqui!',
+            feedback: 'Fantástico! Por eso estás aquí!',
             feedbackTranslation: "Fantastic! That's why you're here!",
             nextNodeId: 'd4',
           },
@@ -101,10 +101,10 @@ export const conversations: ConversationScenario[] = [
         responses: [
           {
             id: 'r4a',
-            text: 'Igualmente! Hasta pronto!',
+            text: '¡Igualmente! ¡Hasta pronto!',
             translation: 'Likewise! See you soon!',
             isCorrect: true,
-            feedback: 'Perfecto! Has completado la conversacion!',
+            feedback: '¡Perfecto! ¡Has completado la conversación!',
             feedbackTranslation: 'Perfect! You have completed the conversation!',
             nextNodeId: 'end',
           },
@@ -123,14 +123,14 @@ export const conversations: ConversationScenario[] = [
     order: 2,
     prerequisiteId: 'conv001',
     culturalNote: {
-      title: 'Tipping in Spain',
-      content: 'Unlike in the US, tipping in Spain is not obligatory. A service charge is usually included in the bill. If you want to leave a tip, rounding up or leaving 5-10% is appreciated but not expected.'
+      title: 'Tipping in Peru and Latin America',
+      content: 'In Peru and most Latin American countries, tipping is customary but flexible. A 10% tip is standard and appreciated in restaurants, though not always included in the bill. For other services (taxis, hotels, guides), tipping is appreciated but not obligatory. In Spain, tipping is more optional, but this varies across the Spanish-speaking world.'
     },
     dialogue: [
       {
         id: 'd1',
         speaker: 'teacher',
-        text: 'Buenas tardes! Bienvenido al restaurante. Que desea tomar?',
+        text: 'Buenas tardes! Bienvenido al restaurante. ¿Qué desea tomar?',
         translation: 'Good afternoon! Welcome to the restaurant. What would you like to drink?',
         responses: [
           {
@@ -138,7 +138,7 @@ export const conversations: ConversationScenario[] = [
             text: 'Quiero un vaso de agua, por favor.',
             translation: 'I want a glass of water, please.',
             isCorrect: true,
-            feedback: 'Muy bien! Un agua, perfecto.',
+            feedback: '¡Muy bien! Un agua, perfecto.',
             feedbackTranslation: 'Very good! Water, perfect.',
             nextNodeId: 'd2',
           },
@@ -156,7 +156,7 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd2',
         speaker: 'teacher',
-        text: 'Aqui tiene. Y para comer, que le gustaria?',
+        text: 'Aquí tiene. ¿Y para comer, qué le gustaría?',
         translation: 'Here you go. And to eat, what would you like?',
         responses: [
           {
@@ -164,7 +164,7 @@ export const conversations: ConversationScenario[] = [
             text: 'Quisiera la paella, por favor.',
             translation: 'I would like the paella, please.',
             isCorrect: true,
-            feedback: 'Excelente eleccion! La paella es deliciosa.',
+            feedback: '¡Excelente elección! La paella es deliciosa.',
             feedbackTranslation: 'Excellent choice! The paella is delicious.',
             nextNodeId: 'd3',
           },
@@ -182,7 +182,7 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd3',
         speaker: 'teacher',
-        text: 'La comida estuvo bien? Desea algo mas?',
+        text: '¿La comida estuvo bien? ¿Desea algo más?',
         translation: 'Was the food good? Would you like anything else?',
         responses: [
           {
@@ -199,7 +199,7 @@ export const conversations: ConversationScenario[] = [
             text: 'Quisiera un postre, por favor.',
             translation: 'I would like a dessert, please.',
             isCorrect: true,
-            feedback: 'Tenemos flan y helado. Cual prefiere?',
+            feedback: 'Tenemos flan y helado. ¿Cuál prefiere?',
             feedbackTranslation: 'We have flan and ice cream. Which do you prefer?',
             nextNodeId: 'd4',
           },
@@ -213,10 +213,10 @@ export const conversations: ConversationScenario[] = [
         responses: [
           {
             id: 'r4a',
-            text: 'Con tarjeta, por favor. Gracias por todo!',
+            text: '¡Con tarjeta, por favor. Gracias por todo!',
             translation: 'By card, please. Thank you for everything!',
             isCorrect: true,
-            feedback: 'Gracias a usted! Vuelva pronto!',
+            feedback: '¡Gracias a usted! ¡Vuelva pronto!',
             feedbackTranslation: 'Thank you! Come back soon!',
             nextNodeId: 'end',
           },
@@ -235,8 +235,8 @@ export const conversations: ConversationScenario[] = [
     order: 3,
     prerequisiteId: 'conv002',
     culturalNote: {
-      title: 'Helpful Locals',
-      content: 'Spanish speakers are generally very helpful when asked for directions. Don\'t be surprised if someone walks with you part of the way or gives very detailed instructions with hand gestures!'
+      title: 'Peruvian Hospitality',
+      content: 'Peruvians are known for their warmth and helpfulness. When you ask for directions, locals will often go out of their way to guide you, sometimes even walking with you to your destination. This generosity reflects Peruvian values of community and hospitality, seen across Latin America as well.'
     },
     dialogue: [
       {
@@ -247,7 +247,7 @@ export const conversations: ConversationScenario[] = [
         responses: [
           {
             id: 'r1a',
-            text: 'Disculpe, donde esta el museo?',
+            text: 'Disculpe, ¿dónde está el museo?',
             translation: 'Excuse me, where is the museum?',
             isCorrect: true,
             feedback: '',
@@ -268,12 +268,12 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd2',
         speaker: 'teacher',
-        text: 'El museo? Esta muy cerca. Siga todo recto y despues gire a la izquierda.',
+        text: '¿El museo? Está muy cerca. Siga todo recto y después gire a la izquierda.',
         translation: 'The museum? It is very close. Go straight ahead and then turn left.',
         responses: [
           {
             id: 'r2a',
-            text: 'Recto y despues a la izquierda. Esta lejos?',
+            text: 'Recto y después a la izquierda. ¿Está lejos?',
             translation: 'Straight and then left. Is it far?',
             isCorrect: true,
             feedback: 'No, esta a cinco minutos caminando.',
@@ -285,12 +285,12 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd2b',
         speaker: 'teacher',
-        text: 'La estacion esta al final de esta calle. Gire a la derecha en el semaforo.',
+        text: 'La estacion esta al final de esta calle. Gire a la derecha en el semáforo.',
         translation: 'The station is at the end of this street. Turn right at the traffic light.',
         responses: [
           {
             id: 'r2ba',
-            text: 'A la derecha en el semaforo. Entendido, gracias!',
+            text: 'A la derecha en el semáforo. Entendido, gracias!',
             translation: 'Right at the traffic light. Got it, thanks!',
             isCorrect: true,
             feedback: 'De nada! Buen viaje!',
@@ -302,7 +302,7 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd3',
         speaker: 'teacher',
-        text: 'No, esta muy cerca. El museo esta al lado de la biblioteca.',
+        text: 'No, está muy cerca. El museo está al lado de la biblioteca.',
         translation: 'No, it is very close. The museum is next to the library.',
         responses: [
           {
@@ -310,7 +310,7 @@ export const conversations: ConversationScenario[] = [
             text: 'Perfecto! Muchas gracias por su ayuda!',
             translation: 'Perfect! Thank you very much for your help!',
             isCorrect: true,
-            feedback: 'De nada! Que disfrute el museo!',
+            feedback: '¡De nada! ¡Que disfrute el museo!',
             feedbackTranslation: "You're welcome! Enjoy the museum!",
             nextNodeId: 'end',
           },
@@ -329,14 +329,14 @@ export const conversations: ConversationScenario[] = [
     order: 4,
     prerequisiteId: 'conv003',
     culturalNote: {
-      title: 'Shopping Culture',
-      content: 'In Spain, most shops close for siesta (2-5pm) and on Sundays. Larger cities have more flexible hours. Bargaining is only appropriate at markets (mercados), not in regular stores.'
+      title: 'Shopping in Peru and Latin America',
+      content: 'In Peru, shopping hours are generally longer in major cities. Traditional markets (mercados) like Mercado Central in Lima are vibrant hubs for fresh produce and local goods. Bargaining is expected and enjoyed at outdoor markets—it\'s a social interaction! In Spain, shops may close for siesta, while in Peru, most businesses stay open throughout the day.'
     },
     dialogue: [
       {
         id: 'd1',
         speaker: 'teacher',
-        text: 'Buenos dias! En que puedo ayudarle?',
+        text: '¡Buenos días! ¿En qué puedo ayudarle?',
         translation: 'Good morning! How can I help you?',
         responses: [
           {
@@ -344,7 +344,7 @@ export const conversations: ConversationScenario[] = [
             text: 'Busco una camisa azul.',
             translation: 'I am looking for a blue shirt.',
             isCorrect: true,
-            feedback: 'Tenemos varias camisas azules. Que talla usa?',
+            feedback: 'Tenemos varias camisas azules. ¿Qué talla usa?',
             feedbackTranslation: 'We have several blue shirts. What size do you wear?',
             nextNodeId: 'd2',
           },
@@ -353,7 +353,7 @@ export const conversations: ConversationScenario[] = [
             text: 'Solo estoy mirando, gracias.',
             translation: 'I am just looking, thank you.',
             isCorrect: true,
-            feedback: 'Muy bien. Si necesita ayuda, estoy aqui.',
+            feedback: 'Muy bien. Si necesita ayuda, estoy aquí.',
             feedbackTranslation: "Very well. If you need help, I'm here.",
             nextNodeId: 'd2',
           },
@@ -362,15 +362,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd2',
         speaker: 'teacher',
-        text: 'Esta camisa es muy bonita. Quiere probarsela?',
+        text: 'Esta camisa es muy bonita. ¿Quiere probársela?',
         translation: 'This shirt is very nice. Do you want to try it on?',
         responses: [
           {
             id: 'r2a',
-            text: 'Si, por favor. Donde estan los probadores?',
+            text: 'Sí, por favor. ¿Dónde están los probadores?',
             translation: 'Yes, please. Where are the fitting rooms?',
             isCorrect: true,
-            feedback: 'Los probadores estan al fondo, a la derecha.',
+            feedback: 'Los probadores están al fondo, a la derecha.',
             feedbackTranslation: 'The fitting rooms are at the back, on the right.',
             nextNodeId: 'd3',
           },
@@ -379,12 +379,12 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd3',
         speaker: 'teacher',
-        text: 'Que tal le queda? Le gusta?',
+        text: '¿Qué tal le queda? ¿Le gusta?',
         translation: 'How does it fit? Do you like it?',
         responses: [
           {
             id: 'r3a',
-            text: 'Me queda muy bien. Cuanto cuesta?',
+            text: 'Me queda muy bien. ¿Cuánto cuesta?',
             translation: 'It fits me very well. How much does it cost?',
             isCorrect: true,
             feedback: 'Cuesta treinta euros. Hoy hay un descuento del veinte por ciento.',
@@ -393,10 +393,10 @@ export const conversations: ConversationScenario[] = [
           },
           {
             id: 'r3b',
-            text: 'Es un poco grande. Tiene una talla mas pequena?',
+            text: 'Es un poco grande. ¿Tiene una talla más pequeña?',
             translation: 'It is a bit big. Do you have a smaller size?',
             isCorrect: true,
-            feedback: 'Dejeme ver... Si, aqui tiene la talla pequena.',
+            feedback: 'Déjeme ver... Sí, aquí tiene la talla pequeña.',
             feedbackTranslation: 'Let me see... Yes, here is the small size.',
             nextNodeId: 'd3',
           },
@@ -405,15 +405,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd4',
         speaker: 'teacher',
-        text: 'Quiere algo mas o solo la camisa?',
+        text: '¿Quiere algo más o solo la camisa?',
         translation: 'Do you want anything else or just the shirt?',
         responses: [
           {
             id: 'r4a',
-            text: 'Solo la camisa, por favor. La compro!',
+            text: 'Solo la camisa, por favor. ¡La compro!',
             translation: "Just the shirt, please. I'll buy it!",
             isCorrect: true,
-            feedback: 'Perfecto! Son veinticuatro euros con el descuento. Gracias por su compra!',
+            feedback: '¡Perfecto! Son veinticuatro euros con el descuento. ¡Gracias por su compra!',
             feedbackTranslation: 'Perfect! It is twenty-four euros with the discount. Thank you for your purchase!',
             nextNodeId: 'end',
           },
@@ -432,14 +432,14 @@ export const conversations: ConversationScenario[] = [
     order: 5,
     prerequisiteId: 'conv004',
     culturalNote: {
-      title: 'Spanish Siesta',
-      content: 'Many hotels and businesses in Spain observe siesta time (usually 2-5pm). Room service and some amenities may be limited during these hours. Dinner is typically served late, around 9-10pm.'
+      title: 'Daily Rhythms: Peru vs Spain',
+      content: 'In Peru, businesses generally stay open throughout the day. However, in Spain, many shops close for siesta (2-5pm). Dinner timing also differs: Peruvians typically eat dinner at 7-8pm, while Spaniards eat at 9-10pm. In other countries like Argentina and Mexico, dinner hours fall somewhere in between.'
     },
     dialogue: [
       {
         id: 'd1',
         speaker: 'teacher',
-        text: 'Buenas noches. Bienvenido al Hotel Sol. Tiene una reservacion?',
+        text: 'Buenas noches. Bienvenido al Hotel Sol. ¿Tiene una reservación?',
         translation: 'Good evening. Welcome to Hotel Sol. Do you have a reservation?',
         responses: [
           {
@@ -447,16 +447,16 @@ export const conversations: ConversationScenario[] = [
             text: 'Si, tengo una reservacion a nombre de [your name].',
             translation: 'Yes, I have a reservation under the name [your name].',
             isCorrect: true,
-            feedback: 'Perfecto, aqui la veo. Una habitacion doble por tres noches.',
+            feedback: 'Perfecto, aquí la veo. Una habitación doble por tres noches.',
             feedbackTranslation: 'Perfect, I see it here. A double room for three nights.',
             nextNodeId: 'd2',
           },
           {
             id: 'r1b',
-            text: 'No, no tengo reservacion. Tienen habitaciones disponibles?',
+            text: 'No, no tengo reservación. ¿Tienen habitaciones disponibles?',
             translation: "No, I don't have a reservation. Do you have rooms available?",
             isCorrect: true,
-            feedback: 'Dejeme ver... Si, tenemos una habitacion individual disponible.',
+            feedback: 'Déjeme ver... Sí, tenemos una habitación individual disponible.',
             feedbackTranslation: 'Let me see... Yes, we have a single room available.',
             nextNodeId: 'd2',
           },
@@ -470,10 +470,10 @@ export const conversations: ConversationScenario[] = [
         responses: [
           {
             id: 'r2a',
-            text: 'Aqui tiene mi pasaporte.',
+            text: 'Aquí tiene mi pasaporte.',
             translation: 'Here is my passport.',
             isCorrect: true,
-            feedback: 'Gracias. Su habitacion es la numero 205 en el segundo piso.',
+            feedback: 'Gracias. Su habitación es la número 205 en el segundo piso.',
             feedbackTranslation: 'Thank you. Your room is number 205 on the second floor.',
             nextNodeId: 'd3',
           },
@@ -482,24 +482,24 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd3',
         speaker: 'teacher',
-        text: 'El desayuno se sirve de siete a diez en el restaurante. Necesita algo mas?',
+        text: 'El desayuno se sirve de siete a diez en el restaurante. ¿Necesita algo más?',
         translation: 'Breakfast is served from seven to ten in the restaurant. Do you need anything else?',
         responses: [
           {
             id: 'r3a',
-            text: 'A que hora hay que dejar la habitacion?',
+            text: '¿A qué hora hay que dejar la habitación?',
             translation: 'What time is checkout?',
             isCorrect: true,
-            feedback: 'Hay que dejar la habitacion antes de las doce del mediodia.',
+            feedback: 'Hay que dejar la habitación antes de las doce del mediodía.',
             feedbackTranslation: 'You must leave the room before noon.',
             nextNodeId: 'd4',
           },
           {
             id: 'r3b',
-            text: 'Hay wifi gratis en el hotel?',
+            text: '¿Hay wifi gratis en el hotel?',
             translation: 'Is there free wifi in the hotel?',
             isCorrect: true,
-            feedback: 'Si, el wifi es gratuito. La contrasena esta en la tarjeta de la habitacion.',
+            feedback: 'Sí, el wifi es gratuito. La contraseña está en la tarjeta de la habitación.',
             feedbackTranslation: 'Yes, wifi is free. The password is on the room card.',
             nextNodeId: 'd4',
           },
@@ -508,15 +508,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd4',
         speaker: 'teacher',
-        text: 'Aqui tiene su llave. El ascensor esta a la izquierda. Que tenga una buena estancia!',
+        text: 'Aquí tiene su llave. El ascensor está a la izquierda. ¡Que tenga una buena estancia!',
         translation: 'Here is your key. The elevator is on the left. Have a nice stay!',
         responses: [
           {
             id: 'r4a',
-            text: 'Muchas gracias! Buenas noches.',
+            text: '¡Muchas gracias! Buenas noches.',
             translation: 'Thank you very much! Good night.',
             isCorrect: true,
-            feedback: 'Buenas noches! Si necesita algo, llame a recepcion.',
+            feedback: '¡Buenas noches! Si necesita algo, llame a recepción.',
             feedbackTranslation: 'Good night! If you need anything, call the reception.',
             nextNodeId: 'end',
           },
@@ -535,19 +535,19 @@ export const conversations: ConversationScenario[] = [
     order: 6,
     prerequisiteId: 'conv005',
     culturalNote: {
-      title: 'Spanish Pharmacies',
-      content: 'Pharmacies (farmacias) in Spain are marked by a green cross. Pharmacists can provide advice and many medications without a prescription. Each neighborhood has a "farmacia de guardia" that stays open 24 hours on rotation.'
+      title: 'Pharmacies (Farmacias) in Latin America',
+      content: 'In Peru and across Latin America, pharmacies (farmacias) are marked by a green cross (just like in Spain). Peruvian pharmacists are knowledgeable and helpful, providing advice and many medications without a prescription. In Lima and major cities, there are pharmacies open 24/7. The "botica" is an alternative term used in Peru.'
     },
     dialogue: [
       {
         id: 'd1',
         speaker: 'teacher',
-        text: 'Buenos dias. Que necesita?',
+        text: '¡Buenos días! ¿Qué necesita?',
         translation: 'Good morning. What do you need?',
         responses: [
           {
             id: 'r1a',
-            text: 'Me duele la cabeza. Tiene algo para el dolor?',
+            text: 'Me duele la cabeza. ¿Tiene algo para el dolor?',
             translation: 'I have a headache. Do you have something for the pain?',
             isCorrect: true,
             feedback: 'Si, le recomiendo estas pastillas. Tome una cada ocho horas.',
@@ -568,7 +568,7 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd2',
         speaker: 'teacher',
-        text: 'Es alergico a algun medicamento?',
+        text: '¿Es alérgico a algún medicamento?',
         translation: 'Are you allergic to any medication?',
         responses: [
           {
@@ -594,15 +594,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd3',
         speaker: 'teacher',
-        text: 'Necesita algo mas? Tenemos vitaminas y crema solar.',
+        text: '¿Necesita algo más? Tenemos vitaminas y crema solar.',
         translation: 'Do you need anything else? We have vitamins and sunscreen.',
         responses: [
           {
             id: 'r3a',
-            text: 'Si, necesito crema solar. Cual recomienda?',
+            text: 'Sí, necesito crema solar. ¿Cuál recomienda?',
             translation: 'Yes, I need sunscreen. Which do you recommend?',
             isCorrect: true,
-            feedback: 'Esta es muy buena. Tiene factor de proteccion cincuenta.',
+            feedback: 'Esta es muy buena. Tiene factor de protección cincuenta.',
             feedbackTranslation: 'This one is very good. It has SPF fifty.',
             nextNodeId: 'd4',
           },
@@ -625,10 +625,10 @@ export const conversations: ConversationScenario[] = [
         responses: [
           {
             id: 'r4a',
-            text: 'Gracias por su ayuda. Hasta luego!',
+            text: '¡Gracias por su ayuda! ¡Hasta luego!',
             translation: 'Thank you for your help. Goodbye!',
             isCorrect: true,
-            feedback: 'De nada! Que se mejore!',
+            feedback: '¡De nada! ¡Que se mejore!',
             feedbackTranslation: "You're welcome! Feel better!",
             nextNodeId: 'end',
           },
@@ -647,14 +647,14 @@ export const conversations: ConversationScenario[] = [
     order: 7,
     prerequisiteId: 'conv006',
     culturalNote: {
-      title: 'Taxi Etiquette',
-      content: 'In Spain, taxis are usually white with a colored stripe. You can hail them on the street or find them at designated taxi stands. It\'s common to sit in the back seat. Tipping is not expected but rounding up is appreciated.'
+      title: 'Transportation in Peru',
+      content: 'In Peru, besides regular taxis, you\'ll find "colectivos" (shared vans) that follow set routes and are very affordable. "Mototaxis" (motorcycle taxis) are popular in smaller cities. In Lima, taxis are usually white and are hailed on the street. Tipping taxi drivers is appreciated (rounding up is common). Always negotiate colectivo fares before boarding.'
     },
     dialogue: [
       {
         id: 'd1',
         speaker: 'teacher',
-        text: 'Hola! A donde le llevo?',
+        text: '¡Hola! ¿A dónde le llevo?',
         translation: 'Hello! Where shall I take you?',
         responses: [
           {
@@ -668,10 +668,10 @@ export const conversations: ConversationScenario[] = [
           },
           {
             id: 'r1b',
-            text: 'A la calle Gran Via, numero 25.',
+            text: 'A la calle Gran Vía, número 25.',
             translation: 'To Gran Via street, number 25.',
             isCorrect: true,
-            feedback: 'Perfecto, conozco esa zona. Vamos alla.',
+            feedback: 'Perfecto, conozco esa zona. Vamos allá.',
             feedbackTranslation: 'Perfect, I know that area. Let\'s go there.',
             nextNodeId: 'd2',
           },
@@ -680,12 +680,12 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd2',
         speaker: 'teacher',
-        text: 'Tiene prisa? Hay mucho trafico a esta hora.',
+        text: '¿Tiene prisa? Hay mucho tráfico a esta hora.',
         translation: 'Are you in a hurry? There is a lot of traffic at this time.',
         responses: [
           {
             id: 'r2a',
-            text: 'Si, mi vuelo sale en dos horas.',
+            text: 'Sí, mi vuelo sale en dos horas.',
             translation: 'Yes, my flight leaves in two hours.',
             isCorrect: true,
             feedback: 'No se preocupe, llegaremos a tiempo. Conozco un atajo.',
@@ -694,10 +694,10 @@ export const conversations: ConversationScenario[] = [
           },
           {
             id: 'r2b',
-            text: 'No, no tengo prisa. Podemos ir por el camino mas bonito.',
+            text: 'No, no tengo prisa. Podemos ir por el camino más bonito.',
             translation: 'No, I am not in a hurry. We can take the scenic route.',
             isCorrect: true,
-            feedback: 'Muy bien! Le mostrare algunos lugares interesantes.',
+            feedback: '¡Muy bien! Le mostraré algunos lugares interesantes.',
             feedbackTranslation: 'Very well! I will show you some interesting places.',
             nextNodeId: 'd3',
           },
@@ -706,12 +706,12 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd3',
         speaker: 'teacher',
-        text: 'Ya casi llegamos. Puede parar aqui o prefiere mas adelante?',
+        text: 'Ya casi llegamos. ¿Puede parar aquí o prefiere más adelante?',
         translation: 'We are almost there. Can I stop here or do you prefer further ahead?',
         responses: [
           {
             id: 'r3a',
-            text: 'Aqui esta bien. Cuanto es?',
+            text: 'Aquí está bien. ¿Cuánto es?',
             translation: 'Here is fine. How much is it?',
             isCorrect: true,
             feedback: 'Son veinticinco euros.',
@@ -723,15 +723,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd4',
         speaker: 'teacher',
-        text: 'Aqui tiene su recibo. Necesita ayuda con las maletas?',
+        text: 'Aquí tiene su recibo. ¿Necesita ayuda con las maletas?',
         translation: 'Here is your receipt. Do you need help with the luggage?',
         responses: [
           {
             id: 'r4a',
-            text: 'No, gracias. Aqui tiene treinta euros. Quedese con el cambio.',
+            text: 'No, gracias. Aquí tiene treinta euros. Quédese con el cambio.',
             translation: 'No, thank you. Here is thirty euros. Keep the change.',
             isCorrect: true,
-            feedback: 'Muy amable! Buen viaje!',
+            feedback: '¡Muy amable! ¡Buen viaje!',
             feedbackTranslation: 'Very kind! Have a good trip!',
             nextNodeId: 'end',
           },
@@ -750,14 +750,14 @@ export const conversations: ConversationScenario[] = [
     order: 8,
     prerequisiteId: 'conv007',
     culturalNote: {
-      title: 'Banking Hours',
-      content: 'Banks in Spain typically open from 8:30am to 2pm on weekdays. Some larger branches may open on Thursday afternoons. ATMs (cajeros automaticos) are available 24/7. Many Spanish banks charge fees for non-customers using their ATMs.'
+      title: 'Banking in Peru and Latin America',
+      content: 'In Peru, banks typically open from 9am to 5pm on weekdays, with some branches open on Saturdays mornings. ATMs (cajeros automaticos) are widely available 24/7 in cities. In Spain, banks close earlier (around 2pm), so banking hours vary across the Spanish-speaking world. Always use ATMs in well-lit, secure locations.'
     },
     dialogue: [
       {
         id: 'd1',
         speaker: 'teacher',
-        text: 'Buenos dias. En que puedo ayudarle?',
+        text: '¡Buenos días! ¿En qué puedo ayudarle?',
         translation: 'Good morning. How can I help you?',
         responses: [
           {
@@ -765,7 +765,7 @@ export const conversations: ConversationScenario[] = [
             text: 'Quiero cambiar dolares a euros.',
             translation: 'I want to exchange dollars to euros.',
             isCorrect: true,
-            feedback: 'Claro. Cuantos dolares quiere cambiar?',
+            feedback: '¿Claro. ¿Cuántos dólares quiere cambiar?',
             feedbackTranslation: 'Of course. How many dollars do you want to exchange?',
             nextNodeId: 'd2',
           },
@@ -774,7 +774,7 @@ export const conversations: ConversationScenario[] = [
             text: 'Necesito sacar dinero de mi cuenta.',
             translation: 'I need to withdraw money from my account.',
             isCorrect: true,
-            feedback: 'Tiene su tarjeta y documento de identidad?',
+            feedback: '¿Tiene su tarjeta y documento de identidad?',
             feedbackTranslation: 'Do you have your card and ID?',
             nextNodeId: 'd2b',
           },
@@ -800,7 +800,7 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd2b',
         speaker: 'teacher',
-        text: 'Perfecto. Cuanto desea retirar?',
+        text: 'Perfecto. ¿Cuánto desea retirar?',
         translation: 'Perfect. How much do you wish to withdraw?',
         responses: [
           {
@@ -808,7 +808,7 @@ export const conversations: ConversationScenario[] = [
             text: 'Quisiera retirar cien euros, por favor.',
             translation: 'I would like to withdraw one hundred euros, please.',
             isCorrect: true,
-            feedback: 'Muy bien. En billetes de veinte o de cincuenta?',
+            feedback: 'Muy bien. ¿En billetes de veinte o de cincuenta?',
             feedbackTranslation: 'Very well. In twenty or fifty euro bills?',
             nextNodeId: 'd3',
           },
@@ -817,12 +817,12 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd3',
         speaker: 'teacher',
-        text: 'Aqui tiene. Desea algo mas?',
+        text: 'Aquí tiene. ¿Desea algo más?',
         translation: 'Here you are. Do you need anything else?',
         responses: [
           {
             id: 'r3a',
-            text: 'Si, donde puedo encontrar un cajero automatico?',
+            text: 'Sí, ¿dónde puedo encontrar un cajero automático?',
             translation: 'Yes, where can I find an ATM?',
             isCorrect: true,
             feedback: 'Hay uno fuera del banco, a la derecha de la puerta principal.',
@@ -834,7 +834,7 @@ export const conversations: ConversationScenario[] = [
             text: 'No, eso es todo. Muchas gracias.',
             translation: 'No, that is all. Thank you very much.',
             isCorrect: true,
-            feedback: 'De nada. Que tenga un buen dia!',
+            feedback: '¡De nada! ¡Que tenga un buen día!',
             feedbackTranslation: 'You\'re welcome. Have a nice day!',
             nextNodeId: 'end',
           },
@@ -843,7 +843,7 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd4',
         speaker: 'teacher',
-        text: 'Algo mas en lo que pueda ayudarle?',
+        text: '¿Algo más en lo que pueda ayudarle?',
         translation: 'Anything else I can help you with?',
         responses: [
           {
@@ -851,7 +851,7 @@ export const conversations: ConversationScenario[] = [
             text: 'No, gracias. Ha sido muy amable.',
             translation: 'No, thank you. You have been very kind.',
             isCorrect: true,
-            feedback: 'Es un placer. Hasta luego!',
+            feedback: 'Es un placer. ¡Hasta luego!',
             feedbackTranslation: 'It\'s a pleasure. Goodbye!',
             nextNodeId: 'end',
           },
@@ -877,15 +877,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd1',
         speaker: 'teacher',
-        text: 'Digame, Clinica San Jose, buenos dias.',
+        text: 'Dígame, Clínica San José, ¡buenos días!',
         translation: 'Hello, San Jose Clinic, good morning.',
         responses: [
           {
             id: 'r1a',
-            text: 'Buenos dias. Quisiera pedir una cita con el doctor Garcia.',
+            text: '¡Buenos días! Quisiera pedir una cita con el doctor García.',
             translation: 'Good morning. I would like to make an appointment with Doctor Garcia.',
             isCorrect: true,
-            feedback: 'Por supuesto. Cuando le viene bien?',
+            feedback: 'Por supuesto. ¿Cuándo le viene bien?',
             feedbackTranslation: 'Of course. When is convenient for you?',
             nextNodeId: 'd2',
           },
@@ -902,7 +902,7 @@ export const conversations: ConversationScenario[] = [
             text: 'El martes a las diez me viene bien.',
             translation: 'Tuesday at ten works for me.',
             isCorrect: true,
-            feedback: 'Perfecto. A nombre de quien?',
+            feedback: 'Perfecto. ¿A nombre de quién?',
             feedbackTranslation: 'Perfect. Under what name?',
             nextNodeId: 'd3',
           },
@@ -911,7 +911,7 @@ export const conversations: ConversationScenario[] = [
             text: 'Prefiero el jueves por la tarde.',
             translation: 'I prefer Thursday afternoon.',
             isCorrect: true,
-            feedback: 'De acuerdo, el jueves a las cuatro. Su nombre, por favor?',
+            feedback: 'De acuerdo, el jueves a las cuatro. ¿Su nombre, por favor?',
             feedbackTranslation: 'Alright, Thursday at four. Your name, please?',
             nextNodeId: 'd3',
           },
@@ -920,7 +920,7 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd3',
         speaker: 'teacher',
-        text: 'Necesito su numero de telefono para confirmar la cita.',
+        text: 'Necesito su número de teléfono para confirmar la cita.',
         translation: 'I need your phone number to confirm the appointment.',
         responses: [
           {
@@ -928,7 +928,7 @@ export const conversations: ConversationScenario[] = [
             text: 'Mi numero es seis, uno, dos, tres, cuatro, cinco, seis, siete, ocho.',
             translation: 'My number is six, one, two, three, four, five, six, seven, eight.',
             isCorrect: true,
-            feedback: 'Perfecto. Le llamaremos el dia antes para confirmar.',
+            feedback: 'Perfecto. Le llamaremos el día antes para confirmar.',
             feedbackTranslation: 'Perfect. We will call you the day before to confirm.',
             nextNodeId: 'd4',
           },
@@ -937,7 +937,7 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd4',
         speaker: 'teacher',
-        text: 'Su cita esta confirmada. Algo mas?',
+        text: 'Su cita está confirmada. ¿Algo más?',
         translation: 'Your appointment is confirmed. Anything else?',
         responses: [
           {
@@ -945,7 +945,7 @@ export const conversations: ConversationScenario[] = [
             text: 'No, eso es todo. Muchas gracias por su ayuda.',
             translation: 'No, that is all. Thank you very much for your help.',
             isCorrect: true,
-            feedback: 'De nada. Le esperamos el martes. Adios!',
+            feedback: '¡De nada! Le esperamos el martes. ¡Adiós!',
             feedbackTranslation: 'You\'re welcome. We expect you on Tuesday. Goodbye!',
             nextNodeId: 'end',
           },
@@ -964,14 +964,14 @@ export const conversations: ConversationScenario[] = [
     order: 10,
     prerequisiteId: 'conv009',
     culturalNote: {
-      title: 'Healthcare in Spain',
-      content: 'Spain has both public and private healthcare. EU citizens can use the public system with a European Health Insurance Card. Pharmacists can often help with minor ailments. For emergencies, call 112.'
+      title: 'Healthcare in Peru',
+      content: 'Peru has public (ESSALUD) and private healthcare options. Private clinics in Lima are modern and well-equipped. Travel insurance is highly recommended for visitors. Pharmacists can help with minor ailments and recommend remedies. For emergencies in Peru, call 106 for an ambulance. Emergency services vary across Latin America.'
     },
     dialogue: [
       {
         id: 'd1',
         speaker: 'teacher',
-        text: 'Buenos dias. Sientese, por favor. Que le pasa?',
+        text: '¡Buenos días! Siéntese, por favor. ¿Qué le pasa?',
         translation: 'Good morning. Please sit down. What is wrong?',
         responses: [
           {
@@ -979,7 +979,7 @@ export const conversations: ConversationScenario[] = [
             text: 'Doctor, no me siento bien. Me duele el estomago y tengo fiebre.',
             translation: 'Doctor, I don\'t feel well. My stomach hurts and I have a fever.',
             isCorrect: true,
-            feedback: 'Entiendo. Desde cuando tiene estos sintomas?',
+            feedback: '¿Entiendo. ¿Desde cuándo tiene estos síntomas?',
             feedbackTranslation: 'I understand. Since when have you had these symptoms?',
             nextNodeId: 'd2',
           },
@@ -988,12 +988,12 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd2',
         speaker: 'teacher',
-        text: 'Ha comido algo diferente recientemente?',
+        text: '¿Ha comido algo diferente recientemente?',
         translation: 'Have you eaten anything different recently?',
         responses: [
           {
             id: 'r2a',
-            text: 'Si, comi mariscos ayer en un restaurante.',
+            text: 'Sí, comí mariscos ayer en un restaurante.',
             translation: 'Yes, I ate seafood yesterday at a restaurant.',
             isCorrect: true,
             feedback: 'Ah, puede ser una intoxicacion alimentaria. Voy a examinarle.',
@@ -1005,7 +1005,7 @@ export const conversations: ConversationScenario[] = [
             text: 'No, he comido lo mismo de siempre.',
             translation: 'No, I have eaten the same as always.',
             isCorrect: true,
-            feedback: 'Puede ser un virus. Dejeme examinarle.',
+            feedback: 'Puede ser un virus. Déjeme examinarle.',
             feedbackTranslation: 'It could be a virus. Let me examine you.',
             nextNodeId: 'd3',
           },
@@ -1019,10 +1019,10 @@ export const conversations: ConversationScenario[] = [
         responses: [
           {
             id: 'r3a',
-            text: 'Cuantas veces al dia tengo que tomar el medicamento?',
+            text: '¿Cuántas veces al día tengo que tomar el medicamento?',
             translation: 'How many times a day do I have to take the medication?',
             isCorrect: true,
-            feedback: 'Tome una pastilla cada ocho horas, despues de las comidas.',
+            feedback: 'Tome una pastilla cada ocho horas, después de las comidas.',
             feedbackTranslation: 'Take one pill every eight hours, after meals.',
             nextNodeId: 'd4',
           },
@@ -1031,7 +1031,7 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd4',
         speaker: 'teacher',
-        text: 'Si no mejora en tres dias, vuelva a verme. Cuidense!',
+        text: 'Si no mejora en tres días, vuelva a verme. ¡Cuídese!',
         translation: 'If you don\'t improve in three days, come back to see me. Take care!',
         responses: [
           {
@@ -1039,7 +1039,7 @@ export const conversations: ConversationScenario[] = [
             text: 'Muchas gracias, doctor. Hasta luego.',
             translation: 'Thank you very much, doctor. Goodbye.',
             isCorrect: true,
-            feedback: 'De nada. Que se mejore pronto!',
+            feedback: '¡De nada! ¡Que se mejore pronto!',
             feedbackTranslation: 'You\'re welcome. Get well soon!',
             nextNodeId: 'end',
           },
@@ -1058,14 +1058,14 @@ export const conversations: ConversationScenario[] = [
     order: 11,
     prerequisiteId: 'conv010',
     culturalNote: {
-      title: 'Fresh Markets',
-      content: 'Spanish markets (mercados) offer fresh produce, meat, fish, and local specialties. Vendors appreciate when you greet them and may give you a "napa" (a small extra) for being a regular customer. Bargaining is acceptable in street markets.'
+      title: 'Markets in Peru',
+      content: 'Peruvian markets (mercados) are colorful, lively places full of fresh produce, exotic fruits, and local specialties. Mercado Central in Lima is famous for seafood. Vendors appreciate friendly greetings and may offer you samples or extras if you become a regular. Bargaining customs vary by region—it\'s common in Latin American open-air markets and street vendors, making it an enjoyable part of the cultural experience. However, bargaining is generally not practiced at Spanish supermarkets or modern chain stores. You\'ll find similar vibrant markets throughout Latin America.'
     },
     dialogue: [
       {
         id: 'd1',
         speaker: 'teacher',
-        text: 'Buenos dias! Que le pongo?',
+        text: 'Buenos días! ¿Qué le pongo?',
         translation: 'Good morning! What can I get you?',
         responses: [
           {
@@ -1073,16 +1073,16 @@ export const conversations: ConversationScenario[] = [
             text: 'Quiero un kilo de naranjas, por favor.',
             translation: 'I want a kilo of oranges, please.',
             isCorrect: true,
-            feedback: 'Muy bien. Estas naranjas son muy dulces. Algo mas?',
+            feedback: 'Muy bien. Estas naranjas son muy dulces. ¿Algo más?',
             feedbackTranslation: 'Very well. These oranges are very sweet. Anything else?',
             nextNodeId: 'd2',
           },
           {
             id: 'r1b',
-            text: 'Pongame medio kilo de tomates.',
+            text: 'Póngame medio kilo de tomates.',
             translation: 'Give me half a kilo of tomatoes.',
             isCorrect: true,
-            feedback: 'Aqui tiene. Los tomates estan muy buenos hoy.',
+            feedback: 'Aquí tiene. Los tomates están muy buenos hoy.',
             feedbackTranslation: 'Here you are. The tomatoes are very good today.',
             nextNodeId: 'd2',
           },
@@ -1091,15 +1091,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd2',
         speaker: 'teacher',
-        text: 'Tenemos lechuga fresca y cebollas tambien.',
+        text: 'Tenemos lechuga fresca y cebollas también.',
         translation: 'We have fresh lettuce and onions too.',
         responses: [
           {
             id: 'r2a',
-            text: 'Si, deme una lechuga y dos cebollas.',
+            text: 'Sí, déme una lechuga y dos cebollas.',
             translation: 'Yes, give me a lettuce and two onions.',
             isCorrect: true,
-            feedback: 'Perfecto. La lechuga esta muy fresca, recien llegada.',
+            feedback: 'Perfecto. La lechuga está muy fresca, recién llegada.',
             feedbackTranslation: 'Perfect. The lettuce is very fresh, just arrived.',
             nextNodeId: 'd3',
           },
@@ -1108,15 +1108,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd3',
         speaker: 'teacher',
-        text: 'Quiere probar un poco de jamon? Tenemos iberico.',
+        text: '¿Quiere probar un poco de jamón? Tenemos ibérico.',
         translation: 'Would you like to try some ham? We have Iberian.',
         responses: [
           {
             id: 'r3a',
-            text: 'Si, por favor. Esta muy bueno! Pongame cien gramos.',
+            text: 'Sí, por favor. Está muy bueno! Póngame cien gramos.',
             translation: 'Yes, please. It\'s very good! Give me one hundred grams.',
             isCorrect: true,
-            feedback: 'Excelente eleccion! El jamon iberico es el mejor.',
+            feedback: '¡Excelente elección! El jamón ibérico es el mejor.',
             feedbackTranslation: 'Excellent choice! Iberian ham is the best.',
             nextNodeId: 'd4',
           },
@@ -1125,7 +1125,7 @@ export const conversations: ConversationScenario[] = [
             text: 'No, gracias. Solo la fruta y verdura.',
             translation: 'No, thank you. Just the fruit and vegetables.',
             isCorrect: true,
-            feedback: 'De acuerdo. Algo mas?',
+            feedback: 'De acuerdo. ¿Algo más?',
             feedbackTranslation: 'Alright. Anything else?',
             nextNodeId: 'd4',
           },
@@ -1134,15 +1134,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd4',
         speaker: 'teacher',
-        text: 'Son ocho euros con cincuenta. Quiere una bolsa?',
+        text: 'Son ocho euros con cincuenta. ¿Quiere una bolsa?',
         translation: 'It is eight euros fifty. Do you want a bag?',
         responses: [
           {
             id: 'r4a',
-            text: 'No, tengo mi propia bolsa. Aqui tiene diez euros.',
+            text: 'No, tengo mi propia bolsa. Aquí tiene diez euros.',
             translation: 'No, I have my own bag. Here is ten euros.',
             isCorrect: true,
-            feedback: 'Muy bien, su cambio. Gracias y hasta la proxima!',
+            feedback: 'Muy bien, su cambio. Gracias y hasta la próxima!',
             feedbackTranslation: 'Very well, your change. Thank you and see you next time!',
             nextNodeId: 'end',
           },
@@ -1161,14 +1161,14 @@ export const conversations: ConversationScenario[] = [
     order: 12,
     prerequisiteId: 'conv011',
     culturalNote: {
-      title: 'Spanish Post',
-      content: 'Correos is the Spanish postal service. Post offices are usually open 8:30am-2:30pm on weekdays. Yellow mailboxes are for regular mail. You can also buy stamps at tobacco shops (estancos) marked with a brown and yellow sign.'
+      title: 'Postal Services in Peru and Latin America',
+      content: 'Peru\'s postal service is Correos del Peru. Main post offices are usually open 8am-5pm, Monday-Friday. Yellow mailboxes are standard throughout Latin America. In Peru, you can also buy stamps at some supermarkets and shops. Correos operates differently across countries—Spain\'s Correos has different hours than Peru\'s. For important documents, consider using courier services available throughout the region.'
     },
     dialogue: [
       {
         id: 'd1',
         speaker: 'teacher',
-        text: 'Siguiente! Buenos dias, que desea?',
+        text: 'Siguiente! Buenos días, ¿qué desea?',
         translation: 'Next! Good morning, what would you like?',
         responses: [
           {
@@ -1176,7 +1176,7 @@ export const conversations: ConversationScenario[] = [
             text: 'Quiero enviar este paquete a Estados Unidos.',
             translation: 'I want to send this package to the United States.',
             isCorrect: true,
-            feedback: 'De acuerdo. Pongalo en la bascula para pesarlo.',
+            feedback: 'De acuerdo. Póngalo en la báscula para pesarlo.',
             feedbackTranslation: 'Alright. Put it on the scale to weigh it.',
             nextNodeId: 'd2',
           },
@@ -1185,7 +1185,7 @@ export const conversations: ConversationScenario[] = [
             text: 'Necesito sellos para cinco postales.',
             translation: 'I need stamps for five postcards.',
             isCorrect: true,
-            feedback: 'A donde van las postales? Dentro de Europa o fuera?',
+            feedback: '¿A dónde van las postales? ¿Dentro de Europa o fuera?',
             feedbackTranslation: 'Where are the postcards going? Within Europe or outside?',
             nextNodeId: 'd2b',
           },
@@ -1194,15 +1194,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd2',
         speaker: 'teacher',
-        text: 'Pesa dos kilos. Lo quiere enviar urgente o normal?',
+        text: 'Pesa dos kilos. ¿Lo quiere enviar urgente o normal?',
         translation: 'It weighs two kilos. Do you want to send it express or regular?',
         responses: [
           {
             id: 'r2a',
-            text: 'Urgente, por favor. Cuanto tarda en llegar?',
+            text: 'Urgente, por favor. ¿Cuánto tarda en llegar?',
             translation: 'Express, please. How long does it take to arrive?',
             isCorrect: true,
-            feedback: 'Por urgente, tres o cuatro dias. Son veinticinco euros.',
+            feedback: 'Por urgente, tres o cuatro días. Son veinticinco euros.',
             feedbackTranslation: 'By express, three or four days. It is twenty-five euros.',
             nextNodeId: 'd3',
           },
@@ -1219,7 +1219,7 @@ export const conversations: ConversationScenario[] = [
             text: 'Perfecto. Deme cinco sellos entonces.',
             translation: 'Perfect. Give me five stamps then.',
             isCorrect: true,
-            feedback: 'Son seis euros. Aqui tiene los sellos.',
+            feedback: 'Son seis euros. Aquí tiene los sellos.',
             feedbackTranslation: 'It is six euros. Here are the stamps.',
             nextNodeId: 'd3',
           },
@@ -1228,12 +1228,12 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd3',
         speaker: 'teacher',
-        text: 'Necesita algo mas? Tenemos cajas y sobres acolchados.',
+        text: '¿Necesita algo más? Tenemos cajas y sobres acolchados.',
         translation: 'Do you need anything else? We have boxes and padded envelopes.',
         responses: [
           {
             id: 'r3a',
-            text: 'No, gracias. Cuanto es en total?',
+            text: 'No, gracias. ¿Cuánto es en total?',
             translation: 'No, thank you. How much is it in total?',
             isCorrect: true,
             feedback: 'Son veinticinco euros. Puede pagar con tarjeta.',
@@ -1245,15 +1245,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd4',
         speaker: 'teacher',
-        text: 'Aqui tiene su recibo y el numero de seguimiento.',
+        text: 'Aquí tiene su recibo y el número de seguimiento.',
         translation: 'Here is your receipt and tracking number.',
         responses: [
           {
             id: 'r4a',
-            text: 'Muchas gracias. Puedo seguir el paquete por internet?',
+            text: 'Muchas gracias. ¿Puedo seguir el paquete por internet?',
             translation: 'Thank you very much. Can I track the package online?',
             isCorrect: true,
-            feedback: 'Si, en la pagina web de Correos con ese numero. Buen dia!',
+            feedback: 'Sí, en la página web de Correos con ese número. ¡Buen día!',
             feedbackTranslation: 'Yes, on the Correos website with that number. Good day!',
             nextNodeId: 'end',
           },
@@ -1272,31 +1272,31 @@ export const conversations: ConversationScenario[] = [
     order: 13,
     prerequisiteId: 'conv012',
     culturalNote: {
-      title: 'Driving in Spain',
-      content: 'In Spain, you drive on the right side. Speed limits are in km/h: 120 on highways, 90 on regular roads, 50 in cities. Most cars are manual transmission unless you request automatic. An International Driving Permit is recommended.'
+      title: 'Driving in Peru and Latin America',
+      content: 'In Peru, you drive on the right side. Speed limits are in km/h: 100 on highways, 60 on main roads, 40 in cities. Traffic can be chaotic, especially in Lima—defensive driving is essential! Most rental cars are manual unless you pay extra for automatic. An International Driving Permit is recommended. In Spain and other countries, rules are similar but vary slightly.'
     },
     dialogue: [
       {
         id: 'd1',
         speaker: 'teacher',
-        text: 'Buenos dias. Tiene una reserva?',
+        text: '¡Buenos días! ¿Tiene una reserva?',
         translation: 'Good morning. Do you have a reservation?',
         responses: [
           {
             id: 'r1a',
-            text: 'Si, a nombre de [your name]. Reserve un coche pequeno.',
+            text: 'Sí, a nombre de [your name]. Reservé un coche pequeño.',
             translation: 'Yes, under the name [your name]. I reserved a small car.',
             isCorrect: true,
-            feedback: 'Perfecto, aqui la tengo. Para una semana, verdad?',
+            feedback: 'Perfecto, aquí la tengo. ¿Para una semana, verdad?',
             feedbackTranslation: 'Perfect, I have it here. For one week, right?',
             nextNodeId: 'd2',
           },
           {
             id: 'r1b',
-            text: 'No, no tengo reserva. Tienen coches disponibles?',
+            text: 'No, no tengo reserva. ¿Tienen coches disponibles?',
             translation: 'No, I don\'t have a reservation. Do you have cars available?',
             isCorrect: true,
-            feedback: 'Si, tenemos varios. Que tipo de coche busca?',
+            feedback: 'Sí, tenemos varios. ¿Qué tipo de coche busca?',
             feedbackTranslation: 'Yes, we have several. What type of car are you looking for?',
             nextNodeId: 'd2',
           },
@@ -1305,21 +1305,21 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd2',
         speaker: 'teacher',
-        text: 'Prefiere un coche automatico o manual?',
+        text: '¿Prefiere un coche automático o manual?',
         translation: 'Do you prefer an automatic or manual car?',
         responses: [
           {
             id: 'r2a',
-            text: 'Automatico, por favor. No se conducir manual.',
+            text: 'Automático, por favor. No sé conducir manual.',
             translation: 'Automatic, please. I don\'t know how to drive manual.',
             isCorrect: true,
-            feedback: 'Sin problema. El automatico cuesta diez euros mas por dia.',
+            feedback: 'Sin problema. El automático cuesta diez euros más por día.',
             feedbackTranslation: 'No problem. The automatic costs ten euros more per day.',
             nextNodeId: 'd3',
           },
           {
             id: 'r2b',
-            text: 'Manual esta bien. Estoy acostumbrado.',
+            text: 'Manual está bien. Estoy acostumbrado.',
             translation: 'Manual is fine. I am used to it.',
             isCorrect: true,
             feedback: 'Perfecto. Tenemos un Seat Ibiza disponible.',
@@ -1331,12 +1331,12 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd3',
         speaker: 'teacher',
-        text: 'Quiere seguro a todo riesgo? Cubre todo tipo de danos.',
+        text: '¿Quiere seguro a todo riesgo? Cubre todo tipo de daños.',
         translation: 'Do you want full coverage insurance? It covers all types of damage.',
         responses: [
           {
             id: 'r3a',
-            text: 'Si, prefiero tener el seguro completo.',
+            text: 'Sí, prefiero tener el seguro completo.',
             translation: 'Yes, I prefer to have full insurance.',
             isCorrect: true,
             feedback: 'Muy bien. Son quince euros adicionales por dia.',
@@ -1348,15 +1348,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd4',
         speaker: 'teacher',
-        text: 'Necesito ver su carnet de conducir y una tarjeta de credito.',
+        text: 'Necesito ver su carnet de conducir y una tarjeta de crédito.',
         translation: 'I need to see your driver\'s license and a credit card.',
         responses: [
           {
             id: 'r4a',
-            text: 'Aqui tiene. Donde puedo recoger el coche?',
+            text: 'Aquí tiene. ¿Dónde puedo recoger el coche?',
             translation: 'Here you are. Where can I pick up the car?',
             isCorrect: true,
-            feedback: 'En el parking de abajo. Aqui estan las llaves. Buen viaje!',
+            feedback: 'En el parking de abajo. Aquí están las llaves. ¡Buen viaje!',
             feedbackTranslation: 'In the parking below. Here are the keys. Have a good trip!',
             nextNodeId: 'end',
           },
@@ -1375,22 +1375,22 @@ export const conversations: ConversationScenario[] = [
     order: 14,
     prerequisiteId: 'conv013',
     culturalNote: {
-      title: 'Spanish Social Culture',
-      content: 'Spanish parties often start late and go even later! It\'s common for dinner parties to begin at 9-10pm. Bringing a small gift like wine or dessert is appreciated. Conversation topics like family and food are always welcome.'
+      title: 'Social Gatherings in Peru',
+      content: 'Peruvian social gatherings are warm and inclusive. Dinner parties typically start at 8-9pm (earlier than Spain). Bringing a bottle of pisco, wine, or dessert is appreciated. Peruvians enjoy discussing family, food, and culture. Across Latin America, social customs vary—Mexico and Argentina also have late dinners, while other countries eat earlier.'
     },
     dialogue: [
       {
         id: 'd1',
         speaker: 'teacher',
-        text: 'Hola! Bienvenido a la fiesta. Soy Elena, la amiga de Carlos.',
+        text: '¡Hola! Bienvenido a la fiesta. Soy Elena, la amiga de Carlos.',
         translation: 'Hello! Welcome to the party. I am Elena, Carlos\'s friend.',
         responses: [
           {
             id: 'r1a',
-            text: 'Hola Elena! Encantado de conocerte. Que fiesta tan bonita!',
+            text: '¡Hola Elena! Encantado de conocerte. ¡Qué fiesta tan bonita!',
             translation: 'Hi Elena! Nice to meet you. What a lovely party!',
             isCorrect: true,
-            feedback: 'Gracias! De donde conoces a Carlos?',
+            feedback: '¡Gracias! ¿De dónde conoces a Carlos?',
             feedbackTranslation: 'Thank you! How do you know Carlos?',
             nextNodeId: 'd2',
           },
@@ -1399,13 +1399,13 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd2',
         speaker: 'teacher',
-        text: 'Quieres tomar algo? Hay sangria, cerveza y refrescos.',
-        translation: 'Do you want to drink something? There is sangria, beer, and soft drinks.',
+        text: '¿Quieres tomar algo? Hay sangría, cerveza y refrescos.',
+        translation: 'Do you want to drink something? There is sangría, beer, and soft drinks.',
         responses: [
           {
             id: 'r2a',
-            text: 'Una sangria, por favor. Tiene muy buena pinta!',
-            translation: 'A sangria, please. It looks very good!',
+            text: 'Una sangría, por favor. ¡Tiene muy buena pinta!',
+            translation: 'A sangría, please. It looks very good!',
             isCorrect: true,
             feedback: 'La hizo Carlos. Tiene un secreto especial!',
             feedbackTranslation: 'Carlos made it. He has a special secret!',
@@ -1416,7 +1416,7 @@ export const conversations: ConversationScenario[] = [
             text: 'Prefiero una cerveza, gracias.',
             translation: 'I prefer a beer, thanks.',
             isCorrect: true,
-            feedback: 'Claro! Las cervezas estan en la nevera de la cocina.',
+            feedback: '¡Claro! Las cervezas están en la nevera de la cocina.',
             feedbackTranslation: 'Of course! The beers are in the kitchen fridge.',
             nextNodeId: 'd3',
           },
@@ -1425,15 +1425,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd3',
         speaker: 'teacher',
-        text: 'Y que haces? Trabajas o estudias?',
+        text: '¿Y qué haces? ¿Trabajas o estudias?',
         translation: 'And what do you do? Do you work or study?',
         responses: [
           {
             id: 'r3a',
-            text: 'Trabajo como ingeniero. Y tu, a que te dedicas?',
+            text: 'Trabajo como ingeniero. ¿Y tú, a qué te dedicas?',
             translation: 'I work as an engineer. And you, what do you do?',
             isCorrect: true,
-            feedback: 'Soy profesora de ingles en un instituto. Me encanta mi trabajo!',
+            feedback: 'Soy profesora de inglés en un instituto. ¡Me encanta mi trabajo!',
             feedbackTranslation: 'I am an English teacher at a high school. I love my job!',
             nextNodeId: 'd4',
           },
@@ -1442,15 +1442,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd4',
         speaker: 'teacher',
-        text: 'Mira, alli esta Carlos. Te lo presento?',
+        text: 'Mira, allí está Carlos. ¿Te lo presento?',
         translation: 'Look, there is Carlos. Shall I introduce you?',
         responses: [
           {
             id: 'r4a',
-            text: 'Si, por favor! Ha sido un placer hablar contigo.',
+            text: '¡Sí, por favor! Ha sido un placer hablar contigo.',
             translation: 'Yes, please! It has been a pleasure talking with you.',
             isCorrect: true,
-            feedback: 'Igualmente! Vamos, Carlos te va a caer muy bien.',
+            feedback: '¡Igualmente! Vamos, Carlos te va a caer muy bien.',
             feedbackTranslation: 'Likewise! Let\'s go, you\'re going to like Carlos a lot.',
             nextNodeId: 'end',
           },
@@ -1476,15 +1476,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd1',
         speaker: 'teacher',
-        text: 'Buenos dias. Usted debe ser el candidato para el puesto de marketing. Sientese, por favor.',
+        text: '¡Buenos días! Usted debe ser el candidato para el puesto de marketing. Siéntese, por favor.',
         translation: 'Good morning. You must be the candidate for the marketing position. Please sit down.',
         responses: [
           {
             id: 'r1a',
-            text: 'Buenos dias. Si, soy [your name]. Muchas gracias por recibirme.',
+            text: '¡Buenos días! Sí, soy [your name]. Muchas gracias por recibirme.',
             translation: 'Good morning. Yes, I am [your name]. Thank you very much for seeing me.',
             isCorrect: true,
-            feedback: 'De nada. Cuenteme sobre su experiencia profesional.',
+            feedback: 'De nada. Cuénteme sobre su experiencia profesional.',
             feedbackTranslation: 'You\'re welcome. Tell me about your professional experience.',
             nextNodeId: 'd2',
           },
@@ -1493,15 +1493,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd2',
         speaker: 'teacher',
-        text: 'Veo en su curriculum que ha trabajado tres anos en publicidad.',
+        text: 'Veo en su currículum que ha trabajado tres años en publicidad.',
         translation: 'I see on your resume that you have worked three years in advertising.',
         responses: [
           {
             id: 'r2a',
-            text: 'Si, trabaje en una agencia de publicidad gestionando campanas digitales.',
+            text: 'Sí, trabajé en una agencia de publicidad gestionando campañas digitales.',
             translation: 'Yes, I worked at an advertising agency managing digital campaigns.',
             isCorrect: true,
-            feedback: 'Interesante. Y por que quiere cambiar de trabajo?',
+            feedback: '¿Interesante. ¿Y por qué quiere cambiar de trabajo?',
             feedbackTranslation: 'Interesting. And why do you want to change jobs?',
             nextNodeId: 'd3',
           },
@@ -1510,15 +1510,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd3',
         speaker: 'teacher',
-        text: 'Cuales son sus principales fortalezas?',
+        text: '¿Cuáles son sus principales fortalezas?',
         translation: 'What are your main strengths?',
         responses: [
           {
             id: 'r3a',
-            text: 'Soy muy organizado, trabajo bien en equipo y me adapto facilmente a nuevas situaciones.',
+            text: 'Soy muy organizado, trabajo bien en equipo y me adapto fácilmente a nuevas situaciones.',
             translation: 'I am very organized, I work well in a team, and I adapt easily to new situations.',
             isCorrect: true,
-            feedback: 'Muy bien. Y tiene alguna pregunta sobre el puesto?',
+            feedback: '¿Muy bien. ¿Y tiene alguna pregunta sobre el puesto?',
             feedbackTranslation: 'Very good. And do you have any questions about the position?',
             nextNodeId: 'd4',
           },
@@ -1527,7 +1527,7 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd4',
         speaker: 'teacher',
-        text: 'Le contactaremos la proxima semana con nuestra decision.',
+        text: 'Le contactaremos la próxima semana con nuestra decisión.',
         translation: 'We will contact you next week with our decision.',
         responses: [
           {
@@ -1535,7 +1535,7 @@ export const conversations: ConversationScenario[] = [
             text: 'Muchas gracias por su tiempo. Ha sido un placer. Espero su respuesta.',
             translation: 'Thank you very much for your time. It has been a pleasure. I look forward to your response.',
             isCorrect: true,
-            feedback: 'Igualmente. Que tenga un buen dia!',
+            feedback: '¡Igualmente! ¡Que tenga un buen día!',
             feedbackTranslation: 'Likewise. Have a good day!',
             nextNodeId: 'end',
           },
@@ -1554,31 +1554,31 @@ export const conversations: ConversationScenario[] = [
     order: 16,
     prerequisiteId: 'conv015',
     culturalNote: {
-      title: 'Emergency Numbers',
-      content: '112 is the universal emergency number in Spain and the EU. For police specifically, call 091 (National Police) or 092 (Local Police). Ambulance is 061. Keep these numbers saved in your phone when traveling.'
+      title: 'Emergency Numbers in Peru and Latin America',
+      content: 'In Peru, emergency numbers are: 105 (Police), 106 (Ambulance/Medical), and 104 (Fire). In Spain, the universal number is 112. Other Latin American countries have different systems: Mexico uses 911 (like the US), while Argentina uses 911 for police and 107 for ambulance. Always ask your hotel for local emergency numbers when you arrive.'
     },
     dialogue: [
       {
         id: 'd1',
         speaker: 'teacher',
-        text: 'Emergencias, digame. Cual es su emergencia?',
+        text: 'Emergencias, dígame. ¿Cuál es su emergencia?',
         translation: 'Emergency services, go ahead. What is your emergency?',
         responses: [
           {
             id: 'r1a',
-            text: 'Necesito una ambulancia! Ha habido un accidente de coche.',
+            text: '¡Necesito una ambulancia! Ha habido un accidente de coche.',
             translation: 'I need an ambulance! There has been a car accident.',
             isCorrect: true,
-            feedback: 'De acuerdo. Donde esta exactamente? Cual es la direccion?',
+            feedback: 'De acuerdo. ¿Dónde está exactamente? ¿Cuál es la dirección?',
             feedbackTranslation: 'Alright. Where exactly are you? What is the address?',
             nextNodeId: 'd2',
           },
           {
             id: 'r1b',
-            text: 'Ayuda! Me han robado el bolso!',
+            text: '¡Ayuda! ¡Me han robado el bolso!',
             translation: 'Help! They have stolen my bag!',
             isCorrect: true,
-            feedback: 'Calmese. Donde esta usted ahora?',
+            feedback: 'Cálmese. ¿Dónde está usted ahora?',
             feedbackTranslation: 'Calm down. Where are you now?',
             nextNodeId: 'd2',
           },
@@ -1587,12 +1587,12 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd2',
         speaker: 'teacher',
-        text: 'Hay alguien herido? Cuantas personas?',
+        text: '¿Hay alguien herido? ¿Cuántas personas?',
         translation: 'Is anyone injured? How many people?',
         responses: [
           {
             id: 'r2a',
-            text: 'Si, hay dos personas heridas. Una esta consciente pero la otra no responde.',
+            text: 'Sí, hay dos personas heridas. Una está consciente pero la otra no responde.',
             translation: 'Yes, there are two people injured. One is conscious but the other is not responding.',
             isCorrect: true,
             feedback: 'Enviamos una ambulancia inmediatamente. No mueva a los heridos.',
@@ -1604,15 +1604,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd3',
         speaker: 'teacher',
-        text: 'Quedese en la linea. La ayuda va en camino. Puede ver la matricula del otro coche?',
+        text: 'Quédese en la línea. La ayuda va en camino. ¿Puede ver la matrícula del otro coche?',
         translation: 'Stay on the line. Help is on the way. Can you see the license plate of the other car?',
         responses: [
           {
             id: 'r3a',
-            text: 'Si, la matricula es 1234 ABC. Es un coche rojo.',
+            text: 'Sí, la matrícula es 1234 ABC. Es un coche rojo.',
             translation: 'Yes, the license plate is 1234 ABC. It is a red car.',
             isCorrect: true,
-            feedback: 'Perfecto. La ambulancia llegara en cinco minutos.',
+            feedback: 'Perfecto. La ambulancia llegará en cinco minutos.',
             feedbackTranslation: 'Perfect. The ambulance will arrive in five minutes.',
             nextNodeId: 'd4',
           },
@@ -1621,15 +1621,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd4',
         speaker: 'teacher',
-        text: 'Ya llega la ambulancia. Puede verla?',
+        text: 'Ya llega la ambulancia. ¿Puede verla?',
         translation: 'The ambulance is arriving now. Can you see it?',
         responses: [
           {
             id: 'r4a',
-            text: 'Si, ya la veo! Muchas gracias por su ayuda!',
+            text: '¡Sí, ya la veo! ¡Muchas gracias por su ayuda!',
             translation: 'Yes, I see it now! Thank you very much for your help!',
             isCorrect: true,
-            feedback: 'De nada. Cuidese. Los paramedicos se encargaran de todo.',
+            feedback: 'De nada. Cuídese. Los paramédicos se encargarán de todo.',
             feedbackTranslation: 'You\'re welcome. Take care. The paramedics will take care of everything.',
             nextNodeId: 'end',
           },
@@ -1648,22 +1648,22 @@ export const conversations: ConversationScenario[] = [
     order: 17,
     prerequisiteId: 'conv016',
     culturalNote: {
-      title: 'Friendship Culture',
-      content: 'Spanish speakers are known for being warm and friendly. It\'s common to spend hours chatting over coffee (sobremesa). Friends often greet with two kisses (one on each cheek) and use affectionate terms like "carino" or "tio/tia."'
+      title: 'Friendship and Family in Peru',
+      content: 'Peruvians are warm, affectionate, and value close relationships. Friends often spend hours chatting over coffee or a meal—this extended time is treasured. Peruvian friendships often feel like family. Common terms of affection include "carino," "mi amor" (between friends), or "hermano/hermana." This warmth is characteristic across Latin America, though expressed in different ways.'
     },
     dialogue: [
       {
         id: 'd1',
         speaker: 'teacher',
-        text: 'Hola! Tu tambien vienes al parque a correr?',
+        text: '¡Hola! ¿Tú también vienes al parque a correr?',
         translation: 'Hi! Do you also come to the park to run?',
         responses: [
           {
             id: 'r1a',
-            text: 'Si! Vengo casi todos los dias. Es mi primera vez viendote aqui.',
+            text: '¡Sí! Vengo casi todos los días. Es mi primera vez viéndote aquí.',
             translation: 'Yes! I come almost every day. It is my first time seeing you here.',
             isCorrect: true,
-            feedback: 'Soy nuevo en el barrio. Me llamo Pablo, y tu?',
+            feedback: 'Soy nuevo en el barrio. Me llamo Pablo, ¿y tú?',
             feedbackTranslation: 'I am new in the neighborhood. My name is Pablo, and you?',
             nextNodeId: 'd2',
           },
@@ -1672,7 +1672,7 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd2',
         speaker: 'teacher',
-        text: 'Te gusta vivir aqui? Que tal el barrio?',
+        text: '¿Te gusta vivir aquí? ¿Qué tal el barrio?',
         translation: 'Do you like living here? How is the neighborhood?',
         responses: [
           {
@@ -1680,7 +1680,7 @@ export const conversations: ConversationScenario[] = [
             text: 'Me encanta! La gente es muy amable y hay muchos restaurantes buenos.',
             translation: 'I love it! The people are very friendly and there are many good restaurants.',
             isCorrect: true,
-            feedback: 'Si! Conoces el restaurante La Tasca? Tiene las mejores tapas.',
+            feedback: '¿¡Sí! ¿Conoces el restaurante La Tasca? Tiene las mejores tapas.',
             feedbackTranslation: 'Yes! Do you know the restaurant La Tasca? It has the best tapas.',
             nextNodeId: 'd3',
           },
@@ -1689,15 +1689,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd3',
         speaker: 'teacher',
-        text: 'Oye, un grupo de amigos nos juntamos los viernes para tomar algo. Te gustaria venir?',
+        text: 'Oye, un grupo de amigos nos juntamos los viernes para tomar algo. ¿Te gustaría venir?',
         translation: 'Hey, a group of friends get together on Fridays for drinks. Would you like to come?',
         responses: [
           {
             id: 'r3a',
-            text: 'Me encantaria! Donde y a que hora quedais?',
+            text: '¡Me encantaría! ¿Dónde y a qué hora quedáis?',
             translation: 'I would love to! Where and what time do you meet?',
             isCorrect: true,
-            feedback: 'En el bar de la esquina, a las ocho. Te paso mi numero!',
+            feedback: 'En el bar de la esquina, a las ocho. ¡Te paso mi número!',
             feedbackTranslation: 'At the bar on the corner, at eight. I\'ll give you my number!',
             nextNodeId: 'd4',
           },
@@ -1706,7 +1706,7 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd4',
         speaker: 'teacher',
-        text: 'Genial! Te mando un mensaje con la direccion. Nos vemos el viernes!',
+        text: '¡Genial! Te mando un mensaje con la dirección. ¡Nos vemos el viernes!',
         translation: 'Great! I\'ll send you a message with the address. See you Friday!',
         responses: [
           {
@@ -1714,7 +1714,7 @@ export const conversations: ConversationScenario[] = [
             text: 'Perfecto! Ha sido un placer conocerte, Pablo. Hasta el viernes!',
             translation: 'Perfect! It has been a pleasure meeting you, Pablo. See you Friday!',
             isCorrect: true,
-            feedback: 'Igualmente! Que tengas un buen dia. Hasta pronto!',
+            feedback: '¡Igualmente! ¡Que tengas un buen día! ¡Hasta pronto!',
             feedbackTranslation: 'Likewise! Have a good day. See you soon!',
             nextNodeId: 'end',
           },
@@ -1734,22 +1734,22 @@ export const conversations: ConversationScenario[] = [
     order: 18,
     category: 'cultural',
     culturalNote: {
-      title: 'Tapas Tradition',
-      content: 'Tapas originated as small plates to cover drinks (tapar means "to cover"). In some regions like Granada, tapas are still free with drinks! The tradition of "ir de tapas" means hopping from bar to bar, having a drink and a tapa at each. Standing at the bar is often cheaper than sitting at a table.'
+      title: 'Spanish Tapas Culture in Andalusia',
+      content: 'Tapas are small appetizers served in Spanish bars, and Granada in Andalusia is famous for its generous tapas tradition. In Granada\'s bars, a tapa comes free with every drink—a unique custom! Popular tapas include patatas bravas (fried potatoes with spicy sauce), jamón ibérico (Iberian cured ham), tortilla española (Spanish omelet), croquetas (creamy fried balls), and gambas al ajillo (garlic shrimp). "Ir de tapas" (going for tapas) means bar hopping with friends, enjoying small bites and drinks while socializing. This tradition is central to Spanish social life and culture.'
     },
     dialogue: [
       {
         id: 'd1',
         speaker: 'teacher',
-        text: 'Buenas tardes! Que le pongo? Aqui en Granada la tapa es gratis con la bebida.',
+        text: '¡Buenas tardes! ¿Qué le pongo? Aquí en Granada la tapa es gratis con la bebida.',
         translation: 'Good afternoon! What can I get you? Here in Granada the tapa is free with the drink.',
         responses: [
           {
             id: 'r1a',
-            text: 'Ah, que bien! Pongame una cana y que tapa me recomienda?',
-            translation: 'Oh, how nice! Give me a small beer and what tapa do you recommend?',
+            text: '¡Ah, qué bien! Póngame una caña. ¿Qué tapa me recomienda?',
+            translation: 'Oh, how nice! Give me a small beer. What tapa do you recommend?',
             isCorrect: true,
-            feedback: 'Hoy tenemos croquetas caseras muy buenas. Tambien hay tortilla.',
+            feedback: 'Hoy tenemos croquetas caseras muy buenas. También hay tortilla.',
             feedbackTranslation: 'Today we have very good homemade croquettes. There is also tortilla.',
             nextNodeId: 'd2',
           },
@@ -1758,15 +1758,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd2',
         speaker: 'npc',
-        text: 'Perdoname, eres turista? Aqui en Granada hacemos las mejores tapas de Espana!',
+        text: 'Perdóname, ¿eres turista? ¡Aquí en Granada hacemos las mejores tapas de España!',
         translation: 'Excuse me, are you a tourist? Here in Granada we make the best tapas in Spain!',
         responses: [
           {
             id: 'r2a',
-            text: 'Si, es mi primera vez aqui. Cual es la especialidad de este bar?',
+            text: 'Sí, es mi primera vez aquí. ¿Cuál es la especialidad de este bar?',
             translation: 'Yes, it is my first time here. What is the specialty of this bar?',
             isCorrect: true,
-            feedback: 'Las patatas bravas y el jamon. Tienes que probarlos!',
+            feedback: 'Las patatas bravas y el jamón. ¡Tienes que probarlos!',
             feedbackTranslation: 'The spicy potatoes and the ham. You have to try them!',
             nextNodeId: 'd3',
           },
@@ -1775,15 +1775,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd3',
         speaker: 'npc',
-        text: 'Sabes lo que significa "ir de tapas"? Es ir de bar en bar, probando diferentes tapas.',
+        text: '¿Sabes lo que significa "ir de tapas"? Es ir de bar en bar, probando diferentes tapas.',
         translation: 'Do you know what "ir de tapas" means? It is going from bar to bar, trying different tapas.',
         responses: [
           {
             id: 'r3a',
-            text: 'Que buena tradicion! Hay algun bar cerca que tambien recomiendas?',
+            text: '¡Qué buena tradición! ¿Hay algún bar cerca que también recomiendas?',
             translation: 'What a great tradition! Is there a nearby bar you also recommend?',
             isCorrect: true,
-            feedback: 'Si! El bar de la esquina tiene las mejores gambas al ajillo. Te acompano?',
+            feedback: '¡Sí! El bar de la esquina tiene las mejores gambas al ajillo. ¿Te acompaño?',
             feedbackTranslation: 'Yes! The bar on the corner has the best garlic shrimp. Shall I accompany you?',
             nextNodeId: 'd4',
           },
@@ -1792,15 +1792,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd4',
         speaker: 'teacher',
-        text: 'Aqui tiene su cuenta. Son solo dos euros por la cana. La tapa va incluida.',
+        text: 'Aquí tiene su cuenta. Son solo dos euros por la caña. La tapa va incluida.',
         translation: 'Here is your bill. It is only two euros for the beer. The tapa is included.',
         responses: [
           {
             id: 'r4a',
-            text: 'Increible! En mi pais las tapas cuestan mucho mas. Muchas gracias!',
+            text: '¡Increíble! En mi país las tapas cuestan mucho más. ¡Muchas gracias!',
             translation: 'Incredible! In my country tapas cost much more. Thank you very much!',
             isCorrect: true,
-            feedback: 'De nada! Vuelva pronto. Y disfrute del paseo de tapas!',
+            feedback: '¡De nada! ¡Vuelva pronto! Y disfrute del paseo de tapas.',
             feedbackTranslation: 'You\'re welcome! Come back soon. And enjoy your tapas crawl!',
             nextNodeId: 'end',
           },
@@ -1819,22 +1819,22 @@ export const conversations: ConversationScenario[] = [
     order: 19,
     category: 'cultural',
     culturalNote: {
-      title: 'The Art of Siesta',
-      content: 'The siesta tradition comes from Spain\'s hot climate. Historically, workers rested during the hottest hours (2-5 PM). While fewer people take siestas today due to modern work schedules, many shops still close in the afternoon. Studies show short naps (20-30 min) boost productivity!'
+      title: 'Rest and Work in the Andes',
+      content: 'Peru\'s mountain climate is quite different from Spain\'s. While siestas are less common in Peru than in Spain, many businesses close briefly at midday. In the Andean highlands, work rhythms follow agricultural cycles. Across Latin America, some countries maintain siesta traditions (like Spain and Argentina) while others have adopted modern schedules. Rest remains important in all cultures!'
     },
     dialogue: [
       {
         id: 'd1',
         speaker: 'teacher',
-        text: 'Bueno, acabamos de comer. Aqui en Espana solemos descansar un poco despues del almuerzo.',
+        text: 'Bueno, acabamos de comer. Aquí en España solemos descansar un poco después del almuerzo.',
         translation: 'Well, we just finished eating. Here in Spain we usually rest a bit after lunch.',
         responses: [
           {
             id: 'r1a',
-            text: 'Ah si, he oido hablar de la siesta! Es una tradicion muy espanola, no?',
+            text: '¡Ah sí! He oído hablar de la siesta. ¡Es una tradición muy española, ¿no?',
             translation: 'Ah yes, I have heard about the siesta! It is a very Spanish tradition, right?',
             isCorrect: true,
-            feedback: 'Exacto! Despues de comer, el cuerpo necesita descansar. Quieres echarte una siesta?',
+            feedback: '¿¡Exacto! Después de comer, el cuerpo necesita descansar. ¿Quieres echarte una siesta?',
             feedbackTranslation: 'Exactly! After eating, the body needs to rest. Do you want to take a siesta?',
             nextNodeId: 'd2',
           },
@@ -1843,15 +1843,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd2',
         speaker: 'teacher',
-        text: 'La siesta no tiene que ser larga. Veinte minutos es suficiente para recargar energia.',
+        text: 'La siesta no tiene que ser larga. Veinte minutos es suficiente para recargar energía.',
         translation: 'The siesta does not have to be long. Twenty minutes is enough to recharge energy.',
         responses: [
           {
             id: 'r2a',
-            text: 'Es verdad que todas las tiendas cierran durante la siesta?',
+            text: '¿Es verdad que todas las tiendas cierran durante la siesta?',
             translation: 'Is it true that all the shops close during siesta?',
             isCorrect: true,
-            feedback: 'Muchas si, especialmente en pueblos pequenos. En las grandes ciudades es diferente.',
+            feedback: 'Muchas sí, especialmente en pueblos pequeños. En las grandes ciudades es diferente.',
             feedbackTranslation: 'Many do, especially in small towns. In big cities it is different.',
             nextNodeId: 'd3',
           },
@@ -1860,15 +1860,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd3',
         speaker: 'teacher',
-        text: 'El secreto es no dormir mas de treinta minutos. Si no, te despiertas mas cansado.',
+        text: 'El secreto es no dormir más de treinta minutos. Si no, te despiertas más cansado.',
         translation: 'The secret is not to sleep more than thirty minutes. Otherwise, you wake up more tired.',
         responses: [
           {
             id: 'r3a',
-            text: 'Que buen consejo! Creo que voy a intentar la siesta hoy.',
+            text: '¡Qué buen consejo! Creo que voy a intentar la siesta hoy.',
             translation: 'What good advice! I think I am going to try the siesta today.',
             isCorrect: true,
-            feedback: 'Muy bien! Tu habitacion esta fresca y tranquila. Dulces suenos!',
+            feedback: '¡Muy bien! Tu habitación está fresca y tranquila. ¡Dulces sueños!',
             feedbackTranslation: 'Very good! Your room is cool and quiet. Sweet dreams!',
             nextNodeId: 'd4',
           },
@@ -1877,15 +1877,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd4',
         speaker: 'teacher',
-        text: 'Ya son las cinco. Que tal la siesta? Te sientes con mas energia?',
+        text: 'Ya son las cinco. ¿Qué tal la siesta? ¿Te sientes con más energía?',
         translation: 'It is five o\'clock now. How was the siesta? Do you feel more energetic?',
         responses: [
           {
             id: 'r4a',
-            text: 'Increible! Me siento como nuevo. Ahora entiendo por que es tan popular!',
+            text: '¡Increíble! Me siento como nuevo. ¡Ahora entiendo por qué es tan popular!',
             translation: 'Incredible! I feel like new. Now I understand why it is so popular!',
             isCorrect: true,
-            feedback: 'Ja ja! Ya eres un poco espanol. Ahora tomamos un cafe y salimos a pasear.',
+            feedback: '¡Ja ja! Ya eres un poco español. Ahora tomamos un café y salimos a pasear.',
             feedbackTranslation: 'Ha ha! You are already a bit Spanish. Now we\'ll have a coffee and go for a walk.',
             nextNodeId: 'end',
           },
@@ -1895,32 +1895,32 @@ export const conversations: ConversationScenario[] = [
   },
   {
     id: 'cultural003',
-    title: 'Spanish Festivals',
-    titleSpanish: 'Las Fiestas Espanolas',
-    description: 'Experience a traditional Spanish festival',
+    title: 'Peruvian Festivals',
+    titleSpanish: 'Las Fiestas Peruanas',
+    description: 'Experience traditional Peruvian festivals',
     difficulty: 'easy',
     location: 'A town plaza',
     participants: ['You', 'Festival goers'],
     order: 20,
     category: 'cultural',
     culturalNote: {
-      title: 'Fiestas Patronales',
-      content: 'Every Spanish town has its own "fiestas patronales" celebrating their patron saint. Famous festivals include La Tomatina (tomato fight), San Fermin (running of the bulls), and Las Fallas (burning monuments). Festivals feature processions, fireworks, music, and lots of food!'
+      title: 'Peruvian Festivals and Celebrations',
+      content: 'Peru\'s most famous festival is Inti Raymi (June), celebrating the Inca sun god with processions and traditional ceremonies in Cusco. Señor de los Milagros (October) honors a sacred image in Lima. Every town celebrates "fiestas patronales" for their patron saint with processions, fireworks, music, and traditional food. Peru\'s festivals blend indigenous and Catholic traditions, while Spain and other Latin American countries have their own distinct celebrations.'
     },
     dialogue: [
       {
         id: 'd1',
         speaker: 'teacher',
-        text: 'Bienvenido a las fiestas del pueblo! Hoy celebramos a nuestro santo patron.',
-        translation: 'Welcome to the town festival! Today we celebrate our patron saint.',
+        text: '¡Bienvenido a las fiestas peruanas! Hoy celebramos el Inti Raymi, la fiesta del sol.',
+        translation: 'Welcome to the Peruvian festival! Today we celebrate Inti Raymi, the sun festival.',
         responses: [
           {
             id: 'r1a',
-            text: 'Que emocionante! Es mi primera fiesta espanola. Que actividades hay?',
-            translation: 'How exciting! It is my first Spanish festival. What activities are there?',
+            text: '¡Qué emocionante! Es mi primera fiesta peruana. ¿Qué actividades hay?',
+            translation: 'How exciting! It is my first Peruvian festival. What activities are there?',
             isCorrect: true,
-            feedback: 'Hay de todo! Procesiones, musica en directo, fuegos artificiales y comida tradicional.',
-            feedbackTranslation: 'There is everything! Processions, live music, fireworks, and traditional food.',
+            feedback: '¡Hay de todo! Procesiones, danzas tradicionales, música en directo y comida típica.',
+            feedbackTranslation: 'There is everything! Processions, traditional dances, live music, and typical food.',
             nextNodeId: 'd2',
           },
         ],
@@ -1928,16 +1928,16 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd2',
         speaker: 'teacher',
-        text: 'A las doce sale la procesion de la iglesia. Todos acompanan al santo por las calles.',
-        translation: 'At twelve the procession leaves the church. Everyone accompanies the saint through the streets.',
+        text: 'Al amanecer, todos salen en procesión para honrar al sol. ¡Es increíble ver a miles de personas juntas!',
+        translation: 'At dawn, everyone goes out in procession to honor the sun. It is incredible to see thousands of people together!',
         responses: [
           {
             id: 'r2a',
-            text: 'Que interesante! Y hay alguna comida tipica de estas fiestas?',
+            text: '¡Qué interesante! ¿Y hay alguna comida típica de estas fiestas?',
             translation: 'How interesting! And is there any typical food from these festivals?',
             isCorrect: true,
-            feedback: 'Si! Tenemos churros con chocolate, bunoelos y sangria. Quieres probar?',
-            feedbackTranslation: 'Yes! We have churros with chocolate, fritters, and sangria. Do you want to try?',
+            feedback: '¡Sí! Tenemos anticuchos, picarones y chicha morada. ¡Son deliciosos! ¿Quieres probar?',
+            feedbackTranslation: 'Yes! We have anticuchos, picarones, and chicha morada. They are delicious! Do you want to try?',
             nextNodeId: 'd3',
           },
         ],
@@ -1945,15 +1945,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd3',
         speaker: 'npc',
-        text: 'Oye! Ven a bailar con nosotros! Esto es sevillanas, el baile tradicional de Andalucia.',
-        translation: 'Hey! Come dance with us! This is sevillanas, the traditional dance of Andalucia.',
+        text: '¡Oye! ¡Ven a bailar con nosotros! Esto es la marinera, el baile tradicional peruano.',
+        translation: 'Hey! Come dance with us! This is the marinera, the traditional Peruvian dance.',
         responses: [
           {
             id: 'r3a',
-            text: 'No se bailar sevillanas, pero me encantaria aprender!',
-            translation: 'I do not know how to dance sevillanas, but I would love to learn!',
+            text: 'No sé bailar la marinera, ¡pero me encantaría aprender!',
+            translation: 'I do not know how to dance the marinera, but I would love to learn!',
             isCorrect: true,
-            feedback: 'Es muy facil! Solo sigue mis pasos. Uno, dos, tres... perfecto!',
+            feedback: '¡Es muy fácil! Solo sigue mis pasos. Uno, dos, tres... ¡perfecto!',
             feedbackTranslation: 'It is very easy! Just follow my steps. One, two, three... perfect!',
             nextNodeId: 'd4',
           },
@@ -1962,15 +1962,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd4',
         speaker: 'teacher',
-        text: 'Mira! Ya empiezan los fuegos artificiales. Es el momento mas bonito de la fiesta.',
+        text: '¡Mira! Ya empiezan los fuegos artificiales. Es el momento más bonito de la fiesta.',
         translation: 'Look! The fireworks are starting now. It is the most beautiful moment of the festival.',
         responses: [
           {
             id: 'r4a',
-            text: 'Es impresionante! Nunca olvidare esta experiencia. Viva la fiesta!',
+            text: '¡Es impresionante! Nunca olvidaré esta experiencia. ¡Viva la fiesta!',
             translation: 'It is impressive! I will never forget this experience. Long live the festival!',
             isCorrect: true,
-            feedback: 'Eso es! Ya eres uno de nosotros. Que viva!',
+            feedback: '¡Eso es! Ya eres uno de nosotros. ¡Que viva!',
             feedbackTranslation: 'That\'s it! You are already one of us. Long live!',
             nextNodeId: 'end',
           },
@@ -1989,22 +1989,22 @@ export const conversations: ConversationScenario[] = [
     order: 21,
     category: 'cultural',
     culturalNote: {
-      title: 'Sobremesa',
-      content: 'The "sobremesa" is the time spent talking at the table after a meal. It can last for hours! Sunday family meals are sacred in Spain - multiple generations gather at the grandparents\' house for long lunches, conversation, and connection. It\'s considered rude to rush away after eating.'
+      title: 'Family Meals and Sobremesa',
+      content: 'The "sobremesa"—lingering at the table after eating to talk and connect—is treasured in Peru and across Latin America. Family meals are central to Peruvian culture, especially on Sundays and holidays. In Peru, families often gather for extended lunches with multiple generations sharing stories. This tradition exists in Spain too. Rushing away after eating is considered rude across the Spanish-speaking world.'
     },
     dialogue: [
       {
         id: 'd1',
         speaker: 'teacher',
-        text: 'Bienvenido a nuestra casa! Los domingos siempre comemos toda la familia junta.',
+        text: '¡Bienvenido a nuestra casa! Los domingos siempre comemos toda la familia junta.',
         translation: 'Welcome to our house! On Sundays we always eat all together as a family.',
         responses: [
           {
             id: 'r1a',
-            text: 'Muchas gracias por invitarme! Que buena tradicion tienen.',
+            text: '¡Muchas gracias por invitarme! ¡Qué buena tradición tienen!',
             translation: 'Thank you very much for inviting me! What a nice tradition you have.',
             isCorrect: true,
-            feedback: 'Es lo mas importante para nosotros. Ven, te presento a la abuela.',
+            feedback: 'Es lo más importante para nosotros. Ven, te presento a la abuela.',
             feedbackTranslation: 'It is the most important thing for us. Come, I\'ll introduce you to grandmother.',
             nextNodeId: 'd2',
           },
@@ -2013,12 +2013,12 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd2',
         speaker: 'npc',
-        text: 'Ay, bienvenido hijo! Sientate, sientate. Tienes que comer mucho, estas muy delgado!',
+        text: '¡Ay, bienvenido hijo! ¡Siéntate, siéntate! Tienes que comer mucho, ¡estás muy delgado!',
         translation: 'Oh, welcome dear! Sit down, sit down. You have to eat a lot, you are very thin!',
         responses: [
           {
             id: 'r2a',
-            text: 'Gracias, abuela! Huele delicioso. Que esta cocinando?',
+            text: '¡Gracias, abuela! Huele delicioso. ¿Qué está cocinando?',
             translation: 'Thank you, grandma! It smells delicious. What are you cooking?',
             isCorrect: true,
             feedback: 'Paella! La receta de mi madre. Tardamos tres horas en hacerla.',
@@ -2035,10 +2035,10 @@ export const conversations: ConversationScenario[] = [
         responses: [
           {
             id: 'r3a',
-            text: 'En mi pais no tenemos esta costumbre. Me parece muy bonito.',
+            text: 'En mi país no tenemos esta costumbre. Me parece muy bonito.',
             translation: 'In my country we do not have this custom. It seems very nice to me.',
             isCorrect: true,
-            feedback: 'Es el momento de conectar con la familia. Toma, un cafe y un chupito de licor.',
+            feedback: 'Es el momento de conectar con la familia. Toma, un café y un chupito de licor.',
             feedbackTranslation: 'It is the moment to connect with family. Here, a coffee and a shot of liquor.',
             nextNodeId: 'd4',
           },
@@ -2047,15 +2047,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd4',
         speaker: 'npc',
-        text: 'Ya son las seis! El tiempo vuela cuando estamos juntos. Te quedas a cenar?',
+        text: '¡Ya son las seis! El tiempo vuela cuando estamos juntos. ¿Te quedas a cenar?',
         translation: 'It is six already! Time flies when we are together. Are you staying for dinner?',
         responses: [
           {
             id: 'r4a',
-            text: 'Me encantaria! Ha sido una experiencia maravillosa. Gracias por acogerme.',
+            text: '¡Me encantaría! Ha sido una experiencia maravillosa. ¡Gracias por acogerme!',
             translation: 'I would love to! It has been a wonderful experience. Thank you for welcoming me.',
             isCorrect: true,
-            feedback: 'Ya eres parte de la familia! Vuelve cuando quieras.',
+            feedback: '¡Ya eres parte de la familia! ¡Vuelve cuando quieras!',
             feedbackTranslation: 'You are already part of the family! Come back whenever you want.',
             nextNodeId: 'end',
           },
@@ -2074,22 +2074,22 @@ export const conversations: ConversationScenario[] = [
     order: 22,
     category: 'cultural',
     culturalNote: {
-      title: 'Coffee Vocabulary',
-      content: 'Spain has specific coffee terminology: "cafe solo" (espresso), "cortado" (espresso with a dash of milk), "cafe con leche" (half coffee, half steamed milk), "cafe bombon" (espresso with condensed milk). In the afternoon, try a "carajillo" (coffee with brandy). Sitting at the bar is usually cheaper than at a table.'
+      title: 'Coffee Culture in Peru',
+      content: 'Peru is one of the world\'s leading coffee producers! Peruvian coffee is renowned for its rich flavor. You\'ll hear Spanish coffee terms like "cafe solo" (espresso) and "cafe con leche" (with milk) throughout Latin America. Try "pisco sour" instead of "carajillo" in Peru! Peru\'s coffee culture is rooted in agriculture and tradition. Each country has unique coffee drinks—Spain loves their "carajillo," while Peru celebrates its coffee bean heritage.'
     },
     dialogue: [
       {
         id: 'd1',
         speaker: 'teacher',
-        text: 'Buenos dias! Que va a tomar? Solo le aviso, en la barra es mas barato.',
+        text: '¡Buenos días! ¿Qué va a tomar? Solo le aviso, en la barra es más barato.',
         translation: 'Good morning! What will you have? I\'ll just let you know, at the bar it is cheaper.',
         responses: [
           {
             id: 'r1a',
-            text: 'Ah, gracias por el consejo! Que tipos de cafe tienen?',
+            text: '¡Ah, gracias por el consejo! ¿Qué tipos de café tienen?',
             translation: 'Ah, thanks for the advice! What types of coffee do you have?',
             isCorrect: true,
-            feedback: 'Tenemos cafe solo, cortado, con leche, bombon... cual prefiere?',
+            feedback: 'Tenemos café solo, cortado, con leche, bombón... ¿cuál prefiere?',
             feedbackTranslation: 'We have espresso, cortado, with milk, bombon... which do you prefer?',
             nextNodeId: 'd2',
           },
@@ -2098,15 +2098,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd2',
         speaker: 'teacher',
-        text: 'El cortado lleva un poquito de leche. El cafe con leche es mitad y mitad.',
+        text: 'El cortado lleva un poquito de leche. El café con leche es mitad y mitad.',
         translation: 'The cortado has a little bit of milk. The cafe con leche is half and half.',
         responses: [
           {
             id: 'r2a',
-            text: 'Pongame un cortado entonces. Y que es un cafe bombon?',
+            text: 'Póngame un cortado entonces. ¿Y qué es un café bombón?',
             translation: 'Give me a cortado then. And what is a cafe bombon?',
             isCorrect: true,
-            feedback: 'Es cafe solo con leche condensada. Es muy dulce pero delicioso!',
+            feedback: 'Es café solo con leche condensada. ¡Es muy dulce pero delicioso!',
             feedbackTranslation: 'It is espresso with condensed milk. It is very sweet but delicious!',
             nextNodeId: 'd3',
           },
@@ -2115,15 +2115,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd3',
         speaker: 'teacher',
-        text: 'Aqui tiene su cortado. Si quiere algo mas fuerte, pruebe el carajillo.',
+        text: 'Aquí tiene su cortado. Si quiere algo más fuerte, pruebe el carajillo.',
         translation: 'Here is your cortado. If you want something stronger, try the carajillo.',
         responses: [
           {
             id: 'r3a',
-            text: 'Que es un carajillo? Suena interesante.',
+            text: '¿Qué es un carajillo? Suena interesante.',
             translation: 'What is a carajillo? It sounds interesting.',
             isCorrect: true,
-            feedback: 'Es cafe con un chorro de coñac o ron. Perfecto para las tardes frias!',
+            feedback: 'Es café con un chorro de coñac o ron. ¡Perfecto para las tardes frías!',
             feedbackTranslation: 'It is coffee with a splash of cognac or rum. Perfect for cold afternoons!',
             nextNodeId: 'd4',
           },
@@ -2132,7 +2132,7 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd4',
         speaker: 'teacher',
-        text: 'Ya sabe pedir cafe como un espanol! El cafe es parte de nuestra vida social.',
+        text: '¡Ya sabe pedir café como un español! El café es parte de nuestra vida social.',
         translation: 'Now you know how to order coffee like a Spaniard! Coffee is part of our social life.',
         responses: [
           {
@@ -2140,7 +2140,7 @@ export const conversations: ConversationScenario[] = [
             text: 'Es verdad! He visto que la gente pasa mucho tiempo en las cafeterias charlando.',
             translation: 'It is true! I have seen that people spend a lot of time in cafes chatting.',
             isCorrect: true,
-            feedback: 'Si! Un cafe es una excusa para hablar. Eso es la vida espanola!',
+            feedback: '¡Sí! Un café es una excusa para hablar. ¡Eso es la vida española!',
             feedbackTranslation: 'Yes! A coffee is an excuse to talk. That is Spanish life!',
             nextNodeId: 'end',
           },
@@ -2159,22 +2159,22 @@ export const conversations: ConversationScenario[] = [
     order: 23,
     category: 'cultural',
     culturalNote: {
-      title: 'Spanish Meal Schedule',
-      content: 'Spaniards eat later than most countries. Lunch (la comida) is around 2-3 PM and is the main meal. Dinner (la cena) is usually 9-10 PM or later. Most restaurants don\'t open for dinner until 8:30 PM. On weekends, it\'s common to eat dinner after 10 PM!'
+      title: 'Meal Times Across Latin America',
+      content: 'Meal times vary across Spanish-speaking countries. In Peru, lunch (almuerzo) is typically 12-1 PM and is the main meal, with dinner (cena) around 7-8 PM. In Spain, lunch is 2-3 PM and dinner is 9-10 PM. Mexico and Colombia fall somewhere in between. Understanding local meal times helps you navigate restaurants and restaurants\' opening hours in different countries!'
     },
     dialogue: [
       {
         id: 'd1',
         speaker: 'teacher',
-        text: 'Son las siete. Quieres cenar? Aunque es un poco pronto todavia...',
+        text: 'Son las siete. ¿Quieres cenar? Aunque es un poco pronto todavía...',
         translation: 'It is seven. Do you want to have dinner? Although it is a bit early still...',
         responses: [
           {
             id: 'r1a',
-            text: 'Las siete es pronto? En mi pais ya cenamos a esta hora.',
+            text: '¿Las siete es pronto? En mi país ya cenamos a esta hora.',
             translation: 'Seven is early? In my country we already have dinner at this time.',
             isCorrect: true,
-            feedback: 'En Espana cenamos a las nueve o diez. Los restaurantes abren a las ocho y media.',
+            feedback: 'En España cenamos a las nueve o diez. Los restaurantes abren a las ocho y media.',
             feedbackTranslation: 'In Spain we have dinner at nine or ten. Restaurants open at eight thirty.',
             nextNodeId: 'd2',
           },
@@ -2188,7 +2188,7 @@ export const conversations: ConversationScenario[] = [
         responses: [
           {
             id: 'r2a',
-            text: 'Entonces, que hacemos hasta las nueve?',
+            text: 'Entonces, ¿qué hacemos hasta las nueve?',
             translation: 'So, what do we do until nine?',
             isCorrect: true,
             feedback: 'Podemos dar un paseo y tomar algo. Es lo que hacemos normalmente.',
@@ -2205,10 +2205,10 @@ export const conversations: ConversationScenario[] = [
         responses: [
           {
             id: 'r3a',
-            text: 'Tienes razon! Antes estaban vacios y ahora hay mucha gente.',
+            text: 'Tienes razón! Antes estaban vacíos y ahora hay mucha gente.',
             translation: 'You are right! Before they were empty and now there are many people.',
             isCorrect: true,
-            feedback: 'Los fines de semana cenamos incluso mas tarde, a las diez u once!',
+            feedback: 'Los fines de semana cenamos incluso más tarde, a las diez u once!',
             feedbackTranslation: 'On weekends we have dinner even later, at ten or eleven!',
             nextNodeId: 'd4',
           },
@@ -2222,7 +2222,7 @@ export const conversations: ConversationScenario[] = [
         responses: [
           {
             id: 'r4a',
-            text: 'La merienda! Es como un snack por la tarde, verdad?',
+            text: '¡La merienda! ¿Es como un snack por la tarde, verdad?',
             translation: 'The merienda! It is like an afternoon snack, right?',
             isCorrect: true,
             feedback: 'Exacto! Asi no llegamos a la cena con mucha hambre. Es perfecto!',

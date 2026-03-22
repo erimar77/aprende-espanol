@@ -39,7 +39,6 @@ export interface ConjugationSet {
   tu: string;
   el: string;
   nosotros: string;
-  vosotros: string;
   ellos: string;
 }
 
@@ -47,7 +46,6 @@ export interface ImperativeSet {
   tu: string;
   usted: string;
   nosotros: string;
-  vosotros: string;
   ustedes: string;
 }
 
@@ -60,6 +58,96 @@ export interface GrammarLesson {
   order: number;
   content: LessonContent[];
   exercises: Exercise[];
+  /** New interactive lesson steps — if present, the lesson uses the interactive view */
+  interactiveSteps?: InteractiveStep[];
+}
+
+// ── Interactive Lesson System ──────────────────────────────────────────
+
+/** A single step in a progressive-reveal interactive lesson */
+export type InteractiveStep =
+  | NarrativeStep
+  | DiscoverStep
+  | ExplainStep
+  | PracticeStep
+  | DragOrderStep
+  | FillTableStep
+  | ColorMatchStep;
+
+interface BaseStep {
+  id: string;
+}
+
+/** Mini-story: dialogue/narrative that demonstrates the grammar in context */
+export interface NarrativeStep extends BaseStep {
+  type: 'narrative';
+  /** Setting context line shown above the dialogue */
+  scene: string;
+  lines: { speaker: string; text: string; translation: string; highlight?: string }[];
+  /** Question asking learner what they noticed */
+  noticePrompt?: string;
+}
+
+/** Discovery: show examples and ask the learner to spot the pattern */
+export interface DiscoverStep extends BaseStep {
+  type: 'discover';
+  instruction: string;
+  examples: { spanish: string; english: string; highlight?: string }[];
+  question: string;
+  options: string[];
+  correctAnswer: string;
+  explanation: string;
+}
+
+/** Brief rule explanation — a concise reveal after the learner has seen the pattern */
+export interface ExplainStep extends BaseStep {
+  type: 'explain';
+  title: string;
+  content: string;
+  /** Optional table for conjugation/grammar patterns */
+  table?: TableData;
+  tip?: string;
+}
+
+/** Inline practice question embedded in the flow */
+export interface PracticeStep extends BaseStep {
+  type: 'practice';
+  variant: 'multiple-choice' | 'fill-blank' | 'translate';
+  question: string;
+  context?: string;
+  options?: string[];
+  correctAnswer: string;
+  explanation: string;
+  hint?: string;
+}
+
+/** Drag to reorder words into correct sentence order */
+export interface DragOrderStep extends BaseStep {
+  type: 'drag-order';
+  instruction: string;
+  /** The words in correct order */
+  correctOrder: string[];
+  /** Scrambled words shown to the user (if omitted, auto-shuffled) */
+  scrambled?: string[];
+  translation: string;
+}
+
+/** Fill in a conjugation/grammar table interactively */
+export interface FillTableStep extends BaseStep {
+  type: 'fill-table';
+  instruction: string;
+  headers: string[];
+  rows: { label: string; cells: { value: string; editable: boolean }[] }[];
+  tip?: string;
+}
+
+/** Color-coded sentence analysis — tap parts to identify their role */
+export interface ColorMatchStep extends BaseStep {
+  type: 'color-match';
+  instruction: string;
+  sentence: string;
+  /** Segments of the sentence with their grammatical role */
+  segments: { text: string; role: string; color: string }[];
 }
 
 export interface LessonContent {
@@ -144,6 +232,7 @@ export interface FlashcardProgress {
   nextReview: string;
   easeFactor: number;
   interval: number;
+  repetition: number;          // consecutive correct answers (SM-2)
   status: 'new' | 'learning' | 'review' | 'mastered';
 }
 

@@ -2,8 +2,8 @@
 import { teachers } from '@/data/teachers';
 import { createTeacher, getTeachers, DbTeacher } from './db';
 
-export function seedTeachers(): void {
-  const existingTeachers = getTeachers(true);
+export async function seedTeachers(): Promise<void> {
+  const existingTeachers = await getTeachers(true);
   if (existingTeachers.length > 0) {
     console.log('Teachers already exist in database, skipping seed');
     return;
@@ -11,8 +11,8 @@ export function seedTeachers(): void {
 
   console.log('Seeding teachers from static data...');
 
-  teachers.forEach((teacher, index) => {
-    createTeacher({
+  for (const [index, teacher] of teachers.entries()) {
+    await createTeacher({
       name: teacher.name,
       imageUrl: teacher.imageUrl,
       greeting: teacher.greeting,
@@ -22,7 +22,7 @@ export function seedTeachers(): void {
       order: index,
       isActive: true,
     });
-  });
+  }
 
   console.log(`Seeded ${teachers.length} teachers`);
 }

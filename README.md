@@ -2,7 +2,7 @@
 
 An interactive Spanish learning web application for A1-level beginners.
 
-![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=next.js)
+![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?style=flat-square&logo=tailwind-css)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
@@ -66,6 +66,9 @@ An interactive Spanish learning web application for A1-level beginners.
 - Progress persistence with localStorage
 - 8 virtual teachers with unique specialties
 - Mobile-responsive design
+- OAuth authentication (Google, GitHub, Discord)
+- Admin panel for user management and settings
+- Optional ElevenLabs text-to-speech integration
 
 ## Getting Started
 
@@ -84,11 +87,65 @@ cd aprende-espanol
 # Install dependencies
 npm install
 
+# Copy environment template
+cp .env.example .env.local
+```
+
+### Configuration
+
+Edit `.env.local` with your settings:
+
+```bash
+# Required
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your-secret-key  # Generate with: openssl rand -base64 32
+
+# Initial Admin (this email will be auto-approved as admin on first sign-in)
+ADMIN_EMAIL=your-email@example.com
+
+# OAuth Providers (configure at least one)
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+
+GITHUB_CLIENT_ID=your-github-client-id
+GITHUB_CLIENT_SECRET=your-github-client-secret
+
+DISCORD_CLIENT_ID=your-discord-client-id
+DISCORD_CLIENT_SECRET=your-discord-client-secret
+
+# Optional: ElevenLabs Text-to-Speech (configure in admin panel after setup)
+ELEVENLABS_API_KEY=your-elevenlabs-api-key
+```
+
+#### Setting up OAuth Providers
+
+**Google:**
+1. Go to [Google Cloud Console](https://console.cloud.google.com/)
+2. Create a new project or select existing
+3. Enable the Google+ API
+4. Go to Credentials → Create Credentials → OAuth Client ID
+5. Set authorized redirect URI to `http://localhost:3000/api/auth/callback/google`
+
+**GitHub:**
+1. Go to [GitHub Developer Settings](https://github.com/settings/developers)
+2. Create a new OAuth App
+3. Set authorization callback URL to `http://localhost:3000/api/auth/callback/github`
+
+**Discord:**
+1. Go to [Discord Developer Portal](https://discord.com/developers/applications)
+2. Create a new application
+3. Go to OAuth2 → Add redirect URL: `http://localhost:3000/api/auth/callback/discord`
+
+### Running the App
+
+```bash
 # Start the development server
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+**First-time setup:** Sign in with the email address you set as `ADMIN_EMAIL`. You'll automatically be granted admin privileges and can approve other users from the admin panel.
 
 ### Build for Production
 
@@ -135,12 +192,14 @@ spanish-project/
 
 ## Tech Stack
 
-- **Framework:** [Next.js 14](https://nextjs.org/) with App Router
+- **Framework:** [Next.js 15](https://nextjs.org/) with App Router
 - **Language:** [TypeScript](https://www.typescriptlang.org/)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 - **Icons:** [Lucide React](https://lucide.dev/)
+- **Authentication:** [NextAuth.js v5](https://authjs.dev/) (Google, GitHub, Discord)
+- **Text-to-Speech:** Browser Web Speech API with optional [ElevenLabs](https://elevenlabs.io/) integration
 - **State:** React Context API
-- **Storage:** Browser localStorage
+- **Storage:** Browser localStorage + JSON file database
 
 ## Contributing
 

@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getSettings, updateSettings } from '@/lib/db';
+import { getSettings, updateSettings, getSessionByToken, getUserById } from '@/lib/db';
 import { cookies } from 'next/headers';
-import { getSessionByToken, getUserById } from '@/lib/db';
 
 const SESSION_COOKIE_NAME = 'spanish_session';
 
@@ -11,11 +10,17 @@ async function isAdmin(): Promise<boolean> {
   const token = cookieStore.get(SESSION_COOKIE_NAME)?.value;
   if (!token) return false;
 
-  const session = getSessionByToken(token);
+  const session = await getSessionByToken(token);
   if (!session) return false;
 
-  const user = getUserById(session.userId);
+  const user = await getUserById(session.userId);
   return user?.role === 'ADMIN';
+}
+
+// Safely mask an API key, showing last 4 chars (or **** if too short)
+function maskApiKey(key: string | null | undefined): string | null {
+  if (!key) return null;
+  return '••••••••' + (key.length >= 4 ? key.slice(-4) : '****');
 }
 
 // GET /api/settings - Get current settings (admin only, returns masked API key)
@@ -24,12 +29,12 @@ export async function GET() {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  const settings = getSettings();
+  const settings = await getSettings();
 
   // Return settings with masked API key for security
   return NextResponse.json({
     ...settings,
-    elevenLabsApiKey: settings.elevenLabsApiKey ? '••••••••' + settings.elevenLabsApiKey.slice(-4) : null,
+    elevenLabsApiKey: maskApiKey(settings.elevenLabsApiKey),
     hasApiKey: !!settings.elevenLabsApiKey,
   });
 }
@@ -59,11 +64,11 @@ export async function PUT(request: NextRequest) {
       updates.usePremiumTTS = usePremiumTTS;
     }
 
-    const updated = updateSettings(updates);
+    const updated = await updateSettings(updates);
 
     return NextResponse.json({
       ...updated,
-      elevenLabsApiKey: updated.elevenLabsApiKey ? '••••••••' + updated.elevenLabsApiKey.slice(-4) : null,
+      elevenLabsApiKey: maskApiKey(updated.elevenLabsApiKey),
       hasApiKey: !!updated.elevenLabsApiKey,
     });
   } catch {

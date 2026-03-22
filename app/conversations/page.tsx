@@ -1,15 +1,14 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MessageCircle, Volume2, CheckCircle, XCircle, ChevronRight, RotateCcw, Lock, Globe, Coffee, Filter } from 'lucide-react';
 import Card, { CardContent, CardTitle, CardDescription } from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
-import TeacherBubble from '@/components/layout/TeacherBubble';
 import CulturalNote from '@/components/ui/CulturalNote';
-import { useTeachers } from '@/hooks/useTeachers';
-import { conversations, getConversationById, getEverydayConversations, getCulturalConversations } from '@/data/conversations';
+import { getConversationById, getEverydayConversations, getCulturalConversations } from '@/data/conversations';
 import { ConversationScenario, DialogueNode, DialogueResponse } from '@/lib/types';
 import { useProgress } from '@/context/ProgressContext';
+import { useGamification } from '@/context/GamificationContext';
 import { speak } from '@/lib/speech';
 
 function ConversationPlayer({
@@ -28,9 +27,7 @@ function ConversationPlayer({
   }>>([]);
   const [feedback, setFeedback] = useState<{text: string; translation: string; isCorrect: boolean} | null>(null);
   const [isComplete, setIsComplete] = useState(false);
-  const { getTeacherBySpecialty } = useTeachers();
 
-  const teacher = getTeacherBySpecialty('conversations');
   const currentNode = scenario.dialogue.find(d => d.id === currentNodeId);
 
   const handleResponse = (response: DialogueResponse) => {
@@ -103,7 +100,7 @@ function ConversationPlayer({
       )}
 
       {/* Conversation History */}
-      <div className="space-y-3 max-h-[400px] overflow-y-auto">
+      <div className="space-y-3">
         {conversationHistory.map((msg, idx) => (
           <div
             key={idx}
@@ -113,7 +110,7 @@ function ConversationPlayer({
               className={`max-w-[80%] p-4 rounded-2xl ${
                 msg.isUser
                   ? 'bg-primary-500 text-white rounded-br-none'
-                  : 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-bl-none'
+                  : 'bg-secondary-100 dark:bg-secondary-900/40 text-gray-900 dark:text-white rounded-bl-none border border-secondary-200 dark:border-secondary-800'
               }`}
             >
               <p className="font-medium text-sm opacity-75 mb-1">{msg.speaker}</p>
@@ -128,17 +125,24 @@ function ConversationPlayer({
             </div>
           </div>
         ))}
-      </div>
 
-      {/* Current Teacher Message */}
-      {currentNode && currentNode.text && (
-        <TeacherBubble
-          teacher={teacher}
-          message={currentNode.text}
-          messageTranslation={currentNode.translation}
-          size="medium"
-        />
-      )}
+        {/* Current Teacher Message (not yet in history) */}
+        {currentNode && currentNode.text && !feedback && (
+          <div className="flex justify-start">
+            <div className="max-w-[80%] p-4 rounded-2xl bg-secondary-100 dark:bg-secondary-900/40 text-gray-900 dark:text-white rounded-bl-none border border-secondary-200 dark:border-secondary-800">
+              <p className="font-medium text-sm opacity-75 mb-1">Teacher</p>
+              <p>{currentNode.text}</p>
+              <p className="text-sm opacity-75 mt-1 italic">{currentNode.translation}</p>
+              <button
+                onClick={() => handleSpeak(currentNode.text)}
+                className="mt-2 opacity-75 hover:opacity-100"
+              >
+                <Volume2 className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
 
       {/* Feedback */}
       {feedback && (
@@ -180,17 +184,31 @@ function ConversationPlayer({
 export default function ConversationsPage() {
   const [selectedScenario, setSelectedScenario] = useState<ConversationScenario | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<'all' | 'everyday' | 'cultural'>('all');
+  const [conversations, setConversations] = useState<ConversationScenario[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const { markConversationComplete, isConversationComplete, isConversationUnlocked } = useProgress();
-  const { getTeacherBySpecialty } = useTeachers();
+  const { earnXP, recordSkill } = useGamification();
 
-  // Use different teachers based on category
-  const conversationsTeacher = getTeacherBySpecialty('conversations');
-  const culturalTeacher = getTeacherBySpecialty('cultural');
-  const teacher = selectedCategory === 'cultural' ? culturalTeacher : conversationsTeacher;
+  useEffect(() => {
+    const loadConversations = async () => {
+      try {
+        const module = await import('@/data/conversations');
+        setConversations(module.conversations);
+      } catch (error) {
+        console.error('Failed to load conversations:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadConversations();
+  }, []);
 
   const handleComplete = () => {
     if (selectedScenario) {
       markConversationComplete(selectedScenario.id);
+      earnXP('conversation_complete', undefined, { conversationId: selectedScenario.id });
+      recordSkill('conversation', true);
     }
     setSelectedScenario(null);
   };
@@ -227,6 +245,29 @@ export default function ConversationsPage() {
     return prereq?.title || null;
   };
 
+  if (isLoading) {
+    return (
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+            Conversaciones / Conversation
+          </h1>
+          <p className="text-gray-600 dark:text-gray-400">
+            Practice real-life dialogues in Spanish
+          </p>
+        </div>
+        <Card>
+          <CardContent className="flex items-center justify-center py-12">
+            <div className="flex flex-col items-center gap-3">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-500"></div>
+              <p className="text-gray-600 dark:text-gray-400">Loading conversations...</p>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
   if (selectedScenario) {
     return (
       <div className="space-y-6">
@@ -261,18 +302,6 @@ export default function ConversationsPage() {
         </p>
       </div>
 
-      <TeacherBubble
-        teacher={teacher}
-        message={selectedCategory === 'cultural'
-          ? "La cultura espanola es fascinante! Vamos a explorar tradiciones, comida y costumbres juntos!"
-          : "Practicar conversaciones es la mejor manera de aprender un idioma! Elige un escenario y vamos a hablar!"
-        }
-        messageTranslation={selectedCategory === 'cultural'
-          ? "Spanish culture is fascinating! Let's explore traditions, food and customs together!"
-          : "Practicing conversations is the best way to learn a language! Choose a scenario and let's talk!"
-        }
-        size="medium"
-      />
 
       {/* Category Filter */}
       <div className="flex flex-wrap gap-3">

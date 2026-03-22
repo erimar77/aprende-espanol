@@ -77,7 +77,7 @@ export default function AdminDashboard() {
           Admin Dashboard
         </h1>
         <p className="text-gray-600 dark:text-gray-400 mt-1">
-          Manage users and teachers for Aprende Espanol
+          Manage users and teachers for Aprende Español
         </p>
       </div>
 

@@ -5,8 +5,6 @@ import { Search, Volume2, Filter, Grid, List } from 'lucide-react';
 import Card, { CardContent } from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import WordCard from '@/components/ui/WordCard';
-import TeacherBubble from '@/components/layout/TeacherBubble';
-import { useTeachers } from '@/hooks/useTeachers';
 import { nouns, getCategories, getNounsByCategory } from '@/data/nouns';
 import { WORD_CATEGORIES, WordCategory } from '@/lib/types';
 import { speak } from '@/lib/speech';
@@ -15,10 +13,7 @@ export default function NounsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
-  const [showTeacher, setShowTeacher] = useState(true);
-  const { getTeacherBySpecialty } = useTeachers();
 
-  const teacher = getTeacherBySpecialty('vocabulary');
   const categories = getCategories();
 
   const filteredNouns = useMemo(() => {
@@ -51,14 +46,6 @@ export default function NounsPage() {
         </p>
       </div>
 
-      {showTeacher && (
-        <TeacherBubble
-          teacher={teacher}
-          message="Los sustantivos en espanol tienen genero - masculino (el) o femenino (la). Presta atencion al articulo!"
-          messageTranslation="Nouns in Spanish have gender - masculine (el) or feminine (la). Pay attention to the article!"
-          size="small"
-        />
-      )}
 
       {/* Search and Filters */}
       <Card>

@@ -8,10 +8,10 @@ async function isAdminRequest(): Promise<boolean> {
   const sessionToken = cookieStore.get('spanish_session')?.value;
   if (!sessionToken) return false;
 
-  const session = getSessionByToken(sessionToken);
+  const session = await getSessionByToken(sessionToken);
   if (!session) return false;
 
-  const user = getUserById(session.userId);
+  const user = await getUserById(session.userId);
   return user?.role === 'ADMIN';
 }
 
@@ -26,7 +26,7 @@ export async function GET(
   }
 
   const { id } = await params;
-  const user = getUserById(id);
+  const user = await getUserById(id);
 
   if (!user) {
     return NextResponse.json({ error: 'User not found' }, { status: 404 });
@@ -59,7 +59,7 @@ export async function PATCH(
     updates.role = role;
   }
 
-  const updatedUser = updateUser(id, updates);
+  const updatedUser = await updateUser(id, updates);
 
   if (!updatedUser) {
     return NextResponse.json({ error: 'User not found' }, { status: 404 });
@@ -86,7 +86,7 @@ export async function DELETE(
   const cookieStore = await cookies();
   const sessionToken = cookieStore.get('spanish_session')?.value;
   if (sessionToken) {
-    const session = getSessionByToken(sessionToken);
+    const session = await getSessionByToken(sessionToken);
     if (session?.userId === id) {
       return NextResponse.json(
         { error: 'Cannot delete your own account' },
@@ -95,7 +95,7 @@ export async function DELETE(
     }
   }
 
-  const success = deleteUser(id);
+  const success = await deleteUser(id);
 
   if (!success) {
     return NextResponse.json({ error: 'User not found' }, { status: 404 });

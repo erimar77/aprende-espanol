@@ -1,0 +1,3 @@
+# Python dependencies for worksheet PDF generation
+# Install with: pip install -r requirements.txt
+reportlab>=4.0

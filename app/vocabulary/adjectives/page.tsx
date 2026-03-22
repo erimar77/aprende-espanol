@@ -5,8 +5,6 @@ import { Search, Filter, Grid, List } from 'lucide-react';
 import Card, { CardContent } from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import WordCard from '@/components/ui/WordCard';
-import TeacherBubble from '@/components/layout/TeacherBubble';
-import { useTeachers } from '@/hooks/useTeachers';
 import { adjectives, getAdjectiveCategories, getAdjectivesByCategory } from '@/data/adjectives';
 
 const categoryLabels: Record<string, string> = {
@@ -27,9 +25,7 @@ export default function AdjectivesPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
-  const { getTeacherBySpecialty } = useTeachers();
 
-  const teacher = getTeacherBySpecialty('vocabulary');
   const categories = getAdjectiveCategories();
 
   const filteredAdjectives = useMemo(() => {
@@ -58,12 +54,6 @@ export default function AdjectivesPage() {
         </p>
       </div>
 
-      <TeacherBubble
-        teacher={teacher}
-        message="Los adjetivos en espanol concuerdan con el sustantivo en genero y numero. Por ejemplo: 'el gato negro' pero 'la gata negra'."
-        messageTranslation="Adjectives in Spanish agree with the noun in gender and number. For example: 'el gato negro' but 'la gata negra'."
-        size="small"
-      />
 
       {/* Gender Agreement Info */}
       <Card className="bg-secondary-50 dark:bg-secondary-900/20 border-secondary-200 dark:border-secondary-800">

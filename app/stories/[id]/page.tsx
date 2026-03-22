@@ -2,7 +2,8 @@
 
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
+import { useGamification } from '@/context/GamificationContext';
 import {
   ArrowLeft,
   ArrowRight,
@@ -17,9 +18,7 @@ import {
   Lightbulb,
 } from 'lucide-react';
 import Card, { CardContent } from '@/components/ui/Card';
-import TeacherBubble from '@/components/layout/TeacherBubble';
-import { useTeachers } from '@/hooks/useTeachers';
-import { getStoryById, stories, Story, ComprehensionQuestion } from '@/data/stories';
+import type { Story, ComprehensionQuestion } from '@/data/stories';
 import { speak, stopSpeaking, isSpeaking } from '@/lib/speech';
 
 const levelColors = {
@@ -37,11 +36,30 @@ const levelLabels = {
 export default function StoryPage() {
   const params = useParams();
   const router = useRouter();
-  const { getTeacherBySpecialty } = useTeachers();
-  const teacher = getTeacherBySpecialty('stories');
+  const { earnXP, recordSkill } = useGamification();
 
   const storyId = params.id as string;
-  const story = getStoryById(storyId);
+  const [story, setStory] = useState<Story | null>(null);
+  const [stories, setStories] = useState<Story[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadStories = async () => {
+      try {
+        const { stories: loadedStories, getStoryById } = await import('@/data/stories');
+        setStories(loadedStories);
+        const foundStory = getStoryById(storyId);
+        setStory(foundStory || null);
+      } catch (error) {
+        console.error('Failed to load stories:', error);
+        setStory(null);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadStories();
+  }, [storyId]);
 
   const [showTranslation, setShowTranslation] = useState(false);
   const [speakingIndex, setSpeakingIndex] = useState<number | null>(null);
@@ -78,6 +96,13 @@ export default function StoryPage() {
     if (answeredQuestions.has(questionId)) return;
     setSelectedAnswers(prev => ({ ...prev, [questionId]: answerIndex }));
     setAnsweredQuestions(prev => new Set(prev).add(questionId));
+
+    // Record skill based on correctness
+    const question = story?.comprehensionQuestions?.find(q => q.id === questionId);
+    if (question) {
+      const isCorrect = answerIndex === question.correctAnswer;
+      recordSkill('reading', isCorrect);
+    }
   };
 
   const goToNextQuestion = () => {
@@ -108,6 +133,24 @@ export default function StoryPage() {
   };
 
   const allQuestionsAnswered = story?.comprehensionQuestions?.length === answeredQuestions.size;
+
+  // Award XP when all questions are answered
+  useEffect(() => {
+    if (allQuestionsAnswered && story?.comprehensionQuestions?.length) {
+      earnXP('lesson_complete', undefined, { type: 'story-reading' });
+    }
+  }, [allQuestionsAnswered, story?.comprehensionQuestions?.length, earnXP]);
+
+  if (isLoading) {
+    return (
+      <div className="text-center py-12">
+        <div className="inline-block">
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary-500 mb-4"></div>
+          <p className="text-gray-600 dark:text-gray-400">Loading story...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (!story) {
     return (
@@ -450,15 +493,6 @@ export default function StoryPage() {
         )}
       </div>
 
-      {/* Teacher Encouragement */}
-      {allQuestionsAnswered && getScore().correct === getScore().total && (
-        <TeacherBubble
-          teacher={teacher}
-          message="Excelente! Has comprendido muy bien la historia. Sigue practicando con mas cuentos!"
-          messageTranslation="Excellent! You have understood the story very well. Keep practicing with more stories!"
-          size="small"
-        />
-      )}
     </div>
   );
 }

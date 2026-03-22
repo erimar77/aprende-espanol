@@ -5,8 +5,6 @@ import { Search, Grid, List } from 'lucide-react';
 import Card, { CardContent } from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import WordCard from '@/components/ui/WordCard';
-import TeacherBubble from '@/components/layout/TeacherBubble';
-import { useTeachers } from '@/hooks/useTeachers';
 import { adverbs, getAdverbCategories, getAdverbsByCategory } from '@/data/adverbs';
 
 const categoryLabels: Record<string, string> = {
@@ -22,9 +20,7 @@ export default function AdverbsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
-  const { getTeacherBySpecialty } = useTeachers();
 
-  const teacher = getTeacherBySpecialty('vocabulary');
   const categories = getAdverbCategories();
 
   const filteredAdverbs = useMemo(() => {
@@ -53,12 +49,6 @@ export default function AdverbsPage() {
         </p>
       </div>
 
-      <TeacherBubble
-        teacher={teacher}
-        message="Los adverbios modifican verbos, adjetivos u otros adverbios. No cambian de forma - siempre son iguales!"
-        messageTranslation="Adverbs modify verbs, adjectives, or other adverbs. They don't change form - they're always the same!"
-        size="small"
-      />
 
       {/* Adverb Formation Info */}
       <Card className="bg-accent-50 dark:bg-accent-900/20 border-accent-200 dark:border-accent-800">

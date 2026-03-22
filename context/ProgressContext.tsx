@@ -5,6 +5,9 @@ import {
   getProgress,
   saveProgress,
   updateFlashcardProgress as updateCard,
+  updateFlashcardProgressWithQuality as updateCardQuality,
+  getFlashcardsDueForReview as getDueCards,
+  getReviewQueueStats as getQueueStats,
   markLessonComplete as markLesson,
   markConversationComplete as markConversation,
   unlockConversation as unlock,
@@ -12,13 +15,17 @@ import {
   addTestScore as addScore,
   resetProgress as reset,
 } from '@/lib/storage';
-import { getConversationById, getNextConversation } from '@/data/conversations';
+import { getNextConversation } from '@/data/conversations';
 import { UserProgress, FlashcardProgress, TestScore } from '@/lib/types';
+import type { QualityRating } from '@/lib/sm2';
 
 interface ProgressContextType {
   progress: UserProgress;
   flashcardProgress: Record<string, FlashcardProgress>;
   updateFlashcardProgress: (wordId: string, wordType: 'noun' | 'verb' | 'adjective' | 'adverb', correct: boolean) => FlashcardProgress;
+  updateFlashcardWithQuality: (wordId: string, wordType: 'noun' | 'verb' | 'adjective' | 'adverb', quality: QualityRating) => FlashcardProgress;
+  getCardsDueForReview: () => string[];
+  getReviewQueueStats: () => { dueNow: number; learning: number; review: number; mastered: number; total: number };
   markLessonComplete: (lessonId: string) => void;
   markGrammarLessonComplete: (lessonId: string) => void;
   markConversationComplete: (conversationId: string) => void;
@@ -57,31 +64,52 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     wordType: 'noun' | 'verb' | 'adjective' | 'adverb',
     correct: boolean
   ): FlashcardProgress => {
-    const updated = updateCard(wordId, wordType, correct);
-    setProgress(getProgress());
-    return updated;
+    const { card, progress: updated } = updateCard(wordId, wordType, correct);
+    setProgress(updated);
+    return card;
+  }, []);
+
+  const updateFlashcardWithQuality = useCallback((
+    wordId: string,
+    wordType: 'noun' | 'verb' | 'adjective' | 'adverb',
+    quality: QualityRating
+  ): FlashcardProgress => {
+    const { card, progress: updated } = updateCardQuality(wordId, wordType, quality);
+    setProgress(updated);
+    return card;
+  }, []);
+
+  const getCardsDueForReview = useCallback(() => {
+    return getDueCards();
+  }, []);
+
+  const getReviewQueueStats = useCallback(() => {
+    return getQueueStats();
   }, []);
 
   const markLessonComplete = useCallback((lessonId: string) => {
-    markLesson(lessonId);
-    setProgress(getProgress());
+    const updated = markLesson(lessonId);
+    setProgress(updated);
   }, []);
 
   const markConversationComplete = useCallback((conversationId: string) => {
     markConversation(conversationId);
     // Automatically unlock the next conversation when completing one
     const nextConversation = getNextConversation(conversationId);
+    let updated: UserProgress;
     if (nextConversation) {
-      unlock(nextConversation.id);
+      updated = unlock(nextConversation.id);
+    } else {
+      updated = getProgress();
     }
-    setProgress(getProgress());
+    setProgress(updated);
   }, []);
 
   const unlockNextConversation = useCallback((completedId: string) => {
     const nextConversation = getNextConversation(completedId);
     if (nextConversation) {
-      unlock(nextConversation.id);
-      setProgress(getProgress());
+      const updated = unlock(nextConversation.id);
+      setProgress(updated);
     }
   }, []);
 
@@ -95,18 +123,18 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     if (!current.lessonsCompleted.includes(`grammar-${lessonId}`)) {
       current.lessonsCompleted.push(`grammar-${lessonId}`);
       saveProgress(current);
-      setProgress(getProgress());
+      setProgress(current);
     }
   }, []);
 
   const addTestScore = useCallback((score: TestScore) => {
-    addScore(score.testId, score.score, score.totalQuestions, score.timeSpent);
-    setProgress(getProgress());
+    const updated = addScore(score.testId, score.score, score.totalQuestions, score.timeSpent);
+    setProgress(updated);
   }, []);
 
   const resetProgressHandler = useCallback(() => {
-    reset();
-    setProgress(getProgress());
+    const updated = reset();
+    setProgress(updated);
   }, []);
 
   const isLessonComplete = useCallback((lessonId: string) => {
@@ -131,6 +159,9 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
         progress,
         flashcardProgress: progress.flashcardProgress,
         updateFlashcardProgress,
+        updateFlashcardWithQuality,
+        getCardsDueForReview,
+        getReviewQueueStats,
         markLessonComplete,
         markGrammarLessonComplete,
         markConversationComplete,

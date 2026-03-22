@@ -44,27 +44,27 @@ export const stories: Story[] = [
     description: 'Follow Ana as she starts her day in the Spanish capital.',
     content: [
       {
-        spanish: 'Ana se despierta a las siete de la manana. El sol entra por la ventana de su apartamento en Madrid.',
+        spanish: 'Ana se despierta a las siete de la mañana. El sol entra por la ventana de su apartamento en Madrid.',
         english: 'Ana wakes up at seven in the morning. The sun comes through the window of her apartment in Madrid.',
       },
       {
-        spanish: 'Ella se levanta y va a la cocina. Prepara un cafe con leche y tostadas con tomate. Es un desayuno tipico espanol.',
+        spanish: 'Ella se levanta y va a la cocina. Prepara un café con leche y tostadas con tomate. Es un desayuno típico español.',
         english: 'She gets up and goes to the kitchen. She prepares a coffee with milk and toast with tomato. It is a typical Spanish breakfast.',
       },
       {
-        spanish: 'Despues del desayuno, Ana se ducha y se viste. Hoy lleva una camiseta azul y unos pantalones negros.',
+        spanish: 'Después del desayuno, Ana se ducha y se viste. Hoy lleva una camiseta azul y unos pantalones negros.',
         english: 'After breakfast, Ana showers and gets dressed. Today she wears a blue t-shirt and black pants.',
       },
       {
-        spanish: 'A las ocho y media, sale de casa. Camina hasta la estacion de metro. El metro en Madrid es muy rapido y eficiente.',
+        spanish: 'A las ocho y media, sale de casa. Camina hasta la estación de metro. El metro en Madrid es muy rápido y eficiente.',
         english: 'At eight thirty, she leaves home. She walks to the metro station. The metro in Madrid is very fast and efficient.',
       },
       {
-        spanish: 'En el metro, Ana lee un libro en su telefono. Le gusta leer novelas en espanol.',
+        spanish: 'En el metro, Ana lee un libro en su teléfono. Le gusta leer novelas en español.',
         english: 'On the metro, Ana reads a book on her phone. She likes to read novels in Spanish.',
       },
       {
-        spanish: 'Llega a su trabajo a las nueve. Trabaja en una oficina cerca del centro. "Buenos dias," dice a sus companeros. Otro dia comienza en Madrid.',
+        spanish: 'Llega a su trabajo a las nueve. Trabaja en una oficina cerca del centro. "Buenos días," dice a sus compañeros. Otro día comienza en Madrid.',
         english: 'She arrives at her work at nine. She works in an office near the center. "Good morning," she says to her colleagues. Another day begins in Madrid.',
       },
     ],
@@ -75,8 +75,8 @@ export const stories: Story[] = [
       { spanish: 'ducharse', english: 'to shower', partOfSpeech: 'verb' },
       { spanish: 'vestirse', english: 'to get dressed', partOfSpeech: 'verb' },
       { spanish: 'caminar', english: 'to walk', partOfSpeech: 'verb' },
-      { spanish: 'rapido', english: 'fast', partOfSpeech: 'adjective' },
-      { spanish: 'los companeros', english: 'colleagues', partOfSpeech: 'noun' },
+      { spanish: 'rápido', english: 'fast', partOfSpeech: 'adjective' },
+      { spanish: 'los compañeros', english: 'colleagues', partOfSpeech: 'noun' },
     ],
     comprehensionQuestions: [
       {
@@ -85,7 +85,7 @@ export const stories: Story[] = [
         questionSpanish: 'A que hora se despierta Ana?',
         options: ['6:00', '7:00', '8:00', '9:00'],
         correctAnswer: 1,
-        explanation: 'The story says "Ana se despierta a las siete de la manana" - Ana wakes up at seven in the morning.',
+        explanation: 'The story says "Ana se despierta a las siete de la mañana" - Ana wakes up at seven in the morning.',
       },
       {
         id: 'q2',
@@ -93,7 +93,7 @@ export const stories: Story[] = [
         questionSpanish: 'Que desayuna Ana?',
         options: ['Cereal and juice', 'Coffee with milk and toast with tomato', 'Eggs and bacon', 'Just coffee'],
         correctAnswer: 1,
-        explanation: 'Ana has "cafe con leche y tostadas con tomate" - coffee with milk and toast with tomato, a typical Spanish breakfast.',
+        explanation: 'Ana has "café con leche y tostadas con tomate" - coffee with milk and toast with tomato, a typical Spanish breakfast.',
       },
       {
         id: 'q3',
@@ -101,7 +101,7 @@ export const stories: Story[] = [
         questionSpanish: 'Como va Ana al trabajo?',
         options: ['By bus', 'By car', 'By metro', 'On foot'],
         correctAnswer: 2,
-        explanation: 'Ana takes the metro: "Camina hasta la estacion de metro."',
+        explanation: 'Ana takes the metro: "Camina hasta la estación de metro."',
       },
     ],
     culturalNote: 'In Spain, "tostadas con tomate" (toast with crushed tomato and olive oil) is a beloved breakfast tradition, especially in Catalonia where it is called "pa amb tomaquet."',
@@ -115,7 +115,7 @@ export const stories: Story[] = [
     description: 'Join Carlos as he shops at a traditional Spanish market.',
     content: [
       {
-        spanish: 'Hoy es sabado y Carlos va al mercado. El Mercado Central esta en el centro de la ciudad. Es un edificio grande y bonito.',
+        spanish: 'Hoy es sábado y Carlos va al mercado. El Mercado Central está en el centro de la ciudad. Es un edificio grande y bonito.',
         english: 'Today is Saturday and Carlos goes to the market. The Central Market is in the center of the city. It is a big and beautiful building.',
       },
       {
@@ -123,15 +123,15 @@ export const stories: Story[] = [
         english: 'Inside the market there are many stalls. Carlos sees fruits, vegetables, meat, fish, and cheese.',
       },
       {
-        spanish: '"Buenos dias, que desea?" pregunta la vendedora de frutas. "Quiero un kilo de naranjas y medio kilo de manzanas, por favor," responde Carlos.',
+        spanish: '"Buenos días, que desea?" pregunta la vendedora de frutas. "Quiero un kilo de naranjas y medio kilo de manzanas, por favor," responde Carlos.',
         english: '"Good morning, what would you like?" asks the fruit seller. "I want a kilo of oranges and half a kilo of apples, please," Carlos responds.',
       },
       {
-        spanish: 'Las naranjas son de Valencia. Son muy dulces y jugosas. "Algo mas?" pregunta la vendedora. "No, gracias. Cuanto es?" "Son tres euros cincuenta."',
+        spanish: 'Las naranjas son de Valencia. Son muy dulces y jugosas. "Algo más?" pregunta la vendedora. "No, gracias. Cuanto es?" "Son tres euros cincuenta."',
         english: 'The oranges are from Valencia. They are very sweet and juicy. "Anything else?" asks the seller. "No, thank you. How much is it?" "It is three euros fifty."',
       },
       {
-        spanish: 'Despues, Carlos compra pan en la panaderia y jamon en la charcuteria. El jamon serrano es su favorito.',
+        spanish: 'Después, Carlos compra pan en la panaderia y jamón en la charcuteria. El jamón serrano es su favorito.',
         english: 'Afterwards, Carlos buys bread at the bakery and ham at the deli. Serrano ham is his favorite.',
       },
       {
@@ -153,15 +153,15 @@ export const stories: Story[] = [
       {
         id: 'q1',
         question: 'What day does Carlos go to the market?',
-        questionSpanish: 'Que dia va Carlos al mercado?',
+        questionSpanish: 'Que día va Carlos al mercado?',
         options: ['Monday', 'Friday', 'Saturday', 'Sunday'],
         correctAnswer: 2,
-        explanation: 'The story begins with "Hoy es sabado" - Today is Saturday.',
+        explanation: 'The story begins with "Hoy es sábado" - Today is Saturday.',
       },
       {
         id: 'q2',
         question: 'Where are the oranges from?',
-        questionSpanish: 'De donde son las naranjas?',
+        questionSpanish: 'De dónde son las naranjas?',
         options: ['Madrid', 'Barcelona', 'Valencia', 'Sevilla'],
         correctAnswer: 2,
         explanation: 'The story says "Las naranjas son de Valencia" - The oranges are from Valencia.',
@@ -186,19 +186,19 @@ export const stories: Story[] = [
     description: 'Meet Pedro, a new student learning Spanish in Barcelona.',
     content: [
       {
-        spanish: 'Pedro es de Estados Unidos. Tiene veintitres anos y estudia espanol en Barcelona. Llego hace dos semanas.',
+        spanish: 'Pedro es de Estados Unidos. Tiene veintitrés años y estudia español en Barcelona. Llegó hace dos semanas.',
         english: 'Pedro is from the United States. He is twenty-three years old and studies Spanish in Barcelona. He arrived two weeks ago.',
       },
       {
-        spanish: 'Vive con una familia espanola. La familia tiene tres personas: Maria, la madre; Juan, el padre; y Lucia, la hija de quince anos.',
-        english: 'He lives with a Spanish family. The family has three people: Maria, the mother; Juan, the father; and Lucia, the fifteen-year-old daughter.',
+        spanish: 'Vive con una familia española. La familia tiene tres personas: María, la madre; Juan, el padre; y Lucía, la hija de quince años.',
+        english: 'He lives with a Spanish family. The family has three people: María, the mother; Juan, the father; and Lucía, the fifteen-year-old daughter.',
       },
       {
-        spanish: 'Cada manana, Pedro desayuna con la familia. Maria siempre prepara cafe y churros. "Los churros estan deliciosos," dice Pedro en espanol.',
-        english: 'Every morning, Pedro has breakfast with the family. Maria always prepares coffee and churros. "The churros are delicious," says Pedro in Spanish.',
+        spanish: 'Cada mañana, Pedro desayuna con la familia. María siempre prepara café y churros. "Los churros están deliciosos," dice Pedro en español.',
+        english: 'Every morning, Pedro has breakfast with the family. María always prepares coffee and churros. "The churros are delicious," says Pedro in Spanish.',
       },
       {
-        spanish: 'Despues del desayuno, Pedro va a la escuela de idiomas. Sus clases empiezan a las nueve. Tiene companeros de muchos paises: Italia, Francia, Alemania y Japon.',
+        spanish: 'Después del desayuno, Pedro va a la escuela de idiomas. Sus clases empiezan a las nueve. Tiene compañeros de muchos países: Italia, Francia, Alemania y Japón.',
         english: 'After breakfast, Pedro goes to the language school. His classes start at nine. He has classmates from many countries: Italy, France, Germany, and Japan.',
       },
       {
@@ -206,8 +206,8 @@ export const stories: Story[] = [
         english: 'In the afternoons, Pedro explores the city. He likes to walk along Las Ramblas and visit the museums. His favorite place is Park Guell.',
       },
       {
-        spanish: 'Por las noches, practica espanol con Lucia. Ella le ayuda con la pronunciacion. "Tu espanol mejora cada dia," dice Lucia. Pedro sonrie. Le encanta vivir en Espana.',
-        english: 'In the evenings, he practices Spanish with Lucia. She helps him with pronunciation. "Your Spanish improves every day," says Lucia. Pedro smiles. He loves living in Spain.',
+        spanish: 'Por las noches, práctica español con Lucía. Ella le ayuda con la pronunciación. "Tu español mejora cada día," dice Lucía. Pedro sonríe. Le encanta vivir en España.',
+        english: 'In the evenings, he practices Spanish with Lucía. She helps him with pronunciation. "Your Spanish improves every day," says Lucía. Pedro smiles. He loves living in Spain.',
       },
     ],
     vocabulary: [
@@ -215,7 +215,7 @@ export const stories: Story[] = [
       { spanish: 'llegar', english: 'to arrive', partOfSpeech: 'verb' },
       { spanish: 'hace dos semanas', english: 'two weeks ago', partOfSpeech: 'phrase' },
       { spanish: 'la escuela de idiomas', english: 'the language school', partOfSpeech: 'noun' },
-      { spanish: 'los companeros', english: 'classmates', partOfSpeech: 'noun' },
+      { spanish: 'los compañeros', english: 'classmates', partOfSpeech: 'noun' },
       { spanish: 'pasear', english: 'to walk/stroll', partOfSpeech: 'verb' },
       { spanish: 'mejorar', english: 'to improve', partOfSpeech: 'verb' },
       { spanish: 'sonreir', english: 'to smile', partOfSpeech: 'verb' },
@@ -224,18 +224,18 @@ export const stories: Story[] = [
       {
         id: 'q1',
         question: 'Where is Pedro from?',
-        questionSpanish: 'De donde es Pedro?',
-        options: ['Spain', 'Mexico', 'United States', 'Italy'],
+        questionSpanish: 'De dónde es Pedro?',
+        options: ['Spain', 'México', 'United States', 'Italy'],
         correctAnswer: 2,
         explanation: 'The story says "Pedro es de Estados Unidos" - Pedro is from the United States.',
       },
       {
         id: 'q2',
-        question: 'How old is Lucia?',
-        questionSpanish: 'Cuantos anos tiene Lucia?',
+        question: 'How old is Lucía?',
+        questionSpanish: 'Cuántos años tiene Lucía?',
         options: ['13 years old', '15 years old', '18 years old', '23 years old'],
         correctAnswer: 1,
-        explanation: 'Lucia is "la hija de quince anos" - the fifteen-year-old daughter.',
+        explanation: 'Lucía is "la hija de quince años" - the fifteen-year-old daughter.',
       },
       {
         id: 'q3',
@@ -254,36 +254,36 @@ export const stories: Story[] = [
     titleSpanish: 'Un Domingo Lluvioso',
     level: 'elementary',
     estimatedMinutes: 4,
-    description: 'Sofia spends a cozy rainy day at home with her family.',
+    description: 'Sofía spends a cozy rainy day at home with her family.',
     content: [
       {
-        spanish: 'Es domingo por la manana y llueve mucho. Sofia mira por la ventana. Las calles estan vacias y el cielo esta gris.',
-        english: 'It is Sunday morning and it is raining a lot. Sofia looks out the window. The streets are empty and the sky is gray.',
+        spanish: 'Es domingo por la mañana y llueve mucho. Sofía mira por la ventana. Las calles están vacías y el cielo está gris.',
+        english: 'It is Sunday morning and it is raining a lot. Sofía looks out the window. The streets are empty and the sky is gray.',
       },
       {
-        spanish: '"No podemos ir al parque hoy," dice su madre. "Pero podemos hacer algo divertido en casa." Sofia piensa un momento. "Podemos cocinar juntas?"',
-        english: '"We cannot go to the park today," says her mother. "But we can do something fun at home." Sofia thinks for a moment. "Can we cook together?"',
+        spanish: '"No podemos ir al parque hoy," dice su madre. "Pero podemos hacer algo divertido en casa." Sofía piensa un momento. "Podemos cocinar juntas?"',
+        english: '"We cannot go to the park today," says her mother. "But we can do something fun at home." Sofía thinks for a moment. "Can we cook together?"',
       },
       {
-        spanish: 'Deciden hacer una tortilla espanola. Es el plato favorito de Sofia. Necesitan huevos, patatas, cebolla, aceite y sal.',
-        english: 'They decide to make a Spanish tortilla. It is Sofia\'s favorite dish. They need eggs, potatoes, onion, oil, and salt.',
+        spanish: 'Deciden hacer una tortilla española. Es el plato favorito de Sofía. Necesitan huevos, patatas, cebolla, aceite y sal.',
+        english: 'They decide to make a Spanish tortilla. It is Sofía\'s favorite dish. They need eggs, potatoes, onion, oil, and salt.',
       },
       {
-        spanish: 'Primero, pelan y cortan las patatas. Despues, frien las patatas con la cebolla. El olor es delicioso. Sofia bate los huevos en un bol grande.',
-        english: 'First, they peel and cut the potatoes. Then, they fry the potatoes with the onion. The smell is delicious. Sofia beats the eggs in a large bowl.',
+        spanish: 'Primero, pelan y cortan las patatas. Después, frien las patatas con la cebolla. El olor es delicioso. Sofía bate los huevos en un bol grande.',
+        english: 'First, they peel and cut the potatoes. Then, they fry the potatoes with the onion. The smell is delicious. Sofía beats the eggs in a large bowl.',
       },
       {
-        spanish: 'Mientras cocinan, el padre de Sofia pone musica. Es flamenco, la musica tradicional de Andalucia. La abuela llama por telefono. "Que haceis?" pregunta. "Estamos cocinando tortilla," responde Sofia.',
-        english: 'While they cook, Sofia\'s father puts on music. It is flamenco, the traditional music of Andalucia. Grandmother calls on the phone. "What are you doing?" she asks. "We are cooking tortilla," Sofia responds.',
+        spanish: 'Mientras cocinan, el padre de Sofía pone música. Es flamenco, la música tradicional de Andalucía. La abuela llama por teléfono. "¿Qué hacéis?" pregunta. "Estamos cocinando tortilla," responde Sofía.',
+        english: 'While they cook, Sofía\'s father puts on music. It is flamenco, the traditional music of Andalucía. Grandmother calls on the phone. "What are you doing?" she asks. "We are cooking tortilla," Sofía responds.',
       },
       {
-        spanish: 'Finalmente, la tortilla esta lista. Comen juntos en la mesa de la cocina. Fuera todavia llueve, pero dentro de la casa hay calor y felicidad.',
+        spanish: 'Finalmente, la tortilla está lista. Comen juntos en la mesa de la cocina. Fuera todavía llueve, pero dentro de la casa hay calor y felicidad.',
         english: 'Finally, the tortilla is ready. They eat together at the kitchen table. Outside it is still raining, but inside the house there is warmth and happiness.',
       },
     ],
     vocabulary: [
       { spanish: 'llover', english: 'to rain', partOfSpeech: 'verb' },
-      { spanish: 'vacio', english: 'empty', partOfSpeech: 'adjective' },
+      { spanish: 'vacío', english: 'empty', partOfSpeech: 'adjective' },
       { spanish: 'juntos', english: 'together', partOfSpeech: 'adverb' },
       { spanish: 'pelar', english: 'to peel', partOfSpeech: 'verb' },
       { spanish: 'cortar', english: 'to cut', partOfSpeech: 'verb' },
@@ -306,18 +306,18 @@ export const stories: Story[] = [
         questionSpanish: 'Que deciden cocinar?',
         options: ['Paella', 'Spanish tortilla', 'Gazpacho', 'Churros'],
         correctAnswer: 1,
-        explanation: 'They decide to make "una tortilla espanola" - a Spanish tortilla.',
+        explanation: 'They decide to make "una tortilla española" - a Spanish tortilla.',
       },
       {
         id: 'q3',
         question: 'What type of music does the father play?',
-        questionSpanish: 'Que tipo de musica pone el padre?',
+        questionSpanish: 'Que tipo de música pone el padre?',
         options: ['Pop', 'Rock', 'Flamenco', 'Classical'],
         correctAnswer: 2,
-        explanation: 'The father puts on "flamenco, la musica tradicional de Andalucia."',
+        explanation: 'The father puts on "flamenco, la música tradicional de Andalucía."',
       },
     ],
-    culturalNote: 'Tortilla espanola (Spanish omelette) is one of Spain\'s most iconic dishes. Unlike a French omelette, it is thick, round, and made with potatoes. Every family has their own recipe - some add onion, others do not. It can be eaten hot or cold, for breakfast, lunch, or as a tapa.',
+    culturalNote: 'Tortilla española (Spanish omelette) is one of Spain\'s most iconic dishes. Unlike a French omelette, it is thick, round, and made with potatoes. Every family has their own recipe - some add onion, others do not. It can be eaten hot or cold, for breakfast, lunch, or as a tapa.',
   },
   {
     id: 'story-005',
@@ -328,11 +328,11 @@ export const stories: Story[] = [
     description: 'Miguel celebrates his birthday with friends and family.',
     content: [
       {
-        spanish: 'Hoy Miguel cumple treinta anos. Su esposa Laura ha organizado una fiesta sorpresa. Han invitado a veinte personas: familia y amigos cercanos.',
+        spanish: 'Hoy Miguel cumple treinta años. Su esposa Laura ha organizado una fiesta sorpresa. Han invitado a veinte personas: familia y amigos cercanos.',
         english: 'Today Miguel turns thirty. His wife Laura has organized a surprise party. They have invited twenty people: family and close friends.',
       },
       {
-        spanish: 'La fiesta es en su casa. Laura ha decorado el salon con globos y una pancarta que dice "Feliz Cumpleanos Miguel." Ha preparado tapas: jamon, queso manchego, aceitunas y croquetas.',
+        spanish: 'La fiesta es en su casa. Laura ha decorado el salón con globos y una pancarta que dice "Feliz Cumpleanos Miguel." Ha preparado tapas: jamón, queso manchego, aceitunas y croquetas.',
         english: 'The party is at their house. Laura has decorated the living room with balloons and a banner that says "Happy Birthday Miguel." She has prepared tapas: ham, manchego cheese, olives, and croquettes.',
       },
       {
@@ -344,16 +344,16 @@ export const stories: Story[] = [
         english: '"I had no idea," says Miguel hugging Laura. "Thank you, my love." The guests give him gifts: a watch, books, a bottle of wine, and tickets for a concert.',
       },
       {
-        spanish: 'Mas tarde, Laura trae la tarta. Es de chocolate, el favorito de Miguel. Todos cantan "Cumpleanos Feliz" mientras Miguel sopla las velas. Pide un deseo en secreto.',
+        spanish: 'Más tarde, Laura trae la tarta. Es de chocolate, el favorito de Miguel. Todos cantan "Cumpleanos Feliz" mientras Miguel sopla las velas. Pide un deseo en secreto.',
         english: 'Later, Laura brings the cake. It is chocolate, Miguel\'s favorite. Everyone sings "Happy Birthday" while Miguel blows out the candles. He makes a wish in secret.',
       },
       {
-        spanish: 'La fiesta continua hasta la medianoche. Bailan, rien y cuentan historias. Miguel piensa que este es el mejor cumpleanos de su vida. Esta rodeado de las personas que mas quiere.',
+        spanish: 'La fiesta continua hasta la medianoche. Bailan, ríen y cuentan historias. Miguel piensa que este es el mejor cumpleanos de su vida. Esta rodeado de las personas que más quiere.',
         english: 'The party continues until midnight. They dance, laugh, and tell stories. Miguel thinks this is the best birthday of his life. He is surrounded by the people he loves most.',
       },
     ],
     vocabulary: [
-      { spanish: 'cumplir anos', english: 'to turn years old', partOfSpeech: 'phrase' },
+      { spanish: 'cumplir años', english: 'to turn years old', partOfSpeech: 'phrase' },
       { spanish: 'la fiesta sorpresa', english: 'surprise party', partOfSpeech: 'noun' },
       { spanish: 'los globos', english: 'balloons', partOfSpeech: 'noun' },
       { spanish: 'esconderse', english: 'to hide', partOfSpeech: 'verb' },
@@ -366,10 +366,10 @@ export const stories: Story[] = [
       {
         id: 'q1',
         question: 'How old is Miguel turning?',
-        questionSpanish: 'Cuantos anos cumple Miguel?',
+        questionSpanish: 'Cuántos años cumple Miguel?',
         options: ['25', '28', '30', '35'],
         correctAnswer: 2,
-        explanation: 'The story says "Miguel cumple treinta anos" - Miguel turns thirty.',
+        explanation: 'The story says "Miguel cumple treinta años" - Miguel turns thirty.',
       },
       {
         id: 'q2',
@@ -399,28 +399,28 @@ export const stories: Story[] = [
     description: 'An American tourist gets lost in Seville and discovers the kindness of strangers.',
     content: [
       {
-        spanish: 'Tom es un turista americano que visita Sevilla por primera vez. Esta manana ha salido del hotel sin mapa y sin bateria en el telefono. Queria encontrar la famosa Plaza de Espana.',
-        english: 'Tom is an American tourist visiting Seville for the first time. This morning he left the hotel without a map and without battery on his phone. He wanted to find the famous Plaza de Espana.',
+        spanish: 'Tom es un turista americano que visita Sevilla por primera vez. Esta mañana ha salido del hotel sin mapa y sin bateria en el teléfono. Queria encontrar la famosa Plaza de España.',
+        english: 'Tom is an American tourist visiting Seville for the first time. This morning he left the hotel without a map and without battery on his phone. He wanted to find the famous Plaza de España.',
       },
       {
-        spanish: 'Despues de caminar treinta minutos, Tom se da cuenta de que esta completamente perdido. Las calles del centro historico son estrechas y todas parecen iguales. Empieza a sentirse frustrado.',
+        spanish: 'Después de caminar treinta minutos, Tom se da cuenta de que está completamente perdido. Las calles del centro histórico son estrechas y todas parecen iguales. Empieza a sentirse frustrado.',
         english: 'After walking thirty minutes, Tom realizes he is completely lost. The streets of the historic center are narrow and they all look the same. He starts to feel frustrated.',
       },
       {
-        spanish: 'Decide pedir ayuda. Ve a una senora mayor sentada en un banco. "Disculpe, habla usted ingles?" pregunta Tom. "Un poquito," responde ella con una sonrisa amable.',
+        spanish: 'Decide pedir ayuda. Ve a una señora mayor sentada en un banco. "Disculpe, habla usted ingles?" pregunta Tom. "Un poquito," responde ella con una sonrisa amable.',
         english: 'He decides to ask for help. He sees an elderly lady sitting on a bench. "Excuse me, do you speak English?" asks Tom. "A little bit," she responds with a kind smile.',
       },
       {
-        spanish: 'Tom intenta explicar en su espanol limitado: "Yo... busco... Plaza de Espana. Estoy perdido." La senora se rie suavemente. "Ay, hijo, estas muy lejos! Pero no te preocupes, yo te ayudo."',
-        english: 'Tom tries to explain in his limited Spanish: "I... am looking for... Plaza de Espana. I am lost." The lady laughs gently. "Oh, son, you are very far! But do not worry, I will help you."',
+        spanish: 'Tom intenta explicar en su español limitado: "Yo... busco... Plaza de España. Estoy perdido." La señora se ríe suavemente. "Ay, hijo, estas muy lejos! Pero no te preocupes, yo te ayudo."',
+        english: 'Tom tries to explain in his limited Spanish: "I... am looking for... Plaza de España. I am lost." The lady laughs gently. "Oh, son, you are very far! But do not worry, I will help you."',
       },
       {
-        spanish: 'La senora se levanta y camina con Tom. Por el camino, le cuenta sobre la historia de Sevilla. Le muestra la Catedral y la Giralda. "Esta ciudad tiene mas de dos mil anos de historia," explica.',
+        spanish: 'La señora se levanta y camina con Tom. Por el camino, le cuenta sobre la historia de Sevilla. Le muestra la Catedral y la Giralda. "Esta ciudad tiene más de dos mil años de historia," explica.',
         english: 'The lady gets up and walks with Tom. Along the way, she tells him about the history of Seville. She shows him the Cathedral and the Giralda. "This city has more than two thousand years of history," she explains.',
       },
       {
-        spanish: 'Finalmente, llegan a la Plaza de Espana. Es impresionante: un edificio semicircular con azulejos coloridos y un canal con barcas. "Gracias, muchas gracias," dice Tom emocionado. "De nada, guapo. Bienvenido a Espana."',
-        english: 'Finally, they arrive at the Plaza de Espana. It is impressive: a semicircular building with colorful tiles and a canal with boats. "Thank you, thank you so much," says Tom excitedly. "You\'re welcome, handsome. Welcome to Spain."',
+        spanish: 'Finalmente, llegan a la Plaza de España. Es impresionante: un edificio semicircular con azulejos coloridos y un canal con barcas. "Gracias, muchas gracias," dice Tom emocionado. "De nada, guapo. Bienvenido a España."',
+        english: 'Finally, they arrive at the Plaza de España. It is impressive: a semicircular building with colorful tiles and a canal with boats. "Thank you, thank you so much," says Tom excitedly. "You\'re welcome, handsome. Welcome to Spain."',
       },
     ],
     vocabulary: [
@@ -440,20 +440,20 @@ export const stories: Story[] = [
         questionSpanish: 'Por que se perdio Tom?',
         options: ['He does not speak Spanish', 'He had no map or phone battery', 'The streets were closed', 'It was raining'],
         correctAnswer: 1,
-        explanation: 'Tom "ha salido del hotel sin mapa y sin bateria en el telefono."',
+        explanation: 'Tom "ha salido del hotel sin mapa y sin bateria en el teléfono."',
       },
       {
         id: 'q2',
         question: 'Who helps Tom find his way?',
-        questionSpanish: 'Quien ayuda a Tom?',
+        questionSpanish: '¿Quién ayuda a Tom?',
         options: ['A police officer', 'A young student', 'An elderly lady', 'A taxi driver'],
         correctAnswer: 2,
-        explanation: 'Tom asks "una senora mayor sentada en un banco" - an elderly lady sitting on a bench.',
+        explanation: 'Tom asks "una señora mayor sentada en un banco" - an elderly lady sitting on a bench.',
       },
       {
         id: 'q3',
         question: 'What landmark does the lady show Tom along the way?',
-        questionSpanish: 'Que monumento le muestra la senora?',
+        questionSpanish: 'Que monumento le muestra la señora?',
         options: ['The Alhambra', 'The Cathedral and Giralda', 'The Royal Palace', 'The Prado Museum'],
         correctAnswer: 1,
         explanation: 'She shows him "la Catedral y la Giralda."',
@@ -470,32 +470,32 @@ export const stories: Story[] = [
     description: 'Elena meets an old friend at her favorite coffee shop.',
     content: [
       {
-        spanish: 'Elena entra en su cafeteria favorita. Se llama "El Rincon del Cafe" y esta cerca de su casa. El olor a cafe recien hecho llena el aire.',
+        spanish: 'Elena entra en su cafetería favorita. Se llama "El Rincon del Cafe" y está cerca de su casa. El olor a café recien hecho llena el aire.',
         english: 'Elena enters her favorite coffee shop. It is called "The Coffee Corner" and it is near her house. The smell of freshly made coffee fills the air.',
       },
       {
-        spanish: 'Se acerca al mostrador. "Hola, que te pongo?" pregunta el camarero. "Un cafe con leche y un croissant, por favor," responde Elena.',
+        spanish: 'Se acerca al mostrador. "Hola, que te pongo?" pregunta el camarero. "Un café con leche y un croissant, por favor," responde Elena.',
         english: 'She approaches the counter. "Hello, what can I get you?" asks the waiter. "A coffee with milk and a croissant, please," Elena responds.',
       },
       {
-        spanish: 'Mientras espera, oye una voz familiar. "Elena? Eres tu?" Es su amiga del colegio, Marta. No se han visto en cinco anos.',
+        spanish: 'Mientras espera, oye una voz familiar. "Elena? Eres tu?" Es su amiga del colegio, Marta. No se han visto en cinco años.',
         english: 'While she waits, she hears a familiar voice. "Elena? Is that you?" It is her friend from school, Marta. They have not seen each other in five years.',
       },
       {
-        spanish: '"Marta! Que sorpresa!" exclama Elena. Se abrazan con emocion. "Tienes tiempo para sentarte conmigo?" pregunta Elena.',
+        spanish: '"Marta! Que sorpresa!" exclama Elena. Se abrazan con emoción. "Tienes tiempo para sentarte conmigo?" pregunta Elena.',
         english: '"Marta! What a surprise!" exclaims Elena. They hug with emotion. "Do you have time to sit with me?" asks Elena.',
       },
       {
-        spanish: 'Se sientan junto a la ventana. Hablan durante dos horas. Marta ahora es medica y vive en Valencia. Esta en Madrid visitando a su familia.',
+        spanish: 'Se sientan junto a la ventana. Hablan durante dos horas. Marta ahora es médica y vive en Valencia. Esta en Madrid visitando a su familia.',
         english: 'They sit by the window. They talk for two hours. Marta is now a doctor and lives in Valencia. She is in Madrid visiting her family.',
       },
       {
-        spanish: 'Antes de despedirse, intercambian numeros de telefono. "No dejemos pasar otros cinco anos," dice Marta. Elena sonrie y asiente. Ha sido un dia especial.',
+        spanish: 'Antes de despedirse, intercambian números de teléfono. "No dejemos pasar otros cinco años," dice Marta. Elena sonríe y asiente. Ha sido un día especial.',
         english: 'Before saying goodbye, they exchange phone numbers. "Let\'s not let another five years pass," says Marta. Elena smiles and nods. It has been a special day.',
       },
     ],
     vocabulary: [
-      { spanish: 'la cafeteria', english: 'coffee shop', partOfSpeech: 'noun' },
+      { spanish: 'la cafetería', english: 'coffee shop', partOfSpeech: 'noun' },
       { spanish: 'el mostrador', english: 'counter', partOfSpeech: 'noun' },
       { spanish: 'el camarero', english: 'waiter', partOfSpeech: 'noun' },
       { spanish: 'oir', english: 'to hear', partOfSpeech: 'verb' },
@@ -511,7 +511,7 @@ export const stories: Story[] = [
         questionSpanish: 'Que pide Elena?',
         options: ['Black coffee', 'Coffee with milk and a croissant', 'Tea and cake', 'Orange juice'],
         correctAnswer: 1,
-        explanation: 'Elena orders "Un cafe con leche y un croissant."',
+        explanation: 'Elena orders "Un café con leche y un croissant."',
       },
       {
         id: 'q2',
@@ -519,7 +519,7 @@ export const stories: Story[] = [
         questionSpanish: 'Cuanto tiempo hace que no se ven?',
         options: ['Two years', 'Three years', 'Five years', 'Ten years'],
         correctAnswer: 2,
-        explanation: 'The story says "No se han visto en cinco anos" - they haven\'t seen each other in five years.',
+        explanation: 'The story says "No se han visto en cinco años" - they haven\'t seen each other in five years.',
       },
       {
         id: 'q3',
@@ -527,10 +527,10 @@ export const stories: Story[] = [
         questionSpanish: 'Cual es la profesion de Marta?',
         options: ['Teacher', 'Lawyer', 'Doctor', 'Engineer'],
         correctAnswer: 2,
-        explanation: 'The story says "Marta ahora es medica" - Marta is now a doctor.',
+        explanation: 'The story says "Marta ahora es médica" - Marta is now a doctor.',
       },
     ],
-    culturalNote: 'Spanish coffee culture is an important part of daily life. A "cafe con leche" is espresso with steamed milk, similar to a latte. Spaniards often spend hours at cafes chatting with friends - it\'s called "hacer tertulia."',
+    culturalNote: 'Spanish coffee culture is an important part of daily life. A "café con leche" is espresso with steamed milk, similar to a latte. Spaniards often spend hours at cafes chatting with friends - it\'s called "hacer tertulia."',
   },
   {
     id: 'story-008',
@@ -538,30 +538,30 @@ export const stories: Story[] = [
     titleSpanish: 'En la Playa',
     level: 'beginner',
     estimatedMinutes: 3,
-    description: 'The Garcia family enjoys a summer day at the beach in Valencia.',
+    description: 'The García family enjoys a summer day at the beach in Valencia.',
     content: [
       {
-        spanish: 'Es agosto y hace mucho calor. La familia Garcia decide ir a la playa de la Malvarrosa en Valencia. Salen de casa muy temprano.',
-        english: 'It is August and it is very hot. The Garcia family decides to go to Malvarrosa beach in Valencia. They leave home very early.',
+        spanish: 'Es agosto y hace mucho calor. La familia García decide ir a la playa de la Malvarrosa en Valencia. Salen de casa muy temprano.',
+        english: 'It is August and it is very hot. The García family decides to go to Malvarrosa beach in Valencia. They leave home very early.',
       },
       {
-        spanish: 'Llevan todo lo necesario: toallas, sombrilla, crema solar, y una nevera con bebidas y bocadillos. Los ninos llevan sus cubos y palas.',
+        spanish: 'Llevan todo lo necesario: toallas, sombrilla, crema solar, y una nevera con bebidas y bocadillos. Los niños llevan sus cubos y palas.',
         english: 'They bring everything necessary: towels, umbrella, sunscreen, and a cooler with drinks and sandwiches. The children bring their buckets and shovels.',
       },
       {
-        spanish: 'Llegan a la playa a las nueve. Todavia hay sitio cerca del agua. El padre planta la sombrilla y la madre extiende las toallas sobre la arena.',
+        spanish: 'Llegan a la playa a las nueve. Todavía hay sitio cerca del agua. El padre planta la sombrilla y la madre extiende las toallas sobre la arena.',
         english: 'They arrive at the beach at nine. There is still space near the water. The father sets up the umbrella and the mother spreads the towels on the sand.',
       },
       {
-        spanish: 'Los ninos corren hacia el mar. "El agua esta muy fria!" grita Pablo. Su hermana Lucia se rie y le salpica. Juegan en las olas durante horas.',
-        english: 'The children run towards the sea. "The water is very cold!" shouts Pablo. His sister Lucia laughs and splashes him. They play in the waves for hours.',
+        spanish: 'Los niños corren hacia el mar. "El agua está muy fría!" grita Pablo. Su hermana Lucía se ríe y le salpica. Juegan en las olas durante horas.',
+        english: 'The children run towards the sea. "The water is very cold!" shouts Pablo. His sister Lucía laughs and splashes him. They play in the waves for hours.',
       },
       {
-        spanish: 'Al mediodia, la familia come bocadillos de jamon y queso. Despues, los padres descansan bajo la sombrilla mientras los ninos construyen un castillo de arena.',
+        spanish: 'Al mediodía, la familia come bocadillos de jamón y queso. Después, los padres descansan bajo la sombrilla mientras los niños construyen un castillo de arena.',
         english: 'At noon, the family eats ham and cheese sandwiches. Afterwards, the parents rest under the umbrella while the children build a sandcastle.',
       },
       {
-        spanish: 'Por la tarde, compran helados en el chiringuito. "Este ha sido el mejor dia del verano," dice Pablo con helado de chocolate en la nariz.',
+        spanish: 'Por la tarde, compran helados en el chiringuito. "Este ha sido el mejor día del verano," dice Pablo con helado de chocolate en la nariz.',
         english: 'In the afternoon, they buy ice cream at the beach bar. "This has been the best day of summer," says Pablo with chocolate ice cream on his nose.',
       },
     ],
@@ -587,10 +587,10 @@ export const stories: Story[] = [
       {
         id: 'q2',
         question: 'What do the children do after lunch?',
-        questionSpanish: 'Que hacen los ninos despues de comer?',
+        questionSpanish: 'Que hacen los niños después de comer?',
         options: ['Swim', 'Build a sandcastle', 'Sleep', 'Play soccer'],
         correctAnswer: 1,
-        explanation: 'After lunch "los ninos construyen un castillo de arena" - the children build a sandcastle.',
+        explanation: 'After lunch "los niños construyen un castillo de arena" - the children build a sandcastle.',
       },
       {
         id: 'q3',
@@ -612,19 +612,19 @@ export const stories: Story[] = [
     description: 'Antonio visits the doctor because he doesn\'t feel well.',
     content: [
       {
-        spanish: 'Antonio no se siente bien. Le duele la cabeza y tiene fiebre. Su madre le toma la temperatura: treinta y ocho grados. "Tienes que ir al medico," dice.',
+        spanish: 'Antonio no se siente bien. Le duele la cabeza y tiene fiebre. Su madre le toma la temperatura: treinta y ocho grados. "Tienes que ir al médico," dice.',
         english: 'Antonio does not feel well. His head hurts and he has a fever. His mother takes his temperature: thirty-eight degrees. "You have to go to the doctor," she says.',
       },
       {
-        spanish: 'Van al centro de salud. La sala de espera esta llena de gente. Antonio coge un numero y se sienta. Espera veinte minutos.',
+        spanish: 'Van al centro de salud. La sala de espera está llena de gente. Antonio coge un número y se sienta. Espera veinte minutos.',
         english: 'They go to the health center. The waiting room is full of people. Antonio takes a number and sits down. He waits twenty minutes.',
       },
       {
-        spanish: '"Antonio Gomez?" llama la enfermera. Antonio entra en la consulta. La doctora Fernandez le saluda con una sonrisa. "Hola Antonio, que te pasa?"',
-        english: '"Antonio Gomez?" calls the nurse. Antonio enters the office. Doctor Fernandez greets him with a smile. "Hello Antonio, what\'s wrong?"',
+        spanish: '"Antonio Gómez?" llama la enfermera. Antonio entra en la consulta. La doctora Fernández le saluda con una sonrisa. "Hola Antonio, que te pasa?"',
+        english: '"Antonio Gómez?" calls the nurse. Antonio enters the office. Doctor Fernández greets him with a smile. "Hello Antonio, what\'s wrong?"',
       },
       {
-        spanish: '"Me duele mucho la cabeza y tengo fiebre desde ayer," explica Antonio. La doctora le examina la garganta. "Di ahhh." Tambien le escucha el pecho con el estetoscopio.',
+        spanish: '"Me duele mucho la cabeza y tengo fiebre desde ayer," explica Antonio. La doctora le examina la garganta. "Di ahhh." También le escucha el pecho con el estetoscopio.',
         english: '"My head hurts a lot and I have had a fever since yesterday," explains Antonio. The doctor examines his throat. "Say ahhh." She also listens to his chest with the stethoscope.',
       },
       {
@@ -632,7 +632,7 @@ export const stories: Story[] = [
         english: '"You have the flu," says the doctor. "You need to rest a lot, drink fluids, and take this medication every eight hours." She gives him a prescription.',
       },
       {
-        spanish: 'Antes de irse, Antonio pregunta: "Cuando puedo volver al trabajo?" "En tres o cuatro dias, si te sientes mejor. Cuidate mucho."',
+        spanish: 'Antes de irse, Antonio pregunta: "¿Cuándo puedo volver al trabajo?" "En tres o cuatro días, si te sientes mejor. Cuidate mucho."',
         english: 'Before leaving, Antonio asks: "When can I return to work?" "In three or four days, if you feel better. Take good care of yourself."',
       },
     ],
@@ -683,45 +683,45 @@ export const stories: Story[] = [
     description: 'Rosa takes the bus to visit her grandmother in a small village.',
     content: [
       {
-        spanish: 'Rosa vive en la ciudad, pero su abuela vive en un pueblo pequeno. Hoy va a visitarla. Tiene que coger un autobus en la estacion.',
+        spanish: 'Rosa vive en la ciudad, pero su abuela vive en un pueblo pequeño. Hoy va a visitarla. Tiene que tomar un autobús en la estación.',
         english: 'Rosa lives in the city, but her grandmother lives in a small village. Today she is going to visit her. She has to take a bus at the station.',
       },
       {
-        spanish: 'Llega a la estacion de autobuses a las diez. Hay mucha gente. Rosa va a la ventanilla. "Un billete para Villavieja, por favor." "Son quince euros. El autobus sale del anden 4."',
+        spanish: 'Llega a la estación de autobúses a las diez. Hay mucha gente. Rosa va a la ventanilla. "Un billete para Villavieja, por favor." "Son quince euros. El autobús sale del andén 4."',
         english: 'She arrives at the bus station at ten. There are many people. Rosa goes to the ticket window. "One ticket to Villavieja, please." "It is fifteen euros. The bus leaves from platform 4."',
       },
       {
-        spanish: 'Rosa encuentra su autobus y sube. Elige un asiento junto a la ventana. El autobus esta casi lleno. A las diez y media, el conductor cierra las puertas y el autobus sale.',
+        spanish: 'Rosa encuentra su autobús y sube. Elige un asiento junto a la ventana. El autobús está casi lleno. A las diez y media, el conductor cierra las puertas y el autobús sale.',
         english: 'Rosa finds her bus and gets on. She chooses a seat by the window. The bus is almost full. At ten thirty, the driver closes the doors and the bus leaves.',
       },
       {
-        spanish: 'El viaje dura una hora. Rosa mira el paisaje por la ventana. Ve campos de olivos, montanas y pequenos pueblos blancos. Es muy bonito.',
+        spanish: 'El viaje dura una hora. Rosa mira el paisaje por la ventana. Ve campos de olivos, montañas y pequeños pueblos blancos. Es muy bonito.',
         english: 'The journey lasts one hour. Rosa looks at the landscape through the window. She sees olive fields, mountains, and small white villages. It is very beautiful.',
       },
       {
-        spanish: 'Finalmente, el autobus llega a Villavieja. Rosa baja y ve a su abuela esperando. "Abuela!" grita Rosa y corre a abrazarla. "Mi nina querida, que alegria verte."',
+        spanish: 'Finalmente, el autobús llega a Villavieja. Rosa baja y ve a su abuela esperando. "Abuela!" grita Rosa y corre a abrazarla. "Mi niña querida, que alegría verte."',
         english: 'Finally, the bus arrives at Villavieja. Rosa gets off and sees her grandmother waiting. "Grandma!" shouts Rosa and runs to hug her. "My dear girl, what joy to see you."',
       },
       {
-        spanish: 'Caminan juntas hacia la casa. La abuela ha preparado su comida favorita: cocido madrileno. Rosa sabe que este sera un fin de semana maravilloso.',
+        spanish: 'Caminan juntas hacia la casa. La abuela ha preparado su comida favorita: cocido madrileño. Rosa sabe que este sera un fin de semana maravilloso.',
         english: 'They walk together towards the house. Grandma has prepared her favorite meal: Madrid-style stew. Rosa knows this will be a wonderful weekend.',
       },
     ],
     vocabulary: [
-      { spanish: 'el autobus', english: 'the bus', partOfSpeech: 'noun' },
+      { spanish: 'el autobús', english: 'the bus', partOfSpeech: 'noun' },
       { spanish: 'el pueblo', english: 'village/town', partOfSpeech: 'noun' },
       { spanish: 'la ventanilla', english: 'ticket window', partOfSpeech: 'noun' },
       { spanish: 'el billete', english: 'ticket', partOfSpeech: 'noun' },
-      { spanish: 'el anden', english: 'platform', partOfSpeech: 'noun' },
+      { spanish: 'el andén', english: 'platform', partOfSpeech: 'noun' },
       { spanish: 'el paisaje', english: 'landscape', partOfSpeech: 'noun' },
       { spanish: 'los olivos', english: 'olive trees', partOfSpeech: 'noun' },
-      { spanish: 'la alegria', english: 'joy', partOfSpeech: 'noun' },
+      { spanish: 'la alegría', english: 'joy', partOfSpeech: 'noun' },
     ],
     comprehensionQuestions: [
       {
         id: 'q1',
         question: 'How much does the bus ticket cost?',
-        questionSpanish: 'Cuanto cuesta el billete de autobus?',
+        questionSpanish: 'Cuanto cuesta el billete de autobús?',
         options: ['10 euros', '12 euros', '15 euros', '20 euros'],
         correctAnswer: 2,
         explanation: 'The ticket seller says "Son quince euros" - It is fifteen euros.',
@@ -729,7 +729,7 @@ export const stories: Story[] = [
       {
         id: 'q2',
         question: 'How long is the bus journey?',
-        questionSpanish: 'Cuanto dura el viaje en autobus?',
+        questionSpanish: 'Cuanto dura el viaje en autobús?',
         options: ['30 minutes', '45 minutes', '1 hour', '2 hours'],
         correctAnswer: 2,
         explanation: 'The story says "El viaje dura una hora" - The journey lasts one hour.',
@@ -738,44 +738,44 @@ export const stories: Story[] = [
         id: 'q3',
         question: 'What has grandmother prepared?',
         questionSpanish: 'Que ha preparado la abuela?',
-        options: ['Paella', 'Tortilla', 'Cocido madrileno', 'Gazpacho'],
+        options: ['Paella', 'Tortilla', 'Cocido madrileño', 'Gazpacho'],
         correctAnswer: 2,
-        explanation: 'Grandma has prepared "cocido madrileno" - Madrid-style stew.',
+        explanation: 'Grandma has prepared "cocido madrileño" - Madrid-style stew.',
       },
     ],
-    culturalNote: 'Spain\'s countryside is dotted with "pueblos blancos" (white villages), especially in Andalucia. The white walls help reflect the intense summer heat. Cocido madrileno is a hearty chickpea-based stew traditionally eaten in Madrid during winter months.',
+    culturalNote: 'Spain\'s countryside is dotted with "pueblos blancos" (white villages), especially in Andalucía. The white walls help reflect the intense summer heat. Cocido madrileño is a hearty chickpea-based stew traditionally eaten in Madrid during winter months.',
   },
   {
     id: 'story-011',
     title: 'A Day at School',
-    titleSpanish: 'Un Dia en el Colegio',
+    titleSpanish: 'Un Día en el Colegio',
     level: 'beginner',
     estimatedMinutes: 4,
-    description: 'Follow young Maria through her typical school day.',
+    description: 'Follow young María through her typical school day.',
     content: [
       {
-        spanish: 'Maria tiene ocho anos y va al Colegio San Jose. Cada manana, su padre la lleva en coche porque el colegio esta lejos de casa.',
-        english: 'Maria is eight years old and goes to San Jose School. Every morning, her father takes her by car because the school is far from home.',
+        spanish: 'María tiene ocho años y va al Colegio San José. Cada mañana, su padre la lleva en coche porque el colegio está lejos de casa.',
+        english: 'María is eight years old and goes to San José School. Every morning, her father takes her by car because the school is far from home.',
       },
       {
-        spanish: 'Las clases empiezan a las nueve. La primera clase es de matematicas. Hoy aprenden a sumar y restar. Maria es buena con los numeros.',
-        english: 'Classes start at nine. The first class is mathematics. Today they learn to add and subtract. Maria is good with numbers.',
+        spanish: 'Las clases empiezan a las nueve. La primera clase es de matemáticas. Hoy aprenden a sumar y restar. María es buena con los números.',
+        english: 'Classes start at nine. The first class is mathematics. Today they learn to add and subtract. María is good with numbers.',
       },
       {
-        spanish: 'A las once tienen el recreo. Maria juega en el patio con sus amigas. Juegan a la cuerda y al escondite. El recreo dura treinta minutos.',
-        english: 'At eleven they have recess. Maria plays in the playground with her friends. They play jump rope and hide-and-seek. Recess lasts thirty minutes.',
+        spanish: 'A las once tienen el recreo. María juega en el patio con sus amigas. Juegan a la cuerda y al escondite. El recreo dura treinta minutos.',
+        english: 'At eleven they have recess. María plays in the playground with her friends. They play jump rope and hide-and-seek. Recess lasts thirty minutes.',
       },
       {
-        spanish: 'Despues del recreo, tienen clase de espanol. La profesora les lee un cuento. Es sobre un dragon que quiere ser bombero. Los ninos se rien mucho.',
-        english: 'After recess, they have Spanish class. The teacher reads them a story. It is about a dragon who wants to be a firefighter. The children laugh a lot.',
+        spanish: 'Después del recreo, tienen clase de español. La profesora les lee un cuento. Es sobre un dragón que quiere ser bombero. Los niños se ríen mucho.',
+        english: 'After recess, they have Spanish class. The teacher reads them a story. It is about a dragón who wants to be a firefighter. The children laugh a lot.',
       },
       {
-        spanish: 'A las dos, Maria come en el comedor del colegio. Hoy hay lentejas con arroz y de postre, una manzana. Se sienta con su mejor amiga, Laura.',
-        english: 'At two, Maria eats in the school cafeteria. Today there are lentils with rice and for dessert, an apple. She sits with her best friend, Laura.',
+        spanish: 'A las dos, María come en el comedor del colegio. Hoy hay lentejas con arroz y de postre, una manzana. Se sienta con su mejor amiga, Laura.',
+        english: 'At two, María eats in the school cafetería. Today there are lentils with rice and for dessert, an apple. She sits with her best friend, Laura.',
       },
       {
-        spanish: 'Por la tarde, tienen clase de arte. Pintan un dibujo de su familia. Maria pinta a sus padres, a su hermano y a su perro Toby. A las cinco, su madre la recoge. "Que tal el dia, carino?" "Muy bien, mama!"',
-        english: 'In the afternoon, they have art class. They paint a picture of their family. Maria paints her parents, her brother, and her dog Toby. At five, her mother picks her up. "How was your day, sweetie?" "Very good, mom!"',
+        spanish: 'Por la tarde, tienen clase de arte. Pintan un dibujo de su familia. María pinta a sus padres, a su hermano y a su perro Toby. A las cinco, su madre la recoge. "¿Qué tal el día, carino?" "Muy bien, mama!"',
+        english: 'In the afternoon, they have art class. They paint a picture of their family. María paints her parents, her brother, and her dog Toby. At five, her mother picks her up. "How was your day, sweetie?" "Very good, mom!"',
       },
     ],
     vocabulary: [
@@ -785,17 +785,17 @@ export const stories: Story[] = [
       { spanish: 'el recreo', english: 'recess', partOfSpeech: 'noun' },
       { spanish: 'el patio', english: 'playground/courtyard', partOfSpeech: 'noun' },
       { spanish: 'el escondite', english: 'hide-and-seek', partOfSpeech: 'noun' },
-      { spanish: 'el comedor', english: 'cafeteria/dining room', partOfSpeech: 'noun' },
+      { spanish: 'el comedor', english: 'cafetería/dining room', partOfSpeech: 'noun' },
       { spanish: 'pintar', english: 'to paint', partOfSpeech: 'verb' },
     ],
     comprehensionQuestions: [
       {
         id: 'q1',
-        question: 'How old is Maria?',
-        questionSpanish: 'Cuantos anos tiene Maria?',
+        question: 'How old is María?',
+        questionSpanish: 'Cuántos años tiene María?',
         options: ['Six', 'Seven', 'Eight', 'Nine'],
         correctAnswer: 2,
-        explanation: 'The story says "Maria tiene ocho anos" - Maria is eight years old.',
+        explanation: 'The story says "María tiene ocho años" - María is eight years old.',
       },
       {
         id: 'q2',
@@ -807,25 +807,25 @@ export const stories: Story[] = [
       },
       {
         id: 'q3',
-        question: 'What time does Maria\'s mother pick her up?',
+        question: 'What time does María\'s mother pick her up?',
         questionSpanish: 'A que hora la recoge su madre?',
         options: ['3 PM', '4 PM', '5 PM', '6 PM'],
         correctAnswer: 2,
         explanation: 'The story says "A las cinco, su madre la recoge" - At five, her mother picks her up.',
       },
     ],
-    culturalNote: 'Spanish school schedules are different from many countries. Many schools have a long lunch break when children can go home or eat at the school cafeteria. The school day often extends into the late afternoon. "Lentejas" (lentils) are a staple of Spanish school lunches and home cooking.',
+    culturalNote: 'Spanish school schedules are different from many countries. Many schools have a long lunch break when children can go home or eat at the school cafetería. The school day often extends into the late afternoon. "Lentejas" (lentils) are a staple of Spanish school lunches and home cooking.',
   },
   {
     id: 'story-012',
     title: 'The Soccer Match',
-    titleSpanish: 'El Partido de Futbol',
+    titleSpanish: 'El Partido de Fútbol',
     level: 'elementary',
     estimatedMinutes: 4,
     description: 'Diego attends his first professional soccer match in Madrid.',
     content: [
       {
-        spanish: 'Diego siempre ha sonado con ver un partido de futbol en el estadio. Hoy, su tio le ha regalado dos entradas para ver al Real Madrid. No puede creerlo.',
+        spanish: 'Diego siempre ha sonado con ver un partido de fútbol en el estadio. Hoy, su tío le ha regalado dos entradas para ver al Real Madrid. No puede creerlo.',
         english: 'Diego has always dreamed of seeing a soccer match in the stadium. Today, his uncle has given him two tickets to see Real Madrid. He cannot believe it.',
       },
       {
@@ -833,7 +833,7 @@ export const stories: Story[] = [
         english: 'They go to the Santiago Bernabeu stadium by metro. It is full of fans dressed in white. There is an incredible atmosphere. Diego wears the shirt of his favorite team.',
       },
       {
-        spanish: 'Encuentran sus asientos. Estan bastante cerca del campo. Diego puede ver a los jugadores calentando. "Mira, ahi esta mi jugador favorito!" exclama emocionado.',
+        spanish: 'Encuentran sus asientos. Estan bastante cerca del campo. Diego puede ver a los jugadores calentando. "Mira, ahí está mi jugador favorito!" exclama emocionado.',
         english: 'They find their seats. They are quite close to the field. Diego can see the players warming up. "Look, there is my favorite player!" he exclaims excitedly.',
       },
       {
@@ -841,11 +841,11 @@ export const stories: Story[] = [
         english: 'The match starts at nine in the evening. The first forty-five minutes are very intense, but neither team scores. At halftime, Diego eats a sandwich and drinks a Coca-Cola.',
       },
       {
-        spanish: 'En la segunda parte, el Real Madrid marca dos goles. Todo el estadio grita "GOOOOL!" Diego salta de alegria y abraza a su tio. Es el momento mas emocionante de su vida.',
+        spanish: 'En la segunda parte, el Real Madrid marca dos goles. Todo el estadio grita "GOOOOL!" Diego salta de alegría y abraza a su tío. Es el momento más emocionante de su vida.',
         english: 'In the second half, Real Madrid scores two goals. The whole stadium shouts "GOOOOL!" Diego jumps with joy and hugs his uncle. It is the most exciting moment of his life.',
       },
       {
-        spanish: 'El partido termina 2-0. Cuando salen del estadio, Diego dice: "Tio, muchas gracias. Este ha sido el mejor dia de mi vida." Su tio sonrie. "El proximo ano, volvemos."',
+        spanish: 'El partido termina 2-0. Cuando salen del estadio, Diego dice: "Tio, muchas gracias. Este ha sido el mejor día de mi vida." Su tío sonríe. "El próximo ano, volvemos."',
         english: 'The match ends 2-0. When they leave the stadium, Diego says: "Uncle, thank you so much. This has been the best day of my life." His uncle smiles. "Next year, we\'ll come back."',
       },
     ],
@@ -863,10 +863,10 @@ export const stories: Story[] = [
       {
         id: 'q1',
         question: 'Who gave Diego the tickets?',
-        questionSpanish: 'Quien le regalo las entradas a Diego?',
+        questionSpanish: '¿Quién le regalo las entradas a Diego?',
         options: ['His father', 'His uncle', 'His friend', 'His brother'],
         correctAnswer: 1,
-        explanation: 'The story says "su tio le ha regalado dos entradas" - his uncle gave him two tickets.',
+        explanation: 'The story says "su tío le ha regalado dos entradas" - his uncle gave him two tickets.',
       },
       {
         id: 'q2',
@@ -900,7 +900,7 @@ export const stories: Story[] = [
         english: 'Carmen has just finished her marketing studies. Today she has a job interview at an important company. She is very nervous.',
       },
       {
-        spanish: 'Se despierta a las seis para prepararse. Se ducha, se viste con ropa formal y revisa su curriculum una vez mas. Practica sus respuestas delante del espejo.',
+        spanish: 'Se despierta a las seis para prepararse. Se ducha, se viste con ropa formal y revisa su curriculum una vez más. Practica sus respuestas delante del espejo.',
         english: 'She wakes up at six to prepare. She showers, dresses in formal clothes, and reviews her resume one more time. She practices her answers in front of the mirror.',
       },
       {
@@ -908,16 +908,16 @@ export const stories: Story[] = [
         english: 'She arrives at the office twenty minutes early. The receptionist tells her to wait in the room. Carmen takes a deep breath and tries to relax. She reads a brochure about the company.',
       },
       {
-        spanish: '"Senorita Ruiz?" Un hombre de traje gris la saluda. "Soy el senor Martinez, director de recursos humanos. Pase por aqui, por favor."',
-        english: '"Miss Ruiz?" A man in a gray suit greets her. "I am Mr. Martinez, director of human resources. Come this way, please."',
+        spanish: '"Senorita Ruiz?" Un hombre de traje gris la saluda. "Soy el señor Martínez, director de recursos humanos. Pase por aquí, por favor."',
+        english: '"Miss Ruiz?" A man in a gray suit greets her. "I am Mr. Martínez, director of human resources. Come this way, please."',
       },
       {
-        spanish: 'Durante la entrevista, Carmen habla de su experiencia y sus habilidades. Explica por que quiere trabajar en esta empresa. El senor Martinez hace muchas preguntas y toma notas.',
-        english: 'During the interview, Carmen talks about her experience and skills. She explains why she wants to work at this company. Mr. Martinez asks many questions and takes notes.',
+        spanish: 'Durante la entrevista, Carmen habla de su experiencia y sus habilidades. Explica por qué quiere trabajar en está empresa. El señor Martínez hace muchas preguntas y toma notas.',
+        english: 'During the interview, Carmen talks about her experience and skills. She explains why she wants to work at this company. Mr. Martínez asks many questions and takes notes.',
       },
       {
-        spanish: 'Al final, el senor Martinez sonrie. "Ha sido una entrevista muy buena. Le llamaremos la semana que viene." Carmen sale de la oficina con una gran sonrisa. Ha hecho todo lo posible.',
-        english: 'At the end, Mr. Martinez smiles. "It has been a very good interview. We will call you next week." Carmen leaves the office with a big smile. She has done everything possible.',
+        spanish: 'Al final, el señor Martínez sonríe. "Ha sido una entrevista muy buena. Le llamaremos la semana que viene." Carmen sale de la oficina con una gran sonrisa. Ha hecho todo lo posible.',
+        english: 'At the end, Mr. Martínez smiles. "It has been a very good interview. We will call you next week." Carmen leaves the office with a big smile. She has done everything possible.',
       },
     ],
     vocabulary: [
@@ -953,7 +953,7 @@ export const stories: Story[] = [
         questionSpanish: 'Cuando la llamaran?',
         options: ['Tomorrow', 'Next week', 'In two weeks', 'In a month'],
         correctAnswer: 1,
-        explanation: 'Mr. Martinez says "Le llamaremos la semana que viene" - We will call you next week.',
+        explanation: 'Mr. Martínez says "Le llamaremos la semana que viene" - We will call you next week.',
       },
     ],
     culturalNote: 'In Spain, it is common to include a photo on your CV, and job applications often ask for personal details like age and marital status. The job market has traditionally had high youth unemployment, making competition for positions fierce.',
@@ -967,28 +967,28 @@ export const stories: Story[] = [
     description: 'The extended family gathers for Sunday dinner.',
     content: [
       {
-        spanish: 'Cada domingo, la familia Martinez se reune en casa de los abuelos para cenar. Hoy han venido todos: padres, tios, primos y sobrinos. Son dieciocho personas en total.',
-        english: 'Every Sunday, the Martinez family gathers at the grandparents\' house for dinner. Today everyone has come: parents, aunts and uncles, cousins and nephews. There are eighteen people in total.',
+        spanish: 'Cada domingo, la familia Martínez se reune en casa de los abuelos para cenar. Hoy han venido todos: padres, tios, primos y sobrinos. Son dieciocho personas en total.',
+        english: 'Every Sunday, the Martínez family gathers at the grandparents\' house for dinner. Today everyone has come: parents, aunts and uncles, cousins and nephews. There are eighteen people in total.',
       },
       {
-        spanish: 'La abuela ha cocinado toda la manana. Ha preparado una paella valenciana enorme. El abuelo ha puesto la mesa grande en el jardin porque hace buen tiempo.',
+        spanish: 'La abuela ha cocinado toda la mañana. Ha preparado una paella valenciana enorme. El abuelo ha puesto la mesa grande en el jardín porque hace buen tiempo.',
         english: 'Grandmother has cooked all morning. She has prepared an enormous Valencian paella. Grandfather has set up the big table in the garden because the weather is nice.',
       },
       {
-        spanish: 'Los ninos juegan al futbol en el jardin mientras los adultos hablan. "Ten cuidado con las plantas!" grita la abuela desde la cocina.',
+        spanish: 'Los niños juegan al fútbol en el jardín mientras los adultos hablan. "Ten cuidado con las plantas!" grita la abuela desde la cocina.',
         english: 'The children play soccer in the garden while the adults talk. "Be careful with the plants!" shouts grandmother from the kitchen.',
       },
       {
-        spanish: 'A las tres, todos se sientan a la mesa. El abuelo sirve la paella. Esta deliciosa. "Nadie cocina como mama," dice el tio Roberto. La abuela sonrie orgullosa.',
+        spanish: 'A las tres, todos se sientan a la mesa. El abuelo sirve la paella. Esta deliciosa. "Nadie cocina cómo mama," dice el tío Roberto. La abuela sonríe orgullosa.',
         english: 'At three, everyone sits at the table. Grandfather serves the paella. It is delicious. "Nobody cooks like mom," says Uncle Roberto. Grandmother smiles proudly.',
       },
       {
-        spanish: 'Durante la comida, hablan de todo: trabajo, vacaciones, la escuela de los ninos. La prima mayor anuncia que va a casarse en primavera. Todos aplauden y le dan la enhorabuena.',
+        spanish: 'Durante la comida, hablan de todo: trabajo, vacaciones, la escuela de los niños. La prima mayor anuncia que va a casarse en primavera. Todos aplauden y le dan la enhorabuena.',
         english: 'During the meal, they talk about everything: work, vacations, the children\'s school. The oldest cousin announces she is getting married in spring. Everyone applauds and congratulates her.',
       },
       {
-        spanish: 'Despues de comer, toman cafe y tarta de manzana. Los ninos corren a ver la television mientras los adultos siguen charlando. No se van hasta las ocho. Es una tradicion que todos adoran.',
-        english: 'After eating, they have coffee and apple pie. The children run to watch television while the adults continue chatting. They don\'t leave until eight. It is a tradition that everyone loves.',
+        spanish: 'Después de comer, toman café y tarta de manzana. Los niños corren a ver la televisión mientras los adultos siguen charlando. No se van hasta las ocho. Es una tradicion que todos adoran.',
+        english: 'After eating, they have coffee and apple pie. The children run to watch televisión while the adults continue chatting. They don\'t leave until eight. It is a tradition that everyone loves.',
       },
     ],
     vocabulary: [
@@ -996,7 +996,7 @@ export const stories: Story[] = [
       { spanish: 'los tios', english: 'aunts and uncles', partOfSpeech: 'noun' },
       { spanish: 'los primos', english: 'cousins', partOfSpeech: 'noun' },
       { spanish: 'los sobrinos', english: 'nephews/nieces', partOfSpeech: 'noun' },
-      { spanish: 'el jardin', english: 'garden', partOfSpeech: 'noun' },
+      { spanish: 'el jardín', english: 'garden', partOfSpeech: 'noun' },
       { spanish: 'tener cuidado', english: 'to be careful', partOfSpeech: 'phrase' },
       { spanish: 'casarse', english: 'to get married', partOfSpeech: 'verb' },
       { spanish: 'la enhorabuena', english: 'congratulations', partOfSpeech: 'noun' },
@@ -1005,7 +1005,7 @@ export const stories: Story[] = [
       {
         id: 'q1',
         question: 'How many people are at the dinner?',
-        questionSpanish: 'Cuantas personas hay en la cena?',
+        questionSpanish: 'Cuántas personas hay en la cena?',
         options: ['12', '15', '18', '20'],
         correctAnswer: 2,
         explanation: 'The story says "Son dieciocho personas en total" - There are eighteen people in total.',
@@ -1038,15 +1038,15 @@ export const stories: Story[] = [
     description: 'Amanda experiences authentic flamenco in Seville.',
     content: [
       {
-        spanish: 'Amanda es una turista australiana que viaja por Espana. Esta en Sevilla, la cuna del flamenco. Su guia le ha recomendado un tablao autentico en el barrio de Triana.',
+        spanish: 'Amanda es una turista australiana que viaja por España. Esta en Sevilla, la cuna del flamenco. Su guía le ha recomendado un tablao autentico en el barrio de Triana.',
         english: 'Amanda is an Australian tourist traveling through Spain. She is in Seville, the birthplace of flamenco. Her guide has recommended an authentic tablao in the Triana neighborhood.',
       },
       {
-        spanish: 'El local es pequeno e intimo. Hay unas cincuenta sillas alrededor de un escenario de madera. Amanda se sienta en primera fila. Pide una copa de vino tinto mientras espera.',
+        spanish: 'El local es pequeño e intimo. Hay unas cincuenta sillas alrededor de un escenario de madera. Amanda se sienta en primera fila. Pide una copa de vino tinto mientras espera.',
         english: 'The venue is small and intimate. There are about fifty chairs around a wooden stage. Amanda sits in the front row. She orders a glass of red wine while she waits.',
       },
       {
-        spanish: 'Las luces se apagan y el espectaculo comienza. Primero sale un guitarrista. Sus dedos se mueven rapidamente sobre las cuerdas. La musica es melancolica y apasionada.',
+        spanish: 'Las luces se apagan y el espectaculo comienza. Primero sale un guitarrista. Sus dedos se mueven rapidamente sobre las cuerdas. La música es melancolica y apasionada.',
         english: 'The lights go out and the show begins. First a guitarist comes out. His fingers move rapidly over the strings. The music is melancholic and passionate.',
       },
       {
@@ -1054,11 +1054,11 @@ export const stories: Story[] = [
         english: 'Then the female dancer appears. She wears a red dress with white polka dots. She starts dancing slowly, but soon her shoes strike the floor forcefully. The rhythm is hypnotic.',
       },
       {
-        spanish: 'Un cantaor se une al espectaculo. Su voz es profunda y llena de emocion. Canta sobre el amor, el dolor y la vida. Amanda no entiende todas las palabras, pero siente la emocion en su corazon.',
+        spanish: 'Un cantaor se une al espectaculo. Su voz es profunda y llena de emoción. Canta sobre el amor, el dolor y la vida. Amanda no entiende todas las palabras, pero siente la emoción en su corazón.',
         english: 'A male singer joins the show. His voice is deep and full of emotion. He sings about love, pain, and life. Amanda does not understand all the words, but she feels the emotion in her heart.',
       },
       {
-        spanish: 'El espectaculo dura una hora y media. Cuando termina, el publico aplaude de pie. Amanda tiene lagrimas en los ojos. Ha sido una de las experiencias mas conmovedoras de su vida. Entiende ahora por que el flamenco es Patrimonio de la Humanidad.',
+        spanish: 'El espectaculo dura una hora y media. Cuando termina, el público aplaude de pie. Amanda tiene lagrimas en los ojos. Ha sido una de las experiencias más conmovedoras de su vida. Entiende ahora por qué el flamenco es Patrimonio de la Humanidad.',
         english: 'The show lasts an hour and a half. When it ends, the audience gives a standing ovation. Amanda has tears in her eyes. It has been one of the most moving experiences of her life. She now understands why flamenco is a World Heritage.',
       },
     ],
@@ -1076,7 +1076,7 @@ export const stories: Story[] = [
       {
         id: 'q1',
         question: 'Where is Amanda from?',
-        questionSpanish: 'De donde es Amanda?',
+        questionSpanish: 'De dónde es Amanda?',
         options: ['England', 'United States', 'Australia', 'Canada'],
         correctAnswer: 2,
         explanation: 'The story says Amanda is "una turista australiana" - an Australian tourist.',
@@ -1098,7 +1098,7 @@ export const stories: Story[] = [
         explanation: 'The show "dura una hora y media" - lasts an hour and a half.',
       },
     ],
-    culturalNote: 'Flamenco originated in Andalucia and is a powerful art form combining music, song, and dance. In 2010, UNESCO declared it a World Heritage. The three pillars of flamenco are "cante" (singing), "baile" (dance), and "toque" (guitar). A "tablao" is a venue specifically for flamenco performances.',
+    culturalNote: 'Flamenco originated in Andalucía and is a powerful art form combining music, song, and dance. In 2010, UNESCO declared it a World Heritage. The three pillars of flamenco are "cante" (singing), "baile" (dance), and "toque" (guitar). A "tablao" is a venue specifically for flamenco performances.',
   },
   {
     id: 'story-016',
@@ -1109,34 +1109,34 @@ export const stories: Story[] = [
     description: 'Pablo and his girlfriend move into their first apartment together.',
     content: [
       {
-        spanish: 'Despues de dos anos de relacion, Pablo y su novia Clara han decidido vivir juntos. Han alquilado un piso en el centro de Granada. Hoy es el dia de la mudanza.',
+        spanish: 'Después de dos años de relación, Pablo y su novia Clara han decidido vivir juntos. Han alquilado un piso en el centro de Granada. Hoy es el día de la mudanza.',
         english: 'After two years of relationship, Pablo and his girlfriend Clara have decided to live together. They have rented an apartment in the center of Granada. Today is moving day.',
       },
       {
-        spanish: 'El piso tiene dos dormitorios, un salon, una cocina pequena y un bano. No es muy grande, pero tiene mucha luz natural y un balcon con vistas a la Alhambra.',
+        spanish: 'El piso tiene dos dormitorios, un salón, una cocina pequeña y un baño. No es muy grande, pero tiene mucha luz natural y un balcón con vistas a la Alhambra.',
         english: 'The apartment has two bedrooms, a living room, a small kitchen, and a bathroom. It is not very big, but it has a lot of natural light and a balcony with views of the Alhambra.',
       },
       {
-        spanish: 'Sus amigos les ayudan con las cajas. Suben cinco pisos por las escaleras porque el ascensor esta estropeado. "Esto es un ejercicio magnifico," bromea Lucia cargando una caja pesada.',
-        english: 'Their friends help them with the boxes. They climb five floors by stairs because the elevator is broken. "This is magnificent exercise," jokes Lucia carrying a heavy box.',
+        spanish: 'Sus amigos les ayudan con las cajas. Suben cinco pisos por las escaleras porque el ascensor está estropeado. "Esto es un ejercicio magnifico," bromea Lucía cargando una caja pesada.',
+        english: 'Their friends help them with the boxes. They climb five floors by stairs because the elevator is broken. "This is magnificent exercise," jokes Lucía carrying a heavy box.',
       },
       {
-        spanish: 'Poco a poco, el piso empieza a parecer un hogar. Clara coloca los libros en las estanterias mientras Pablo monta los muebles del dormitorio. "Donde ponemos el sofa?" pregunta Pablo.',
+        spanish: 'Poco a poco, el piso empieza a parecer un hogar. Clara coloca los libros en las estanterias mientras Pablo monta los muebles del dormitorio. "¿Dónde ponemos el sofa?" pregunta Pablo.',
         english: 'Little by little, the apartment starts to look like a home. Clara places the books on the shelves while Pablo assembles the bedroom furniture. "Where do we put the sofa?" asks Pablo.',
       },
       {
-        spanish: 'Por la noche, piden pizza porque todavia no tienen gas para cocinar. Se sientan en el suelo del salon, rodeados de cajas. "Nuestra primera cena en casa," dice Clara levantando su vaso.',
+        spanish: 'Por la noche, piden pizza porque todavía no tienen gas para cocinar. Se sientan en el suelo del salón, rodeados de cajas. "Nuestra primera cena en casa," dice Clara levantando su vaso.',
         english: 'In the evening, they order pizza because they don\'t have gas to cook yet. They sit on the living room floor, surrounded by boxes. "Our first dinner at home," says Clara raising her glass.',
       },
       {
-        spanish: 'Antes de dormir, salen al balcon. La Alhambra esta iluminada y se ve preciosa. Pablo abraza a Clara. "Este es el comienzo de algo maravilloso," susurra. Ella sonrie y asiente.',
+        spanish: 'Antes de dormir, salen al balcón. La Alhambra está iluminada y se ve preciosa. Pablo abraza a Clara. "Este es el comienzo de algo maravilloso," susurra. Ella sonríe y asiente.',
         english: 'Before sleeping, they go out to the balcony. The Alhambra is illuminated and looks beautiful. Pablo hugs Clara. "This is the beginning of something wonderful," he whispers. She smiles and nods.',
       },
     ],
     vocabulary: [
       { spanish: 'la mudanza', english: 'moving (house)', partOfSpeech: 'noun' },
       { spanish: 'alquilar', english: 'to rent', partOfSpeech: 'verb' },
-      { spanish: 'el salon', english: 'living room', partOfSpeech: 'noun' },
+      { spanish: 'el salón', english: 'living room', partOfSpeech: 'noun' },
       { spanish: 'las vistas', english: 'views', partOfSpeech: 'noun' },
       { spanish: 'el ascensor', english: 'elevator', partOfSpeech: 'noun' },
       { spanish: 'estropeado', english: 'broken', partOfSpeech: 'adjective' },
@@ -1150,7 +1150,7 @@ export const stories: Story[] = [
         questionSpanish: 'Cuanto tiempo llevan juntos Pablo y Clara?',
         options: ['One year', 'Two years', 'Three years', 'Five years'],
         correctAnswer: 1,
-        explanation: 'The story says "Despues de dos anos de relacion" - After two years of relationship.',
+        explanation: 'The story says "Después de dos años de relación" - After two years of relationship.',
       },
       {
         id: 'q2',
@@ -1158,15 +1158,15 @@ export const stories: Story[] = [
         questionSpanish: 'Por que piden pizza?',
         options: ['They\'re too tired to cook', 'They don\'t have gas', 'The kitchen is dirty', 'They don\'t have food'],
         correctAnswer: 1,
-        explanation: 'They order pizza "porque todavia no tienen gas para cocinar" - because they don\'t have gas to cook yet.',
+        explanation: 'They order pizza "porque todavía no tienen gas para cocinar" - because they don\'t have gas to cook yet.',
       },
       {
         id: 'q3',
         question: 'What can they see from the balcony?',
-        questionSpanish: 'Que pueden ver desde el balcon?',
+        questionSpanish: 'Que pueden ver desde el balcón?',
         options: ['The beach', 'The mountains', 'The Alhambra', 'The park'],
         correctAnswer: 2,
-        explanation: 'They have "un balcon con vistas a la Alhambra."',
+        explanation: 'They have "un balcón con vistas a la Alhambra."',
       },
     ],
     culturalNote: 'Young Spaniards often live with their parents until their late twenties or early thirties due to high housing costs and youth unemployment. Moving out is a significant milestone. In Spain, apartments are called "pisos" and are more common than houses in cities.',
@@ -1180,38 +1180,38 @@ export const stories: Story[] = [
     description: 'Jorge and his dog explore the trails of Sierra Nevada.',
     content: [
       {
-        spanish: 'Jorge vive en Granada y le encanta la naturaleza. Cada fin de semana, va a caminar por Sierra Nevada con su perro Max. Hoy hace un dia perfecto: sol, cielo azul y aire fresco.',
+        spanish: 'Jorge vive en Granada y le encanta la naturaleza. Cada fin de semana, va a caminar por Sierra Nevada con su perro Max. Hoy hace un día perfecto: sol, cielo azul y aire fresco.',
         english: 'Jorge lives in Granada and loves nature. Every weekend, he goes hiking in Sierra Nevada with his dog Max. Today is a perfect day: sun, blue sky, and fresh air.',
       },
       {
-        spanish: 'Lleva en su mochila agua, fruta, un sandwich y un mapa de la zona. Tambien lleva comida y agua para Max. El perro esta muy emocionado y mueve la cola sin parar.',
+        spanish: 'Lleva en su mochila agua, fruta, un sandwich y un mapa de la zona. También lleva comida y agua para Max. El perro está muy emocionado y mueve la cola sin parar.',
         english: 'He carries in his backpack water, fruit, a sandwich, and a map of the area. He also brings food and water for Max. The dog is very excited and wags his tail non-stop.',
       },
       {
-        spanish: 'El sendero empieza suave pero pronto se vuelve mas empinado. Jorge camina despacio, disfrutando del paisaje. Ve arboles de pino, flores silvestres y rocas enormes. Max corre de un lado a otro, oliendo todo.',
+        spanish: 'El sendero empieza suave pero pronto se vuelve más empinado. Jorge camina despacio, disfrutando del paisaje. Ve árboles de pino, flores silvestres y rocas enormes. Max corre de un lado a otro, oliendo todo.',
         english: 'The trail starts gentle but soon becomes steeper. Jorge walks slowly, enjoying the landscape. He sees pine trees, wildflowers, and enormous rocks. Max runs from side to side, sniffing everything.',
       },
       {
-        spanish: 'Despues de dos horas, llegan a un mirador. Desde alli pueden ver toda la ciudad de Granada y, a lo lejos, el mar Mediterraneo. "Que vista tan increible," piensa Jorge.',
+        spanish: 'Después de dos horas, llegan a un mirador. Desde alli pueden ver toda la ciudad de Granada y, a lo lejos, el mar Mediterraneo. "¿Qué vista tan increible," piensa Jorge.',
         english: 'After two hours, they reach a viewpoint. From there they can see the entire city of Granada and, in the distance, the Mediterranean Sea. "What an incredible view," thinks Jorge.',
       },
       {
-        spanish: 'Se sientan en una roca para descansar y comer. Jorge le da agua a Max y comparten el sandwich. Un aguila vuela sobre sus cabezas. Todo esta en silencio excepto el viento.',
+        spanish: 'Se sientan en una roca para descansar y comer. Jorge le da agua a Max y comparten el sandwich. Un águila vuela sobre sus cabezas. Todo está en silencio excepto el viento.',
         english: 'They sit on a rock to rest and eat. Jorge gives water to Max and they share the sandwich. An eagle flies over their heads. Everything is silent except for the wind.',
       },
       {
-        spanish: 'En el camino de vuelta, encuentran un arroyo con agua cristalina. Max salta al agua y se moja completamente. Jorge se rie. Ha sido otro dia perfecto en la montana.',
+        spanish: 'En el camino de vuelta, encuentran un arroyo con agua cristalina. Max salta al agua y se moja completamente. Jorge se ríe. Ha sido otro día perfecto en la montaña.',
         english: 'On the way back, they find a stream with crystal-clear water. Max jumps in the water and gets completely wet. Jorge laughs. It has been another perfect day in the mountains.',
       },
     ],
     vocabulary: [
-      { spanish: 'la montana', english: 'mountain', partOfSpeech: 'noun' },
+      { spanish: 'la montaña', english: 'mountain', partOfSpeech: 'noun' },
       { spanish: 'el sendero', english: 'trail/path', partOfSpeech: 'noun' },
       { spanish: 'empinado', english: 'steep', partOfSpeech: 'adjective' },
       { spanish: 'el paisaje', english: 'landscape', partOfSpeech: 'noun' },
       { spanish: 'las flores silvestres', english: 'wildflowers', partOfSpeech: 'noun' },
       { spanish: 'el mirador', english: 'viewpoint', partOfSpeech: 'noun' },
-      { spanish: 'el aguila', english: 'eagle', partOfSpeech: 'noun' },
+      { spanish: 'el águila', english: 'eagle', partOfSpeech: 'noun' },
       { spanish: 'el arroyo', english: 'stream', partOfSpeech: 'noun' },
     ],
     comprehensionQuestions: [
@@ -1248,31 +1248,31 @@ export const stories: Story[] = [
     titleSpanish: 'La Cartera Perdida',
     level: 'intermediate',
     estimatedMinutes: 5,
-    description: 'Andres loses his wallet and a stranger helps him.',
+    description: 'Andrés loses his wallet and a stranger helps him.',
     content: [
       {
-        spanish: 'Andres sale del supermercado con las bolsas de la compra. Cuando llega a su coche, busca las llaves en el bolsillo. De repente, se da cuenta de que no tiene la cartera.',
-        english: 'Andres leaves the supermarket with the shopping bags. When he reaches his car, he looks for the keys in his pocket. Suddenly, he realizes he doesn\'t have his wallet.',
+        spanish: 'Andrés sale del supermercado con las bolsas de la compra. Cuando llega a su coche, busca las llaves en el bolsillo. De repente, se da cuenta de que no tiene la cartera.',
+        english: 'Andrés leaves the supermarket with the shopping bags. When he reaches his car, he looks for the keys in his pocket. Suddenly, he realizes he doesn\'t have his wallet.',
       },
       {
         spanish: 'El panico le invade. En la cartera tiene su documento de identidad, las tarjetas de credito, la licencia de conducir y doscientos euros en efectivo. Vuelve corriendo al supermercado.',
         english: 'Panic invades him. In the wallet he has his ID, credit cards, driver\'s license, and two hundred euros in cash. He runs back to the supermarket.',
       },
       {
-        spanish: 'Busca por todos los pasillos, mira debajo de las estanterias y pregunta en las cajas. Nadie ha visto nada. Va al servicio de atencion al cliente. "Lo siento, no han entregado ninguna cartera," le dice la empleada.',
+        spanish: 'Busca por todos los pasillos, mira debajo de las estanterias y pregunta en las cajas. Nadie ha visto nada. Va al servicio de atención al cliente. "Lo siento, no han entregado ninguna cartera," le dice la empleada.',
         english: 'He searches through all the aisles, looks under the shelves, and asks at the checkout. No one has seen anything. He goes to customer service. "I\'m sorry, no wallet has been turned in," the employee tells him.',
       },
       {
-        spanish: 'Andres se sienta en un banco fuera de la tienda, desesperado. Esta pensando en llamar al banco para cancelar las tarjetas cuando alguien le toca el hombro.',
-        english: 'Andres sits on a bench outside the store, desperate. He is thinking about calling the bank to cancel the cards when someone touches his shoulder.',
+        spanish: 'Andrés se sienta en un banco fuera de la tienda, desesperado. Esta pensando en llamar al banco para cancelar las tarjetas cuándo alguien le toca el hombro.',
+        english: 'Andrés sits on a bench outside the store, desperate. He is thinking about calling the bank to cancel the cards when someone touches his shoulder.',
       },
       {
-        spanish: '"Disculpe, es usted Andres Garcia?" Es un hombre mayor con una sonrisa amable. "He encontrado esto en el aparcamiento." Le entrega la cartera. Andres la abre: todo esta dentro, incluso el dinero.',
-        english: '"Excuse me, are you Andres Garcia?" It is an older man with a kind smile. "I found this in the parking lot." He hands him the wallet. Andres opens it: everything is inside, even the money.',
+        spanish: '"Disculpe, es usted Andrés García?" Es un hombre mayor con una sonrisa amable. "He encontrado esto en el aparcamiento." Le entrega la cartera. Andrés la abre: todo está dentro, incluso el dinero.',
+        english: '"Excuse me, are you Andrés García?" It is an older man with a kind smile. "I found this in the parking lot." He hands him the wallet. Andrés opens it: everything is inside, even the money.',
       },
       {
-        spanish: 'Andres no sabe como agradecerle. Le ofrece dinero como recompensa, pero el hombre lo rechaza. "No hace falta. Yo he perdido cosas tambien, y se lo mal que se pasa. Cuidese." Y se va, dejando a Andres con la fe en la humanidad restaurada.',
-        english: 'Andres doesn\'t know how to thank him. He offers him money as a reward, but the man refuses. "It\'s not necessary. I have lost things too, and I know how bad it feels. Take care." And he leaves, leaving Andres with his faith in humanity restored.',
+        spanish: 'Andrés no sabe cómo agradecerle. Le ofrece dinero cómo recompensa, pero el hombre lo rechaza. "No hace falta. Yo he perdido cosas también, y se lo mal que se pasa. Cuidese." Y se va, dejando a Andrés con la fe en la humanidad restaurada.',
+        english: 'Andrés doesn\'t know how to thank him. He offers him money as a reward, but the man refuses. "It\'s not necessary. I have lost things too, and I know how bad it feels. Take care." And he leaves, leaving Andrés with his faith in humanity restored.',
       },
     ],
     vocabulary: [
@@ -1292,7 +1292,7 @@ export const stories: Story[] = [
         questionSpanish: 'Cuanto dinero habia en la cartera?',
         options: ['100 euros', '150 euros', '200 euros', '250 euros'],
         correctAnswer: 2,
-        explanation: 'Andres has "doscientos euros en efectivo" - two hundred euros in cash.',
+        explanation: 'Andrés has "doscientos euros en efectivo" - two hundred euros in cash.',
       },
       {
         id: 'q2',
@@ -1322,15 +1322,15 @@ export const stories: Story[] = [
     description: 'International students learn to make traditional Spanish dishes.',
     content: [
       {
-        spanish: 'Lisa es una estudiante alemana que vive en Valencia. Se ha apuntado a una clase de cocina espanola. Hoy van a aprender a hacer paella y gazpacho.',
+        spanish: 'Lisa es una estudiante alemana que vive en Valencia. Se ha apuntado a una clase de cocina española. Hoy van a aprender a hacer paella y gazpacho.',
         english: 'Lisa is a German student living in Valencia. She has signed up for a Spanish cooking class. Today they are going to learn to make paella and gazpacho.',
       },
       {
-        spanish: 'La clase es en una cocina grande y luminosa. Hay otros ocho estudiantes de diferentes paises: Japon, Brasil, Suecia y Estados Unidos. El chef Antonio les da la bienvenida.',
+        spanish: 'La clase es en una cocina grande y luminosa. Hay otros ocho estudiantes de diferentes países: Japón, Brasil, Suecia y Estados Unidos. El chef Antonio les da la bienvenida.',
         english: 'The class is in a large and bright kitchen. There are eight other students from different countries: Japan, Brazil, Sweden, and the United States. Chef Antonio welcomes them.',
       },
       {
-        spanish: '"La paella es el plato mas famoso de Valencia," explica el chef. "Pero atencion: la paella autentica no lleva chorizo! Ese es un mito muy comun."',
+        spanish: '"La paella es el plato más famoso de Valencia," explica el chef. "Pero atención: la paella autentica no lleva chorizo! Ese es un mito muy común."',
         english: '"Paella is the most famous dish of Valencia," explains the chef. "But attention: authentic paella does not have chorizo! That is a very common myth."',
       },
       {
@@ -1338,11 +1338,11 @@ export const stories: Story[] = [
         english: 'They start with the gazpacho. Lisa peels and cuts the tomatoes, cucumbers, peppers, and onion. Everything goes in the blender with olive oil, vinegar, and salt.',
       },
       {
-        spanish: 'Para la paella, el chef les ensena el "socarrat": la capa crujiente de arroz en el fondo de la sarten. "Este es el secreto de una buena paella. No se puede mezclar una vez que el arroz esta en la sarten."',
+        spanish: 'Para la paella, el chef les ensena el "socarrat": la capa crujiente de arroz en el fondo de la sarten. "Este es el secreto de una buena paella. No se puede mezclar una vez que el arroz está en la sarten."',
         english: 'For the paella, the chef teaches them about the "socarrat": the crispy layer of rice at the bottom of the pan. "This is the secret of a good paella. You cannot stir once the rice is in the pan."',
       },
       {
-        spanish: 'Despues de dos horas, se sientan todos a comer. El gazpacho esta refrescante y la paella, deliciosa. Lisa toma fotos para enviar a su familia. Ha aprendido mucho mas que recetas: ha aprendido sobre la cultura espanola.',
+        spanish: 'Después de dos horas, se sientan todos a comer. El gazpacho está refrescante y la paella, deliciosa. Lisa toma fotos para enviar a su familia. Ha aprendido mucho más que recetas: ha aprendido sobre la cultura española.',
         english: 'After two hours, they all sit down to eat. The gazpacho is refreshing and the paella, delicious. Lisa takes photos to send to her family. She has learned much more than recipes: she has learned about Spanish culture.',
       },
     ],
@@ -1363,7 +1363,7 @@ export const stories: Story[] = [
         questionSpanish: 'Que mito desmiente el chef?',
         options: ['Paella has fish', 'Paella has chorizo', 'Paella is from Madrid', 'Paella is difficult'],
         correctAnswer: 1,
-        explanation: 'The chef says "la paella autentica no lleva chorizo! Ese es un mito muy comun."',
+        explanation: 'The chef says "la paella autentica no lleva chorizo! Ese es un mito muy común."',
       },
       {
         id: 'q2',
@@ -1379,7 +1379,7 @@ export const stories: Story[] = [
         questionSpanish: 'Cuanto dura la clase?',
         options: ['1 hour', '2 hours', '3 hours', '4 hours'],
         correctAnswer: 1,
-        explanation: 'The story says "Despues de dos horas" - After two hours.',
+        explanation: 'The story says "Después de dos horas" - After two hours.',
       },
     ],
     culturalNote: 'Valencia is the birthplace of paella, and authentic Valencian paella typically contains rabbit, chicken, green beans, and white beans - never seafood or chorizo. Gazpacho, a cold tomato soup, is a staple in southern Spain during hot summers.',
@@ -1393,27 +1393,27 @@ export const stories: Story[] = [
     description: 'A group of friends celebrates New Year\'s Eve in Madrid.',
     content: [
       {
-        spanish: 'Es el treinta y uno de diciembre. Sara y sus amigos han decidido celebrar la Nochevieja en la Puerta del Sol, el corazon de Madrid. Van a comer las doce uvas con las campanadas.',
+        spanish: 'Es el treinta y uno de diciembre. Sara y sus amigos han decidido celebrar la Nochevieja en la Puerta del Sol, el corazón de Madrid. Van a comer las doce uvas con las campanadas.',
         english: 'It is December 31st. Sara and her friends have decided to celebrate New Year\'s Eve in Puerta del Sol, the heart of Madrid. They are going to eat the twelve grapes with the bell chimes.',
       },
       {
-        spanish: 'Primero, cenan en casa de Alberto. Su madre ha preparado un menu especial: consomé, cordero asado con patatas y turron de postre. Brindan con cava espanol.',
-        english: 'First, they have dinner at Alberto\'s house. His mother has prepared a special menu: consommé, roast lamb with potatoes, and turron for dessert. They toast with Spanish cava.',
+        spanish: 'Primero, cenan en casa de Alberto. Su madre ha preparado un menú especial: consomé, cordero asado con patatas y turron de postre. Brindan con cava español.',
+        english: 'First, they have dinner at Alberto\'s house. His mother has prepared a special menú: consommé, roast lamb with potatoes, and turron for dessert. They toast with Spanish cava.',
       },
       {
-        spanish: 'A las once de la noche, salen hacia la Puerta del Sol. Las calles estan llenas de gente. Todos llevan bolsas con las doce uvas y botellas de champan.',
+        spanish: 'A las once de la noche, salen hacia la Puerta del Sol. Las calles están llenas de gente. Todos llevan bolsas con las doce uvas y botellas de champan.',
         english: 'At eleven at night, they head to Puerta del Sol. The streets are full of people. Everyone carries bags with the twelve grapes and bottles of champagne.',
       },
       {
-        spanish: 'Cuando llegan, la plaza esta abarrotada. Hay miles de personas esperando las campanadas del reloj. Sara y sus amigos encuentran un sitio cerca de la estatua del oso.',
+        spanish: 'Cuando llegan, la plaza está abarrotada. Hay miles de personas esperando las campanadas del reloj. Sara y sus amigos encuentran un sitio cerca de la estatua del oso.',
         english: 'When they arrive, the square is packed. There are thousands of people waiting for the clock chimes. Sara and her friends find a spot near the bear statue.',
       },
       {
-        spanish: 'A las doce menos cuarto, preparan las uvas. El reloj empieza a dar las campanadas. Todos intentan comer una uva con cada campana, pero es muy dificil. Sara se atraganta con la quinta y se rie.',
+        spanish: 'A las doce menos cuarto, preparan las uvas. El reloj empieza a dar las campanadas. Todos intentan comer una uva con cada campana, pero es muy difícil. Sara se atraganta con la quinta y se ríe.',
         english: 'At a quarter to twelve, they prepare the grapes. The clock starts to chime. Everyone tries to eat one grape with each bell, but it is very difficult. Sara chokes on the fifth one and laughs.',
       },
       {
-        spanish: 'Cuando termina la ultima campanada, todos gritan "Feliz Ano Nuevo!" Sara abraza a sus amigos. Brindan y miran los fuegos artificiales. Es el comienzo de un nuevo ano lleno de posibilidades.',
+        spanish: 'Cuando termina la última campanada, todos gritan "Feliz Año Nuevo!" Sara abraza a sus amigos. Brindan y miran los fuegos artificiales. Es el comienzo de un nuevo ano lleno de posibilidades.',
         english: 'When the last chime ends, everyone shouts "Happy New Year!" Sara hugs her friends. They toast and watch the fireworks. It is the beginning of a new year full of possibilities.',
       },
     ],
@@ -1434,12 +1434,12 @@ export const stories: Story[] = [
         questionSpanish: 'Adonde van a celebrar?',
         options: ['Plaza Mayor', 'Puerta del Sol', 'Retiro Park', 'Gran Via'],
         correctAnswer: 1,
-        explanation: 'They celebrate "en la Puerta del Sol, el corazon de Madrid."',
+        explanation: 'They celebrate "en la Puerta del Sol, el corazón de Madrid."',
       },
       {
         id: 'q2',
         question: 'How many grapes do Spaniards eat at midnight?',
-        questionSpanish: 'Cuantas uvas comen los espanoles a medianoche?',
+        questionSpanish: 'Cuántas uvas comen los españoles a medianoche?',
         options: ['6', '10', '12', '20'],
         correctAnswer: 2,
         explanation: 'They eat "doce uvas" (twelve grapes) - one with each bell chime.',
@@ -1464,7 +1464,7 @@ export const stories: Story[] = [
     description: 'Julia discovers a charming old bookstore in her neighborhood.',
     content: [
       {
-        spanish: 'Julia camina por una calle estrecha del centro. Nunca ha pasado por aqui antes. De repente, ve una libreria pequena con un escaparate lleno de libros viejos.',
+        spanish: 'Julia camina por una calle estrecha del centro. Nunca ha pasado por aquí antes. De repente, ve una libreria pequeña con un escaparate lleno de libros viejos.',
         english: 'Julia walks down a narrow street in the center. She has never passed through here before. Suddenly, she sees a small bookstore with a window display full of old books.',
       },
       {
@@ -1472,19 +1472,19 @@ export const stories: Story[] = [
         english: 'The store is called "The Corner of Dreams." Julia opens the door and enters. It smells of old paper and wood. An orange cat sleeps in an armchair.',
       },
       {
-        spanish: '"Bienvenida," dice una voz. Es un hombre mayor con gafas y una sonrisa amable. "Soy el senor Ruiz. Busca algo en particular?"',
+        spanish: '"Bienvenida," dice una voz. Es un hombre mayor con gafas y una sonrisa amable. "Soy el señor Ruiz. Busca algo en particular?"',
         english: '"Welcome," says a voice. It is an older man with glasses and a kind smile. "I am Mr. Ruiz. Are you looking for something in particular?"',
       },
       {
-        spanish: 'Julia mira las estanterias. Hay libros de todos los tipos: novelas, poesia, historia, ciencia. Ve una seccion de libros en espanol para estudiantes.',
+        spanish: 'Julia mira las estanterias. Hay libros de todos los tipos: novelas, poesia, historia, ciencia. Ve una sección de libros en español para estudiantes.',
         english: 'Julia looks at the shelves. There are books of all types: novels, poetry, history, science. She sees a section of books in Spanish for students.',
       },
       {
-        spanish: '"Estoy aprendiendo espanol," explica Julia. "Busco algo facil para leer." El senor Ruiz asiente y le muestra varios libros. "Este es perfecto para empezar: cuentos cortos con vocabulario basico."',
+        spanish: '"Estoy aprendiendo español," explica Julia. "Busco algo fácil para leer." El señor Ruiz asiente y le muestra varios libros. "Este es perfecto para empezar: cuentos cortos con vocabulario basico."',
         english: '"I am learning Spanish," explains Julia. "I\'m looking for something easy to read." Mr. Ruiz nods and shows her several books. "This one is perfect to start: short stories with basic vocabulary."',
       },
       {
-        spanish: 'Julia compra el libro y tambien un diccionario pequeno. "Vuelve cuando quieras," dice el senor Ruiz. "Siempre hay nuevos libros por descubrir." Julia sale de la tienda feliz. Ha encontrado su nuevo lugar favorito.',
+        spanish: 'Julia compra el libro y también un diccionario pequeño. "Vuelve cuándo quieras," dice el señor Ruiz. "Siempre hay nuevos libros por descubrir." Julia sale de la tienda feliz. Ha encontrado su nuevo lugar favorito.',
         english: 'Julia buys the book and also a small dictionary. "Come back whenever you want," says Mr. Ruiz. "There are always new books to discover." Julia leaves the store happy. She has found her new favorite place.',
       },
     ],
@@ -1521,10 +1521,10 @@ export const stories: Story[] = [
         questionSpanish: 'Que compra Julia?',
         options: ['Just a book', 'A book and a dictionary', 'Just a dictionary', 'Three books'],
         correctAnswer: 1,
-        explanation: 'Julia buys "el libro y tambien un diccionario pequeno."',
+        explanation: 'Julia buys "el libro y también un diccionario pequeño."',
       },
     ],
-    culturalNote: 'Spain has a strong literary tradition and many charming independent bookstores. April 23rd is "Dia del Libro" (Book Day) when it\'s traditional to give books and roses. This day honors Cervantes, author of Don Quixote, who died on April 23, 1616.',
+    culturalNote: 'Spain has a strong literary tradition and many charming independent bookstores. April 23rd is "Día del Libro" (Book Day) when it\'s traditional to give books and roses. This day honors Cervantes, author of Don Quixote, who died on April 23, 1616.',
   },
   {
     id: 'story-022',
@@ -1535,27 +1535,27 @@ export const stories: Story[] = [
     description: 'Antonio explains the Spanish tradition of siesta to his American friend.',
     content: [
       {
-        spanish: 'Mark es un estudiante americano en Madrid. Su amigo Antonio le ha invitado a comer en su casa. Despues del almuerzo, Antonio bosteza.',
+        spanish: 'Mark es un estudiante americano en Madrid. Su amigo Antonio le ha invitado a comer en su casa. Después del almuerzo, Antonio bosteza.',
         english: 'Mark is an American student in Madrid. His friend Antonio has invited him to eat at his house. After lunch, Antonio yawns.',
       },
       {
-        spanish: '"Voy a echar una siesta," dice Antonio. "Una que?" pregunta Mark confundido. "Una siesta - un descanso despues de comer. Es muy comun en Espana."',
+        spanish: '"Voy a echar una siesta," dice Antonio. "Una qué?" pregunta Mark confundido. "Una siesta - un descanso después de comer. Es muy común en España."',
         english: '"I\'m going to take a siesta," says Antonio. "A what?" asks Mark confused. "A siesta - a rest after eating. It is very common in Spain."',
       },
       {
-        spanish: 'Antonio explica: "En Espana, comemos tarde, entre las dos y las tres. Despues, muchas personas descansan un poco. Esto es la siesta."',
+        spanish: 'Antonio explica: "En España, comemos tarde, entre las dos y las tres. Después, muchas personas descansan un poco. Esto es la siesta."',
         english: 'Antonio explains: "In Spain, we eat late, between two and three. Afterwards, many people rest a little. This is the siesta."',
       },
       {
-        spanish: '"Pero las tiendas tambien cierran," anade Antonio. "Por eso muchas tiendas cierran de dos a cinco. Luego abren otra vez por la tarde."',
+        spanish: '"Pero las tiendas también cierran," anade Antonio. "Por eso muchas tiendas cierran de dos a cinco. Luego abren otra vez por la tarde."',
         english: '"But the stores also close," adds Antonio. "That\'s why many stores close from two to five. Then they open again in the afternoon."',
       },
       {
-        spanish: '"Interesante," dice Mark. "En America, trabajamos todo el dia sin parar." Antonio sonrie. "Por eso estais siempre cansados. Prueba la siesta. Te va a gustar."',
+        spanish: '"Interesante," dice Mark. "En America, trabajamos todo el día sin parar." Antonio sonríe. "Por eso estáis siempre cansados. Prueba la siesta. Te va a gustar."',
         english: '"Interesting," says Mark. "In America, we work all day without stopping." Antonio smiles. "That\'s why you\'re always tired. Try the siesta. You\'re going to like it."',
       },
       {
-        spanish: 'Mark decide intentarlo. Se tumba en el sofa y cierra los ojos. Veinte minutos despues, se despierta con mucha energia. "Tenias razon," dice a Antonio. "La siesta es fantastica!"',
+        spanish: 'Mark decide intentarlo. Se tumba en el sofa y cierra los ojos. Veinte minutos después, se despierta con mucha energia. "Tenias razon," dice a Antonio. "La siesta es fantastica!"',
         english: 'Mark decides to try it. He lies down on the sofa and closes his eyes. Twenty minutes later, he wakes up with a lot of energy. "You were right," he says to Antonio. "The siesta is fantastic!"',
       },
     ],
@@ -1573,7 +1573,7 @@ export const stories: Story[] = [
       {
         id: 'q1',
         question: 'What time do Spaniards typically eat lunch?',
-        questionSpanish: 'A que hora comen los espanoles normalmente?',
+        questionSpanish: 'A que hora comen los españoles normalmente?',
         options: ['12:00 - 1:00', '1:00 - 2:00', '2:00 - 3:00', '3:00 - 4:00'],
         correctAnswer: 2,
         explanation: 'Antonio says "comemos tarde, entre las dos y las tres."',
@@ -1592,7 +1592,7 @@ export const stories: Story[] = [
         questionSpanish: 'Cuanto dura la siesta de Mark?',
         options: ['10 minutes', '20 minutes', '30 minutes', '1 hour'],
         correctAnswer: 1,
-        explanation: 'Mark wakes up "Veinte minutos despues" - twenty minutes later.',
+        explanation: 'Mark wakes up "Veinte minutos después" - twenty minutes later.',
       },
     ],
     culturalNote: 'The siesta tradition comes from Spain\'s hot climate - historically, it made sense to rest during the hottest part of the day. While fewer people take siestas today due to modern work schedules, many shops still close in the afternoon, especially in smaller towns.',
@@ -1603,14 +1603,14 @@ export const stories: Story[] = [
     titleSpanish: 'El Viaje en Tren',
     level: 'elementary',
     estimatedMinutes: 4,
-    description: 'Sofia takes the high-speed train from Madrid to Barcelona.',
+    description: 'Sofía takes the high-speed train from Madrid to Barcelona.',
     content: [
       {
-        spanish: 'Sofia tiene una reunion de trabajo en Barcelona. Decide ir en tren de alta velocidad, el AVE. Es mas rapido y comodo que el avion para esta distancia.',
-        english: 'Sofia has a work meeting in Barcelona. She decides to go by high-speed train, the AVE. It is faster and more comfortable than the plane for this distance.',
+        spanish: 'Sofía tiene una reunion de trabajo en Barcelona. Decide ir en tren de alta velocidad, el AVE. Es más rápido y cómodo que el avión para está distancia.',
+        english: 'Sofía has a work meeting in Barcelona. She decides to go by high-speed train, the AVE. It is faster and more comfortable than the plane for this distance.',
       },
       {
-        spanish: 'Llega a la estacion de Atocha con treinta minutos de antelacion. La estacion es impresionante: tiene un jardin tropical interior con palmeras y tortugas.',
+        spanish: 'Llega a la estación de Atocha con treinta minutos de antelacion. La estación es impresionante: tiene un jardín tropical interior con palmeras y tortugas.',
         english: 'She arrives at Atocha station thirty minutes early. The station is impressive: it has an indoor tropical garden with palm trees and turtles.',
       },
       {
@@ -1618,21 +1618,21 @@ export const stories: Story[] = [
         english: 'She looks for her train on the departures screen. "AVE 3092 to Barcelona Sants, platform 12." She goes through security and walks to her car.',
       },
       {
-        spanish: 'Su asiento es junto a la ventana, en clase turista. El tren es muy limpio y moderno. Hay wifi gratis y enchufes para cargar el movil.',
+        spanish: 'Su asiento es junto a la ventana, en clase turista. El tren es muy limpio y moderno. Hay wifi gratis y enchufes para cargar el móvil.',
         english: 'Her seat is by the window, in tourist class. The train is very clean and modern. There is free wifi and outlets to charge the phone.',
       },
       {
-        spanish: 'El tren sale puntualmente a las ocho de la manana. En pocos minutos alcanza los trescientos kilometros por hora. Sofia ve el paisaje pasar rapidamente: campos de olivos, pueblos pequenos, montanas.',
-        english: 'The train leaves punctually at eight in the morning. In a few minutes it reaches three hundred kilometers per hour. Sofia sees the landscape pass quickly: olive fields, small towns, mountains.',
+        spanish: 'El tren sale puntualmente a las ocho de la mañana. En pocos minutos alcanza los trescientos kilometros por hora. Sofía ve el paisaje pasar rapidamente: campos de olivos, pueblos pequeños, montañas.',
+        english: 'The train leaves punctually at eight in the morning. In a few minutes it reaches three hundred kilometers per hour. Sofía sees the landscape pass quickly: olive fields, small towns, mountains.',
       },
       {
-        spanish: 'Dos horas y media despues, el tren llega a Barcelona. Sofia mira su reloj: las diez y media, perfecta para su reunion de las once. El AVE es realmente una maravilla.',
-        english: 'Two and a half hours later, the train arrives in Barcelona. Sofia looks at her watch: ten thirty, perfect for her eleven o\'clock meeting. The AVE is truly a marvel.',
+        spanish: 'Dos horas y media después, el tren llega a Barcelona. Sofía mira su reloj: las diez y media, perfecta para su reunion de las once. El AVE es realmente una maravilla.',
+        english: 'Two and a half hours later, the train arrives in Barcelona. Sofía looks at her watch: ten thirty, perfect for her eleven o\'clock meeting. The AVE is truly a marvel.',
       },
     ],
     vocabulary: [
       { spanish: 'el tren de alta velocidad', english: 'high-speed train', partOfSpeech: 'noun' },
-      { spanish: 'la estacion', english: 'station', partOfSpeech: 'noun' },
+      { spanish: 'la estación', english: 'station', partOfSpeech: 'noun' },
       { spanish: 'la antelacion', english: 'advance time', partOfSpeech: 'noun' },
       { spanish: 'la pantalla de salidas', english: 'departures screen', partOfSpeech: 'noun' },
       { spanish: 'el vagon', english: 'train car', partOfSpeech: 'noun' },
@@ -1644,7 +1644,7 @@ export const stories: Story[] = [
       {
         id: 'q1',
         question: 'What is the name of the high-speed train in Spain?',
-        questionSpanish: 'Como se llama el tren de alta velocidad en Espana?',
+        questionSpanish: 'Como se llama el tren de alta velocidad en España?',
         options: ['TGV', 'AVE', 'ICE', 'Eurostar'],
         correctAnswer: 1,
         explanation: 'The high-speed train is called "el AVE."',
@@ -1663,10 +1663,10 @@ export const stories: Story[] = [
         questionSpanish: 'Cuanto dura el viaje de Madrid a Barcelona?',
         options: ['1.5 hours', '2 hours', '2.5 hours', '3 hours'],
         correctAnswer: 2,
-        explanation: 'The train arrives "Dos horas y media despues" - two and a half hours later.',
+        explanation: 'The train arrives "Dos horas y media después" - two and a half hours later.',
       },
     ],
-    culturalNote: 'The AVE (Alta Velocidad Espanola) is Spain\'s high-speed rail network, one of the most extensive in the world. Atocha station in Madrid features an unexpected tropical garden built in the old train shed, complete with turtles that live in the pond.',
+    culturalNote: 'The AVE (Alta Velocidad Española) is Spain\'s high-speed rail network, one of the most extensive in the world. Atocha station in Madrid features an unexpected tropical garden built in the old train shed, complete with turtles that live in the pond.',
   },
   {
     id: 'story-024',
@@ -1677,27 +1677,27 @@ export const stories: Story[] = [
     description: 'David needs to buy medicine at a Spanish pharmacy.',
     content: [
       {
-        spanish: 'David esta de vacaciones en Espana. Esta manana se ha despertado con dolor de garganta y tos. Necesita ir a la farmacia.',
+        spanish: 'David está de vacaciones en España. Esta mañana se ha despertado con dolor de garganta y tos. Necesita ir a la farmacia.',
         english: 'David is on vacation in Spain. This morning he woke up with a sore throat and cough. He needs to go to the pharmacy.',
       },
       {
-        spanish: 'Busca una farmacia cerca de su hotel. Ve una cruz verde que parpadea. Es el simbolo de las farmacias en Espana. Entra en la tienda.',
+        spanish: 'Busca una farmacia cerca de su hotel. Ve una cruz verde que parpadea. Es el simbolo de las farmacias en España. Entra en la tienda.',
         english: 'He looks for a pharmacy near his hotel. He sees a flashing green cross. It is the symbol of pharmacies in Spain. He enters the store.',
       },
       {
-        spanish: '"Buenos dias, en que puedo ayudarle?" pregunta la farmaceutica. "Buenos dias. Me duele la garganta y tengo tos," explica David.',
+        spanish: '"Buenos días, en que puedo ayudarle?" pregunta la farmaceutica. "Buenos días. Me duele la garganta y tengo tos," explica David.',
         english: '"Good morning, how can I help you?" asks the pharmacist. "Good morning. My throat hurts and I have a cough," explains David.',
       },
       {
-        spanish: 'La farmaceutica le hace algunas preguntas: "Tiene fiebre? Desde cuando le duele?" David responde: "No tengo fiebre. Empezo ayer por la noche."',
+        spanish: 'La farmaceutica le hace algunas preguntas: "Tiene fiebre? Desde cuándo le duele?" David responde: "No tengo fiebre. Empezo ayer por la noche."',
         english: 'The pharmacist asks him some questions: "Do you have a fever? Since when has it hurt?" David answers: "I don\'t have a fever. It started last night."',
       },
       {
-        spanish: '"Le recomiendo estas pastillas para la garganta y este jarabe para la tos. Tome las pastillas tres veces al dia y el jarabe antes de dormir."',
+        spanish: '"Le recomiendo estas pastillas para la garganta y este jarabe para la tos. Tome las pastillas tres veces al día y el jarabe antes de dormir."',
         english: '"I recommend these throat lozenges and this cough syrup. Take the lozenges three times a day and the syrup before sleeping."',
       },
       {
-        spanish: '"Cuanto es?" pregunta David. "Son ocho euros con cincuenta." David paga y la farmaceutica le da una bolsa. "Que se mejore pronto." "Gracias, muy amable."',
+        spanish: '"¿Cuánto es?" pregunta David. "Son ocho euros con cincuenta." David paga y la farmaceutica le da una bolsa. "¿Qué se mejore pronto." "Gracias, muy amable."',
         english: '"How much is it?" asks David. "It is eight euros fifty." David pays and the pharmacist gives him a bag. "Get well soon." "Thank you, very kind."',
       },
     ],
@@ -1715,7 +1715,7 @@ export const stories: Story[] = [
       {
         id: 'q1',
         question: 'What is the symbol of pharmacies in Spain?',
-        questionSpanish: 'Cual es el simbolo de las farmacias en Espana?',
+        questionSpanish: 'Cual es el simbolo de las farmacias en España?',
         options: ['Red cross', 'Green cross', 'Blue cross', 'White cross'],
         correctAnswer: 1,
         explanation: 'The symbol is "una cruz verde que parpadea" - a flashing green cross.',
@@ -1748,15 +1748,15 @@ export const stories: Story[] = [
     description: 'Isabel checks the weather to plan her weekend activities.',
     content: [
       {
-        spanish: 'Es viernes por la manana. Isabel quiere planificar su fin de semana. Enciende la television para ver el pronostico del tiempo.',
-        english: 'It is Friday morning. Isabel wants to plan her weekend. She turns on the television to see the weather forecast.',
+        spanish: 'Es viernes por la mañana. Isabel quiere planificar su fin de semana. Enciende la televisión para ver el pronostico del tiempo.',
+        english: 'It is Friday morning. Isabel wants to plan her weekend. She turns on the televisión to see the weather forecast.',
       },
       {
-        spanish: '"Buenos dias. Este es el tiempo para el fin de semana," dice la presentadora. "Hoy viernes tenemos cielos nublados y posibilidad de lluvia por la tarde."',
+        spanish: '"Buenos días. Este es el tiempo para el fin de semana," dice la presentadora. "Hoy viernes tenemos cielos nublados y posibilidad de lluvia por la tarde."',
         english: '"Good morning. This is the weather for the weekend," says the presenter. "Today Friday we have cloudy skies and possibility of rain in the afternoon."',
       },
       {
-        spanish: '"Manana sabado sera un dia soleado con temperaturas de veinte grados. Perfecto para actividades al aire libre." Isabel sonrie. Puede ir a la playa.',
+        spanish: '"Manana sábado sera un día soleado con temperaturas de veinte grados. Perfecto para actividades al aire libre." Isabel sonríe. Puede ir a la playa.',
         english: '"Tomorrow Saturday will be a sunny day with temperatures of twenty degrees. Perfect for outdoor activities." Isabel smiles. She can go to the beach.',
       },
       {
@@ -1768,7 +1768,7 @@ export const stories: Story[] = [
         english: 'Isabel takes notes. Today she will stay home reading. Tomorrow she will go to the beach with her friends. Sunday she will clean and cook.',
       },
       {
-        spanish: 'Mira por la ventana. Efectivamente, el cielo esta gris y empiezan a caer las primeras gotas de lluvia. "El hombre del tiempo tenia razon," piensa.',
+        spanish: 'Mira por la ventana. Efectivamente, el cielo está gris y empiezan a caer las primeras gotas de lluvia. "El hombre del tiempo tenia razon," piensa.',
         english: 'She looks out the window. Indeed, the sky is gray and the first drops of rain start to fall. "The weatherman was right," she thinks.',
       },
     ],
@@ -1786,15 +1786,15 @@ export const stories: Story[] = [
       {
         id: 'q1',
         question: 'What will the weather be like on Saturday?',
-        questionSpanish: 'Como sera el tiempo el sabado?',
+        questionSpanish: 'Como sera el tiempo el sábado?',
         options: ['Rainy', 'Cloudy', 'Sunny', 'Stormy'],
         correctAnswer: 2,
-        explanation: 'Saturday "sera un dia soleado con temperaturas de veinte grados."',
+        explanation: 'Saturday "sera un día soleado con temperaturas de veinte grados."',
       },
       {
         id: 'q2',
         question: 'What is the temperature forecast for Saturday?',
-        questionSpanish: 'Cual es la temperatura prevista para el sabado?',
+        questionSpanish: 'Cual es la temperatura prevista para el sábado?',
         options: ['15 degrees', '18 degrees', '20 degrees', '25 degrees'],
         correctAnswer: 2,
         explanation: 'The forecast predicts "temperaturas de veinte grados" - twenty degrees.',
@@ -1808,7 +1808,7 @@ export const stories: Story[] = [
         explanation: 'Isabel plans "hara limpieza y cocinara" - will clean and cook.',
       },
     ],
-    culturalNote: 'Spain has diverse climates, from the rainy northwest (Galicia) to the hot, dry south (Andalucia). Spain uses Celsius for temperature (20°C = 68°F). Weather discussions are common small talk, just as in English-speaking countries.',
+    culturalNote: 'Spain has diverse climates, from the rainy northwest (Galicia) to the hot, dry south (Andalucía). Spain uses Celsius for temperature (20°C = 68°F). Weather discussions are common small talk, just as in English-speaking countries.',
   },
 
   {
@@ -1820,15 +1820,15 @@ export const stories: Story[] = [
     description: 'Roberto takes a taxi to the airport and chats with the driver.',
     content: [
       {
-        spanish: 'Roberto tiene un vuelo a las ocho de la manana. Son las seis y necesita un taxi urgente. Pide uno con una aplicacion en su telefono.',
+        spanish: 'Roberto tiene un vuelo a las ocho de la mañana. Son las seis y necesita un taxi urgente. Pide uno con una aplicacion en su teléfono.',
         english: 'Roberto has a flight at eight in the morning. It is six o\'clock and he needs an urgent taxi. He orders one with an app on his phone.',
       },
       {
-        spanish: 'El taxi llega en cinco minutos. Es un coche blanco con una luz verde en el techo. "Buenos dias, al aeropuerto, por favor," dice Roberto.',
+        spanish: 'El taxi llega en cinco minutos. Es un coche blanco con una luz verde en el techo. "Buenos días, al aeropuerto, por favor," dice Roberto.',
         english: 'The taxi arrives in five minutes. It is a white car with a green light on the roof. "Good morning, to the airport, please," says Roberto.',
       },
       {
-        spanish: 'El taxista es muy simpatico. Se llama Manuel y lleva treinta anos conduciendo taxis. "Conoce esta ciudad mejor que nadie," dice riendo.',
+        spanish: 'El taxista es muy simpatico. Se llama Manuel y lleva treinta años conduciendo taxis. "Conoce está ciudad mejor que nadie," dice riendo.',
         english: 'The taxi driver is very friendly. His name is Manuel and he has been driving taxis for thirty years. "I know this city better than anyone," he says laughing.',
       },
       {
@@ -1836,11 +1836,11 @@ export const stories: Story[] = [
         english: '"Where are you traveling to?" asks Manuel. "I\'m going to New York for work," responds Roberto. "Ah, New York! I have always wanted to visit that city."',
       },
       {
-        spanish: 'Llegan al aeropuerto en treinta minutos. El taximetro marca veintidos euros. Roberto paga con tarjeta y deja una propina. "Buen viaje, senor!"',
+        spanish: 'Llegan al aeropuerto en treinta minutos. El taximetro marca veintidós euros. Roberto paga con tarjeta y deja una propina. "Buen viaje, señor!"',
         english: 'They arrive at the airport in thirty minutes. The meter shows twenty-two euros. Roberto pays with card and leaves a tip. "Have a good trip, sir!"',
       },
       {
-        spanish: '"Gracias, Manuel. Ha sido un placer." Roberto baja del taxi y entra en la terminal. Todavia tiene tiempo de sobra para su vuelo.',
+        spanish: '"Gracias, Manuel. Ha sido un placer." Roberto baja del taxi y entra en la terminal. Todavía tiene tiempo de sobra para su vuelo.',
         english: '"Thank you, Manuel. It has been a pleasure." Roberto gets out of the taxi and enters the terminal. He still has plenty of time for his flight.',
       },
     ],
@@ -1861,7 +1861,7 @@ export const stories: Story[] = [
         questionSpanish: 'Cuanto tiempo lleva Manuel conduciendo taxis?',
         options: ['10 years', '20 years', '30 years', '40 years'],
         correctAnswer: 2,
-        explanation: 'Manuel "lleva treinta anos conduciendo taxis" - has been driving taxis for thirty years.',
+        explanation: 'Manuel "lleva treinta años conduciendo taxis" - has been driving taxis for thirty years.',
       },
       {
         id: 'q2',
@@ -1869,7 +1869,7 @@ export const stories: Story[] = [
         questionSpanish: 'Cuanto cuesta el viaje en taxi?',
         options: ['18 euros', '20 euros', '22 euros', '25 euros'],
         correctAnswer: 2,
-        explanation: 'The meter "marca veintidos euros" - shows twenty-two euros.',
+        explanation: 'The meter "marca veintidós euros" - shows twenty-two euros.',
       },
       {
         id: 'q3',
@@ -1888,31 +1888,31 @@ export const stories: Story[] = [
     titleSpanish: 'La Tienda de Mascotas',
     level: 'beginner',
     estimatedMinutes: 3,
-    description: 'Lucia goes to buy supplies for her new kitten.',
+    description: 'Lucía goes to buy supplies for her new kitten.',
     content: [
       {
-        spanish: 'Lucia tiene una gatita nueva. Se llama Luna y tiene tres meses. Hoy Lucia va a la tienda de mascotas a comprar todo lo necesario.',
-        english: 'Lucia has a new kitten. Her name is Luna and she is three months old. Today Lucia goes to the pet store to buy everything needed.',
+        spanish: 'Lucía tiene una gatita nueva. Se llama Luna y tiene tres meses. Hoy Lucía va a la tienda de mascotas a comprar todo lo necesario.',
+        english: 'Lucía has a new kitten. Her name is Luna and she is three months old. Today Lucía goes to the pet store to buy everything needed.',
       },
       {
-        spanish: 'La tienda se llama "Amigos Peludos." Hay muchos animales: perros, gatos, pajaros, peces y hamsters. Lucia mira a todos con curiosidad.',
-        english: 'The store is called "Furry Friends." There are many animals: dogs, cats, birds, fish, and hamsters. Lucia looks at all of them with curiosity.',
+        spanish: 'La tienda se llama "Amigos Peludos." Hay muchos animales: perros, gatos, pájaros, peces y hamsters. Lucía mira a todos con curiosidad.',
+        english: 'The store is called "Furry Friends." There are many animals: dogs, cats, birds, fish, and hamsters. Lucía looks at all of them with curiosity.',
       },
       {
-        spanish: '"Hola, que necesita?" pregunta el dependiente. "Necesito comida para gatos, una cama y algunos juguetes," responde Lucia.',
-        english: '"Hello, what do you need?" asks the clerk. "I need cat food, a bed, and some toys," responds Lucia.',
+        spanish: '"Hola, que necesita?" pregunta el dependiente. "Necesito comida para gatos, una cama y algunos juguetes," responde Lucía.',
+        english: '"Hello, what do you need?" asks the clerk. "I need cat food, a bed, and some toys," responds Lucía.',
       },
       {
-        spanish: 'El dependiente la lleva al pasillo de gatos. Hay muchas opciones de comida: seca, humeda, para gatitos, para adultos. "Para un gato joven, recomiendo esta marca."',
+        spanish: 'El dependiente la lleva al pasillo de gatos. Hay muchas opciones de comida: seca, humeda, para gatitos, para adultos. "Para un gato joven, recomiendo está marca."',
         english: 'The clerk takes her to the cat aisle. There are many food options: dry, wet, for kittens, for adults. "For a young cat, I recommend this brand."',
       },
       {
-        spanish: 'Lucia elige una cama suave de color rosa, unos ratones de juguete y una pelota con cascabel. Luna va a estar muy contenta.',
-        english: 'Lucia chooses a soft pink bed, some toy mice, and a ball with a bell. Luna is going to be very happy.',
+        spanish: 'Lucía elige una cama suave de color rosa, unos ratones de juguete y una pelota con cascabel. Luna va a estar muy contenta.',
+        english: 'Lucía chooses a soft pink bed, some toy mice, and a ball with a bell. Luna is going to be very happy.',
       },
       {
-        spanish: 'Paga cuarenta y cinco euros por todo. "Gracias. Tiene usted fotos de su gatita?" pregunta el dependiente. Lucia le muestra fotos de Luna. "Es preciosa," dice el.',
-        english: 'She pays forty-five euros for everything. "Thank you. Do you have photos of your kitten?" asks the clerk. Lucia shows him photos of Luna. "She is beautiful," he says.',
+        spanish: 'Paga cuarenta y cinco euros por todo. "Gracias. Tiene usted fotos de su gatita?" pregunta el dependiente. Lucía le muestra fotos de Luna. "Es preciosa," dice el.',
+        english: 'She pays forty-five euros for everything. "Thank you. Do you have photos of your kitten?" asks the clerk. Lucía shows him photos of Luna. "She is beautiful," he says.',
       },
     ],
     vocabulary: [
@@ -1929,26 +1929,26 @@ export const stories: Story[] = [
       {
         id: 'q1',
         question: 'How old is Luna?',
-        questionSpanish: 'Cuantos meses tiene Luna?',
+        questionSpanish: 'Cuántos meses tiene Luna?',
         options: ['Two months', 'Three months', 'Four months', 'Six months'],
         correctAnswer: 1,
         explanation: 'Luna "tiene tres meses" - is three months old.',
       },
       {
         id: 'q2',
-        question: 'What color is the bed Lucia chooses?',
-        questionSpanish: 'De que color es la cama que elige Lucia?',
+        question: 'What color is the bed Lucía chooses?',
+        questionSpanish: 'De que color es la cama que elige Lucía?',
         options: ['Blue', 'Green', 'Pink', 'Yellow'],
         correctAnswer: 2,
-        explanation: 'Lucia chooses "una cama suave de color rosa" - a soft pink bed.',
+        explanation: 'Lucía chooses "una cama suave de color rosa" - a soft pink bed.',
       },
       {
         id: 'q3',
-        question: 'How much does Lucia pay?',
-        questionSpanish: 'Cuanto paga Lucia?',
+        question: 'How much does Lucía pay?',
+        questionSpanish: 'Cuanto paga Lucía?',
         options: ['35 euros', '40 euros', '45 euros', '50 euros'],
         correctAnswer: 2,
-        explanation: 'Lucia "Paga cuarenta y cinco euros por todo."',
+        explanation: 'Lucía "Paga cuarenta y cinco euros por todo."',
       },
     ],
     culturalNote: 'Spaniards love their pets! Dogs and cats are the most popular pets, and pet stores (tiendas de mascotas) are common in Spanish cities. Many restaurants and cafes in Spain are pet-friendly, allowing well-behaved dogs inside.',
@@ -1962,15 +1962,15 @@ export const stories: Story[] = [
     description: 'Carlos starts going to the gym to get in shape.',
     content: [
       {
-        spanish: 'Carlos ha decidido empezar a hacer ejercicio. Lleva muchos meses sin moverse y se siente cansado todo el tiempo. Hoy es su primer dia en el gimnasio.',
+        spanish: 'Carlos ha decidido empezar a hacer ejercicio. Lleva muchos meses sin moverse y se siente cansado todo el tiempo. Hoy es su primer día en el gimnasio.',
         english: 'Carlos has decided to start exercising. He has gone many months without moving and feels tired all the time. Today is his first day at the gym.',
       },
       {
-        spanish: 'El gimnasio se llama "Fitness Total" y esta cerca de su oficina. Perfecto para ir antes o despues del trabajo. Un entrenador le da un tour por las instalaciones.',
+        spanish: 'El gimnasio se llama "Fitness Total" y está cerca de su oficina. Perfecto para ir antes o después del trabajo. Un entrenador le da un tour por las instalaciones.',
         english: 'The gym is called "Total Fitness" and is near his office. Perfect for going before or after work. A trainer gives him a tour of the facilities.',
       },
       {
-        spanish: '"Aqui tenemos las maquinas de cardio: cintas de correr, bicicletas y elipticas. Al fondo estan las pesas y los bancos." Carlos mira todo impresionado.',
+        spanish: '"Aqui tenemos las maquinas de cardio: cintas de correr, bicicletas y elipticas. Al fondo están las pesas y los bancos." Carlos mira todo impresionado.',
         english: '"Here we have the cardio machines: treadmills, bikes, and ellipticals. In the back are the weights and benches." Carlos looks at everything impressed.',
       },
       {
@@ -1978,11 +1978,11 @@ export const stories: Story[] = [
         english: 'The trainer creates a beginner routine for him. "We start gentle: twenty minutes of cardio and some basic exercises. Little by little we will increase the intensity."',
       },
       {
-        spanish: 'Carlos empieza en la cinta de correr. Camina rapido durante diez minutos y luego corre cinco minutos mas. Esta sudando mucho pero se siente bien.',
+        spanish: 'Carlos empieza en la cinta de correr. Camina rápido durante diez minutos y luego corre cinco minutos más. Esta sudando mucho pero se siente bien.',
         english: 'Carlos starts on the treadmill. He walks fast for ten minutes and then runs five more minutes. He is sweating a lot but feels good.',
       },
       {
-        spanish: 'Despues de la sesion, Carlos esta agotado pero satisfecho. "Lo mas dificil es empezar," dice el entrenador. "Vuelve manana y veras como cada dia es mas facil." Carlos sonrie. Esto va a cambiar su vida.',
+        spanish: 'Después de la sesión, Carlos está agotado pero satisfecho. "Lo más difícil es empezar," dice el entrenador. "Vuelve mañana y veras cómo cada día es más fácil." Carlos sonríe. Esto va a cambiar su vida.',
         english: 'After the session, Carlos is exhausted but satisfied. "The hardest part is starting," says the trainer. "Come back tomorrow and you\'ll see how every day gets easier." Carlos smiles. This is going to change his life.',
       },
     ],
@@ -2000,15 +2000,15 @@ export const stories: Story[] = [
       {
         id: 'q1',
         question: 'Where is the gym located?',
-        questionSpanish: 'Donde esta el gimnasio?',
+        questionSpanish: 'Donde está el gimnasio?',
         options: ['Near his house', 'Near his office', 'Near the park', 'Downtown'],
         correctAnswer: 1,
-        explanation: 'The gym "esta cerca de su oficina" - is near his office.',
+        explanation: 'The gym "está cerca de su oficina" - is near his office.',
       },
       {
         id: 'q2',
         question: 'How long does Carlos do cardio on his first day?',
-        questionSpanish: 'Cuanto tiempo hace cardio Carlos el primer dia?',
+        questionSpanish: 'Cuanto tiempo hace cardio Carlos el primer día?',
         options: ['10 minutes', '15 minutes', '20 minutes', '30 minutes'],
         correctAnswer: 2,
         explanation: 'The trainer says "veinte minutos de cardio" - twenty minutes of cardio.',
@@ -2016,7 +2016,7 @@ export const stories: Story[] = [
       {
         id: 'q3',
         question: 'How does Carlos feel after the session?',
-        questionSpanish: 'Como se siente Carlos despues de la sesion?',
+        questionSpanish: 'Como se siente Carlos después de la sesión?',
         options: ['Angry', 'Sad', 'Exhausted but satisfied', 'Bored'],
         correctAnswer: 2,
         explanation: 'Carlos is "agotado pero satisfecho" - exhausted but satisfied.',
@@ -2033,11 +2033,11 @@ export const stories: Story[] = [
     description: 'Miguel goes to the barber for a haircut.',
     content: [
       {
-        spanish: 'Miguel necesita cortarse el pelo. Ha pasado demasiado tiempo desde su ultimo corte. Su pelo esta muy largo y no le gusta como se ve.',
+        spanish: 'Miguel necesita cortarse el pelo. Ha pasado demasiado tiempo desde su último corte. Su pelo está muy largo y no le gusta cómo se ve.',
         english: 'Miguel needs to get a haircut. Too much time has passed since his last cut. His hair is very long and he doesn\'t like how he looks.',
       },
       {
-        spanish: 'Va a la barberia de siempre, "Peluqueria Luis." El barbero Luis conoce a Miguel desde hace anos. "Hola, Miguel! Tienes cita?"',
+        spanish: 'Va a la barberia de siempre, "Peluqueria Luis." El barbero Luis conoce a Miguel desde hace años. "Hola, Miguel! Tienes cita?"',
         english: 'He goes to his usual barbershop, "Luis Hairdresser." The barber Luis has known Miguel for years. "Hello, Miguel! Do you have an appointment?"',
       },
       {
@@ -2045,15 +2045,15 @@ export const stories: Story[] = [
         english: '"No, but I can wait if you\'re busy." Luis looks at his schedule. "I have an opening right now. Sit down." Miguel sits in the chair.',
       },
       {
-        spanish: 'Luis le pone una capa negra. "Como lo quieres hoy?" "Corto por los lados y un poco mas largo arriba. Y recortame la barba, por favor."',
+        spanish: 'Luis le pone una capa negra. "¿Cómo lo quieres hoy?" "Corto por los lados y un poco más largo arriba. Y recortame la barba, por favor."',
         english: 'Luis puts a black cape on him. "How do you want it today?" "Short on the sides and a little longer on top. And trim my beard, please."',
       },
       {
-        spanish: 'Luis trabaja rapidamente con las tijeras y la maquina. Conversan sobre el futbol y la familia. Despues de veinte minutos, Luis gira el sillon hacia el espejo.',
+        spanish: 'Luis trabaja rapidamente con las tijeras y la maquina. Conversan sobre el fútbol y la familia. Después de veinte minutos, Luis gira el sillon hacia el espejo.',
         english: 'Luis works quickly with scissors and clippers. They chat about soccer and family. After twenty minutes, Luis turns the chair towards the mirror.',
       },
       {
-        spanish: '"Que te parece?" Miguel se mira y sonrie. "Perfecto, como siempre." Paga quince euros y deja una propina generosa. "Hasta la proxima, Luis." "Cuidate, Miguel!"',
+        spanish: '"¿Qué te parece?" Miguel se mira y sonríe. "Perfecto, como siempre." Paga quince euros y deja una propina generosa. "Hasta la próxima, Luis." "Cuidate, Miguel!"',
         english: '"What do you think?" Miguel looks at himself and smiles. "Perfect, as always." He pays fifteen euros and leaves a generous tip. "Until next time, Luis." "Take care, Miguel!"',
       },
     ],
@@ -2082,7 +2082,7 @@ export const stories: Story[] = [
         questionSpanish: 'Como quiere Miguel su pelo?',
         options: ['All the same length', 'Long everywhere', 'Short on sides, longer on top', 'Completely shaved'],
         correctAnswer: 2,
-        explanation: 'Miguel wants it "Corto por los lados y un poco mas largo arriba."',
+        explanation: 'Miguel wants it "Corto por los lados y un poco más largo arriba."',
       },
       {
         id: 'q3',
@@ -2104,7 +2104,7 @@ export const stories: Story[] = [
     description: 'Ana spends a peaceful afternoon in the city park.',
     content: [
       {
-        spanish: 'Es domingo por la tarde y hace un tiempo precioso. Ana decide ir al Parque del Retiro, el parque mas famoso de Madrid.',
+        spanish: 'Es domingo por la tarde y hace un tiempo precioso. Ana decide ir al Parque del Retiro, el parque más famoso de Madrid.',
         english: 'It is Sunday afternoon and the weather is beautiful. Ana decides to go to Retiro Park, the most famous park in Madrid.',
       },
       {
@@ -2112,15 +2112,15 @@ export const stories: Story[] = [
         english: 'She enters through the Alcala Gate and walks along the paths. There are many people: families, couples, tourists, and people doing sports.',
       },
       {
-        spanish: 'Ana encuentra un banco vacio cerca de un estanque. Se sienta a leer un libro. Los patos nadan tranquilamente en el agua.',
+        spanish: 'Ana encuentra un banco vacío cerca de un estanque. Se sienta a leer un libro. Los patos nadan tranquilamente en el agua.',
         english: 'Ana finds an empty bench near a pond. She sits down to read a book. The ducks swim peacefully in the water.',
       },
       {
-        spanish: 'Un senor mayor vende helados en un carrito. Ana compra uno de fresa. Esta delicioso y muy refrescante.',
+        spanish: 'Un señor mayor vende helados en un carrito. Ana compra uno de fresa. Esta delicioso y muy refrescante.',
         english: 'An older man sells ice cream from a cart. Ana buys a strawberry one. It is delicious and very refreshing.',
       },
       {
-        spanish: 'Mas tarde, alquila una barca en el estanque grande. Rema lentamente mientras mira el Monumento a Alfonso XII. Es una tarde perfecta.',
+        spanish: 'Más tarde, alquila una barca en el estanque grande. Rema lentamente mientras mira el Monumento a Alfonso XII. Es una tarde perfecta.',
         english: 'Later, she rents a rowboat on the large pond. She rows slowly while looking at the Alfonso XII Monument. It is a perfect afternoon.',
       },
       {
@@ -2142,7 +2142,7 @@ export const stories: Story[] = [
       {
         id: 'q1',
         question: 'What day is it in the story?',
-        questionSpanish: 'Que dia es en la historia?',
+        questionSpanish: 'Que día es en la historia?',
         options: ['Saturday', 'Sunday', 'Monday', 'Friday'],
         correctAnswer: 1,
         explanation: 'The story says "Es domingo por la tarde" - It is Sunday afternoon.',
@@ -2175,28 +2175,28 @@ export const stories: Story[] = [
     description: 'Pablo is nervous about his first date with a girl he met online.',
     content: [
       {
-        spanish: 'Pablo conocio a Maria en una aplicacion de citas hace dos semanas. Han hablado mucho por mensajes y han decidido quedar en persona. Pablo esta muy nervioso.',
-        english: 'Pablo met Maria on a dating app two weeks ago. They have talked a lot by messages and have decided to meet in person. Pablo is very nervous.',
+        spanish: 'Pablo conocio a María en una aplicacion de citas hace dos semanas. Han hablado mucho por mensajes y han decidido quedar en persona. Pablo está muy nervioso.',
+        english: 'Pablo met María on a dating app two weeks ago. They have talked a lot by messages and have decided to meet in person. Pablo is very nervous.',
       },
       {
         spanish: 'Han quedado a las ocho en un restaurante italiano del centro. Pablo llega quince minutos antes. Se sienta en la barra y pide un agua para calmar los nervios.',
         english: 'They have arranged to meet at eight at an Italian restaurant downtown. Pablo arrives fifteen minutes early. He sits at the bar and orders a water to calm his nerves.',
       },
       {
-        spanish: 'A las ocho en punto, Maria entra en el restaurante. Es mas guapa en persona que en las fotos. Lleva un vestido azul y una sonrisa encantadora. "Hola, tu debes ser Pablo."',
-        english: 'At eight o\'clock sharp, Maria enters the restaurant. She is more beautiful in person than in the photos. She wears a blue dress and a charming smile. "Hello, you must be Pablo."',
+        spanish: 'A las ocho en punto, María entra en el restaurante. Es más guapa en persona que en las fotos. Lleva un vestido azul y una sonrisa encantadora. "Hola, tu debes ser Pablo."',
+        english: 'At eight o\'clock sharp, María enters the restaurant. She is more beautiful in person than in the photos. She wears a blue dress and a charming smile. "Hello, you must be Pablo."',
       },
       {
-        spanish: '"Hola, Maria. Encantado de conocerte por fin." Se dan dos besos, como es costumbre en Espana. Se sientan en una mesa junto a la ventana.',
-        english: '"Hello, Maria. Nice to finally meet you." They give each other two kisses, as is customary in Spain. They sit at a table by the window.',
+        spanish: '"Hola, María. Encantado de conocerte por fin." Se dan dos besos, cómo es costumbre en España. Se sientan en una mesa junto a la ventana.',
+        english: '"Hello, María. Nice to finally meet you." They give each other two kisses, as is customary in Spain. They sit at a table by the window.',
       },
       {
-        spanish: 'La conversacion fluye facilmente. Hablan de sus trabajos, sus aficiones y sus viajes. Maria es profesora de historia y le apasionan los museos. Pablo trabaja como ingeniero y adora el cine.',
-        english: 'The conversation flows easily. They talk about their jobs, hobbies, and travels. Maria is a history teacher and is passionate about museums. Pablo works as an engineer and loves cinema.',
+        spanish: 'La conversación fluye facilmente. Hablan de sus trabajos, sus aficiones y sus viajes. María es profesora de historia y le apasionan los museos. Pablo trabaja cómo ingeniero y adora el cine.',
+        english: 'The conversation flows easily. They talk about their jobs, hobbies, and travels. María is a history teacher and is passionate about museums. Pablo works as an engineer and loves cinema.',
       },
       {
-        spanish: 'Cenan pasta y comparten una botella de vino tinto. Las horas pasan volando. Cuando se dan cuenta, son casi las doce. "Me lo he pasado muy bien," dice Maria. "Yo tambien. Te gustaria repetir?" Maria sonrie y asiente. Pablo siente mariposas en el estomago.',
-        english: 'They have pasta for dinner and share a bottle of red wine. The hours fly by. When they realize, it is almost twelve. "I have had a great time," says Maria. "Me too. Would you like to do it again?" Maria smiles and nods. Pablo feels butterflies in his stomach.',
+        spanish: 'Cenan pasta y comparten una botella de vino tinto. Las horas pasan volando. Cuando se dan cuenta, son casi las doce. "Me lo he pasado muy bien," dice María. "Yo también. Te gustaria repetir?" María sonríe y asiente. Pablo siente mariposas en el estomago.',
+        english: 'They have pasta for dinner and share a bottle of red wine. The hours fly by. When they realize, it is almost twelve. "I have had a great time," says María. "Me too. Would you like to do it again?" María smiles and nods. Pablo feels butterflies in his stomach.',
       },
     ],
     vocabulary: [
@@ -2212,19 +2212,19 @@ export const stories: Story[] = [
     comprehensionQuestions: [
       {
         id: 'q1',
-        question: 'Where did Pablo and Maria meet?',
-        questionSpanish: 'Donde se conocieron Pablo y Maria?',
+        question: 'Where did Pablo and María meet?',
+        questionSpanish: 'Donde se conocieron Pablo y María?',
         options: ['At work', 'At a party', 'On a dating app', 'Through friends'],
         correctAnswer: 2,
-        explanation: 'Pablo "conocio a Maria en una aplicacion de citas."',
+        explanation: 'Pablo "conocio a María en una aplicacion de citas."',
       },
       {
         id: 'q2',
-        question: 'What is Maria\'s profession?',
-        questionSpanish: 'Cual es la profesion de Maria?',
+        question: 'What is María\'s profession?',
+        questionSpanish: 'Cual es la profesion de María?',
         options: ['Engineer', 'History teacher', 'Doctor', 'Lawyer'],
         correctAnswer: 1,
-        explanation: 'Maria "es profesora de historia."',
+        explanation: 'María "es profesora de historia."',
       },
       {
         id: 'q3',
@@ -2246,23 +2246,23 @@ export const stories: Story[] = [
     description: 'Teresa does her weekly grocery shopping.',
     content: [
       {
-        spanish: 'Es sabado por la manana y Teresa va al supermercado. Tiene una lista de compras en su telefono. Necesita muchas cosas porque la nevera esta vacia.',
+        spanish: 'Es sábado por la mañana y Teresa va al supermercado. Tiene una lista de compras en su teléfono. Necesita muchas cosas porque la nevera está vacia.',
         english: 'It is Saturday morning and Teresa goes to the supermarket. She has a shopping list on her phone. She needs many things because the fridge is empty.',
       },
       {
-        spanish: 'Coge un carrito y empieza por la seccion de frutas y verduras. Elige tomates, pepinos, lechugas, platanos y manzanas. Todo parece muy fresco.',
+        spanish: 'Coge un carrito y empieza por la sección de frutas y verduras. Elige tomates, pepinos, lechugas, platanos y manzanas. Todo parece muy fresco.',
         english: 'She takes a cart and starts in the fruit and vegetable section. She chooses tomatoes, cucumbers, lettuce, bananas, and apples. Everything looks very fresh.',
       },
       {
-        spanish: 'Despues va a la seccion de lacteos. Compra leche, yogures, queso fresco y mantequilla. Tambien coge una docena de huevos.',
+        spanish: 'Después va a la sección de lacteos. Compra leche, yogures, queso fresco y mantequilla. También coge una docena de huevos.',
         english: 'Then she goes to the dairy section. She buys milk, yogurts, fresh cheese, and butter. She also gets a dozen eggs.',
       },
       {
-        spanish: 'En la seccion de carnes, pide al carnicero medio kilo de pollo y un cuarto de jamon. "Algo mas?" "No, gracias. Eso es todo."',
+        spanish: 'En la sección de carnes, pide al carnicero medio kilo de pollo y un cuarto de jamón. "Algo más?" "No, gracias. Eso es todo."',
         english: 'In the meat section, she asks the butcher for half a kilo of chicken and a quarter of ham. "Anything else?" "No, thank you. That is all."',
       },
       {
-        spanish: 'Por ultimo, pasa por el pasillo de limpieza. Coge detergente, jabon y papel higienico. Su carrito esta lleno.',
+        spanish: 'Por último, pasa por el pasillo de limpieza. Coge detergente, jabon y papel higienico. Su carrito está lleno.',
         english: 'Lastly, she goes through the cleaning aisle. She gets detergent, soap, and toilet paper. Her cart is full.',
       },
       {
@@ -2284,10 +2284,10 @@ export const stories: Story[] = [
       {
         id: 'q1',
         question: 'What day does Teresa go shopping?',
-        questionSpanish: 'Que dia va Teresa a comprar?',
+        questionSpanish: 'Que día va Teresa a comprar?',
         options: ['Friday', 'Saturday', 'Sunday', 'Monday'],
         correctAnswer: 1,
-        explanation: 'The story says "Es sabado por la manana."',
+        explanation: 'The story says "Es sábado por la mañana."',
       },
       {
         id: 'q2',
@@ -2317,7 +2317,7 @@ export const stories: Story[] = [
     description: 'Marta goes to see her favorite band perform live.',
     content: [
       {
-        spanish: 'Marta ha esperado este momento durante meses. Su banda favorita, "Vetusta Morla," va a tocar en Madrid. Compro la entrada el dia que salieron a la venta.',
+        spanish: 'Marta ha esperado este momento durante meses. Su banda favorita, "Vetusta Morla," va a tocar en Madrid. Compro la entrada el día que salieron a la venta.',
         english: 'Marta has waited for this moment for months. Her favorite band, "Vetusta Morla," is going to play in Madrid. She bought the ticket the day they went on sale.',
       },
       {
@@ -2333,7 +2333,7 @@ export const stories: Story[] = [
         english: 'At nine, the lights go out and the crowd screams. The band comes out on stage. The first guitar chords sound and everyone sings.',
       },
       {
-        spanish: 'Marta conoce todas las canciones de memoria. Canta, baila y salta durante dos horas. Cuando tocan su cancion favorita, siente un escalofrio. Este momento es magico.',
+        spanish: 'Marta conoce todas las canciones de memoria. Canta, baila y salta durante dos horas. Cuando tocan su canción favorita, siente un escalofrio. Este momento es mágico.',
         english: 'Marta knows all the songs by heart. She sings, dances, and jumps for two hours. When they play her favorite song, she feels a chill. This moment is magical.',
       },
       {
@@ -2355,7 +2355,7 @@ export const stories: Story[] = [
       {
         id: 'q1',
         question: 'Who does Marta go to the concert with?',
-        questionSpanish: 'Con quien va Marta al concierto?',
+        questionSpanish: 'Con quién va Marta al concierto?',
         options: ['Her sister', 'Her boyfriend', 'Her best friend Laura', 'Her cousin'],
         correctAnswer: 2,
         explanation: 'Marta goes "con su mejor amiga, Laura."',
@@ -2371,7 +2371,7 @@ export const stories: Story[] = [
       {
         id: 'q3',
         question: 'How many songs in the encore?',
-        questionSpanish: 'Cuantas canciones hay en el bis?',
+        questionSpanish: 'Cuántas canciones hay en el bis?',
         options: ['One', 'Two', 'Three', 'Four'],
         correctAnswer: 2,
         explanation: 'The concert ends "con un bis de tres canciones."',
@@ -2388,11 +2388,11 @@ export const stories: Story[] = [
     description: 'Ricardo introduces his neighborhood in Barcelona.',
     content: [
       {
-        spanish: 'Me llamo Ricardo y vivo en el barrio de Gracia, en Barcelona. Es un barrio con mucha personalidad. Las calles son estrechas y hay muchas plazas pequenas.',
+        spanish: 'Me llamo Ricardo y vivo en el barrio de Gracia, en Barcelona. Es un barrio con mucha personalidad. Las calles son estrechas y hay muchas plazas pequeñas.',
         english: 'My name is Ricardo and I live in the Gracia neighborhood, in Barcelona. It is a neighborhood with a lot of personality. The streets are narrow and there are many small squares.',
       },
       {
-        spanish: 'Mi calle tiene de todo. Hay una panaderia que abre muy temprano. El olor a pan recien hecho me despierta cada manana. Tambien hay una fruteria, una ferreteria y una libreria.',
+        spanish: 'Mi calle tiene de todo. Hay una panaderia que abre muy temprano. El olor a pan recien hecho me despierta cada mañana. También hay una fruteria, una ferreteria y una libreria.',
         english: 'My street has everything. There is a bakery that opens very early. The smell of freshly made bread wakes me up every morning. There is also a fruit shop, a hardware store, and a bookstore.',
       },
       {
@@ -2400,11 +2400,11 @@ export const stories: Story[] = [
         english: 'In Sol Square there are several bars and restaurants. In the evenings, people sit on the terraces to have beers and tapas. It is a very lively place.',
       },
       {
-        spanish: 'Conozco a casi todos mis vecinos. La senora del segundo es una abuela muy simpatica que siempre me ofrece galletas. El chico del tercero es musico y a veces toca la guitarra.',
+        spanish: 'Conozco a casi todos mis vecinos. La señora del segundo es una abuela muy simpatica que siempre me ofrece galletas. El chico del tercero es musico y a veces toca la guitarra.',
         english: 'I know almost all my neighbors. The lady on the second floor is a very friendly grandmother who always offers me cookies. The guy on the third floor is a musician and sometimes plays the guitar.',
       },
       {
-        spanish: 'Lo mejor de Gracia es la fiesta mayor en agosto. Las calles se decoran con temas diferentes y hay concursos. Es una semana de musica, comida y alegria.',
+        spanish: 'Lo mejor de Gracia es la fiesta mayor en agosto. Las calles se decoran con temas diferentes y hay concursos. Es una semana de música, comida y alegría.',
         english: 'The best thing about Gracia is the main festival in August. The streets are decorated with different themes and there are contests. It is a week of music, food, and joy.',
       },
       {
@@ -2459,7 +2459,7 @@ export const stories: Story[] = [
     description: 'Children enjoy the traditional Spanish afternoon snack.',
     content: [
       {
-        spanish: 'En Espana, los ninos tienen una comida especial por la tarde: la merienda. Es entre la comida y la cena, normalmente a las cinco o las seis.',
+        spanish: 'En España, los niños tienen una comida especial por la tarde: la merienda. Es entre la comida y la cena, normalmente a las cinco o las seis.',
         english: 'In Spain, children have a special meal in the afternoon: the merienda. It is between lunch and dinner, normally at five or six.',
       },
       {
@@ -2467,19 +2467,19 @@ export const stories: Story[] = [
         english: 'Pablo and his sister Eva have just arrived from school. They are hungry. Their mother has prepared the merienda on the kitchen table.',
       },
       {
-        spanish: 'Hoy hay bocadillos de nocilla (crema de cacao) y zumo de naranja. Es el favorito de Pablo. Eva prefiere los bocadillos de jamon.',
+        spanish: 'Hoy hay bocadillos de nocilla (crema de cacao) y zumo de naranja. Es el favorito de Pablo. Eva prefiere los bocadillos de jamón.',
         english: 'Today there are Nocilla (chocolate spread) sandwiches and orange juice. It is Pablo\'s favorite. Eva prefers ham sandwiches.',
       },
       {
-        spanish: '"Podemos comer galletas tambien?" pregunta Eva. "Si, pero solo dos cada uno," responde la madre. "No quiero que ceneis sin apetito."',
+        spanish: '"Podemos comer galletas también?" pregunta Eva. "Si, pero solo dos cada uno," responde la madre. "No quiero que ceneis sin apetito."',
         english: '"Can we eat cookies too?" asks Eva. "Yes, but only two each," responds the mother. "I don\'t want you to have dinner without an appetite."',
       },
       {
-        spanish: 'Mientras meriendan, los ninos hablan de su dia en el colegio. Pablo ha aprendido una cancion nueva. Eva ha dibujado un arcoiris en clase de arte.',
+        spanish: 'Mientras meriendan, los niños hablan de su día en el colegio. Pablo ha aprendido una canción nueva. Eva ha dibujado un arcoiris en clase de arte.',
         english: 'While they have their snack, the children talk about their day at school. Pablo has learned a new song. Eva has drawn a rainbow in art class.',
       },
       {
-        spanish: 'Despues de la merienda, tienen que hacer los deberes. Pero primero, diez minutos de descanso para digerir. Es la regla de mama.',
+        spanish: 'Después de la merienda, tienen que hacer los deberes. Pero primero, diez minutos de descanso para digerir. Es la regla de mama.',
         english: 'After the merienda, they have to do their homework. But first, ten minutes of rest to digest. It is mom\'s rule.',
       },
     ],
@@ -2513,7 +2513,7 @@ export const stories: Story[] = [
       {
         id: 'q3',
         question: 'How many cookies can each child have?',
-        questionSpanish: 'Cuantas galletas puede comer cada nino?',
+        questionSpanish: 'Cuántas galletas puede comer cada niño?',
         options: ['One', 'Two', 'Three', 'Four'],
         correctAnswer: 1,
         explanation: 'The mother says "solo dos cada uno" - only two each.',

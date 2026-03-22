@@ -4,12 +4,14 @@ import './globals.css';
 import { AuthProvider } from '@/context/AuthContext';
 import { ThemeProvider } from '@/context/ThemeContext';
 import { ProgressProvider } from '@/context/ProgressContext';
+import { GamificationProvider } from '@/context/GamificationContext';
 import Header from '@/components/layout/Header';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
-  title: 'Aprende Espanol - Learn Spanish A1',
+  title: 'Aprende Español - Learn Spanish A1',
   description: 'Interactive Spanish learning website for A1 beginners with vocabulary, grammar, verb conjugation, flashcards, and conversations.',
   keywords: ['Spanish', 'Learn Spanish', 'A1', 'Language Learning', 'Vocabulary', 'Grammar', 'Flashcards'],
 };
@@ -25,19 +27,23 @@ export default function RootLayout({
         <AuthProvider>
           <ThemeProvider>
             <ProgressProvider>
+            <GamificationProvider>
               <div className="min-h-screen bg-cream dark:bg-charcoal tile-pattern">
                 <Header />
-                <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
-                  {children}
-                </main>
+                <ErrorBoundary>
+                  <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+                    {children}
+                  </main>
+                </ErrorBoundary>
                 <footer className="border-t border-gray-200 dark:border-gray-800 py-6 mt-12">
                   <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <p className="text-center text-sm text-gray-500 dark:text-gray-400">
-                      Aprende Espanol - Your journey to Spanish fluency starts here
+                      Aprende Español - Your journey to Spanish fluency starts here
                     </p>
                   </div>
                 </footer>
               </div>
+            </GamificationProvider>
             </ProgressProvider>
           </ThemeProvider>
         </AuthProvider>

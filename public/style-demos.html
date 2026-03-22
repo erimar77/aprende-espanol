@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homepage Style Demos</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0f172a;
+    color: #fff;
+    padding: 40px 20px;
+  }
+
+  .demo-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 16px 0;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .demo-nav a {
+    color: #94a3b8;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 99px;
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.2s;
+  }
+  .demo-nav a:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+  .demo-nav a.a1 { background: #3b82f6; color: #fff; border-color: #3b82f6; }
+  .demo-nav a.a2 { background: #d97706; color: #fff; border-color: #d97706; }
+  .demo-nav a.a3 { background: #e11d48; color: #fff; border-color: #e11d48; }
+  .demo-nav a.a4 { background: #334155; color: #fff; border-color: #475569; }
+
+  .demo-section {
+    max-width: 1100px;
+    margin: 0 auto 80px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .demo-label {
+    padding: 20px 32px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .demo-label span {
+    font-size: 18px;
+    font-weight: 800;
+    text-transform: none;
+    letter-spacing: -0.02em;
+  }
+
+  /* ===== STYLE 1: Modern/Clean SaaS ===== */
+  .s1 { background: #f8fafc; }
+  .s1 .demo-label { background: #3b82f6; color: #fff; }
+
+  .s1-hero {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .s1-hero::after {
+    content: '🎓';
+    position: absolute;
+    right: 40px;
+    bottom: -10px;
+    font-size: 120px;
+    opacity: 0.15;
+  }
+  .s1-hero .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .s1-hero h1 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+  .s1-hero p { color: rgba(255,255,255,0.85); font-size: 16px; }
+
+  .s1-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: 32px;
+  }
+  .s1-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .s1-card:hover { border-color: #3b82f6; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(59,130,246,0.12); }
+  .s1-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+  .s1-card h3 { font-size: 15px; font-weight: 700; color: #1e293b; margin-bottom: 2px; }
+  .s1-card .es { font-size: 12px; color: #3b82f6; font-weight: 600; margin-bottom: 6px; }
+  .s1-card p { font-size: 13px; color: #64748b; line-height: 1.5; }
+
+  .s1-section-title {
+    padding: 0 32px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #1e293b;
+    letter-spacing: -0.02em;
+  }
+  .s1-section-sub {
+    padding: 4px 32px 0;
+    font-size: 14px;
+    color: #64748b;
+  }
+
+  /* Progress */
+  .s1-progress {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 24px 32px 32px;
+  }
+  .s1-pcard {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+  }
+  .s1-pcard h4 { font-size: 14px; font-weight: 700; color: #1e293b; margin-bottom: 4px; }
+  .s1-pcard .desc { font-size: 12px; color: #94a3b8; margin-bottom: 12px; }
+  .s1-bar { height: 8px; background: #e2e8f0; border-radius: 99px; overflow: hidden; }
+  .s1-bar-fill { height: 100%; border-radius: 99px; }
+  .s1-pcard .stat { font-size: 12px; color: #64748b; margin-top: 8px; }
+
+  /* ===== STYLE 2: Warm/Inviting ===== */
+  .s2 { background: #fdf6ee; }
+  .s2 .demo-label { background: #d97706; color: #fff; }
+
+  .s2-hero {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 30%, #d97706 100%);
+    padding: 52px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+  .s2-hero::before {
+    content: '';
+    position: absolute;
+    right: -40px; top: -40px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .s2-hero .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.25);
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #78350f;
+    margin-bottom: 14px;
+  }
+  .s2-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: #78350f;
+    margin-bottom: 10px;
+  }
+  .s2-hero p { color: #92400e; font-size: 17px; line-height: 1.6; max-width: 600px; }
+
+  .s2-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 36px;
+  }
+  .s2-card {
+    background: #fffbf0;
+    border-radius: 20px;
+    padding: 28px;
+    border: 2px solid #fde68a;
+    transition: all 0.25s;
+    cursor: pointer;
+  }
+  .s2-card:hover { border-color: #d97706; background: #fff; box-shadow: 0 12px 32px rgba(217,119,6,0.1); }
+  .s2-icon {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+  .s2-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: #78350f; margin-bottom: 4px; }
+  .s2-card .es { font-size: 13px; color: #b45309; font-style: italic; margin-bottom: 8px; }
+  .s2-card p { font-size: 14px; color: #92400e; line-height: 1.6; }
+
+  .s2-section-title {
+    padding: 0 36px;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #78350f;
+  }
+  .s2-section-sub {
+    padding: 6px 36px 0;
+    font-size: 15px;
+    color: #92400e;
+    font-style: italic;
+  }
+
+  /* ===== STYLE 3: Bold/Vibrant ===== */
+  .s3 { background: #0f0f14; }
+  .s3 .demo-label { background: #e11d48; color: #fff; }
+
+  .s3-hero {
+    background: linear-gradient(135deg, #e11d48, #7c3aed, #2563eb);
+    padding: 56px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+  .s3-hero::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 0; bottom: 0; width: 50%;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
+  }
+  .s3-hero .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+    padding: 6px 16px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .s3-hero .pill::before { content: '⚡'; }
+  .s3-hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 52px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+  }
+  .s3-hero p { color: rgba(255,255,255,0.8); font-size: 18px; max-width: 550px; }
+
+  .s3-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    padding: 28px;
+  }
+  .s3-card {
+    background: #1a1a24;
+    border-radius: 14px;
+    padding: 22px;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: all 0.2s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .s3-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+  }
+  .s3-card:hover { border-color: rgba(255,255,255,0.15); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
+  .s3-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+  .s3-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 2px; }
+  .s3-card .es { font-size: 12px; color: #a78bfa; font-weight: 600; margin-bottom: 6px; }
+  .s3-card p { font-size: 13px; color: #94a3b8; line-height: 1.5; }
+
+  .s3-section-title {
+    padding: 0 28px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.02em;
+  }
+  .s3-section-sub {
+    padding: 4px 28px 0;
+    font-size: 14px;
+    color: #64748b;
+  }
+
+  /* ===== STYLE 4: Minimal/Elegant ===== */
+  .s4 { background: #fff; }
+  .s4 .demo-label { background: #334155; color: #fff; }
+
+  .s4-hero {
+    padding: 64px 48px;
+    border-bottom: 1px solid #e2e8f0;
+    position: relative;
+  }
+  .s4-hero .tag {
+    display: inline-block;
+    border: 1px solid #cbd5e1;
+    padding: 4px 14px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+  }
+  .s4-hero h1 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 12px;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+  .s4-hero p { color: #64748b; font-size: 17px; max-width: 500px; line-height: 1.7; }
+  .s4-hero .accent { position: absolute; right: 48px; top: 50%; transform: translateY(-50%); width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #f1f5f9, #e2e8f0); display: flex; align-items: center; justify-content: center; font-size: 48px; }
+
+  .s4-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    padding: 0;
+    background: #e2e8f0;
+  }
+  .s4-card {
+    background: #fff;
+    padding: 32px;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .s4-card:hover { background: #f8fafc; }
+  .s4-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .s4-card h3 { font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 700; color: #0f172a; margin-bottom: 2px; letter-spacing: -0.01em; }
+  .s4-card .es { font-size: 13px; color: #94a3b8; margin-bottom: 8px; }
+  .s4-card p { font-size: 14px; color: #64748b; line-height: 1.6; }
+  .s4-card .arrow { float: right; color: #cbd5e1; font-size: 18px; transition: 0.2s; }
+  .s4-card:hover .arrow { color: #0f172a; transform: translateX(3px); }
+
+  .s4-section-title {
+    padding: 0 32px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .s4-divider {
+    height: 1px;
+    background: #e2e8f0;
+    margin: 0 32px;
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-nav">
+  <a href="#style1" class="a1">1. Modern SaaS</a>
+  <a href="#style2" class="a2">2. Warm/Inviting</a>
+  <a href="#style3" class="a3">3. Bold/Vibrant</a>
+  <a href="#style4" class="a4">4. Minimal/Elegant</a>
+</div>
+
+<!-- ============ STYLE 1: Modern/Clean SaaS ============ -->
+<div class="demo-section s1" id="style1">
+  <div class="demo-label">Option 1 · <span>Modern / Clean SaaS</span></div>
+
+  <div class="s1-hero">
+    <div class="badge">A1 Level · Beginner Spanish</div>
+    <h1>¡Bienvenido a tu viaje de español!</h1>
+    <p>Start your Spanish journey with interactive lessons, real conversations, and more!</p>
+  </div>
+
+  <div style="padding-top: 28px;">
+    <div class="s1-section-title">📚 Learning Sections</div>
+    <div class="s1-section-sub">Secciones de Aprendizaje</div>
+  </div>
+  <div class="s1-grid">
+    <div class="s1-card">
+      <div class="s1-icon" style="background:#eff6ff;"><span>💬</span></div>
+      <h3>Conversations</h3><div class="es">Conversaciones</div>
+      <p>Practice real-life dialogues</p>
+    </div>
+    <div class="s1-card">
+      <div class="s1-icon" style="background:#f0fdfa;"><span>📖</span></div>
+      <h3>Stories</h3><div class="es">Cuentos</div>
+      <p>35+ graded reading stories</p>
+    </div>
+    <div class="s1-card">
+      <div class="s1-icon" style="background:#fdf4ff;"><span>📝</span></div>
+      <h3>Vocabulary</h3><div class="es">Vocabulario</div>
+      <p>500+ words by category</p>
+    </div>
+    <div class="s1-card">
+      <div class="s1-icon" style="background:#fff7ed;"><span>🔤</span></div>
+      <h3>Verbs</h3><div class="es">Verbos</div>
+      <p>100+ verbs with conjugations</p>
+    </div>
+    <div class="s1-card">
+      <div class="s1-icon" style="background:#f7fee7;"><span>⚡</span></div>
+      <h3>Verb Trainer</h3><div class="es">Entrenador de Verbos</div>
+      <p>Learn verbs in real sentences</p>
+    </div>
+    <div class="s1-card">
+      <div class="s1-icon" style="background:#faf5ff;"><span>🧠</span></div>
+      <h3>Grammar</h3><div class="es">Gramática</div>
+      <p>A1 grammar lessons</p>
+    </div>
+    <div class="s1-card">
+      <div class="s1-icon" style="background:#f0fdf4;"><span>🔄</span></div>
+      <h3>Flashcards</h3><div class="es">Tarjetas</div>
+      <p>Spaced repetition practice</p>
+    </div>
+    <div class="s1-card">
+      <div class="s1-icon" style="background:#fff7ed;"><span>✨</span></div>
+      <h3>Review</h3><div class="es">Repaso</div>
+      <p>Practice weak areas</p>
+    </div>
+  </div>
+
+  <div style="padding-top: 8px;">
+    <div class="s1-section-title">🗣️ Fluency Corner</div>
+    <div class="s1-section-sub">Rincón de Fluidez</div>
+  </div>
+  <div class="s1-grid">
+    <div class="s1-card" style="grid-column: span 2; border-color: #fed7aa; background: linear-gradient(135deg, #fff7ed, #fffbeb);">
+      <div style="display:flex; align-items:center; gap:16px;">
+        <div class="s1-icon" style="background:linear-gradient(135deg,#f97316,#ef4444); width:56px; height:56px;"><span style="font-size:26px;">⚡</span></div>
+        <div>
+          <h3 style="font-size:17px;">Fluency Workshop</h3>
+          <div class="es">Taller de Fluidez</div>
+          <p>Got 5, 10, or 20 minutes? Mixed practice combining all exercises!</p>
+        </div>
+        <div style="display:flex; gap:6px; margin-left:auto;">
+          <span style="background:#fff; border:1px solid #fed7aa; padding:4px 10px; border-radius:6px; font-size:12px; color:#c2410c; font-weight:600;">5m</span>
+          <span style="background:#fff; border:1px solid #fed7aa; padding:4px 10px; border-radius:6px; font-size:12px; color:#c2410c; font-weight:600;">10m</span>
+          <span style="background:#fff; border:1px solid #fed7aa; padding:4px 10px; border-radius:6px; font-size:12px; color:#c2410c; font-weight:600;">20m</span>
+        </div>
+      </div>
+    </div>
+    <div class="s1-card">
+      <div class="s1-icon" style="background:#ede9fe;"><span>🧩</span></div>
+      <h3>Sentence Builder</h3><div class="es">Constructor de Oraciones</div>
+      <p>Practice constructing sentences</p>
+    </div>
+    <div class="s1-card">
+      <div class="s1-icon" style="background:#fce7f3;"><span>🎤</span></div>
+      <h3>Speaking Prompts</h3><div class="es">Temas de Conversación</div>
+      <p>Random topics with questions</p>
+    </div>
+  </div>
+
+  <div style="padding-top: 8px;">
+    <div class="s1-section-title">📊 Your Progress</div>
+  </div>
+  <div class="s1-progress">
+    <div class="s1-pcard">
+      <h4>Lessons</h4>
+      <div class="desc">Grammar lessons completed</div>
+      <div class="s1-bar"><div class="s1-bar-fill" style="width:30%; background:linear-gradient(90deg,#3b82f6,#8b5cf6);"></div></div>
+      <div class="stat">3 of 10 complete</div>
+    </div>
+    <div class="s1-pcard">
+      <h4>Conversations</h4>
+      <div class="desc">Dialogue scenarios practiced</div>
+      <div class="s1-bar"><div class="s1-bar-fill" style="width:50%; background:linear-gradient(90deg,#06b6d4,#3b82f6);"></div></div>
+      <div class="stat">5 of 10 complete</div>
+    </div>
+    <div class="s1-pcard">
+      <h4>Words Learned</h4>
+      <div class="desc">Vocabulary in your deck</div>
+      <div style="font-size:36px; font-weight:800; color:#8b5cf6; margin-top:4px;">47</div>
+      <div class="stat">words practiced</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STYLE 2: Warm/Inviting ============ -->
+<div class="demo-section s2" id="style2">
+  <div class="demo-label">Option 2 · <span>Warm / Inviting</span></div>
+
+  <div class="s2-hero">
+    <div class="tag">✦ A1 · Beginner Spanish</div>
+    <h1>¡Bienvenido a tu viaje!</h1>
+    <p>Start your Spanish journey with interactive lessons, real conversations, and more. Learning a language is a beautiful adventure.</p>
+  </div>
+
+  <div style="padding-top: 28px;">
+    <div class="s2-section-title">Learning Sections</div>
+    <div class="s2-section-sub">Secciones de Aprendizaje</div>
+  </div>
+  <div class="s2-grid">
+    <div class="s2-card">
+      <div class="s2-icon" style="background:#fef3c7;"><span>💬</span></div>
+      <h3>Conversations</h3><div class="es">Conversaciones</div>
+      <p>Practice real-life dialogues with native speakers</p>
+    </div>
+    <div class="s2-card">
+      <div class="s2-icon" style="background:#d1fae5;"><span>📖</span></div>
+      <h3>Stories</h3><div class="es">Cuentos</div>
+      <p>35+ graded reading stories to build comprehension</p>
+    </div>
+    <div class="s2-card">
+      <div class="s2-icon" style="background:#fce7f3;"><span>📝</span></div>
+      <h3>Vocabulary</h3><div class="es">Vocabulario</div>
+      <p>500+ words organized by category</p>
+    </div>
+    <div class="s2-card">
+      <div class="s2-icon" style="background:#e0e7ff;"><span>🔤</span></div>
+      <h3>Verbs</h3><div class="es">Verbos</div>
+      <p>100+ verbs with full conjugation tables</p>
+    </div>
+    <div class="s2-card">
+      <div class="s2-icon" style="background:#ecfccb;"><span>⚡</span></div>
+      <h3>Verb Trainer</h3><div class="es">Entrenador de Verbos</div>
+      <p>Learn verbs through real sentence contexts</p>
+    </div>
+    <div class="s2-card">
+      <div class="s2-icon" style="background:#ede9fe;"><span>🧠</span></div>
+      <h3>Grammar</h3><div class="es">Gramática</div>
+      <p>Clear, friendly A1 grammar lessons</p>
+    </div>
+  </div>
+
+  <div style="padding-top: 8px;">
+    <div class="s2-section-title">🗣️ Fluency Corner</div>
+    <div class="s2-section-sub">Rincón de Fluidez — bridge the gap between knowing words and speaking fluently</div>
+  </div>
+  <div class="s2-grid">
+    <div class="s2-card" style="grid-column: span 3; border-color:#fbbf24; background:linear-gradient(135deg, #fffbeb, #fef3c7);">
+      <div style="display:flex; align-items:center; gap: 20px;">
+        <div class="s2-icon" style="background:#f59e0b; width:60px; height:60px;"><span style="font-size:28px;">⚡</span></div>
+        <div style="flex:1;">
+          <h3 style="font-size:20px;">Fluency Workshop</h3>
+          <div class="es">Taller de Fluidez</div>
+          <p>Got 5, 10, or 20 minutes? Get a mixed practice session combining all exercises!</p>
+        </div>
+      </div>
+    </div>
+    <div class="s2-card">
+      <div class="s2-icon" style="background:#dbeafe;"><span>🧩</span></div>
+      <h3>Sentence Builder</h3><div class="es">Constructor de Oraciones</div>
+      <p>Practice constructing sentences with common patterns</p>
+    </div>
+    <div class="s2-card">
+      <div class="s2-icon" style="background:#fce7f3;"><span>🎤</span></div>
+      <h3>Speaking Prompts</h3><div class="es">Temas de Conversación</div>
+      <p>Random topics with guiding questions</p>
+    </div>
+    <div class="s2-card">
+      <div class="s2-icon" style="background:#ccfbf1;"><span>📚</span></div>
+      <h3>Phrase Bank</h3><div class="es">Banco de Frases</div>
+      <p>Essential phrases by situation</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STYLE 3: Bold/Vibrant ============ -->
+<div class="demo-section s3" id="style3">
+  <div class="demo-label">Option 3 · <span>Bold / Vibrant</span></div>
+
+  <div class="s3-hero">
+    <div class="pill">A1 Beginner Spanish</div>
+    <h1>¡Bienvenido a tu<br>viaje de español!</h1>
+    <p>Interactive lessons, real conversations, and immersive practice to get you speaking.</p>
+  </div>
+
+  <div style="padding-top: 28px;">
+    <div class="s3-section-title">📚 Learning</div>
+    <div class="s3-section-sub">Secciones de Aprendizaje</div>
+  </div>
+  <div class="s3-grid">
+    <div class="s3-card" style="--c:#3b82f6;">
+      <div class="s3-icon" style="background:rgba(59,130,246,0.15);"><span>💬</span></div>
+      <h3>Conversations</h3><div class="es">Conversaciones</div>
+      <p>Practice real-life dialogues</p>
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#3b82f6;border-radius:3px 3px 0 0;"></div>
+    </div>
+    <div class="s3-card">
+      <div class="s3-icon" style="background:rgba(20,184,166,0.15);"><span>📖</span></div>
+      <h3>Stories</h3><div class="es">Cuentos</div>
+      <p>35+ graded reading stories</p>
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#14b8a6;border-radius:3px 3px 0 0;"></div>
+    </div>
+    <div class="s3-card">
+      <div class="s3-icon" style="background:rgba(168,85,247,0.15);"><span>📝</span></div>
+      <h3>Vocabulary</h3><div class="es">Vocabulario</div>
+      <p>500+ words by category</p>
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#a855f7;border-radius:3px 3px 0 0;"></div>
+    </div>
+    <div class="s3-card">
+      <div class="s3-icon" style="background:rgba(245,158,11,0.15);"><span>🔤</span></div>
+      <h3>Verbs</h3><div class="es">Verbos</div>
+      <p>100+ verbs with conjugations</p>
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#f59e0b;border-radius:3px 3px 0 0;"></div>
+    </div>
+    <div class="s3-card">
+      <div class="s3-icon" style="background:rgba(132,204,22,0.15);"><span>⚡</span></div>
+      <h3>Verb Trainer</h3><div class="es">Entrenador de Verbos</div>
+      <p>Learn verbs in real sentences</p>
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#84cc16;border-radius:3px 3px 0 0;"></div>
+    </div>
+    <div class="s3-card">
+      <div class="s3-icon" style="background:rgba(236,72,153,0.15);"><span>🧠</span></div>
+      <h3>Grammar</h3><div class="es">Gramática</div>
+      <p>A1 grammar lessons</p>
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#ec4899;border-radius:3px 3px 0 0;"></div>
+    </div>
+    <div class="s3-card">
+      <div class="s3-icon" style="background:rgba(34,197,94,0.15);"><span>🔄</span></div>
+      <h3>Flashcards</h3><div class="es">Tarjetas</div>
+      <p>Spaced repetition practice</p>
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#22c55e;border-radius:3px 3px 0 0;"></div>
+    </div>
+    <div class="s3-card">
+      <div class="s3-icon" style="background:rgba(244,63,94,0.15);"><span>📋</span></div>
+      <h3>Final Test</h3><div class="es">Examen Final</div>
+      <p>A1 level assessment</p>
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#f43f5e;border-radius:3px 3px 0 0;"></div>
+    </div>
+  </div>
+
+  <div style="padding-top: 8px;">
+    <div class="s3-section-title">🗣️ Fluency</div>
+    <div class="s3-section-sub">Rincón de Fluidez</div>
+  </div>
+  <div class="s3-grid">
+    <div class="s3-card" style="grid-column: span 4; background: linear-gradient(135deg, rgba(249,115,22,0.1), rgba(239,68,68,0.1)); border-color: rgba(249,115,22,0.3);">
+      <div style="display:flex; align-items:center; gap:18px;">
+        <div class="s3-icon" style="background:linear-gradient(135deg,#f97316,#ef4444); width:56px; height:56px;"><span style="font-size:26px;">⚡</span></div>
+        <div style="flex:1;">
+          <h3 style="font-size:20px;">Fluency Workshop</h3>
+          <div class="es">Taller de Fluidez</div>
+          <p>Mixed practice combining all exercises — 5, 10, or 20 minute sessions</p>
+        </div>
+        <div style="display:flex; gap:8px;">
+          <span style="background:rgba(249,115,22,0.2); padding:6px 14px; border-radius:8px; font-size:13px; color:#fb923c; font-weight:700;">5 min</span>
+          <span style="background:rgba(249,115,22,0.2); padding:6px 14px; border-radius:8px; font-size:13px; color:#fb923c; font-weight:700;">10 min</span>
+          <span style="background:rgba(249,115,22,0.2); padding:6px 14px; border-radius:8px; font-size:13px; color:#fb923c; font-weight:700;">20 min</span>
+        </div>
+      </div>
+    </div>
+    <div class="s3-card">
+      <div class="s3-icon" style="background:rgba(99,102,241,0.15);"><span>🧩</span></div>
+      <h3>Sentence Builder</h3><div class="es">Constructor de Oraciones</div>
+      <p>Practice constructing sentences</p>
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#6366f1;border-radius:3px 3px 0 0;"></div>
+    </div>
+    <div class="s3-card">
+      <div class="s3-icon" style="background:rgba(236,72,153,0.15);"><span>🎤</span></div>
+      <h3>Speaking Prompts</h3><div class="es">Temas de Conversación</div>
+      <p>Random topics with questions</p>
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#ec4899;border-radius:3px 3px 0 0;"></div>
+    </div>
+    <div class="s3-card">
+      <div class="s3-icon" style="background:rgba(20,184,166,0.15);"><span>📚</span></div>
+      <h3>Phrase Bank</h3><div class="es">Banco de Frases</div>
+      <p>Essential phrases by situation</p>
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#14b8a6;border-radius:3px 3px 0 0;"></div>
+    </div>
+    <div class="s3-card">
+      <div class="s3-icon" style="background:rgba(250,204,21,0.15);"><span>⚡</span></div>
+      <h3>Quick Response</h3><div class="es">Respuestas Rápidas</div>
+      <p>Timed drills for instant reactions</p>
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#facc15;border-radius:3px 3px 0 0;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STYLE 4: Minimal/Elegant ============ -->
+<div class="demo-section s4" id="style4">
+  <div class="demo-label">Option 4 · <span>Minimal / Elegant</span></div>
+
+  <div class="s4-hero">
+    <div class="tag">A1 · Beginner</div>
+    <h1>¡Bienvenido a tu<br>viaje de español!</h1>
+    <p>Interactive lessons, conversations, and immersive practice to start speaking Spanish.</p>
+    <div class="accent">🎓</div>
+  </div>
+
+  <div style="padding: 40px 32px 16px;">
+    <div class="s4-section-title">Learning</div>
+  </div>
+  <div class="s4-divider"></div>
+  <div class="s4-grid">
+    <div class="s4-card">
+      <span class="s4-icon">💬</span>
+      <h3>Conversations <span class="arrow">→</span></h3><div class="es">Conversaciones</div>
+      <p>Practice real-life dialogues</p>
+    </div>
+    <div class="s4-card">
+      <span class="s4-icon">📖</span>
+      <h3>Stories <span class="arrow">→</span></h3><div class="es">Cuentos</div>
+      <p>35+ graded reading stories</p>
+    </div>
+    <div class="s4-card">
+      <span class="s4-icon">📝</span>
+      <h3>Vocabulary <span class="arrow">→</span></h3><div class="es">Vocabulario</div>
+      <p>500+ words by category</p>
+    </div>
+    <div class="s4-card">
+      <span class="s4-icon">🔤</span>
+      <h3>Verbs <span class="arrow">→</span></h3><div class="es">Verbos</div>
+      <p>100+ verbs with conjugations</p>
+    </div>
+    <div class="s4-card">
+      <span class="s4-icon">⚡</span>
+      <h3>Verb Trainer <span class="arrow">→</span></h3><div class="es">Entrenador de Verbos</div>
+      <p>Learn verbs in real sentences</p>
+    </div>
+    <div class="s4-card">
+      <span class="s4-icon">🧠</span>
+      <h3>Grammar <span class="arrow">→</span></h3><div class="es">Gramática</div>
+      <p>A1 grammar lessons</p>
+    </div>
+  </div>
+
+  <div style="padding: 40px 32px 16px;">
+    <div class="s4-section-title">Fluency</div>
+  </div>
+  <div class="s4-divider"></div>
+  <div class="s4-grid" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="s4-card" style="grid-column: span 3; border-bottom: 1px solid #e2e8f0;">
+      <div style="display:flex; align-items:center; gap:20px;">
+        <span style="font-size:36px;">⚡</span>
+        <div style="flex:1;">
+          <h3 style="font-size:18px;">Fluency Workshop <span class="arrow">→</span></h3>
+          <div class="es">Taller de Fluidez</div>
+          <p>Mixed practice — 5, 10, or 20 minute sessions</p>
+        </div>
+        <div style="display:flex; gap:8px;">
+          <span style="border:1px solid #e2e8f0; padding:4px 12px; border-radius:4px; font-size:12px; color:#64748b; font-weight:600;">5m</span>
+          <span style="border:1px solid #e2e8f0; padding:4px 12px; border-radius:4px; font-size:12px; color:#64748b; font-weight:600;">10m</span>
+          <span style="border:1px solid #e2e8f0; padding:4px 12px; border-radius:4px; font-size:12px; color:#64748b; font-weight:600;">20m</span>
+        </div>
+      </div>
+    </div>
+    <div class="s4-card">
+      <span class="s4-icon">🧩</span>
+      <h3>Sentence Builder <span class="arrow">→</span></h3><div class="es">Constructor de Oraciones</div>
+      <p>Practice constructing sentences</p>
+    </div>
+    <div class="s4-card">
+      <span class="s4-icon">🎤</span>
+      <h3>Speaking Prompts <span class="arrow">→</span></h3><div class="es">Temas de Conversación</div>
+      <p>Random topics with questions</p>
+    </div>
+    <div class="s4-card">
+      <span class="s4-icon">📚</span>
+      <h3>Phrase Bank <span class="arrow">→</span></h3><div class="es">Banco de Frases</div>
+      <p>Essential phrases by situation</p>
+    </div>
+  </div>
+
+  <div style="padding: 40px 32px 16px;">
+    <div class="s4-section-title">Practice</div>
+  </div>
+  <div class="s4-divider"></div>
+  <div class="s4-grid">
+    <div class="s4-card">
+      <span class="s4-icon">🔄</span>
+      <h3>Flashcards <span class="arrow">→</span></h3><div class="es">Tarjetas</div>
+      <p>Spaced repetition practice</p>
+    </div>
+    <div class="s4-card">
+      <span class="s4-icon">✨</span>
+      <h3>Review <span class="arrow">→</span></h3><div class="es">Repaso</div>
+      <p>Practice weak areas</p>
+    </div>
+    <div class="s4-card">
+      <span class="s4-icon">📋</span>
+      <h3>Final Test <span class="arrow">→</span></h3><div class="es">Examen Final</div>
+      <p>A1 level assessment</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

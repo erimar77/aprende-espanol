@@ -4,8 +4,6 @@ import { useState, useMemo } from 'react';
 import { Search, Volume2, Filter, ChevronDown, ChevronUp } from 'lucide-react';
 import Card, { CardContent, CardTitle } from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
-import TeacherBubble from '@/components/layout/TeacherBubble';
-import { useTeachers } from '@/hooks/useTeachers';
 import { allVerbs, getVerbsByType, searchVerbs } from '@/data/verbs';
 import { Verb, ConjugationSet } from '@/lib/types';
 import { speak } from '@/lib/speech';
@@ -19,10 +17,9 @@ const TENSES = [
 
 const SUBJECTS = [
   { key: 'yo', label: 'yo', english: 'I' },
-  { key: 'tu', label: 'tu', english: 'you (informal)' },
-  { key: 'el', label: 'el/ella/usted', english: 'he/she/you (formal)' },
+  { key: 'tu', label: 'tú', english: 'you (informal)' },
+  { key: 'el', label: 'él/ella/usted', english: 'he/she/you (formal)' },
   { key: 'nosotros', label: 'nosotros', english: 'we' },
-  { key: 'vosotros', label: 'vosotros', english: 'you all (Spain)' },
   { key: 'ellos', label: 'ellos/ellas/ustedes', english: 'they/you all' },
 ];
 
@@ -163,9 +160,6 @@ export default function VerbsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [typeFilter, setTypeFilter] = useState<string>('all');
   const [expandedVerb, setExpandedVerb] = useState<string | null>(null);
-  const { getTeacherBySpecialty } = useTeachers();
-
-  const teacher = getTeacherBySpecialty('verbs');
 
   const filteredVerbs = useMemo(() => {
     let result = typeFilter === 'all' ? allVerbs : getVerbsByType(typeFilter as Verb['type']);
@@ -197,12 +191,6 @@ export default function VerbsPage() {
         </p>
       </div>
 
-      <TeacherBubble
-        teacher={teacher}
-        message="Los verbos son el corazon del espanol! Haz clic en cualquier verbo para ver todas sus conjugaciones. Practica con los verbos irregulares - son los mas importantes."
-        messageTranslation="Verbs are the heart of Spanish! Click on any verb to see all its conjugations. Practice with irregular verbs - they're the most important."
-        size="medium"
-      />
 
       {/* Search and Filters */}
       <Card>

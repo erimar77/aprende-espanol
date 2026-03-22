@@ -1,6 +1,7 @@
 'use client';
 
 import { UserProgress, FlashcardProgress } from './types';
+import { calculateSM2, binaryToQuality, getCardPriority, QualityRating } from './sm2';
 
 const STORAGE_KEYS = {
   PROGRESS: 'spanish_learning_progress',
@@ -42,99 +43,117 @@ export function saveProgress(progress: UserProgress): void {
   }
 }
 
+/**
+ * Update flashcard progress using SM-2 algorithm with quality rating.
+ * This is the primary function — accepts a quality rating (0-5).
+ */
+export function updateFlashcardProgressWithQuality(
+  wordId: string,
+  wordType: 'noun' | 'verb' | 'adjective' | 'adverb',
+  quality: QualityRating
+): { card: FlashcardProgress; progress: UserProgress } {
+  const progress = getProgress();
+  const existing = progress.flashcardProgress[wordId];
+  const now = new Date();
+
+  const currentCorrect = existing?.correctCount ?? 0;
+  const currentIncorrect = existing?.incorrectCount ?? 0;
+
+  const sm2Result = calculateSM2({
+    quality,
+    easeFactor: existing?.easeFactor ?? 2.5,
+    interval: existing?.interval ?? 0,
+    repetition: existing?.repetition ?? 0,
+    correctCount: currentCorrect,
+    incorrectCount: currentIncorrect,
+  });
+
+  const updated: FlashcardProgress = {
+    wordId,
+    wordType,
+    correctCount: currentCorrect + (quality >= 3 ? 1 : 0),
+    incorrectCount: currentIncorrect + (quality < 3 ? 1 : 0),
+    lastReviewed: now.toISOString(),
+    nextReview: sm2Result.nextReview,
+    easeFactor: sm2Result.easeFactor,
+    interval: sm2Result.interval,
+    repetition: sm2Result.repetition,
+    status: sm2Result.status,
+  };
+
+  progress.flashcardProgress[wordId] = updated;
+  saveProgress(progress);
+  return { card: updated, progress };
+}
+
+/**
+ * Backward-compatible wrapper: maps boolean correct/incorrect to quality ratings.
+ * correct → quality 4 ("Got It"), incorrect → quality 1 ("Again")
+ */
 export function updateFlashcardProgress(
   wordId: string,
   wordType: 'noun' | 'verb' | 'adjective' | 'adverb',
   correct: boolean
-): FlashcardProgress {
-  const progress = getProgress();
-  const existing = progress.flashcardProgress[wordId];
-
-  // Spaced repetition algorithm (SM-2 simplified)
-  const now = new Date();
-
-  if (!existing) {
-    const newProgress: FlashcardProgress = {
-      wordId,
-      wordType,
-      correctCount: correct ? 1 : 0,
-      incorrectCount: correct ? 0 : 1,
-      lastReviewed: now.toISOString(),
-      nextReview: new Date(now.getTime() + (correct ? 24 * 60 * 60 * 1000 : 10 * 60 * 1000)).toISOString(),
-      easeFactor: 2.5,
-      interval: correct ? 1 : 0,
-      status: 'learning',
-    };
-
-    progress.flashcardProgress[wordId] = newProgress;
-    saveProgress(progress);
-    return newProgress;
-  }
-
-  // Update existing progress
-  let { easeFactor, interval } = existing;
-
-  if (correct) {
-    existing.correctCount++;
-    if (interval === 0) {
-      interval = 1;
-    } else if (interval === 1) {
-      interval = 6;
-    } else {
-      interval = Math.round(interval * easeFactor);
-    }
-    easeFactor = Math.max(1.3, easeFactor + 0.1);
-  } else {
-    existing.incorrectCount++;
-    interval = 0;
-    easeFactor = Math.max(1.3, easeFactor - 0.2);
-  }
-
-  existing.easeFactor = easeFactor;
-  existing.interval = interval;
-  existing.lastReviewed = now.toISOString();
-  existing.nextReview = new Date(now.getTime() + interval * 24 * 60 * 60 * 1000).toISOString();
-
-  // Update status
-  if (existing.correctCount >= 5 && existing.incorrectCount === 0) {
-    existing.status = 'mastered';
-  } else if (existing.correctCount >= 3) {
-    existing.status = 'review';
-  } else {
-    existing.status = 'learning';
-  }
-
-  progress.flashcardProgress[wordId] = existing;
-  saveProgress(progress);
-  return existing;
+): { card: FlashcardProgress; progress: UserProgress } {
+  return updateFlashcardProgressWithQuality(wordId, wordType, binaryToQuality(correct));
 }
 
+/**
+ * Returns word IDs that are due for review, sorted by priority.
+ * Cards that are most overdue or struggling come first.
+ */
 export function getFlashcardsDueForReview(): string[] {
   const progress = getProgress();
   const now = new Date();
 
   return Object.entries(progress.flashcardProgress)
-    .filter(([_, card]) => new Date(card.nextReview) <= now)
+    .filter(([, card]) => new Date(card.nextReview) <= now)
+    .sort(([, a], [, b]) => getCardPriority(a) - getCardPriority(b))
     .map(([id]) => id);
 }
 
-export function markLessonComplete(lessonId: string): void {
+/**
+ * Returns summary stats about the review queue.
+ */
+export function getReviewQueueStats(): {
+  dueNow: number;
+  learning: number;
+  review: number;
+  mastered: number;
+  total: number;
+} {
+  const progress = getProgress();
+  const now = new Date();
+  const cards = Object.values(progress.flashcardProgress);
+
+  return {
+    dueNow: cards.filter(c => new Date(c.nextReview) <= now).length,
+    learning: cards.filter(c => c.status === 'learning').length,
+    review: cards.filter(c => c.status === 'review').length,
+    mastered: cards.filter(c => c.status === 'mastered').length,
+    total: cards.length,
+  };
+}
+
+export function markLessonComplete(lessonId: string): UserProgress {
   const progress = getProgress();
   if (!progress.lessonsCompleted.includes(lessonId)) {
     progress.lessonsCompleted.push(lessonId);
     saveProgress(progress);
   }
+  return progress;
 }
 
-export function markConversationComplete(conversationId: string): void {
+export function markConversationComplete(conversationId: string): UserProgress {
   const progress = getProgress();
   if (!progress.conversationsCompleted.includes(conversationId)) {
     progress.conversationsCompleted.push(conversationId);
     saveProgress(progress);
   }
+  return progress;
 }
 
-export function unlockConversation(conversationId: string): void {
+export function unlockConversation(conversationId: string): UserProgress {
   const progress = getProgress();
   // Initialize unlockedConversations if it doesn't exist (for existing users)
   if (!progress.unlockedConversations) {
@@ -144,6 +163,7 @@ export function unlockConversation(conversationId: string): void {
     progress.unlockedConversations.push(conversationId);
     saveProgress(progress);
   }
+  return progress;
 }
 
 export function isConversationUnlocked(conversationId: string): boolean {
@@ -155,7 +175,7 @@ export function isConversationUnlocked(conversationId: string): boolean {
   return progress.unlockedConversations.includes(conversationId);
 }
 
-export function addTestScore(testId: string, score: number, totalQuestions: number, timeSpent: number): void {
+export function addTestScore(testId: string, score: number, totalQuestions: number, timeSpent: number): UserProgress {
   const progress = getProgress();
   progress.testScores.push({
     testId,
@@ -165,6 +185,7 @@ export function addTestScore(testId: string, score: number, totalQuestions: numb
     timeSpent,
   });
   saveProgress(progress);
+  return progress;
 }
 
 export function getTheme(): 'light' | 'dark' {
@@ -214,12 +235,13 @@ export function setSelectedTeacher(teacherId: string): void {
   }
 }
 
-export function resetProgress(): void {
-  if (typeof window === 'undefined') return;
+export function resetProgress(): UserProgress {
+  if (typeof window === 'undefined') return DEFAULT_PROGRESS;
 
   try {
     localStorage.setItem(STORAGE_KEYS.PROGRESS, JSON.stringify(DEFAULT_PROGRESS));
   } catch (error) {
     console.error('Failed to reset progress:', error);
   }
+  return DEFAULT_PROGRESS;
 }

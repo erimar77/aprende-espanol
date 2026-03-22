@@ -2,36 +2,175 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #FFF8F0;
-  --foreground: #1C1C1E;
-  --card: #FFFFFF;
-  --card-foreground: #1C1C1E;
-  --primary: #E85D4C;
-  --primary-foreground: #FFFFFF;
-  --secondary: #F4C430;
-  --secondary-foreground: #1C1C1E;
-  --accent: #1A535C;
-  --accent-foreground: #FFFFFF;
-  --muted: #F3F4F6;
-  --muted-foreground: #6B7280;
-  --border: #E5E7EB;
+/* CSS Variables use RGB values (space-separated) for Tailwind opacity support */
+:root,
+.scheme-default {
+  --background: 255 248 240;
+  --foreground: 28 28 30;
+  --card: 255 255 255;
+  --card-foreground: 28 28 30;
+  --primary: 232 93 76;
+  --primary-foreground: 255 255 255;
+  --secondary: 244 196 48;
+  --secondary-foreground: 28 28 30;
+  --accent: 26 83 92;
+  --accent-foreground: 255 255 255;
+  --muted: 243 244 246;
+  --muted-foreground: 107 114 128;
+  --border: 229 231 235;
 }
 
-.dark {
-  --background: #1C1C1E;
-  --foreground: #F5F5F5;
-  --card: #2C2C2E;
-  --card-foreground: #F5F5F5;
-  --primary: #F87C72;
-  --primary-foreground: #1C1C1E;
-  --secondary: #F4C430;
-  --secondary-foreground: #1C1C1E;
-  --accent: #2DD4BF;
-  --accent-foreground: #1C1C1E;
-  --muted: #3A3A3C;
-  --muted-foreground: #9CA3AF;
-  --border: #3A3A3C;
+.dark,
+.scheme-default.dark {
+  --background: 28 28 30;
+  --foreground: 245 245 245;
+  --card: 44 44 46;
+  --card-foreground: 245 245 245;
+  --primary: 248 124 114;
+  --primary-foreground: 28 28 30;
+  --secondary: 244 196 48;
+  --secondary-foreground: 28 28 30;
+  --accent: 45 212 191;
+  --accent-foreground: 28 28 30;
+  --muted: 58 58 60;
+  --muted-foreground: 156 163 175;
+  --border: 58 58 60;
+}
+
+/* ============================================
+   COLOR SCHEMES - Latin American Themes
+   ============================================ */
+
+/* Peru Theme - Red & White with Gold accents (Flag inspired) */
+.scheme-peru {
+  --background: 255 249 245;
+  --foreground: 28 28 30;
+  --card: 255 255 255;
+  --card-foreground: 28 28 30;
+  --primary: 217 16 35;
+  --primary-foreground: 255 255 255;
+  --secondary: 200 169 81;
+  --secondary-foreground: 28 28 30;
+  --accent: 139 0 0;
+  --accent-foreground: 255 255 255;
+  --muted: 255 240 235;
+  --muted-foreground: 107 114 128;
+  --border: 245 213 208;
+}
+
+.scheme-peru.dark {
+  --background: 26 18 18;
+  --foreground: 245 245 245;
+  --card: 42 31 31;
+  --card-foreground: 245 245 245;
+  --primary: 230 57 70;
+  --primary-foreground: 255 255 255;
+  --secondary: 212 175 55;
+  --secondary-foreground: 28 28 30;
+  --accent: 205 92 92;
+  --accent-foreground: 255 255 255;
+  --muted: 58 41 41;
+  --muted-foreground: 156 163 175;
+  --border: 61 41 41;
+}
+
+/* Mexico Theme - Green, White & Red (Flag inspired) */
+.scheme-mexico {
+  --background: 245 255 245;
+  --foreground: 28 28 30;
+  --card: 255 255 255;
+  --card-foreground: 28 28 30;
+  --primary: 0 104 71;
+  --primary-foreground: 255 255 255;
+  --secondary: 206 17 38;
+  --secondary-foreground: 255 255 255;
+  --accent: 139 69 19;
+  --accent-foreground: 255 255 255;
+  --muted: 232 245 232;
+  --muted-foreground: 107 114 128;
+  --border: 200 230 200;
+}
+
+.scheme-mexico.dark {
+  --background: 15 26 15;
+  --foreground: 245 245 245;
+  --card: 26 42 26;
+  --card-foreground: 245 245 245;
+  --primary: 46 139 87;
+  --primary-foreground: 255 255 255;
+  --secondary: 220 20 60;
+  --secondary-foreground: 255 255 255;
+  --accent: 205 133 63;
+  --accent-foreground: 28 28 30;
+  --muted: 26 42 26;
+  --muted-foreground: 156 163 175;
+  --border: 45 61 45;
+}
+
+/* Colombia Theme - Yellow, Blue & Red (Flag inspired) */
+.scheme-colombia {
+  --background: 255 254 245;
+  --foreground: 28 28 30;
+  --card: 255 255 255;
+  --card-foreground: 28 28 30;
+  --primary: 252 209 22;
+  --primary-foreground: 28 28 30;
+  --secondary: 0 56 147;
+  --secondary-foreground: 255 255 255;
+  --accent: 206 17 38;
+  --accent-foreground: 255 255 255;
+  --muted: 255 248 220;
+  --muted-foreground: 107 114 128;
+  --border: 240 230 140;
+}
+
+.scheme-colombia.dark {
+  --background: 26 26 18;
+  --foreground: 245 245 245;
+  --card: 42 42 31;
+  --card-foreground: 245 245 245;
+  --primary: 255 215 0;
+  --primary-foreground: 28 28 30;
+  --secondary: 65 105 225;
+  --secondary-foreground: 255 255 255;
+  --accent: 220 20 60;
+  --accent-foreground: 255 255 255;
+  --muted: 42 42 31;
+  --muted-foreground: 156 163 175;
+  --border: 61 61 41;
+}
+
+/* Argentina Theme - Light Blue & White with Sun Gold (Flag inspired) */
+.scheme-argentina {
+  --background: 245 250 255;
+  --foreground: 28 28 30;
+  --card: 255 255 255;
+  --card-foreground: 28 28 30;
+  --primary: 116 172 223;
+  --primary-foreground: 28 28 30;
+  --secondary: 252 191 73;
+  --secondary-foreground: 28 28 30;
+  --accent: 26 83 92;
+  --accent-foreground: 255 255 255;
+  --muted: 232 244 255;
+  --muted-foreground: 107 114 128;
+  --border: 184 212 240;
+}
+
+.scheme-argentina.dark {
+  --background: 15 20 25;
+  --foreground: 245 245 245;
+  --card: 26 37 48;
+  --card-foreground: 245 245 245;
+  --primary: 91 155 213;
+  --primary-foreground: 255 255 255;
+  --secondary: 244 196 48;
+  --secondary-foreground: 28 28 30;
+  --accent: 45 212 191;
+  --accent-foreground: 28 28 30;
+  --muted: 26 37 48;
+  --muted-foreground: 156 163 175;
+  --border: 41 61 77;
 }
 
 * {
@@ -47,8 +186,8 @@ body {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: rgb(var(--background));
+  color: rgb(var(--foreground));
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -65,11 +204,11 @@ body {
 /* Speech bubble styling */
 .speech-bubble {
   position: relative;
-  background: var(--card);
+  background: rgb(var(--card));
   border-radius: 1rem;
   padding: 1rem 1.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  border: 2px solid var(--border);
+  border: 2px solid rgb(var(--border));
 }
 
 .speech-bubble::before {
@@ -79,7 +218,7 @@ body {
   left: 30px;
   border-width: 12px 12px 0;
   border-style: solid;
-  border-color: var(--border) transparent transparent;
+  border-color: rgb(var(--border)) transparent transparent;
 }
 
 .speech-bubble::after {
@@ -89,7 +228,7 @@ body {
   left: 32px;
   border-width: 10px 10px 0;
   border-style: solid;
-  border-color: var(--card) transparent transparent;
+  border-color: rgb(var(--card)) transparent transparent;
 }
 
 /* Flashcard flip animation */
@@ -128,7 +267,7 @@ body {
 }
 
 .btn-secondary {
-  @apply bg-secondary-400 hover:bg-secondary-500 text-gray-900 font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  @apply bg-secondary-400 hover:bg-secondary-500 text-gray-900 dark:text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
 }
 
 .btn-accent {
@@ -147,7 +286,7 @@ body {
 
 .progress-bar-fill {
   @apply h-full rounded-full transition-all duration-500 ease-out;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  background: linear-gradient(90deg, rgb(var(--primary)), rgb(var(--secondary)));
 }
 
 /* Teacher avatar styling */
@@ -182,9 +321,64 @@ body {
   @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
 }
 
-/* Animated gradient background for hero sections */
+/* ============================================
+   THEME-AWARE HERO - Adapts to color scheme
+   ============================================ */
+
+/* Base theme hero - uses CSS variables from active color scheme */
+.theme-hero {
+  background: linear-gradient(135deg, rgb(var(--primary)) 0%, rgb(var(--secondary)) 100%);
+  position: relative;
+}
+.theme-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Peru Hero - Red & Gold with decorative pattern */
+.scheme-peru .theme-hero {
+  background: linear-gradient(160deg, #D91023 0%, #B80D1E 40%, #C8A951 100%);
+}
+.scheme-peru .theme-hero::before {
+  background-image:
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.15) 0%, transparent 50%),
+    radial-gradient(circle, rgba(200,169,81,0.15) 2px, transparent 2px);
+  background-size: 100% 100%, 20px 20px;
+}
+
+/* Mexico Hero - Green with tile pattern */
+.scheme-mexico .theme-hero {
+  background: linear-gradient(135deg, #006847 0%, #004D35 50%, #CE1126 100%);
+}
+.scheme-mexico .theme-hero::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2.5L25 17l-5 3.5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Colombia Hero - Yellow to blue with subtle dots */
+.scheme-colombia .theme-hero {
+  background: linear-gradient(160deg, #FCD116 0%, #E5BC14 30%, #003893 100%);
+}
+.scheme-colombia .theme-hero::before {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.12) 2px, transparent 2px);
+  background-size: 24px 24px;
+}
+
+/* Argentina Hero - Light blue with sun glow */
+.scheme-argentina .theme-hero {
+  background: linear-gradient(135deg, #74ACDF 0%, #5B9BD5 50%, #FCBF49 100%);
+}
+.scheme-argentina .theme-hero::before {
+  background:
+    radial-gradient(circle at 85% 30%, rgba(252,191,73,0.4) 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.2) 0%, transparent 50%);
+}
+
+/* Legacy gradient-hero (keeping for compatibility) */
 .gradient-hero {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+  background: linear-gradient(135deg, rgb(var(--primary)) 0%, rgb(var(--secondary)) 50%, rgb(var(--accent)) 100%);
   background-size: 200% 200%;
   animation: gradient-shift 8s ease infinite;
 }
@@ -195,6 +389,15 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out forwards;
+}
+
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;
@@ -202,32 +405,32 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--muted);
+  background: rgb(var(--muted));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary);
+  background: rgb(var(--primary));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-600);
+  background: rgb(var(--primary) / 0.8);
 }
 
 /* Focus styles */
 :focus-visible {
-  outline: 2px solid var(--primary);
+  outline: 2px solid rgb(var(--primary));
   outline-offset: 2px;
 }
 
 /* Selection styles */
 ::selection {
-  background: var(--primary);
+  background: rgb(var(--primary));
   color: white;
 }
 
 /* Loading spinner */
 .spinner {
-  @apply animate-spin rounded-full border-4 border-gray-200 border-t-primary-500;
+  @apply animate-spin rounded-full border-4 border-gray-200 dark:border-gray-700 border-t-primary-500;
 }

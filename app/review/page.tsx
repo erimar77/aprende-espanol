@@ -5,13 +5,12 @@ import { RotateCcw, TrendingUp, AlertCircle, CheckCircle, ChevronRight, Volume2,
 import Card, { CardContent, CardTitle, CardDescription } from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import ProgressBar from '@/components/ui/ProgressBar';
-import TeacherBubble from '@/components/layout/TeacherBubble';
-import { useTeachers } from '@/hooks/useTeachers';
 import { nouns } from '@/data/nouns';
 import { adjectives } from '@/data/adjectives';
 import { adverbs } from '@/data/adverbs';
 import { allVerbs } from '@/data/verbs';
 import { useProgress } from '@/context/ProgressContext';
+import { useGamification } from '@/context/GamificationContext';
 import { speak } from '@/lib/speech';
 
 interface ReviewItem {
@@ -22,36 +21,46 @@ interface ReviewItem {
   correctCount: number;
   incorrectCount: number;
   accuracy: number;
+  status: string;
+  nextReview: string;
+  interval: number;
+  easeFactor: number;
 }
 
 export default function ReviewPage() {
-  const { flashcardProgress, updateFlashcardProgress } = useProgress();
+  const { flashcardProgress, updateFlashcardProgress, getReviewQueueStats } = useProgress();
+  const { earnXP, recordSkill } = useGamification();
   const [reviewMode, setReviewMode] = useState<'overview' | 'practice'>('overview');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
   const [sessionStats, setSessionStats] = useState({ correct: 0, incorrect: 0 });
-  const { getTeacherBySpecialty } = useTeachers();
 
-  const teacher = getTeacherBySpecialty('review');
+  const queueStats = useMemo(() => getReviewQueueStats(), [getReviewQueueStats]);
 
-  // Get items that need review (low accuracy or marked as needing practice)
+  // Get items that need review (due for review, low accuracy, or still learning)
   const itemsToReview = useMemo(() => {
     const items: ReviewItem[] = [];
+    const now = new Date();
 
     Object.entries(flashcardProgress).forEach(([id, progress]) => {
       const totalAttempts = progress.correctCount + progress.incorrectCount;
       if (totalAttempts === 0) return;
 
       const accuracy = (progress.correctCount / totalAttempts) * 100;
+      const isDue = new Date(progress.nextReview) <= now;
 
-      // Include items with accuracy below 70% or status is 'learning'
-      if (accuracy < 70 || progress.status === 'learning') {
+      // Include items that are due, have low accuracy, or are still learning
+      if (isDue || accuracy < 70 || progress.status === 'learning') {
         let word = null;
         let type: 'noun' | 'verb' | 'adjective' | 'adverb' = 'noun';
 
         // Find the word in our data
         if (progress.wordType === 'noun') {
-          word = nouns.find(n => n.id === id);
+          const noun = nouns.find(n => n.id === id);
+          if (noun) {
+            const article = noun.gender === 'feminine' ? 'la' : noun.gender === 'masculine' ? 'el' : '';
+            word = { spanish: article ? `${article} ${noun.spanish}` : noun.spanish, english: noun.english };
+          }
           type = 'noun';
         } else if (progress.wordType === 'verb') {
           const verb = allVerbs.find(v => v.id === id);
@@ -76,20 +85,36 @@ export default function ReviewPage() {
             correctCount: progress.correctCount,
             incorrectCount: progress.incorrectCount,
             accuracy: Math.round(accuracy),
+            status: progress.status,
+            nextReview: progress.nextReview,
+            interval: progress.interval,
+            easeFactor: progress.easeFactor,
           });
         }
       }
     });
 
-    // Sort by accuracy (lowest first)
-    return items.sort((a, b) => a.accuracy - b.accuracy);
-  }, [flashcardProgress]);
+    // Sort: due items first (by how overdue), then by accuracy (lowest first)
+    return items.sort((a, b) => {
+      const aDue = new Date(a.nextReview) <= now;
+      const bDue = new Date(b.nextReview) <= now;
+      if (aDue && !bDue) return -1;
+      if (!aDue && bDue) return 1;
+      if (aDue && bDue) {
+        // Both due: more overdue first
+        return new Date(a.nextReview).getTime() - new Date(b.nextReview).getTime();
+      }
+      return a.accuracy - b.accuracy;
+    });
+  }, [flashcardProgress, getReviewQueueStats]);
 
   const currentItem = itemsToReview[currentIndex];
 
   const handleCorrect = () => {
     if (currentItem) {
       updateFlashcardProgress(currentItem.id, currentItem.type, true);
+      earnXP('flashcard_review', undefined, { cardId: currentItem.id });
+      recordSkill('vocabulary', true);
       setSessionStats(prev => ({ ...prev, correct: prev.correct + 1 }));
     }
     nextItem();
@@ -98,6 +123,8 @@ export default function ReviewPage() {
   const handleIncorrect = () => {
     if (currentItem) {
       updateFlashcardProgress(currentItem.id, currentItem.type, false);
+      earnXP('flashcard_review', undefined, { cardId: currentItem.id });
+      recordSkill('vocabulary', false);
       setSessionStats(prev => ({ ...prev, incorrect: prev.incorrect + 1 }));
     }
     nextItem();
@@ -237,12 +264,6 @@ export default function ReviewPage() {
         </p>
       </div>
 
-      <TeacherBubble
-        teacher={teacher}
-        message="La repeticion es la madre del aprendizaje. Vamos a repasar las palabras que necesitan mas practica!"
-        messageTranslation="Repetition is the mother of learning. Let's review the words that need more practice!"
-        size="medium"
-      />
 
       {itemsToReview.length === 0 ? (
         <Card className="text-center py-12">
@@ -261,6 +282,34 @@ export default function ReviewPage() {
         </Card>
       ) : (
         <>
+          {/* SM-2 Queue Overview */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <Card className="border-l-4 border-l-orange-400">
+              <CardContent className="text-center">
+                <p className="text-2xl font-bold text-orange-500">{queueStats.learning}</p>
+                <p className="text-sm text-gray-500">Learning</p>
+              </CardContent>
+            </Card>
+            <Card className="border-l-4 border-l-blue-400">
+              <CardContent className="text-center">
+                <p className="text-2xl font-bold text-blue-500">{queueStats.review}</p>
+                <p className="text-sm text-gray-500">Review</p>
+              </CardContent>
+            </Card>
+            <Card className="border-l-4 border-l-green-400">
+              <CardContent className="text-center">
+                <p className="text-2xl font-bold text-green-500">{queueStats.mastered}</p>
+                <p className="text-sm text-gray-500">Mastered</p>
+              </CardContent>
+            </Card>
+            <Card className="border-l-4 border-l-primary-400">
+              <CardContent className="text-center">
+                <p className="text-2xl font-bold text-primary-500">{queueStats.dueNow}</p>
+                <p className="text-sm text-gray-500">Due Now</p>
+              </CardContent>
+            </Card>
+          </div>
+
           <Card>
             <CardContent>
               <div className="flex items-center justify-between">
@@ -280,20 +329,6 @@ export default function ReviewPage() {
               </div>
             </CardContent>
           </Card>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {['noun', 'verb', 'adjective', 'adverb'].map(type => {
-              const count = itemsToReview.filter(i => i.type === type).length;
-              return (
-                <Card key={type}>
-                  <CardContent className="text-center">
-                    <p className="text-2xl font-bold text-gray-900 dark:text-white">{count}</p>
-                    <p className="text-sm text-gray-500 capitalize">{type}s</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
 
           <Card>
             <CardContent>
@@ -318,12 +353,22 @@ export default function ReviewPage() {
                         <p className="text-sm text-gray-500">{item.english}</p>
                       </div>
                     </div>
-                    <div className="text-right">
-                      <div className={`text-lg font-bold ${getAccuracyColor(item.accuracy)}`}>
-                        {item.accuracy}%
-                      </div>
-                      <div className="text-xs text-gray-500">
-                        {item.correctCount}✓ / {item.incorrectCount}✗
+                    <div className="text-right flex items-center gap-3">
+                      <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${
+                        item.status === 'learning' ? 'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400' :
+                        item.status === 'review' ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400' :
+                        item.status === 'mastered' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' :
+                        'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-400'
+                      }`}>
+                        {item.status}
+                      </span>
+                      <div>
+                        <div className={`text-lg font-bold ${getAccuracyColor(item.accuracy)}`}>
+                          {item.accuracy}%
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          {item.correctCount}✓ / {item.incorrectCount}✗
+                        </div>
                       </div>
                     </div>
                   </div>

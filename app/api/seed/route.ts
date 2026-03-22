@@ -9,10 +9,10 @@ async function isAdminRequest(): Promise<boolean> {
   const sessionToken = cookieStore.get('spanish_session')?.value;
   if (!sessionToken) return false;
 
-  const session = getSessionByToken(sessionToken);
+  const session = await getSessionByToken(sessionToken);
   if (!session) return false;
 
-  const user = getUserById(session.userId);
+  const user = await getUserById(session.userId);
   return user?.role === 'ADMIN';
 }
 
@@ -24,7 +24,7 @@ export async function POST() {
   }
 
   try {
-    const existingTeachers = getTeachers(true);
+    const existingTeachers = await getTeachers(true);
 
     if (existingTeachers.length > 0) {
       return NextResponse.json({
@@ -35,7 +35,7 @@ export async function POST() {
     }
 
     // Seed from static data
-    const seededTeachers = staticTeachers.map((teacher, index) => {
+    const seededTeachers = await Promise.all(staticTeachers.map((teacher, index) => {
       return createTeacher({
         name: teacher.name,
         imageUrl: teacher.imageUrl,
@@ -46,7 +46,7 @@ export async function POST() {
         order: index,
         isActive: true,
       });
-    });
+    }));
 
     return NextResponse.json({
       message: 'Teachers seeded successfully',
@@ -64,7 +64,7 @@ export async function POST() {
 
 // GET /api/seed - Check seed status
 export async function GET() {
-  const existingTeachers = getTeachers(true);
+  const existingTeachers = await getTeachers(true);
   const staticCount = staticTeachers.length;
 
   return NextResponse.json({
