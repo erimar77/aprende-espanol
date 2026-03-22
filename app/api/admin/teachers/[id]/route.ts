@@ -9,6 +9,17 @@ import {
   getUserById,
 } from '@/lib/db';
 
+type TeacherUpdate = Partial<{
+  name: string;
+  imageUrl: string;
+  greeting: string;
+  greetingTranslation: string;
+  specialty: string;
+  gender: 'male' | 'female';
+  order: number;
+  isActive: boolean;
+}>;
+
 // Helper to check if current user is admin
 async function isAdminRequest(): Promise<boolean> {
   const cookieStore = await cookies();
@@ -58,7 +69,7 @@ export async function PUT(
     const body = await request.json();
     const { name, imageUrl, greeting, greetingTranslation, specialty, gender, order, isActive } = body;
 
-    const updates: any = {};
+    const updates: TeacherUpdate = {};
 
     // Validation: name must be a string, max 100 chars, trimmed
     if (name !== undefined && name !== null) {
@@ -153,7 +164,7 @@ export async function PUT(
           { status: 400 }
         );
       }
-      updates.gender = gender;
+      updates.gender = gender as 'male' | 'female';
     }
 
     // Validation: order must be a number

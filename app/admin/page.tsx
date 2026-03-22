@@ -5,6 +5,18 @@ import Link from 'next/link';
 import { Users, GraduationCap, Clock, CheckCircle, Settings } from 'lucide-react';
 import Card, { CardContent, CardTitle, CardDescription } from '@/components/ui/Card';
 
+interface User {
+  id: string;
+  approved: boolean;
+  [key: string]: unknown;
+}
+
+interface TeacherResponse {
+  id: string;
+  isActive: boolean;
+  [key: string]: unknown;
+}
+
 interface Stats {
   totalUsers: number;
   pendingUsers: number;
@@ -35,19 +47,21 @@ export default function AdminDashboard() {
         const teachers = await teachersRes.json();
 
         if (Array.isArray(users)) {
+          const typedUsers = users as User[];
           setStats(prev => ({
             ...prev,
-            totalUsers: users.length,
-            pendingUsers: users.filter((u: any) => !u.approved).length,
-            approvedUsers: users.filter((u: any) => u.approved).length,
+            totalUsers: typedUsers.length,
+            pendingUsers: typedUsers.filter(u => !u.approved).length,
+            approvedUsers: typedUsers.filter(u => u.approved).length,
           }));
         }
 
         if (Array.isArray(teachers)) {
+          const typedTeachers = teachers as TeacherResponse[];
           setStats(prev => ({
             ...prev,
-            totalTeachers: teachers.length,
-            activeTeachers: teachers.filter((t: any) => t.isActive).length,
+            totalTeachers: typedTeachers.length,
+            activeTeachers: typedTeachers.filter(t => t.isActive).length,
           }));
         }
       } catch (error) {

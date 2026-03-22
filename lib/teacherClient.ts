@@ -2,6 +2,16 @@
 import { teachers as staticTeachers, getTeacherById as getStaticTeacherById, getTeacherBySpecialty as getStaticTeacherBySpecialty } from '@/data/teachers';
 import { Teacher } from '@/lib/types';
 
+interface TeacherApiResponse {
+  id: string;
+  name: string;
+  imageUrl: string;
+  greeting: string;
+  greetingTranslation: string;
+  specialty: string;
+  gender?: string;
+}
+
 let cachedTeachers: Teacher[] | null = null;
 
 // Fetch teachers from API with fallback to static data
@@ -12,14 +22,15 @@ export async function fetchTeachers(): Promise<Teacher[]> {
       const data = await response.json();
       if (Array.isArray(data) && data.length > 0) {
         // Convert database format to Teacher type
-        cachedTeachers = data.map((t: any) => ({
+        const typedData = data as TeacherApiResponse[];
+        cachedTeachers = typedData.map(t => ({
           id: t.id,
           name: t.name,
           imageUrl: t.imageUrl,
           greeting: t.greeting,
           greetingTranslation: t.greetingTranslation,
           specialty: t.specialty,
-          gender: t.gender,
+          gender: t.gender as 'male' | 'female' | undefined,
         }));
         return cachedTeachers;
       }

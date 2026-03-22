@@ -2,6 +2,11 @@ import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { getUserById, updateUser, deleteUser, getSessionByToken } from '@/lib/db';
 
+type UserUpdate = Partial<{
+  approved: boolean;
+  role: 'USER' | 'ADMIN';
+}>;
+
 // Helper to check if current user is admin
 async function isAdminRequest(): Promise<boolean> {
   const cookieStore = await cookies();
@@ -51,7 +56,7 @@ export async function PATCH(
   const body = await request.json();
   const { approved, role } = body;
 
-  const updates: any = {};
+  const updates: UserUpdate = {};
   if (typeof approved === 'boolean') {
     updates.approved = approved;
   }

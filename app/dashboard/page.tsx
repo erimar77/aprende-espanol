@@ -29,7 +29,7 @@ function LevelXPCard() {
   const { level, state } = useGamification();
 
   return (
-    <div className="bg-gradient-to-br from-primary to-accent rounded-xl shadow-lg p-8 text-white dark:from-primary/90 dark:to-accent/90 col-span-full">
+    <div className="bg-gradient-to-br from-primary to-accent rounded-xl shadow-lg p-8 text-white dark:from-primary/90 dark:to-accent/90 col-span-full" role="region" aria-label="Current level and XP progress">
       <div className="flex items-start justify-between mb-6">
         <div>
           <h2 className="text-sm font-semibold opacity-90 uppercase tracking-wider">
@@ -37,7 +37,7 @@ function LevelXPCard() {
           </h2>
           <h3 className="text-3xl font-bold mt-1">{level.current.title}</h3>
         </div>
-        <div className="flex items-center justify-center w-20 h-20 bg-white/20 rounded-full backdrop-blur">
+        <div className="flex items-center justify-center w-20 h-20 bg-white/20 rounded-full backdrop-blur" aria-label={`Level ${level.current.level}`}>
           <div className="text-center">
             <div className="text-3xl font-bold">{level.current.level}</div>
             <div className="text-xs opacity-75">Level</div>
@@ -86,10 +86,10 @@ function DailyGoalCard() {
   );
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6" role="region" aria-label="Daily goal progress">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-          <Target className="w-5 h-5 text-accent" />
+          <Target className="w-5 h-5 text-accent" aria-hidden="true" />
           Daily Goal
         </h3>
         {isMet && (
@@ -163,9 +163,9 @@ function StreakCard() {
   const { streak } = state;
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6" role="region" aria-label="Current streak status">
       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-        <Flame className="w-5 h-5 text-orange-500" />
+        <Flame className="w-5 h-5 text-orange-500" aria-hidden="true" />
         Streak
       </h3>
 
@@ -266,9 +266,9 @@ function SkillsRadarCard() {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 col-span-full">
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 col-span-full" role="region" aria-label="Skills overview">
       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-        <TrendingUp className="w-5 h-5 text-primary" />
+        <TrendingUp className="w-5 h-5 text-primary" aria-hidden="true" />
         Skills Overview
       </h3>
 
@@ -342,9 +342,9 @@ function RecommendationsCard() {
 
   if (recommendations.length === 0) {
     return (
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 col-span-full">
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 col-span-full" role="region" aria-label="Learning recommendations">
         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-          <Zap className="w-5 h-5 text-accent" />
+          <Zap className="w-5 h-5 text-accent" aria-hidden="true" />
           Recommendations
         </h3>
         <div className="text-center py-8 text-gray-500 dark:text-gray-400">
@@ -355,9 +355,9 @@ function RecommendationsCard() {
   }
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 col-span-full">
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 col-span-full" role="region" aria-label="Learning recommendations">
       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-        <Zap className="w-5 h-5 text-accent" />
+        <Zap className="w-5 h-5 text-accent" aria-hidden="true" />
         Recommendations
       </h3>
 
@@ -428,9 +428,9 @@ function AchievementsGrid() {
   };
 
   return (
-    <div className="col-span-full">
+    <div className="col-span-full" role="region" aria-label="Achievements">
       <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-        <Award className="w-5 h-5 text-primary" />
+        <Award className="w-5 h-5 text-primary" aria-hidden="true" />
         Achievements
       </h2>
 

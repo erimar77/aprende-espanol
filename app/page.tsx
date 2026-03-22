@@ -124,7 +124,7 @@ export default function Home() {
             Start your Spanish journey with interactive lessons, real conversations, and more!
           </p>
         </div>
-        <div className="absolute right-4 bottom-4 md:right-6 md:bottom-6 opacity-10">
+        <div className="absolute right-4 bottom-4 md:right-6 md:bottom-6 opacity-10" aria-hidden="true">
           <GraduationCap className="w-40 h-40 md:w-52 md:h-52 text-white" />
         </div>
       </section>
@@ -138,10 +138,10 @@ export default function Home() {
           {sections.map((section) => {
             const Icon = section.icon;
             return (
-              <Link key={section.href} href={section.href}>
+              <Link key={section.href} href={section.href} aria-label={`Go to ${section.title}`}>
                 <Card hover className="h-full">
                   <CardContent>
-                    <div className={`inline-flex p-3 rounded-xl ${section.color} mb-4`}>
+                    <div className={`inline-flex p-3 rounded-xl ${section.color} mb-4`} aria-hidden="true">
                       <Icon className="w-6 h-6 text-white" />
                     </div>
                     <CardTitle>{section.title}</CardTitle>
@@ -169,7 +169,7 @@ export default function Home() {
         <Link href="/workshop" className="block mb-6">
           <Card hover className="border-2 border-orange-300 dark:border-orange-700 bg-gradient-to-r from-orange-50 to-yellow-50 dark:from-orange-900/20 dark:to-yellow-900/20">
             <CardContent className="flex items-center gap-4">
-              <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-orange-500 to-red-500">
+              <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-orange-500 to-red-500" aria-hidden="true">
                 <Timer className="w-8 h-8 text-white" />
               </div>
               <div className="flex-grow">
@@ -192,7 +192,7 @@ export default function Home() {
           <Link href="/sentence-builder">
             <Card hover className="h-full border-2 border-dashed border-primary-200 dark:border-primary-800 hover:border-primary-400 dark:hover:border-primary-600">
               <CardContent>
-                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 mb-4">
+                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 mb-4" aria-hidden="true">
                   <Puzzle className="w-6 h-6 text-white" />
                 </div>
                 <CardTitle>Sentence Builder</CardTitle>
@@ -207,7 +207,7 @@ export default function Home() {
           <Link href="/prompts">
             <Card hover className="h-full border-2 border-dashed border-secondary-200 dark:border-secondary-800 hover:border-secondary-400 dark:hover:border-secondary-600">
               <CardContent>
-                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-secondary-500 to-accent-500 mb-4">
+                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-secondary-500 to-accent-500 mb-4" aria-hidden="true">
                   <Mic className="w-6 h-6 text-white" />
                 </div>
                 <CardTitle>Speaking Prompts</CardTitle>
@@ -222,7 +222,7 @@ export default function Home() {
           <Link href="/phrases">
             <Card hover className="h-full border-2 border-dashed border-accent-200 dark:border-accent-800 hover:border-accent-400 dark:hover:border-accent-600">
               <CardContent>
-                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-accent-500 to-primary-500 mb-4">
+                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-accent-500 to-primary-500 mb-4" aria-hidden="true">
                   <Library className="w-6 h-6 text-white" />
                 </div>
                 <CardTitle>Phrase Bank</CardTitle>
@@ -237,7 +237,7 @@ export default function Home() {
           <Link href="/quick-response">
             <Card hover className="h-full border-2 border-dashed border-yellow-200 dark:border-yellow-800 hover:border-yellow-400 dark:hover:border-yellow-600">
               <CardContent>
-                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-yellow-500 to-orange-500 mb-4">
+                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-yellow-500 to-orange-500 mb-4" aria-hidden="true">
                   <Zap className="w-6 h-6 text-white" />
                 </div>
                 <CardTitle>Quick Response</CardTitle>
@@ -252,7 +252,7 @@ export default function Home() {
           <Link href="/inner-monologue">
             <Card hover className="h-full border-2 border-dashed border-purple-200 dark:border-purple-800 hover:border-purple-400 dark:hover:border-purple-600">
               <CardContent>
-                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-500 mb-4">
+                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-500 mb-4" aria-hidden="true">
                   <Brain className="w-6 h-6 text-white" />
                 </div>
                 <CardTitle>Inner Monologue</CardTitle>
@@ -267,7 +267,7 @@ export default function Home() {
           <Link href="/scenarios">
             <Card hover className="h-full border-2 border-dashed border-teal-200 dark:border-teal-800 hover:border-teal-400 dark:hover:border-teal-600">
               <CardContent>
-                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-teal-500 to-cyan-500 mb-4">
+                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-teal-500 to-cyan-500 mb-4" aria-hidden="true">
                   <MessageSquare className="w-6 h-6 text-white" />
                 </div>
                 <CardTitle>Scenarios</CardTitle>
@@ -282,7 +282,7 @@ export default function Home() {
           <Link href="/immersion">
             <Card hover className="h-full border-2 border-dashed border-pink-200 dark:border-pink-800 hover:border-pink-400 dark:hover:border-pink-600">
               <CardContent>
-                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-pink-500 to-rose-500 mb-4">
+                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-pink-500 to-rose-500 mb-4" aria-hidden="true">
                   <Headphones className="w-6 h-6 text-white" />
                 </div>
                 <CardTitle>Immersion</CardTitle>
@@ -308,7 +308,7 @@ export default function Home() {
           <Link href="/madlibs">
             <Card hover className="h-full border-2 border-dashed border-green-200 dark:border-green-800 hover:border-green-400 dark:hover:border-green-600">
               <CardContent>
-                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 mb-4">
+                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 mb-4" aria-hidden="true">
                   <Pencil className="w-6 h-6 text-white" />
                 </div>
                 <CardTitle>Mad Libs</CardTitle>
@@ -323,7 +323,7 @@ export default function Home() {
           <Link href="/wordfind">
             <Card hover className="h-full border-2 border-dashed border-blue-200 dark:border-blue-800 hover:border-blue-400 dark:hover:border-blue-600">
               <CardContent>
-                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 mb-4">
+                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 mb-4" aria-hidden="true">
                   <Search className="w-6 h-6 text-white" />
                 </div>
                 <CardTitle>Word Find</CardTitle>
@@ -343,7 +343,7 @@ export default function Home() {
           <Card hover className="border-2 border-dashed border-amber-200 dark:border-amber-800 hover:border-amber-400 dark:hover:border-amber-600">
             <CardContent>
               <div className="flex items-center gap-4">
-                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex-shrink-0">
+                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex-shrink-0" aria-hidden="true">
                   <Music className="w-7 h-7 text-white" />
                 </div>
                 <div>

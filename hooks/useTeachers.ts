@@ -4,6 +4,16 @@ import { useState, useEffect, useCallback } from 'react';
 import { Teacher } from '@/lib/types';
 import { teachers as staticTeachers, getTeacherBySpecialty as getStaticBySpecialty } from '@/data/teachers';
 
+interface TeacherApiResponse {
+  id: string;
+  name: string;
+  imageUrl: string;
+  greeting: string;
+  greetingTranslation: string;
+  specialty: string;
+  gender?: string;
+}
+
 interface UseTeachersReturn {
   teachers: Teacher[];
   loading: boolean;
@@ -50,14 +60,15 @@ export function useTeachers(): UseTeachersReturn {
 
         // If database has teachers, use them
         if (Array.isArray(data) && data.length > 0) {
-          const formattedTeachers: Teacher[] = data.map((t: any) => ({
+          const typedData = data as TeacherApiResponse[];
+          const formattedTeachers: Teacher[] = typedData.map(t => ({
             id: t.id,
             name: t.name,
             imageUrl: t.imageUrl,
             greeting: t.greeting,
             greetingTranslation: t.greetingTranslation,
             specialty: t.specialty,
-            gender: t.gender,
+            gender: t.gender as 'male' | 'female' | undefined,
           }));
           globalTeachersCache = formattedTeachers;
           return formattedTeachers;

@@ -2239,11 +2239,7 @@ export function getConversationById(id: string): ConversationScenario | undefine
   return conversations.find(c => c.id === id);
 }
 
-export function getConversationsByDifficulty(difficulty: string): ConversationScenario[] {
-  return conversations.filter(c => c.difficulty === difficulty);
-}
-
-export function getConversationByOrder(order: number): ConversationScenario | undefined {
+function getConversationByOrder(order: number): ConversationScenario | undefined {
   return conversations.find(c => c.order === order);
 }
 
@@ -2251,13 +2247,6 @@ export function getNextConversation(currentId: string): ConversationScenario | u
   const current = getConversationById(currentId);
   if (!current) return undefined;
   return getConversationByOrder(current.order + 1);
-}
-
-export function getConversationsByCategory(category: string): ConversationScenario[] {
-  if (category === 'all') return conversations;
-  if (category === 'cultural') return conversations.filter(c => c.category === 'cultural');
-  if (category === 'everyday') return conversations.filter(c => !c.category || c.category === 'everyday');
-  return conversations;
 }
 
 export function getCulturalConversations(): ConversationScenario[] {

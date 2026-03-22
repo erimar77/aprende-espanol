@@ -261,66 +261,6 @@ body {
   transform: rotateY(180deg);
 }
 
-/* Button styles */
-.btn-primary {
-  @apply bg-primary-500 hover:bg-primary-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
-}
-
-.btn-secondary {
-  @apply bg-secondary-400 hover:bg-secondary-500 text-gray-900 dark:text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
-}
-
-.btn-accent {
-  @apply bg-accent-500 hover:bg-accent-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
-}
-
-/* Card hover effects */
-.card-hover {
-  @apply transition-all duration-200 hover:shadow-lg hover:-translate-y-1;
-}
-
-/* Progress bar animation */
-.progress-bar {
-  @apply h-2 rounded-full overflow-hidden bg-gray-200 dark:bg-gray-700;
-}
-
-.progress-bar-fill {
-  @apply h-full rounded-full transition-all duration-500 ease-out;
-  background: linear-gradient(90deg, rgb(var(--primary)), rgb(var(--secondary)));
-}
-
-/* Teacher avatar styling */
-.teacher-avatar {
-  @apply rounded-full border-4 border-secondary-400 shadow-lg;
-  object-fit: cover;
-}
-
-/* Verb conjugation table */
-.conjugation-table {
-  @apply w-full border-collapse;
-}
-
-.conjugation-table th {
-  @apply bg-primary-500 text-white py-2 px-4 text-left font-semibold;
-}
-
-.dark .conjugation-table th {
-  @apply bg-primary-600;
-}
-
-.conjugation-table td {
-  @apply border-b border-gray-200 dark:border-gray-700 py-2 px-4;
-}
-
-.conjugation-table tr:hover td {
-  @apply bg-primary-50 dark:bg-primary-900/20;
-}
-
-/* Category badge */
-.category-badge {
-  @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
-}
-
 /* ============================================
    THEME-AWARE HERO - Adapts to color scheme
    ============================================ */
@@ -376,19 +316,6 @@ body {
     radial-gradient(circle at 80% 20%, rgba(255,255,255,0.2) 0%, transparent 50%);
 }
 
-/* Legacy gradient-hero (keeping for compatibility) */
-.gradient-hero {
-  background: linear-gradient(135deg, rgb(var(--primary)) 0%, rgb(var(--secondary)) 50%, rgb(var(--accent)) 100%);
-  background-size: 200% 200%;
-  animation: gradient-shift 8s ease infinite;
-}
-
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
 @keyframes fade-in {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
@@ -428,9 +355,4 @@ body {
 ::selection {
   background: rgb(var(--primary));
   color: white;
-}
-
-/* Loading spinner */
-.spinner {
-  @apply animate-spin rounded-full border-4 border-gray-200 dark:border-gray-700 border-t-primary-500;
 }

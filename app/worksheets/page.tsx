@@ -139,8 +139,12 @@ export default function WorksheetsPage() {
       earnXP('worksheet_generated');
 
       if (seedValue) setLastSeed(seedValue);
-    } catch (err: any) {
-      setError(err.message || 'Something went wrong');
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message || 'Something went wrong');
+      } else {
+        setError('Something went wrong');
+      }
     } finally {
       setGenerating(false);
     }

@@ -5,6 +5,8 @@ import { adjectives } from '@/data/adjectives';
 import { adverbs } from '@/data/adverbs';
 import { execSync } from 'child_process';
 import path from 'path';
+import { cookies } from 'next/headers';
+import { getSessionByToken } from '@/lib/db';
 
 function shuffleArray<T>(arr: T[]): T[] {
   const result = [...arr];
@@ -28,6 +30,26 @@ function getWordPool(wordType: string) {
 }
 
 export async function POST(request: NextRequest) {
+  // Authentication check - verify user has a valid session
+  // NOTE: In production, consider enabling stricter auth (e.g., requiring admin role)
+  // For now, checking session existence ensures only authenticated users can generate worksheets
+  const cookieStore = await cookies();
+  const sessionToken = cookieStore.get('spanish_session')?.value;
+  if (!sessionToken) {
+    return NextResponse.json(
+      { error: 'Unauthorized' },
+      { status: 401 }
+    );
+  }
+
+  const session = await getSessionByToken(sessionToken);
+  if (!session) {
+    return NextResponse.json(
+      { error: 'Unauthorized' },
+      { status: 401 }
+    );
+  }
+
   try {
     const body = await request.json();
     const {
@@ -92,11 +114,21 @@ export async function POST(request: NextRequest) {
         'Content-Disposition': `attachment; filename="spanish-worksheet-${Date.now()}.pdf"`,
       },
     });
-  } catch (error: any) {
-    console.error('Worksheet generation error:', error.message);
-    console.error('stderr:', error.stderr?.toString());
+  } catch (error: unknown) {
+    let errorMessage = 'Unknown error';
+    let stderr = '';
+
+    if (error instanceof Error) {
+      errorMessage = error.message;
+      if ('stderr' in error && error.stderr instanceof Buffer) {
+        stderr = error.stderr.toString();
+      }
+    }
+
+    console.error('Worksheet generation error:', errorMessage);
+    console.error('stderr:', stderr);
     return NextResponse.json(
-      { error: 'Failed to generate worksheet', detail: error.message },
+      { error: 'Failed to generate worksheet' },
       { status: 500 }
     );
   }

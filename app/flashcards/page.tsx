@@ -295,13 +295,15 @@ export default function FlashcardsPage() {
                   <div className="flex gap-2">
                     <button
                       onClick={() => setSessionMode('due')}
+                      aria-label="Review due cards"
+                      aria-pressed={sessionMode === 'due'}
                       className={`flex-1 px-4 py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 ${
                         sessionMode === 'due'
                           ? 'bg-primary-500 text-white'
                           : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
                       }`}
                     >
-                      <Clock className="w-4 h-4" />
+                      <Clock className="w-4 h-4" aria-hidden="true" />
                       Review Due Cards
                       {queueStats.dueNow > 0 && (
                         <span className="bg-white/20 text-xs px-2 py-0.5 rounded-full">
@@ -311,13 +313,15 @@ export default function FlashcardsPage() {
                     </button>
                     <button
                       onClick={() => setSessionMode('random')}
+                      aria-label="Random practice mode"
+                      aria-pressed={sessionMode === 'random'}
                       className={`flex-1 px-4 py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 ${
                         sessionMode === 'random'
                           ? 'bg-primary-500 text-white'
                           : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
                       }`}
                     >
-                      <Shuffle className="w-4 h-4" />
+                      <Shuffle className="w-4 h-4" aria-hidden="true" />
                       Random Practice
                     </button>
                   </div>
@@ -334,6 +338,8 @@ export default function FlashcardsPage() {
                         <button
                           key={type}
                           onClick={() => setWordType(type)}
+                          aria-label={`Select ${type === 'all' ? 'all words' : type} word type`}
+                          aria-pressed={wordType === type}
                           className={`px-4 py-2 rounded-lg font-medium capitalize transition-colors ${
                             wordType === type
                               ? 'bg-primary-500 text-white'
@@ -355,6 +361,8 @@ export default function FlashcardsPage() {
                   <div className="flex gap-2">
                     <button
                       onClick={() => setCardMode('spanish-to-english')}
+                      aria-label="Spanish to English mode"
+                      aria-pressed={cardMode === 'spanish-to-english'}
                       className={`flex-1 px-4 py-3 rounded-lg font-medium transition-colors ${
                         cardMode === 'spanish-to-english'
                           ? 'bg-secondary-400 text-gray-900'
@@ -365,6 +373,8 @@ export default function FlashcardsPage() {
                     </button>
                     <button
                       onClick={() => setCardMode('english-to-spanish')}
+                      aria-label="English to Spanish mode"
+                      aria-pressed={cardMode === 'english-to-spanish'}
                       className={`flex-1 px-4 py-3 rounded-lg font-medium transition-colors ${
                         cardMode === 'english-to-spanish'
                           ? 'bg-secondary-400 text-gray-900'

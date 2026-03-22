@@ -183,6 +183,7 @@ function ChallengeStage({
               </div>
               <button
                 onClick={() => speak(challenge.modelAnswer)}
+                aria-label="Play audio of model answer"
                 className="flex-shrink-0 p-2 rounded-lg bg-green-100 dark:bg-green-800 hover:bg-green-200 dark:hover:bg-green-700 transition-colors"
               >
                 <Volume2 className="w-4 h-4 text-green-600 dark:text-green-300" />
@@ -316,6 +317,7 @@ function PhraseDrillStage({
               <p className="text-2xl font-bold text-primary">{current.spanish}</p>
               <button
                 onClick={() => speak(current.spanish)}
+                aria-label="Play audio of phrase"
                 className="p-2 rounded-lg bg-primary/10 hover:bg-primary/20 transition-colors"
               >
                 <Volume2 className="w-4 h-4 text-primary" />
@@ -478,6 +480,7 @@ function QuickFireStage({
             <span className="font-medium text-primary">{current.spanish}</span>
             <button
               onClick={() => speak(current.spanish)}
+              aria-label="Play audio of correct translation"
               className="ml-2 p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 inline-flex"
             >
               <Volume2 className="w-3.5 h-3.5 text-gray-400" />
@@ -714,9 +717,9 @@ export default function DailyPracticePage() {
             <div className="flex items-center justify-between bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-4">
               <div className="flex items-center gap-3">
                 {reminderEnabled ? (
-                  <Bell className="w-5 h-5 text-primary" />
+                  <Bell className="w-5 h-5 text-primary" aria-hidden="true" />
                 ) : (
-                  <BellOff className="w-5 h-5 text-gray-400" />
+                  <BellOff className="w-5 h-5 text-gray-400" aria-hidden="true" />
                 )}
                 <div>
                   <p className="text-sm font-medium text-gray-900 dark:text-white">Daily Reminder</p>
@@ -729,6 +732,7 @@ export default function DailyPracticePage() {
               </div>
               <button
                 onClick={toggleReminder}
+                aria-label={reminderEnabled ? "Disable daily practice reminder" : "Enable daily practice reminder"}
                 className={`relative w-11 h-6 rounded-full transition-colors ${
                   reminderEnabled ? 'bg-primary' : 'bg-gray-300 dark:bg-gray-600'
                 }`}

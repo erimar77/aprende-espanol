@@ -170,8 +170,9 @@ export default function StoryPage() {
         <Link
           href="/stories"
           className="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-500 mb-4"
+          aria-label="Go back to stories list"
         >
-          <ArrowLeft className="w-4 h-4 mr-2" />
+          <ArrowLeft className="w-4 h-4 mr-2" aria-hidden="true" />
           Back to Stories
         </Link>
 
@@ -193,20 +194,22 @@ export default function StoryPage() {
           <div className="flex items-center gap-2">
             <button
               onClick={() => setShowTranslation(!showTranslation)}
+              aria-label={showTranslation ? "Hide English translation" : "Show English translation"}
               className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
                 showTranslation
                   ? 'bg-primary-500 text-white'
                   : 'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300'
               }`}
             >
-              {showTranslation ? <Eye className="w-4 h-4" /> : <EyeOff className="w-4 h-4" />}
+              {showTranslation ? <Eye className="w-4 h-4" aria-hidden="true" /> : <EyeOff className="w-4 h-4" aria-hidden="true" />}
               {showTranslation ? 'Hide' : 'Show'} English
             </button>
             <button
               onClick={handleSpeakAll}
+              aria-label="Read entire story out loud"
               className="flex items-center gap-2 px-4 py-2 bg-secondary-400 text-white rounded-lg font-medium hover:bg-secondary-500 transition-colors"
             >
-              <Volume2 className="w-4 h-4" />
+              <Volume2 className="w-4 h-4" aria-hidden="true" />
               Read All
             </button>
           </div>
@@ -222,12 +225,12 @@ export default function StoryPage() {
                 <div className="flex items-start gap-3">
                   <button
                     onClick={() => handleSpeak(paragraph.spanish, index)}
+                    aria-label="Play audio of paragraph"
                     className={`flex-shrink-0 p-2 rounded-full transition-colors ${
                       speakingIndex === index
                         ? 'bg-primary-500 text-white'
                         : 'bg-gray-100 text-gray-500 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700'
                     }`}
-                    title="Listen to this paragraph"
                   >
                     {speakingIndex === index ? (
                       <VolumeX className="w-5 h-5" />
@@ -257,13 +260,15 @@ export default function StoryPage() {
         <CardContent>
           <button
             onClick={() => setShowVocabulary(!showVocabulary)}
+            aria-label={showVocabulary ? "Hide vocabulary list" : "Show vocabulary list"}
+            aria-expanded={showVocabulary}
             className="w-full flex items-center justify-between"
           >
             <h2 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
-              <BookOpen className="w-5 h-5 text-primary-500" />
+              <BookOpen className="w-5 h-5 text-primary-500" aria-hidden="true" />
               Vocabulary ({story.vocabulary.length} words)
             </h2>
-            <span className="text-gray-500">
+            <span className="text-gray-500" aria-hidden="true">
               {showVocabulary ? '▲' : '▼'}
             </span>
           </button>
@@ -335,6 +340,7 @@ export default function StoryPage() {
                   <button
                     key={q.id}
                     onClick={() => setCurrentQuestionIndex(idx)}
+                    aria-label={`Go to question ${idx + 1}`}
                     className={`w-3 h-3 rounded-full transition-all ${
                       isCurrent
                         ? 'w-6 bg-primary-500'
@@ -435,9 +441,10 @@ export default function StoryPage() {
               <button
                 onClick={goToPrevQuestion}
                 disabled={currentQuestionIndex === 0}
+                aria-label="Go to previous question"
                 className="flex items-center gap-2 px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white disabled:opacity-30 disabled:cursor-not-allowed"
               >
-                <ArrowLeft className="w-4 h-4" />
+                <ArrowLeft className="w-4 h-4" aria-hidden="true" />
                 Previous
               </button>
 
@@ -454,10 +461,11 @@ export default function StoryPage() {
               <button
                 onClick={goToNextQuestion}
                 disabled={currentQuestionIndex === story.comprehensionQuestions.length - 1}
+                aria-label="Go to next question"
                 className="flex items-center gap-2 px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white disabled:opacity-30 disabled:cursor-not-allowed"
               >
                 Next
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </button>
             </div>
           </CardContent>
@@ -469,9 +477,10 @@ export default function StoryPage() {
         {prevStory ? (
           <Link
             href={`/stories/${prevStory.id}`}
+            aria-label={`Go to previous story: ${prevStory.title}`}
             className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-500"
           >
-            <ArrowLeft className="w-5 h-5" />
+            <ArrowLeft className="w-5 h-5" aria-hidden="true" />
             <span className="hidden sm:inline">{prevStory.title}</span>
             <span className="sm:hidden">Previous</span>
           </Link>
@@ -482,11 +491,12 @@ export default function StoryPage() {
         {nextStory ? (
           <Link
             href={`/stories/${nextStory.id}`}
+            aria-label={`Go to next story: ${nextStory.title}`}
             className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-500"
           >
             <span className="hidden sm:inline">{nextStory.title}</span>
             <span className="sm:hidden">Next</span>
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight className="w-5 h-5" aria-hidden="true" />
           </Link>
         ) : (
           <div />

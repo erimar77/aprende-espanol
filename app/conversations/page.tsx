@@ -118,6 +118,7 @@ function ConversationPlayer({
               <p className="text-sm opacity-75 mt-1 italic">{msg.translation}</p>
               <button
                 onClick={() => handleSpeak(msg.text)}
+                aria-label="Play audio of message"
                 className="mt-2 opacity-75 hover:opacity-100"
               >
                 <Volume2 className="w-4 h-4" />
@@ -135,6 +136,7 @@ function ConversationPlayer({
               <p className="text-sm opacity-75 mt-1 italic">{currentNode.translation}</p>
               <button
                 onClick={() => handleSpeak(currentNode.text)}
+                aria-label="Play audio of message"
                 className="mt-2 opacity-75 hover:opacity-100"
               >
                 <Volume2 className="w-4 h-4" />
@@ -307,35 +309,41 @@ export default function ConversationsPage() {
       <div className="flex flex-wrap gap-3">
         <button
           onClick={() => setSelectedCategory('all')}
+          aria-label="Show all conversations"
+          aria-pressed={selectedCategory === 'all'}
           className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
             selectedCategory === 'all'
               ? 'bg-gray-900 text-white dark:bg-white dark:text-gray-900'
               : 'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
           }`}
         >
-          <Filter className="w-4 h-4" />
+          <Filter className="w-4 h-4" aria-hidden="true" />
           All ({conversations.length})
         </button>
         <button
           onClick={() => setSelectedCategory('everyday')}
+          aria-label="Show everyday conversations"
+          aria-pressed={selectedCategory === 'everyday'}
           className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
             selectedCategory === 'everyday'
               ? 'bg-primary-500 text-white'
               : 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-900/50'
           }`}
         >
-          <Coffee className="w-4 h-4" />
+          <Coffee className="w-4 h-4" aria-hidden="true" />
           Everyday ({everydayCount})
         </button>
         <button
           onClick={() => setSelectedCategory('cultural')}
+          aria-label="Show cultural conversations"
+          aria-pressed={selectedCategory === 'cultural'}
           className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
             selectedCategory === 'cultural'
               ? 'bg-accent-500 text-white'
               : 'bg-accent-100 text-accent-700 dark:bg-accent-900/30 dark:text-accent-400 hover:bg-accent-200 dark:hover:bg-accent-900/50'
           }`}
         >
-          <Globe className="w-4 h-4" />
+          <Globe className="w-4 h-4" aria-hidden="true" />
           Cultural ({culturalCount})
         </button>
       </div>

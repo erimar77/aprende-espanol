@@ -53,8 +53,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Generate unique filename
+    // Generate unique filename and validate extension whitelist
     const ext = file.name.split('.').pop() || 'jpg';
+    const ALLOWED_EXTENSIONS = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
+    if (!ALLOWED_EXTENSIONS.includes(ext.toLowerCase())) {
+      return NextResponse.json(
+        { error: 'Invalid file extension. Allowed: jpg, jpeg, png, webp, gif' },
+        { status: 400 }
+      );
+    }
     const filename = `${Date.now()}-${Math.random().toString(36).substring(2, 15)}.${ext}`;
 
     // Ensure upload directory exists
