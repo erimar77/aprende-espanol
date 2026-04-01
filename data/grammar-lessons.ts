@@ -1484,6 +1484,299 @@ export const grammarLessons: GrammarLesson[] = [
       { id: 'ex092', type: 'multiple-choice', question: '¿Me puedes explicar la lección? — Sí, puedo explicár___.', options: ['tela', 'sela', 'mela', 'telo'], correctAnswer: 'tela', explanation: 'You\'re explaining TO me (indirect: me → te in response) + la lección (direct: la). Attached to infinitive: explicártela. The "te + la" combine as "tela".' },
     ],
   },
+
+  // ── gram025: Interrogatives — Who, What, When, Where, Why, How ──────
+  {
+    id: 'gram025',
+    title: 'Question Words: Who, What, When, Where, Why, How',
+    titleSpanish: 'Palabras Interrogativas: Quién, Qué, Cuándo, Dónde, Por qué, Cómo',
+    description: 'Master the six essential Spanish question words and learn to form questions about any situation',
+    level: 'A1',
+    order: 25,
+    content: [
+      { type: 'heading', content: 'The 5 W\'s and H — in Spanish' },
+      { type: 'text', content: 'Just like in English, Spanish has six essential question words that let you ask about any situation. In Spanish, all question words carry an accent mark and questions are wrapped in ¿...? marks.' },
+      { type: 'table', content: '', tableData: { headers: ['English', 'Spanish', 'Example'], rows: [
+        ['Who?', '¿Quién? / ¿Quiénes?', '¿Quién es ella? — Who is she?'],
+        ['What?', '¿Qué?', '¿Qué quieres? — What do you want?'],
+        ['When?', '¿Cuándo?', '¿Cuándo llegamos? — When do we arrive?'],
+        ['Where?', '¿Dónde?', '¿Dónde vives? — Where do you live?'],
+        ['Why?', '¿Por qué?', '¿Por qué estudias español? — Why do you study Spanish?'],
+        ['How?', '¿Cómo?', '¿Cómo estás? — How are you?'],
+      ] } },
+      { type: 'tip', content: '"Por qué" (why) is two words with an accent. "Porque" (one word, no accent) means "because" — the answer to por qué!' },
+      { type: 'heading', content: 'Bonus Question Words' },
+      { type: 'table', content: '', tableData: { headers: ['English', 'Spanish', 'Example'], rows: [
+        ['How much?', '¿Cuánto/a?', '¿Cuánto cuesta? — How much does it cost?'],
+        ['How many?', '¿Cuántos/as?', '¿Cuántos años tienes? — How old are you?'],
+        ['Which?', '¿Cuál? / ¿Cuáles?', '¿Cuál prefieres? — Which do you prefer?'],
+      ] } },
+      { type: 'tip', content: '¿Cuánto/a/os/as? changes to match the gender and number of the noun it modifies: ¿Cuántas personas? (How many people?)' },
+    ],
+    exercises: [
+      { id: 'ex093', type: 'multiple-choice', question: '___ es tu nombre?', options: ['¿Qué?', '¿Cuál?', '¿Quién?', '¿Cómo?'], correctAnswer: '¿Cuál?', explanation: 'In Spanish we say "¿Cuál es tu nombre?" (Which is your name?) rather than "¿Qué es tu nombre?"' },
+      { id: 'ex094', type: 'multiple-choice', question: '___ vive tu familia?', options: ['¿Dónde?', '¿Cuándo?', '¿Por qué?', '¿Quién?'], correctAnswer: '¿Dónde?', explanation: '¿Dónde? (Where?) asks about location. "¿Dónde vive tu familia?" = Where does your family live?' },
+      { id: 'ex095', type: 'fill-blank', question: '___ estudias español? — Porque me gusta.', correctAnswer: '¿Por qué?', explanation: 'The answer "porque" (because) tells us the question was "¿Por qué?" (why?).' },
+      { id: 'ex096', type: 'multiple-choice', question: '___ personas hay en tu clase?', options: ['¿Cuántas?', '¿Quién?', '¿Cuáles?', '¿Qué?'], correctAnswer: '¿Cuántas?', explanation: '¿Cuántas? (How many?) with feminine -as ending to match "personas" (people, feminine).' },
+      { id: 'ex097', type: 'multiple-choice', question: '___ es la fiesta? — El sábado.', options: ['¿Cuándo?', '¿Dónde?', '¿Qué?', '¿Cómo?'], correctAnswer: '¿Cuándo?', explanation: 'The answer is a time (Saturday), so the question asks about when: ¿Cuándo?' },
+    ],
+    interactiveSteps: [
+      // ── Step 1: Narrative — A new student arrives at school ──
+      {
+        id: 'gram025-s01',
+        type: 'narrative',
+        scene: 'First day at a Spanish language school — a new student meets the receptionist',
+        lines: [
+          {
+            speaker: 'Recepcionista',
+            text: '¡Bienvenido! ¿Quién eres?',
+            translation: 'Welcome! Who are you?',
+            highlight: '¿Quién?',
+          },
+          {
+            speaker: 'Estudiante',
+            text: 'Soy Eric. ¿Dónde es mi clase?',
+            translation: "I'm Eric. Where is my class?",
+            highlight: '¿Dónde?',
+          },
+          {
+            speaker: 'Recepcionista',
+            text: 'En la sala 3. ¿Cuándo llegaste a la ciudad?',
+            translation: 'In room 3. When did you arrive in the city?',
+            highlight: '¿Cuándo?',
+          },
+          {
+            speaker: 'Estudiante',
+            text: 'Ayer. ¿Qué necesito para la clase?',
+            translation: 'Yesterday. What do I need for the class?',
+            highlight: '¿Qué?',
+          },
+          {
+            speaker: 'Recepcionista',
+            text: 'Un cuaderno. ¿Por qué quieres aprender español?',
+            translation: 'A notebook. Why do you want to learn Spanish?',
+            highlight: '¿Por qué?',
+          },
+          {
+            speaker: 'Estudiante',
+            text: 'Porque vivo en México ahora. ¿Cómo son los profesores?',
+            translation: 'Because I live in Mexico now. How are the teachers?',
+            highlight: '¿Cómo?',
+          },
+          {
+            speaker: 'Recepcionista',
+            text: '¡Son excelentes! Vas a aprender mucho.',
+            translation: "They're excellent! You're going to learn a lot.",
+          },
+        ],
+        noticePrompt: 'Did you spot all 6 question words? Each one starts with an accent mark and ¿ symbol. Can you name them?',
+      },
+
+      // ── Step 2: Discover — Spot the pattern ──
+      {
+        id: 'gram025-s02',
+        type: 'discover',
+        instruction: 'Look at each question and its answer. What does each question word ask about?',
+        examples: [
+          { spanish: '¿Quién cocina? — Mi mamá.', english: 'Who cooks? — My mom.', highlight: 'Quién → a person' },
+          { spanish: '¿Qué comes? — Una manzana.', english: 'What are you eating? — An apple.', highlight: 'Qué → a thing' },
+          { spanish: '¿Cuándo sales? — A las ocho.', english: 'When do you leave? — At eight.', highlight: 'Cuándo → a time' },
+          { spanish: '¿Dónde trabajas? — En un hospital.', english: 'Where do you work? — In a hospital.', highlight: 'Dónde → a place' },
+          { spanish: '¿Por qué lloras? — Porque estoy triste.', english: 'Why are you crying? — Because I\'m sad.', highlight: 'Por qué → a reason' },
+          { spanish: '¿Cómo vas? — En autobús.', english: 'How do you go? — By bus.', highlight: 'Cómo → a manner' },
+        ],
+        question: 'What do all Spanish question words have in common?',
+        options: ['They all have accent marks', 'They all start with "qu"', 'They all end in a vowel', 'They are identical to English'],
+        correctAnswer: 'They all have accent marks',
+        explanation: 'Every Spanish interrogative word carries a written accent mark (tilde): quién, qué, cuándo, dónde, cómo. This distinguishes them from their non-question forms.',
+      },
+
+      // ── Step 3: Explain — The rules ──
+      {
+        id: 'gram025-s03',
+        type: 'explain',
+        title: 'The 6 Essential Question Words',
+        content: 'Spanish questions use ¿...? marks at both the beginning and end. Each question word has an accent to show it\'s interrogative. The word order is usually: ¿Question word + verb + subject?',
+        table: {
+          headers: ['Question Word', 'Asks About', 'Answer Type'],
+          rows: [
+            ['¿Quién(es)?', 'Person (Who)', 'A name or person'],
+            ['¿Qué?', 'Thing/Action (What)', 'An object or activity'],
+            ['¿Cuándo?', 'Time (When)', 'A date, time, or moment'],
+            ['¿Dónde?', 'Place (Where)', 'A location'],
+            ['¿Por qué?', 'Reason (Why)', '"Porque..." (Because...)'],
+            ['¿Cómo?', 'Manner (How)', 'A description or method'],
+          ],
+        },
+        tip: 'Remember: "¿Por qué?" (two words, accent) = Why? / "Porque" (one word, no accent) = Because. This is one of the most common mistakes!',
+      },
+
+      // ── Step 4: Practice — Match the question word to the answer ──
+      {
+        id: 'gram025-s04',
+        type: 'practice',
+        variant: 'multiple-choice',
+        question: 'The answer is "En el parque" (In the park). Which question word fits?',
+        options: ['¿Dónde?', '¿Cuándo?', '¿Quién?', '¿Por qué?'],
+        correctAnswer: '¿Dónde?',
+        explanation: '"En el parque" is a place, so we need ¿Dónde? (Where?). "¿Dónde juegas?" → "En el parque."',
+      },
+
+      // ── Step 5: Practice — Fill in the blank ──
+      {
+        id: 'gram025-s05',
+        type: 'practice',
+        variant: 'fill-blank',
+        question: '___ te llamas? — Me llamo María.',
+        context: 'Someone is asking your name at a party.',
+        correctAnswer: '¿Cómo?',
+        explanation: '"¿Cómo te llamas?" is the standard way to ask "What\'s your name?" in Spanish — literally "How do you call yourself?"',
+      },
+
+      // ── Step 6: Color Match — Identify which type of info each question asks for ──
+      {
+        id: 'gram025-s06',
+        type: 'color-match',
+        instruction: 'Tap each question to reveal what type of information it asks for',
+        sentence: '¿Quién | ¿Qué | ¿Cuándo | ¿Dónde | ¿Por qué | ¿Cómo',
+        segments: [
+          { text: '¿Quién?', role: 'Person (Who)', color: 'bg-blue-200 dark:bg-blue-800' },
+          { text: '¿Qué?', role: 'Thing (What)', color: 'bg-green-200 dark:bg-green-800' },
+          { text: '¿Cuándo?', role: 'Time (When)', color: 'bg-yellow-200 dark:bg-yellow-800' },
+          { text: '¿Dónde?', role: 'Place (Where)', color: 'bg-purple-200 dark:bg-purple-800' },
+          { text: '¿Por qué?', role: 'Reason (Why)', color: 'bg-red-200 dark:bg-red-800' },
+          { text: '¿Cómo?', role: 'Manner (How)', color: 'bg-orange-200 dark:bg-orange-800' },
+        ],
+      },
+
+      // ── Step 7: Drag Order — Build a question from words ──
+      {
+        id: 'gram025-s07',
+        type: 'drag-order',
+        instruction: 'Put the words in order to form the question: "Where do you live?"',
+        correctOrder: ['¿', 'Dónde', 'vives', 'tú', '?'],
+        scrambled: ['vives', '¿', 'tú', '?', 'Dónde'],
+        translation: 'Where do you live?',
+      },
+
+      // ── Step 8: Practice — Why vs Because ──
+      {
+        id: 'gram025-s08',
+        type: 'practice',
+        variant: 'multiple-choice',
+        question: '¿___ no vienes a la fiesta? — ___ tengo que estudiar.',
+        context: 'Fill both blanks correctly.',
+        options: ['Por qué / Porque', 'Porque / Por qué', 'Por que / Porqué', 'Porqué / Por que'],
+        correctAnswer: 'Por qué / Porque',
+        explanation: '"¿Por qué?" (two words, accent) asks the question (Why?). "Porque" (one word, no accent) gives the answer (Because). This is the #1 distinction to master!',
+      },
+
+      // ── Step 9: Drag Order — Build a "why" question ──
+      {
+        id: 'gram025-s09',
+        type: 'drag-order',
+        instruction: 'Put the words in order to ask: "Why are you studying Spanish?"',
+        correctOrder: ['¿', 'Por', 'qué', 'estudias', 'español', '?'],
+        scrambled: ['español', '¿', 'estudias', '?', 'qué', 'Por'],
+        translation: 'Why are you studying Spanish?',
+      },
+
+      // ── Step 10: Fill Table — Match questions to answers ──
+      {
+        id: 'gram025-s10',
+        type: 'fill-table',
+        instruction: 'Fill in the correct question word for each answer',
+        headers: ['Question', 'Answer'],
+        rows: [
+          { label: '1', cells: [{ value: 'Quién', editable: true }, { value: 'El señor García.', editable: false }] },
+          { label: '2', cells: [{ value: 'Cuándo', editable: true }, { value: 'A las nueve de la mañana.', editable: false }] },
+          { label: '3', cells: [{ value: 'Dónde', editable: true }, { value: 'Al final del pasillo.', editable: false }] },
+          { label: '4', cells: [{ value: 'Por qué', editable: true }, { value: 'Porque perdí el autobús.', editable: false }] },
+        ],
+      },
+
+      // ── Step 11: Narrative — Reading comprehension passage ──
+      {
+        id: 'gram025-s11',
+        type: 'narrative',
+        scene: 'Read this short passage about María\'s day, then answer questions about it',
+        lines: [
+          {
+            speaker: 'Narrador',
+            text: 'María vive en Barcelona.',
+            translation: 'María lives in Barcelona.',
+            highlight: 'Dónde → Barcelona',
+          },
+          {
+            speaker: 'Narrador',
+            text: 'Ella trabaja en un hospital porque es doctora.',
+            translation: 'She works in a hospital because she is a doctor.',
+            highlight: 'Por qué → porque es doctora',
+          },
+          {
+            speaker: 'Narrador',
+            text: 'Cada mañana, a las siete, va al trabajo en metro.',
+            translation: 'Every morning, at seven, she goes to work by metro.',
+            highlight: 'Cuándo → a las siete, Cómo → en metro',
+          },
+          {
+            speaker: 'Narrador',
+            text: 'Su colega Pedro trabaja con ella. Juntos ayudan a muchas personas.',
+            translation: 'Her colleague Pedro works with her. Together they help many people.',
+            highlight: 'Quién → Pedro, Qué → ayudan a personas',
+          },
+        ],
+        noticePrompt: 'This passage contains answers to all 6 question types. Can you form a ¿Quién?, ¿Qué?, ¿Cuándo?, ¿Dónde?, ¿Por qué?, and ¿Cómo? question from it?',
+      },
+
+      // ── Step 12: Practice — Comprehension question 1 ──
+      {
+        id: 'gram025-s12',
+        type: 'practice',
+        variant: 'multiple-choice',
+        question: 'Based on the passage: ¿Dónde vive María?',
+        context: 'Reading comprehension',
+        options: ['En Barcelona', 'En Madrid', 'En un hospital', 'En el metro'],
+        correctAnswer: 'En Barcelona',
+        explanation: 'The passage says "María vive en Barcelona." ¿Dónde? asks about a place, and Barcelona is where she lives.',
+      },
+
+      // ── Step 13: Practice — Comprehension question 2 ──
+      {
+        id: 'gram025-s13',
+        type: 'practice',
+        variant: 'multiple-choice',
+        question: 'Based on the passage: ¿Por qué trabaja en un hospital?',
+        context: 'Reading comprehension',
+        options: ['Porque es doctora', 'Porque vive en Barcelona', 'Porque va en metro', 'Porque trabaja con Pedro'],
+        correctAnswer: 'Porque es doctora',
+        explanation: '"Porque es doctora" — the passage explains the reason (por qué) she works at a hospital is that she\'s a doctor.',
+      },
+
+      // ── Step 14: Practice — Comprehension question 3 ──
+      {
+        id: 'gram025-s14',
+        type: 'practice',
+        variant: 'multiple-choice',
+        question: 'Based on the passage: ¿Cómo va al trabajo?',
+        context: 'Reading comprehension',
+        options: ['En metro', 'En autobús', 'Caminando', 'En coche'],
+        correctAnswer: 'En metro',
+        explanation: '"Va al trabajo en metro" — ¿Cómo? asks about the manner or method. She goes by metro.',
+      },
+
+      // ── Step 15: Practice — Form your own question ──
+      {
+        id: 'gram025-s15',
+        type: 'practice',
+        variant: 'translate',
+        question: 'Translate to Spanish: "Who works with María?"',
+        context: 'Use what you learned about ¿Quién?',
+        correctAnswer: '¿Quién trabaja con María?',
+        explanation: '¿Quién? (Who) + trabaja (works) + con María (with María). Remember the ¿ at the beginning!',
+      },
+    ],
+  },
 ];
 
 export function getLessonById(id: string): GrammarLesson | undefined {
