@@ -32,6 +32,7 @@ const navigation: NavItem[] = [
   {
     name: 'Fluency',
     children: [
+      { name: '💬 Conversation Cards', href: '/conversation-cards', description: 'Real-life practice' },
       { name: '⚡ Workshop', href: '/workshop', description: 'Live sessions' },
       { name: 'Sentence Builder', href: '/sentence-builder', description: 'Build sentences' },
       { name: 'Speaking Prompts', href: '/prompts', description: 'Speaking exercises' },
