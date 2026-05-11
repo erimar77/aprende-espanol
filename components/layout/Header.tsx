@@ -27,6 +27,7 @@ const navigation: NavItem[] = [
       { name: 'Verbs', href: '/verbs', description: 'Conjugation patterns' },
       { name: 'Verb Trainer', href: '/verb-trainer', description: 'Practice verbs' },
       { name: 'Grammar', href: '/grammar', description: 'Grammar rules' },
+      { name: '🇵🇪 Cultura', href: '/cultura', description: 'Holidays & traditions' },
     ],
   },
   {
