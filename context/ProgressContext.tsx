@@ -50,8 +50,6 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     flashcardProgress: {},
     streakDays: 0,
     lastActive: new Date().toISOString(),
-    totalWordsLearned: 0,
-    totalVerbsLearned: 0,
   });
 
   useEffect(() => {

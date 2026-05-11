@@ -16,8 +16,6 @@ const DEFAULT_PROGRESS: UserProgress = {
   flashcardProgress: {},
   streakDays: 0,
   lastActive: new Date().toISOString(),
-  totalWordsLearned: 0,
-  totalVerbsLearned: 0,
 };
 
 export function getProgress(): UserProgress {

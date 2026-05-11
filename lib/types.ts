@@ -234,8 +234,6 @@ export interface UserProgress {
   flashcardProgress: Record<string, FlashcardProgress>;
   streakDays: number;
   lastActive: string;
-  totalWordsLearned: number;
-  totalVerbsLearned: number;
 }
 
 export interface TestScore {

@@ -226,8 +226,11 @@ export interface AchievementCheck {
 export interface AchievementContext {
   lessonsCompleted: string[];
   conversationsCompleted: string[];
-  totalWordsLearned: number;
-  totalVerbsLearned: number;
+  /** Flashcards that have graduated past the 'learning' phase. */
+  wordsLearned: number;
+  /** Same as wordsLearned, filtered to wordType === 'verb'. */
+  verbsLearned: number;
+  /** All flashcards ever practiced (any status). */
   flashcardCount: number;
 }
 
@@ -251,7 +254,7 @@ export const ACHIEVEMENTS: Achievement[] = [
   { id: 'vocab_50',         title: 'Word Collector',      titleSpanish: 'Coleccionista',        description: 'Learn 50 vocabulary words',           icon: 'BookOpen',      category: 'mastery' },
   { id: 'vocab_100',        title: 'Walking Dictionary',  titleSpanish: 'Diccionario Andante',  description: 'Learn 100 vocabulary words',          icon: 'Library',       category: 'mastery' },
   { id: 'verbs_10',         title: 'Verb Explorer',       titleSpanish: 'Explorador de Verbos', description: 'Practice 10 different verbs',         icon: 'Repeat',        category: 'mastery' },
-  { id: 'grammar_guru',     title: 'Grammar Guru',        titleSpanish: 'Gurú de Gramática',    description: 'Complete all grammar lessons',        icon: 'GraduationCap', category: 'mastery' },
+  { id: 'grammar_guru',     title: 'Grammar Guru',        titleSpanish: 'Gurú de Gramática',    description: 'Complete 24 grammar lessons',         icon: 'GraduationCap', category: 'mastery' },
 
   // ── Exploration ───
   { id: 'first_convo',      title: 'Conversationalist',   titleSpanish: 'Conversador',          description: 'Complete your first conversation',    icon: 'MessageCircle', category: 'exploration' },
@@ -283,10 +286,10 @@ export const ACHIEVEMENT_CHECKS: Record<string, AchievementCheck> = {
   streak_100:       (s) => s.streak.longest >= 100,
 
   perfect_score:    (s) => s.xpHistory.some(e => e.source === 'perfect_score'),
-  vocab_50:         (_s, ctx) => ctx.totalWordsLearned >= 50,
-  vocab_100:        (_s, ctx) => ctx.totalWordsLearned >= 100,
-  verbs_10:         (_s, ctx) => ctx.totalVerbsLearned >= 10,
-  grammar_guru:     (_s, ctx) => ctx.lessonsCompleted.filter(l => l.startsWith('grammar-')).length >= 24,
+  vocab_50:         (_s, ctx) => ctx.wordsLearned >= 50,
+  vocab_100:        (_s, ctx) => ctx.wordsLearned >= 100,
+  verbs_10:         (_s, ctx) => ctx.verbsLearned >= 10,
+  grammar_guru:     (_s, ctx) => ctx.lessonsCompleted.filter(l => l.startsWith('gram')).length >= 24,
 
   first_convo:      (_s, ctx) => ctx.conversationsCompleted.length >= 1,
   five_lessons:     (_s, ctx) => ctx.lessonsCompleted.length >= 5,

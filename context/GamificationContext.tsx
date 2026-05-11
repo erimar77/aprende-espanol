@@ -78,14 +78,21 @@ export function GamificationProvider({ children }: { children: ReactNode }) {
     }
   }, [gamState, loaded]);
 
-  // Build context for achievement checks from existing progress
-  const buildAchievementContext = useCallback(() => ({
-    lessonsCompleted: progress.lessonsCompleted,
-    conversationsCompleted: progress.conversationsCompleted,
-    totalWordsLearned: progress.totalWordsLearned,
-    totalVerbsLearned: progress.totalVerbsLearned,
-    flashcardCount: Object.keys(progress.flashcardProgress).length,
-  }), [progress]);
+  // Build context for achievement checks from existing progress.
+  // wordsLearned / verbsLearned are derived from per-card SM-2 status so the
+  // counters can't drift from reality (every "learned" word is a card with
+  // status === 'review' or 'mastered').
+  const buildAchievementContext = useCallback(() => {
+    const cards = Object.values(progress.flashcardProgress);
+    const learned = cards.filter(c => c.status === 'review' || c.status === 'mastered');
+    return {
+      lessonsCompleted: progress.lessonsCompleted,
+      conversationsCompleted: progress.conversationsCompleted,
+      wordsLearned: learned.length,
+      verbsLearned: learned.filter(c => c.wordType === 'verb').length,
+      flashcardCount: cards.length,
+    };
+  }, [progress]);
 
   // ── Core Action: Award XP ────────────────────────────────────────────
 

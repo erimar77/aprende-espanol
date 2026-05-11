@@ -696,11 +696,15 @@ function LearningSummaryCard() {
           </div>
           <div className="flex justify-between text-sm">
             <span className="text-gray-600 dark:text-gray-400">Words Learned</span>
-            <span className="font-semibold text-gray-900 dark:text-white">{progress.totalWordsLearned}</span>
+            <span className="font-semibold text-gray-900 dark:text-white">
+              {Object.values(progress.flashcardProgress).filter(c => c.status === 'review' || c.status === 'mastered').length}
+            </span>
           </div>
           <div className="flex justify-between text-sm">
             <span className="text-gray-600 dark:text-gray-400">Verbs Practiced</span>
-            <span className="font-semibold text-gray-900 dark:text-white">{progress.totalVerbsLearned}</span>
+            <span className="font-semibold text-gray-900 dark:text-white">
+              {Object.values(progress.flashcardProgress).filter(c => c.wordType === 'verb' && (c.status === 'review' || c.status === 'mastered')).length}
+            </span>
           </div>
           <div className="flex justify-between text-sm">
             <span className="text-gray-600 dark:text-gray-400">Achievements Earned</span>

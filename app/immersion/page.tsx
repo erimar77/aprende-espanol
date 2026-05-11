@@ -11,7 +11,6 @@ import {
   Star,
   Filter,
 } from 'lucide-react';
-import { useGamification } from '@/context/GamificationContext';
 import Card, { CardContent, CardTitle, CardDescription } from '@/components/ui/Card';
 import { mediaResources, getFeaturedMedia, MediaResource } from '@/data/spanish-media';
 
@@ -37,7 +36,7 @@ const levelColors = {
   all: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300',
 };
 
-function MediaCard({ resource, onResourceClick }: { resource: MediaResource; onResourceClick: () => void }) {
+function MediaCard({ resource }: { resource: MediaResource }) {
   const config = typeConfig[resource.type];
   const Icon = config.icon;
 
@@ -47,7 +46,6 @@ function MediaCard({ resource, onResourceClick }: { resource: MediaResource; onR
       target="_blank"
       rel="noopener noreferrer"
       className="block group"
-      onClick={onResourceClick}
     >
       <Card hover className="h-full">
         <CardContent>
@@ -100,7 +98,6 @@ function MediaCard({ resource, onResourceClick }: { resource: MediaResource; onR
 }
 
 export default function ImmersionPage() {
-  const { earnXP } = useGamification();
   const [selectedType, setSelectedType] = useState<string>('all');
   const [selectedLevel, setSelectedLevel] = useState<string>('all');
 
@@ -131,7 +128,7 @@ export default function ImmersionPage() {
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {featuredResources.slice(0, 6).map(resource => (
-            <MediaCard key={resource.id} resource={resource} onResourceClick={() => earnXP('custom', 5, { type: 'immersion-resource' })} />
+            <MediaCard key={resource.id} resource={resource} />
           ))}
         </div>
       </section>
@@ -205,7 +202,7 @@ export default function ImmersionPage() {
         {filteredResources.length > 0 ? (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {filteredResources.map(resource => (
-              <MediaCard key={resource.id} resource={resource} onResourceClick={() => earnXP('custom', 5, { type: 'immersion-resource' })} />
+              <MediaCard key={resource.id} resource={resource} />
             ))}
           </div>
         ) : (
