@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Users, GraduationCap, Clock, CheckCircle, Settings } from 'lucide-react';
+import { Users, Clock, CheckCircle, Settings } from 'lucide-react';
 import Card, { CardContent, CardTitle, CardDescription } from '@/components/ui/Card';
 
 interface User {
@@ -11,18 +11,10 @@ interface User {
   [key: string]: unknown;
 }
 
-interface TeacherResponse {
-  id: string;
-  isActive: boolean;
-  [key: string]: unknown;
-}
-
 interface Stats {
   totalUsers: number;
   pendingUsers: number;
   approvedUsers: number;
-  totalTeachers: number;
-  activeTeachers: number;
 }
 
 export default function AdminDashboard() {
@@ -30,39 +22,22 @@ export default function AdminDashboard() {
     totalUsers: 0,
     pendingUsers: 0,
     approvedUsers: 0,
-    totalTeachers: 0,
-    activeTeachers: 0,
   });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchStats() {
       try {
-        const [usersRes, teachersRes] = await Promise.all([
-          fetch('/api/admin/users'),
-          fetch('/api/admin/teachers'),
-        ]);
-
+        const usersRes = await fetch('/api/admin/users');
         const users = await usersRes.json();
-        const teachers = await teachersRes.json();
 
         if (Array.isArray(users)) {
           const typedUsers = users as User[];
-          setStats(prev => ({
-            ...prev,
+          setStats({
             totalUsers: typedUsers.length,
             pendingUsers: typedUsers.filter(u => !u.approved).length,
             approvedUsers: typedUsers.filter(u => u.approved).length,
-          }));
-        }
-
-        if (Array.isArray(teachers)) {
-          const typedTeachers = teachers as TeacherResponse[];
-          setStats(prev => ({
-            ...prev,
-            totalTeachers: typedTeachers.length,
-            activeTeachers: typedTeachers.filter(t => t.isActive).length,
-          }));
+          });
         }
       } catch (error) {
         console.error('Failed to fetch stats:', error);
@@ -76,8 +51,8 @@ export default function AdminDashboard() {
 
   if (loading) {
     return (
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {[...Array(4)].map((_, i) => (
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[...Array(3)].map((_, i) => (
           <div key={i} className="h-32 bg-gray-200 dark:bg-gray-700 rounded-xl animate-pulse" />
         ))}
       </div>
@@ -91,12 +66,12 @@ export default function AdminDashboard() {
           Admin Dashboard
         </h1>
         <p className="text-gray-600 dark:text-gray-400 mt-1">
-          Manage users and teachers for Aprende Español
+          Manage users for Aprende Español
         </p>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <Card>
           <CardContent>
             <div className="flex items-center gap-4">
@@ -144,26 +119,10 @@ export default function AdminDashboard() {
             </div>
           </CardContent>
         </Card>
-
-        <Card>
-          <CardContent>
-            <div className="flex items-center gap-4">
-              <div className="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
-                <GraduationCap className="w-6 h-6 text-purple-600 dark:text-purple-400" />
-              </div>
-              <div>
-                <p className="text-2xl font-bold text-gray-900 dark:text-white">
-                  {stats.activeTeachers}
-                </p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Active Teachers</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
       </div>
 
       {/* Quick Actions */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-2 gap-6">
         <Link href="/admin/users">
           <Card hover className="h-full">
             <CardContent>
@@ -181,27 +140,6 @@ export default function AdminDashboard() {
                       {stats.pendingUsers} pending
                     </span>
                   )}
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </Link>
-
-        <Link href="/admin/teachers">
-          <Card hover className="h-full">
-            <CardContent>
-              <div className="flex items-center gap-4">
-                <div className="p-4 bg-purple-100 dark:bg-purple-900/30 rounded-xl">
-                  <GraduationCap className="w-8 h-8 text-purple-600 dark:text-purple-400" />
-                </div>
-                <div>
-                  <CardTitle>Manage Teachers</CardTitle>
-                  <CardDescription>
-                    Add, edit, or remove teacher profiles
-                  </CardDescription>
-                  <span className="inline-block mt-2 px-2 py-1 text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 rounded">
-                    {stats.activeTeachers} active
-                  </span>
                 </div>
               </div>
             </CardContent>

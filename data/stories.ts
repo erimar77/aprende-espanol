@@ -90,7 +90,7 @@ export const stories: Story[] = [
       {
         id: 'q2',
         question: 'What does Ana have for breakfast?',
-        questionSpanish: 'Que desayuna Ana?',
+        questionSpanish: '¿Qué desayuna Ana?',
         options: ['Cereal and juice', 'Coffee with milk and toast with tomato', 'Eggs and bacon', 'Just coffee'],
         correctAnswer: 1,
         explanation: 'Ana has "café con leche y tostadas con tomate" - coffee with milk and toast with tomato, a typical Spanish breakfast.',
@@ -98,7 +98,7 @@ export const stories: Story[] = [
       {
         id: 'q3',
         question: 'How does Ana get to work?',
-        questionSpanish: 'Como va Ana al trabajo?',
+        questionSpanish: '¿Cómo va Ana al trabajo?',
         options: ['By bus', 'By car', 'By metro', 'On foot'],
         correctAnswer: 2,
         explanation: 'Ana takes the metro: "Camina hasta la estación de metro."',

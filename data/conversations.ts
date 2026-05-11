@@ -161,11 +161,11 @@ export const conversations: ConversationScenario[] = [
         responses: [
           {
             id: 'r2a',
-            text: 'Quisiera la paella, por favor.',
-            translation: 'I would like the paella, please.',
+            text: 'Quisiera el ají de gallina, por favor.',
+            translation: 'I would like the ají de gallina, please.',
             isCorrect: true,
-            feedback: '¡Excelente elección! La paella es deliciosa.',
-            feedbackTranslation: 'Excellent choice! The paella is delicious.',
+            feedback: '¡Excelente elección! El ají de gallina es delicioso.',
+            feedbackTranslation: 'Excellent choice! The ají de gallina is delicious.',
             nextNodeId: 'd3',
           },
           {
@@ -208,8 +208,8 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd4',
         speaker: 'teacher',
-        text: 'Son quince euros. Puede pagar en efectivo o con tarjeta.',
-        translation: 'It is fifteen euros. You can pay cash or by card.',
+        text: 'Son cincuenta soles. Puede pagar en efectivo o con tarjeta.',
+        translation: 'It is fifty soles. You can pay cash or by card.',
         responses: [
           {
             id: 'r4a',
@@ -387,8 +387,8 @@ export const conversations: ConversationScenario[] = [
             text: 'Me queda muy bien. ¿Cuánto cuesta?',
             translation: 'It fits me very well. How much does it cost?',
             isCorrect: true,
-            feedback: 'Cuesta treinta euros. Hoy hay un descuento del veinte por ciento.',
-            feedbackTranslation: 'It costs thirty euros. Today there is a twenty percent discount.',
+            feedback: 'Cuesta cien soles. Hoy hay un descuento del veinte por ciento.',
+            feedbackTranslation: 'It costs one hundred soles. Today there is a twenty percent discount.',
             nextNodeId: 'd4',
           },
           {
@@ -413,8 +413,8 @@ export const conversations: ConversationScenario[] = [
             text: 'Solo la camisa, por favor. ¡La compro!',
             translation: "Just the shirt, please. I'll buy it!",
             isCorrect: true,
-            feedback: '¡Perfecto! Son veinticuatro euros con el descuento. ¡Gracias por su compra!',
-            feedbackTranslation: 'Perfect! It is twenty-four euros with the discount. Thank you for your purchase!',
+            feedback: '¡Perfecto! Son ochenta soles con el descuento. ¡Gracias por su compra!',
+            feedbackTranslation: 'Perfect! It is eighty soles with the discount. Thank you for your purchase!',
             nextNodeId: 'end',
           },
         ],
@@ -611,8 +611,8 @@ export const conversations: ConversationScenario[] = [
             text: 'No, gracias. Solo el medicamento.',
             translation: 'No, thank you. Just the medication.',
             isCorrect: true,
-            feedback: 'De acuerdo. Son ocho euros con cincuenta.',
-            feedbackTranslation: 'Alright. It is eight euros fifty.',
+            feedback: 'De acuerdo. Son veinte soles.',
+            feedbackTranslation: 'Alright. It is twenty soles.',
             nextNodeId: 'd4',
           },
         ],
@@ -620,8 +620,8 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd4',
         speaker: 'teacher',
-        text: 'Son doce euros en total. Mejorate pronto!',
-        translation: 'It is twelve euros in total. Get well soon!',
+        text: 'Son treinta soles en total. ¡Mejórate pronto!',
+        translation: 'It is thirty soles in total. Get well soon!',
         responses: [
           {
             id: 'r4a',
@@ -648,7 +648,7 @@ export const conversations: ConversationScenario[] = [
     prerequisiteId: 'conv006',
     culturalNote: {
       title: 'Transportation in Peru',
-      content: 'In Peru, besides regular taxis, you\'ll find "colectivos" (shared vans) that follow set routes and are very affordable. "Mototaxis" (motorcycle taxis) are popular in smaller cities. In Lima, taxis are usually white and are hailed on the street. Tipping taxi drivers is appreciated (rounding up is common). Always negotiate colectivo fares before boarding.'
+      content: 'In Peru, besides regular taxis, you\'ll find "colectivos" (shared vans) that follow set routes and are very affordable. "Mototaxis" (motorcycle taxis) are popular in smaller cities. In Lima, most taxis are informal and come in any color, so it is safer to book through an app (Uber, Cabify, InDriver) or call a registered taxi company; always agree on the fare before getting in, since meters are rare. Tipping is not expected, though rounding up is appreciated.'
     },
     dialogue: [
       {
@@ -668,8 +668,8 @@ export const conversations: ConversationScenario[] = [
           },
           {
             id: 'r1b',
-            text: 'A la calle Gran Vía, número 25.',
-            translation: 'To Gran Via street, number 25.',
+            text: 'A la avenida Larco, número 25.',
+            translation: 'To Larco Avenue, number 25.',
             isCorrect: true,
             feedback: 'Perfecto, conozco esa zona. Vamos allá.',
             feedbackTranslation: 'Perfect, I know that area. Let\'s go there.',
@@ -714,8 +714,8 @@ export const conversations: ConversationScenario[] = [
             text: 'Aquí está bien. ¿Cuánto es?',
             translation: 'Here is fine. How much is it?',
             isCorrect: true,
-            feedback: 'Son veinticinco euros.',
-            feedbackTranslation: 'It is twenty-five euros.',
+            feedback: 'Son treinta soles.',
+            feedbackTranslation: 'It is thirty soles.',
             nextNodeId: 'd4',
           },
         ],
@@ -728,8 +728,8 @@ export const conversations: ConversationScenario[] = [
         responses: [
           {
             id: 'r4a',
-            text: 'No, gracias. Aquí tiene treinta euros. Quédese con el cambio.',
-            translation: 'No, thank you. Here is thirty euros. Keep the change.',
+            text: 'No, gracias. Aquí tiene cuarenta soles. Quédese con el cambio.',
+            translation: 'No, thank you. Here is forty soles. Keep the change.',
             isCorrect: true,
             feedback: '¡Muy amable! ¡Buen viaje!',
             feedbackTranslation: 'Very kind! Have a good trip!',
@@ -762,8 +762,8 @@ export const conversations: ConversationScenario[] = [
         responses: [
           {
             id: 'r1a',
-            text: 'Quiero cambiar dolares a euros.',
-            translation: 'I want to exchange dollars to euros.',
+            text: 'Quiero cambiar dólares a soles.',
+            translation: 'I want to exchange dollars to soles.',
             isCorrect: true,
             feedback: '¿Claro. ¿Cuántos dólares quiere cambiar?',
             feedbackTranslation: 'Of course. How many dollars do you want to exchange?',
@@ -783,16 +783,16 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd2',
         speaker: 'teacher',
-        text: 'El tipo de cambio hoy es de 0.92 euros por dolar.',
-        translation: 'The exchange rate today is 0.92 euros per dollar.',
+        text: 'El tipo de cambio hoy es de 3.70 soles por dólar.',
+        translation: 'The exchange rate today is 3.70 soles per dollar.',
         responses: [
           {
             id: 'r2a',
             text: 'De acuerdo. Quiero cambiar doscientos dolares.',
             translation: 'Alright. I want to exchange two hundred dollars.',
             isCorrect: true,
-            feedback: 'Son ciento ochenta y cuatro euros. Necesito ver su pasaporte.',
-            feedbackTranslation: 'That is one hundred eighty-four euros. I need to see your passport.',
+            feedback: 'Son setecientos cuarenta soles. Necesito ver su pasaporte.',
+            feedbackTranslation: 'That is seven hundred forty soles. I need to see your passport.',
             nextNodeId: 'd3',
           },
         ],
@@ -805,11 +805,11 @@ export const conversations: ConversationScenario[] = [
         responses: [
           {
             id: 'r2ba',
-            text: 'Quisiera retirar cien euros, por favor.',
-            translation: 'I would like to withdraw one hundred euros, please.',
+            text: 'Quisiera retirar trescientos soles, por favor.',
+            translation: 'I would like to withdraw three hundred soles, please.',
             isCorrect: true,
-            feedback: 'Muy bien. ¿En billetes de veinte o de cincuenta?',
-            feedbackTranslation: 'Very well. In twenty or fifty euro bills?',
+            feedback: 'Muy bien. ¿En billetes de cincuenta o de cien?',
+            feedbackTranslation: 'Very well. In fifty or one hundred sol bills?',
             nextNodeId: 'd3',
           },
         ],
@@ -1059,7 +1059,7 @@ export const conversations: ConversationScenario[] = [
     prerequisiteId: 'conv010',
     culturalNote: {
       title: 'Markets in Peru',
-      content: 'Peruvian markets (mercados) are colorful, lively places full of fresh produce, exotic fruits, and local specialties. Mercado Central in Lima is famous for seafood. Vendors appreciate friendly greetings and may offer you samples or extras if you become a regular. Bargaining customs vary by region—it\'s common in Latin American open-air markets and street vendors, making it an enjoyable part of the cultural experience. However, bargaining is generally not practiced at Spanish supermarkets or modern chain stores. You\'ll find similar vibrant markets throughout Latin America.'
+      content: 'Peruvian markets (mercados) are colorful, lively places full of fresh produce, exotic fruits, and local specialties. The Mercado de Surquillo in Lima is beloved for its fresh produce and prepared food, while the Terminal Pesquero de Villa María del Triunfo is the go-to spot for fresh seafood. Vendors appreciate friendly greetings and may offer you samples or extras if you become a regular. Bargaining customs vary by region—it\'s common in Latin American open-air markets and street vendors, making it an enjoyable part of the cultural experience. However, bargaining is generally not practiced at modern supermarkets or chain stores. You\'ll find similar vibrant markets throughout Latin America.'
     },
     dialogue: [
       {
@@ -1108,16 +1108,16 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd3',
         speaker: 'teacher',
-        text: '¿Quiere probar un poco de jamón? Tenemos ibérico.',
-        translation: 'Would you like to try some ham? We have Iberian.',
+        text: '¿Quiere probar un poco de jamón? Tenemos jamón del país.',
+        translation: 'Would you like to try some ham? We have Peruvian country ham.',
         responses: [
           {
             id: 'r3a',
             text: 'Sí, por favor. Está muy bueno! Póngame cien gramos.',
             translation: 'Yes, please. It\'s very good! Give me one hundred grams.',
             isCorrect: true,
-            feedback: '¡Excelente elección! El jamón ibérico es el mejor.',
-            feedbackTranslation: 'Excellent choice! Iberian ham is the best.',
+            feedback: '¡Excelente elección! El jamón del país es el mejor.',
+            feedbackTranslation: 'Excellent choice! Peruvian country ham is the best.',
             nextNodeId: 'd4',
           },
           {
@@ -1134,13 +1134,13 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd4',
         speaker: 'teacher',
-        text: 'Son ocho euros con cincuenta. ¿Quiere una bolsa?',
-        translation: 'It is eight euros fifty. Do you want a bag?',
+        text: 'Son veinticinco soles. ¿Quiere una bolsa?',
+        translation: 'It is twenty-five soles. Do you want a bag?',
         responses: [
           {
             id: 'r4a',
-            text: 'No, tengo mi propia bolsa. Aquí tiene diez euros.',
-            translation: 'No, I have my own bag. Here is ten euros.',
+            text: 'No, tengo mi propia bolsa. Aquí tiene treinta soles.',
+            translation: 'No, I have my own bag. Here is thirty soles.',
             isCorrect: true,
             feedback: 'Muy bien, su cambio. Gracias y hasta la próxima!',
             feedbackTranslation: 'Very well, your change. Thank you and see you next time!',
@@ -1162,7 +1162,7 @@ export const conversations: ConversationScenario[] = [
     prerequisiteId: 'conv011',
     culturalNote: {
       title: 'Postal Services in Peru and Latin America',
-      content: 'Peru\'s postal service is Correos del Peru. Main post offices are usually open 8am-5pm, Monday-Friday. Yellow mailboxes are standard throughout Latin America. In Peru, you can also buy stamps at some supermarkets and shops. Correos operates differently across countries—Spain\'s Correos has different hours than Peru\'s. For important documents, consider using courier services available throughout the region.'
+      content: 'Peru\'s postal service is Serpost (Servicio Postal del Perú). Main post offices are usually open 8am-5pm, Monday-Friday. Yellow mailboxes are common across Latin America. In Peru, you can also buy stamps at some supermarkets and shops. Postal services differ across countries—Spain\'s Correos has different hours and pricing than Peru\'s Serpost. For important documents, consider using courier services like DHL or Olva, which are widely available throughout the region.'
     },
     dialogue: [
       {
@@ -1185,8 +1185,8 @@ export const conversations: ConversationScenario[] = [
             text: 'Necesito sellos para cinco postales.',
             translation: 'I need stamps for five postcards.',
             isCorrect: true,
-            feedback: '¿A dónde van las postales? ¿Dentro de Europa o fuera?',
-            feedbackTranslation: 'Where are the postcards going? Within Europe or outside?',
+            feedback: '¿A dónde van las postales? ¿Dentro de Sudamérica o fuera?',
+            feedbackTranslation: 'Where are the postcards going? Within South America or outside?',
             nextNodeId: 'd2b',
           },
         ],
@@ -1202,8 +1202,8 @@ export const conversations: ConversationScenario[] = [
             text: 'Urgente, por favor. ¿Cuánto tarda en llegar?',
             translation: 'Express, please. How long does it take to arrive?',
             isCorrect: true,
-            feedback: 'Por urgente, tres o cuatro días. Son veinticinco euros.',
-            feedbackTranslation: 'By express, three or four days. It is twenty-five euros.',
+            feedback: 'Por urgente, tres o cuatro días. Son ochenta soles.',
+            feedbackTranslation: 'By express, three or four days. It is eighty soles.',
             nextNodeId: 'd3',
           },
         ],
@@ -1211,16 +1211,16 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd2b',
         speaker: 'teacher',
-        text: 'Para Estados Unidos, cada sello cuesta un euro veinte.',
-        translation: 'For the United States, each stamp costs one euro twenty.',
+        text: 'Para Estados Unidos, cada sello cuesta cuatro soles.',
+        translation: 'For the United States, each stamp costs four soles.',
         responses: [
           {
             id: 'r2ba',
             text: 'Perfecto. Deme cinco sellos entonces.',
             translation: 'Perfect. Give me five stamps then.',
             isCorrect: true,
-            feedback: 'Son seis euros. Aquí tiene los sellos.',
-            feedbackTranslation: 'It is six euros. Here are the stamps.',
+            feedback: 'Son veinte soles. Aquí tiene los sellos.',
+            feedbackTranslation: 'It is twenty soles. Here are the stamps.',
             nextNodeId: 'd3',
           },
         ],
@@ -1236,8 +1236,8 @@ export const conversations: ConversationScenario[] = [
             text: 'No, gracias. ¿Cuánto es en total?',
             translation: 'No, thank you. How much is it in total?',
             isCorrect: true,
-            feedback: 'Son veinticinco euros. Puede pagar con tarjeta.',
-            feedbackTranslation: 'It is twenty-five euros. You can pay by card.',
+            feedback: 'Son ochenta soles. Puede pagar con tarjeta.',
+            feedbackTranslation: 'It is eighty soles. You can pay by card.',
             nextNodeId: 'd4',
           },
         ],
@@ -1253,8 +1253,8 @@ export const conversations: ConversationScenario[] = [
             text: 'Muchas gracias. ¿Puedo seguir el paquete por internet?',
             translation: 'Thank you very much. Can I track the package online?',
             isCorrect: true,
-            feedback: 'Sí, en la página web de Correos con ese número. ¡Buen día!',
-            feedbackTranslation: 'Yes, on the Correos website with that number. Good day!',
+            feedback: 'Sí, en la página web de Serpost con ese número. ¡Buen día!',
+            feedbackTranslation: 'Yes, on the Serpost website with that number. Good day!',
             nextNodeId: 'end',
           },
         ],
@@ -1313,8 +1313,8 @@ export const conversations: ConversationScenario[] = [
             text: 'Automático, por favor. No sé conducir manual.',
             translation: 'Automatic, please. I don\'t know how to drive manual.',
             isCorrect: true,
-            feedback: 'Sin problema. El automático cuesta diez euros más por día.',
-            feedbackTranslation: 'No problem. The automatic costs ten euros more per day.',
+            feedback: 'Sin problema. El automático cuesta treinta soles más por día.',
+            feedbackTranslation: 'No problem. The automatic costs thirty soles more per day.',
             nextNodeId: 'd3',
           },
           {
@@ -1322,8 +1322,8 @@ export const conversations: ConversationScenario[] = [
             text: 'Manual está bien. Estoy acostumbrado.',
             translation: 'Manual is fine. I am used to it.',
             isCorrect: true,
-            feedback: 'Perfecto. Tenemos un Seat Ibiza disponible.',
-            feedbackTranslation: 'Perfect. We have a Seat Ibiza available.',
+            feedback: 'Perfecto. Tenemos un Toyota Yaris disponible.',
+            feedbackTranslation: 'Perfect. We have a Toyota Yaris available.',
             nextNodeId: 'd3',
           },
         ],
@@ -1339,8 +1339,8 @@ export const conversations: ConversationScenario[] = [
             text: 'Sí, prefiero tener el seguro completo.',
             translation: 'Yes, I prefer to have full insurance.',
             isCorrect: true,
-            feedback: 'Muy bien. Son quince euros adicionales por dia.',
-            feedbackTranslation: 'Very well. It is fifteen euros additional per day.',
+            feedback: 'Muy bien. Son cincuenta soles adicionales por día.',
+            feedbackTranslation: 'Very well. It is fifty soles additional per day.',
             nextNodeId: 'd4',
           },
         ],
@@ -1399,15 +1399,15 @@ export const conversations: ConversationScenario[] = [
       {
         id: 'd2',
         speaker: 'teacher',
-        text: '¿Quieres tomar algo? Hay sangría, cerveza y refrescos.',
-        translation: 'Do you want to drink something? There is sangría, beer, and soft drinks.',
+        text: '¿Quieres tomar algo? Hay pisco sour, cerveza y refrescos.',
+        translation: 'Do you want to drink something? There is pisco sour, beer, and soft drinks.',
         responses: [
           {
             id: 'r2a',
-            text: 'Una sangría, por favor. ¡Tiene muy buena pinta!',
-            translation: 'A sangría, please. It looks very good!',
+            text: 'Un pisco sour, por favor. ¡Tiene muy buena pinta!',
+            translation: 'A pisco sour, please. It looks very good!',
             isCorrect: true,
-            feedback: 'La hizo Carlos. Tiene un secreto especial!',
+            feedback: 'Lo hizo Carlos. ¡Tiene un secreto especial!',
             feedbackTranslation: 'Carlos made it. He has a special secret!',
             nextNodeId: 'd3',
           },
@@ -1680,8 +1680,8 @@ export const conversations: ConversationScenario[] = [
             text: 'Me encanta! La gente es muy amable y hay muchos restaurantes buenos.',
             translation: 'I love it! The people are very friendly and there are many good restaurants.',
             isCorrect: true,
-            feedback: '¿¡Sí! ¿Conoces el restaurante La Tasca? Tiene las mejores tapas.',
-            feedbackTranslation: 'Yes! Do you know the restaurant La Tasca? It has the best tapas.',
+            feedback: '¡Sí! ¿Conoces el restaurante La Esquina? Tiene los mejores piqueos.',
+            feedbackTranslation: 'Yes! Do you know the restaurant La Esquina? It has the best piqueos (Peruvian appetizers).',
             nextNodeId: 'd3',
           },
         ],
@@ -1694,8 +1694,8 @@ export const conversations: ConversationScenario[] = [
         responses: [
           {
             id: 'r3a',
-            text: '¡Me encantaría! ¿Dónde y a qué hora quedáis?',
-            translation: 'I would love to! Where and what time do you meet?',
+            text: '¡Me encantaría! ¿Dónde y a qué hora se juntan?',
+            translation: 'I would love to! Where and what time do you (all) meet?',
             isCorrect: true,
             feedback: 'En el bar de la esquina, a las ocho. ¡Te paso mi número!',
             feedbackTranslation: 'At the bar on the corner, at eight. I\'ll give you my number!',
@@ -2021,8 +2021,8 @@ export const conversations: ConversationScenario[] = [
             text: '¡Gracias, abuela! Huele delicioso. ¿Qué está cocinando?',
             translation: 'Thank you, grandma! It smells delicious. What are you cooking?',
             isCorrect: true,
-            feedback: 'Paella! La receta de mi madre. Tardamos tres horas en hacerla.',
-            feedbackTranslation: 'Paella! My mother\'s recipe. It takes us three hours to make it.',
+            feedback: '¡Pachamanca! La receta de mi madre. Tardamos tres horas en hacerla.',
+            feedbackTranslation: 'Pachamanca! My mother\'s recipe. It takes us three hours to make it.',
             nextNodeId: 'd3',
           },
         ],
@@ -2075,7 +2075,7 @@ export const conversations: ConversationScenario[] = [
     category: 'cultural',
     culturalNote: {
       title: 'Coffee Culture in Peru',
-      content: 'Peru is one of the world\'s leading coffee producers! Peruvian coffee is renowned for its rich flavor. You\'ll hear Spanish coffee terms like "cafe solo" (espresso) and "cafe con leche" (with milk) throughout Latin America. Try "pisco sour" instead of "carajillo" in Peru! Peru\'s coffee culture is rooted in agriculture and tradition. Each country has unique coffee drinks—Spain loves their "carajillo," while Peru celebrates its coffee bean heritage.'
+      content: 'Peru is one of the world\'s leading coffee producers! Peruvian coffee is renowned for its rich flavor. You\'ll hear Spanish coffee terms like "café solo" (espresso) and "café con leche" (with milk) throughout Latin America. In Peru, try a "café pasado" — strong coffee concentrate diluted with hot water at the table — or a simple "café americano." The Spanish "carajillo" (coffee spiked with brandy or rum) doesn\'t have a direct Peruvian equivalent on café menus; for a similar pick-me-up Peruvians are more likely to order a pisco sour separately. Each country has its own coffee traditions.'
     },
     dialogue: [
       {

@@ -47,19 +47,19 @@ export const latinHolidays: LatinHoliday[] = [
     summary: "Same date as the US, but the celebration is much bigger — it's closer to a national event than a Hallmark holiday.",
     dayInTheLife: `The day starts early. You wake up and the first thing you do is call your mom — or better yet, you're already at her house. In Peru, this isn't a brunch-and-card day like in the US. The whole extended family gathers. Grandma, aunts, sisters, cousins — everyone converges on one house, usually the matriarch's.
 
-By mid-morning, the kitchen is chaos in the best way. Someone's making arroz con pollo or a big ají de gallina. The men are expected to help — or at least stay out of the way and handle the drinks. Beer and chicha morada flow freely.
+By mid-morning, the kitchen is chaos in the best way. Someone's making pollo a la brasa with all the sides, or a big pachamanca if you're in the sierra, or a hearty seco de cordero. The men are expected to help — or at least stay out of the way and handle the drinks. Beer and chicha morada flow freely.
 
 Around noon, the table is set for 15-20 people. There are speeches. Your girlfriend's brother might stand up and say something sentimental about their mom. People cry. It's emotional in a way that might feel unfamiliar if you grew up in a reserved household.
 
-The afternoon stretches into evening. Nobody leaves early. There's cake (torta de tres leches is common), someone puts on cumbia or huayno music, and the older women end up dancing. Kids run around. It's warm, loud, and genuinely happy.
+The afternoon stretches into evening. Nobody leaves early. There's cake (torta helada or a chocolate cake is the Peruvian default; tres leches shows up too but it's more associated with Nicaragua and Mexico), someone puts on cumbia or huayno music, and the older women end up dancing. Kids run around. It's warm, loud, and genuinely happy.
 
 If you're there as the boyfriend, you're expected to participate fully — greet her mother warmly, give her flowers or a gift, and treat the day as important. Ignoring it or being passive would be noticed.`,
     usComparison: `In the US, Mother's Day often means brunch at a restaurant, a card, maybe flowers delivered. It's personal and relatively private — your nuclear family. In Peru (and most of Latin America), it's a full family reunion. Restaurants are packed but many families cook at home together. The emotional intensity is higher — public speeches, tears, and long toasts are normal. Schools also hold events the Friday before where kids perform songs and dances for their mothers. It's a much bigger cultural moment than most Americans expect.`,
     sensoryDetails: {
       see: 'Extended family crowded around a big table, flowers everywhere (roses and lilies are popular), kids in school uniforms performing songs, street vendors selling last-minute bouquets',
       hear: 'Cumbia and ballads playing, toasts being made, "¡Salud por las madres!", kids singing "Mamita" songs from school',
-      smell: 'Ají de gallina cooking, arroz con pollo, torta baking, fresh flowers',
-      taste: 'Arroz con pollo, ají de gallina, torta de tres leches, chicha morada, beer',
+      smell: 'Pollo a la brasa, ají de gallina cooking, torta baking, fresh flowers',
+      taste: 'Pollo a la brasa, ají de gallina, torta helada or chocolate cake, chicha morada, beer',
     },
     vocabulary: [
       { spanish: 'la mamá / la madre', english: 'mom / mother', context: 'mamá is casual, madre more formal' },
@@ -158,7 +158,7 @@ The week after is basically still festive. People are still on vacation, still b
     region: 'peru',
     familiarity: 'new-to-you',
     summary: 'Ancient Incan festival celebrating the winter solstice and the Sun God. Still celebrated massively in Cusco.',
-    dayInTheLife: `Inti Raymi is the Incan New Year — a celebration of the sun god Inti during the winter solstice (remember, Peru is in the Southern Hemisphere, so June is winter). It's one of the most spectacular cultural events in all of South America.
+    dayInTheLife: `Inti Raymi is the great Incan winter-solstice festival honoring Inti, the sun god (remember, Peru is in the Southern Hemisphere, so June is winter). It's distinct from the Andean New Year (Machaq Mara / Año Nuevo Andino, June 21) but often confused with it. Inti Raymi is one of the most spectacular cultural events in all of South America.
 
 If you're in Cusco, the day starts at the Qorikancha (the ancient Sun Temple). Actors in elaborate Incan costumes perform a ritual in Quechua — not Spanish. The "Inca" (played by a chosen actor) makes offerings to the sun and asks for a good year ahead.
 
@@ -462,7 +462,7 @@ If someone in her family has passed — a father, grandparent — this day carri
       see: 'Families picnicking among graves, flowers covering headstones, tantawawas (bread dolls), candles lit everywhere, colorful blankets on the ground',
       hear: 'Prayers, quiet conversation, sometimes Andean music, church bells, birds',
       smell: 'Flowers (especially yellow ones), candle wax, home-cooked food, mazamorra morada (purple corn pudding)',
-      taste: 'Tantawawas (sweet bread), mazamorra morada, the deceased\'s favorite food, colada morada (spiced fruit drink)',
+      taste: 'Tantawawas (sweet bread), mazamorra morada, the deceased\'s favorite home-cooked food',
     },
     vocabulary: [
       { spanish: 'el cementerio', english: 'the cemetery' },

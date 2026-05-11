@@ -213,16 +213,6 @@ export interface DialogueResponse {
   nextNodeId: string;
 }
 
-export interface Teacher {
-  id: string;
-  name: string;
-  imageUrl: string;
-  greeting: string;
-  greetingTranslation: string;
-  specialty: string;
-  gender?: 'male' | 'female';
-}
-
 export interface FlashcardProgress {
   wordId: string;
   wordType: 'noun' | 'verb' | 'adjective' | 'adverb';

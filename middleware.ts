@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 // Routes that don't require authentication
-const publicRoutes = ['/', '/api/auth', '/api/teachers'];
+const publicRoutes = ['/', '/api/auth'];
 
 // Routes that require admin role
 const adminRoutes = ['/admin'];

@@ -275,7 +275,7 @@ export const nouns: Word[] = [
   { id: 'n259', spanish: 'acera', english: 'sidewalk', gender: 'feminine', plural: 'aceras', category: 'transportation' },
 
   // TIME & DAYS - Tiempo y Dias (30+ words)
-  { id: 'n260', spanish: 'hora', english: 'hour/time', gender: 'feminine', plural: 'horas', category: 'time', example: 'Que hora es?', exampleTranslation: 'What time is it?' },
+  { id: 'n260', spanish: 'hora', english: 'hour/time', gender: 'feminine', plural: 'horas', category: 'time', example: '¿Qué hora es?', exampleTranslation: 'What time is it?' },
   { id: 'n261', spanish: 'minuto', english: 'minute', gender: 'masculine', plural: 'minutos', category: 'time' },
   { id: 'n262', spanish: 'segundo', english: 'second', gender: 'masculine', plural: 'segundos', category: 'time' },
   { id: 'n263', spanish: 'día', english: 'day', gender: 'masculine', plural: 'días', category: 'time', example: 'Hoy es un buen día.', exampleTranslation: 'Today is a good day.' },
@@ -312,7 +312,7 @@ export const nouns: Word[] = [
   { id: 'n294', spanish: 'invierno', english: 'winter', gender: 'masculine', plural: 'inviernos', category: 'time' },
 
   // WEATHER - Clima (20+ words)
-  { id: 'n295', spanish: 'tiempo', english: 'weather/time', gender: 'masculine', category: 'weather', example: 'Que tiempo hace?', exampleTranslation: "What's the weather like?" },
+  { id: 'n295', spanish: 'tiempo', english: 'weather/time', gender: 'masculine', category: 'weather', example: '¿Qué tiempo hace?', exampleTranslation: "What's the weather like?" },
   { id: 'n296', spanish: 'sol', english: 'sun', gender: 'masculine', category: 'weather', example: 'Hace sol hoy.', exampleTranslation: "It's sunny today." },
   { id: 'n297', spanish: 'lluvia', english: 'rain', gender: 'feminine', plural: 'lluvias', category: 'weather' },
   { id: 'n298', spanish: 'nieve', english: 'snow', gender: 'feminine', category: 'weather' },
@@ -545,7 +545,7 @@ export const nouns: Word[] = [
 
   // GREETINGS & SOCIAL - Saludos (15+ words)
   { id: 'n511', spanish: 'saludo', english: 'greeting', gender: 'masculine', plural: 'saludos', category: 'greetings' },
-  { id: 'n512', spanish: 'nombre', english: 'name', gender: 'masculine', plural: 'nombres', category: 'greetings', example: 'Como te llamas?', exampleTranslation: "What's your name?" },
+  { id: 'n512', spanish: 'nombre', english: 'name', gender: 'masculine', plural: 'nombres', category: 'greetings', example: '¿Cómo te llamas?', exampleTranslation: "What's your name?" },
   { id: 'n513', spanish: 'amigo', english: 'friend', gender: 'masculine', plural: 'amigos', category: 'greetings' },
   { id: 'n514', spanish: 'amiga', english: 'friend (female)', gender: 'feminine', plural: 'amigas', category: 'greetings' },
   { id: 'n515', spanish: 'persona', english: 'person', gender: 'feminine', plural: 'personas', category: 'greetings' },

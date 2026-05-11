@@ -6,7 +6,6 @@ import { calculateSM2, binaryToQuality, getCardPriority, QualityRating } from '.
 const STORAGE_KEYS = {
   PROGRESS: 'spanish_learning_progress',
   THEME: 'spanish_learning_theme',
-  SELECTED_TEACHER: 'spanish_learning_teacher',
 } as const;
 
 const DEFAULT_PROGRESS: UserProgress = {
@@ -212,26 +211,6 @@ export function setTheme(theme: 'light' | 'dark'): void {
     localStorage.setItem(STORAGE_KEYS.THEME, theme);
   } catch (error) {
     console.error('Failed to save theme:', error);
-  }
-}
-
-export function getSelectedTeacher(): string {
-  if (typeof window === 'undefined') return 'maria';
-
-  try {
-    return localStorage.getItem(STORAGE_KEYS.SELECTED_TEACHER) || 'maria';
-  } catch {
-    return 'maria';
-  }
-}
-
-export function setSelectedTeacher(teacherId: string): void {
-  if (typeof window === 'undefined') return;
-
-  try {
-    localStorage.setItem(STORAGE_KEYS.SELECTED_TEACHER, teacherId);
-  } catch (error) {
-    console.error('Failed to save teacher selection:', error);
   }
 }
 

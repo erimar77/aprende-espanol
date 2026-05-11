@@ -1,5 +1,5 @@
 // JSON-based database implementation
-// This provides a simple file-based database for users and teachers
+// This provides a simple file-based database for users, sessions, and settings.
 
 import fs from 'fs';
 import path from 'path';
@@ -60,20 +60,6 @@ export interface DbSession {
   token: string;
   expiresAt: string;
   createdAt: string;
-}
-
-export interface DbTeacher {
-  id: string;
-  name: string;
-  imageUrl: string;
-  greeting: string;
-  greetingTranslation: string;
-  specialty: string;
-  gender?: 'male' | 'female';
-  order: number;
-  isActive: boolean;
-  createdAt: string;
-  updatedAt: string;
 }
 
 export interface DbSettings {
@@ -190,59 +176,6 @@ export async function deleteSessionByToken(token: string): Promise<boolean> {
   return true;
 }
 
-// Teacher functions
-export async function getTeachers(includeInactive = false): Promise<DbTeacher[]> {
-  const teachers = await readDb<DbTeacher[]>('teachers.json', []);
-  if (includeInactive) return teachers;
-  return teachers.filter(t => t.isActive).sort((a, b) => a.order - b.order);
-}
-
-export async function getTeacherById(id: string): Promise<DbTeacher | null> {
-  const teachers = await readDb<DbTeacher[]>('teachers.json', []);
-  return teachers.find(t => t.id === id) || null;
-}
-
-export async function createTeacher(teacher: Omit<DbTeacher, 'id' | 'createdAt' | 'updatedAt'>): Promise<DbTeacher> {
-  const teachers = await readDb<DbTeacher[]>('teachers.json', []);
-  const newTeacher: DbTeacher = {
-    ...teacher,
-    id: generateId(),
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
-  };
-  teachers.push(newTeacher);
-  await writeDb('teachers.json', teachers);
-  return newTeacher;
-}
-
-export async function updateTeacher(id: string, updates: Partial<Omit<DbTeacher, 'id' | 'createdAt'>>): Promise<DbTeacher | null> {
-  const teachers = await readDb<DbTeacher[]>('teachers.json', []);
-  const index = teachers.findIndex(t => t.id === id);
-  if (index === -1) return null;
-
-  teachers[index] = {
-    ...teachers[index],
-    ...updates,
-    updatedAt: new Date().toISOString(),
-  };
-  await writeDb('teachers.json', teachers);
-  return teachers[index];
-}
-
-export async function deleteTeacher(id: string): Promise<boolean> {
-  // Soft delete - just set isActive to false
-  const result = await updateTeacher(id, { isActive: false });
-  return result !== null;
-}
-
-export async function hardDeleteTeacher(id: string): Promise<boolean> {
-  const teachers = await readDb<DbTeacher[]>('teachers.json', []);
-  const filtered = teachers.filter(t => t.id !== id);
-  if (filtered.length === teachers.length) return false;
-  await writeDb('teachers.json', filtered);
-  return true;
-}
-
 // Helper functions
 function generateId(): string {
   return crypto.randomUUID();
@@ -271,13 +204,4 @@ export async function updateSettings(updates: Partial<Omit<DbSettings, 'updatedA
   };
   await writeDb('settings.json', updated);
   return updated;
-}
-
-// Initialize teachers from static data if database is empty
-export async function initializeTeachersFromStatic(): Promise<void> {
-  const teachers = await readDb<DbTeacher[]>('teachers.json', []);
-  if (teachers.length > 0) return; // Already initialized
-
-  // Import will be done separately to avoid circular dependencies
-  console.log('Teachers database needs to be seeded');
 }

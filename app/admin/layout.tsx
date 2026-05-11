@@ -5,12 +5,11 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useAuth } from '@/context/AuthContext';
-import { LayoutDashboard, Users, GraduationCap, Settings, ChevronRight } from 'lucide-react';
+import { LayoutDashboard, Users, Settings, ChevronRight } from 'lucide-react';
 
 const adminNavigation = [
   { name: 'Dashboard', href: '/admin', icon: LayoutDashboard },
   { name: 'Users', href: '/admin/users', icon: Users },
-  { name: 'Teachers', href: '/admin/teachers', icon: GraduationCap },
   { name: 'Settings', href: '/admin/settings', icon: Settings },
 ];
 
