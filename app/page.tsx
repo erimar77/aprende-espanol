@@ -9,10 +9,8 @@ import {
   GraduationCap,
   RefreshCw,
   ClipboardCheck,
-  Sparkles,
   Book,
   Headphones,
-  Puzzle,
   Mic,
   Library,
   Zap,
@@ -78,18 +76,10 @@ const sections = [
   {
     title: 'Flashcards',
     titleSpanish: 'Tarjetas',
-    description: 'Spaced repetition practice',
+    description: 'Spaced repetition + review queue',
     href: '/flashcards',
     icon: RefreshCw,
     color: 'bg-green-500',
-  },
-  {
-    title: 'Review',
-    titleSpanish: 'Repaso',
-    description: 'Practice weak areas',
-    href: '/review',
-    icon: Sparkles,
-    color: 'bg-orange-500',
   },
   {
     title: 'Final Test',
@@ -188,22 +178,7 @@ export default function Home() {
           </Card>
         </Link>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          <Link href="/sentence-builder">
-            <Card hover className="h-full border-2 border-dashed border-primary-200 dark:border-primary-800 hover:border-primary-400 dark:hover:border-primary-600">
-              <CardContent>
-                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 mb-4" aria-hidden="true">
-                  <Puzzle className="w-6 h-6 text-white" />
-                </div>
-                <CardTitle>Sentence Builder</CardTitle>
-                <p className="text-sm text-primary-500 font-medium mb-1">Constructor de Oraciones</p>
-                <CardDescription>
-                  Practice constructing sentences with common patterns
-                </CardDescription>
-              </CardContent>
-            </Card>
-          </Link>
-
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           <Link href="/prompts">
             <Card hover className="h-full border-2 border-dashed border-secondary-200 dark:border-secondary-800 hover:border-secondary-400 dark:hover:border-secondary-600">
               <CardContent>
@@ -219,51 +194,6 @@ export default function Home() {
             </Card>
           </Link>
 
-          <Link href="/phrases">
-            <Card hover className="h-full border-2 border-dashed border-accent-200 dark:border-accent-800 hover:border-accent-400 dark:hover:border-accent-600">
-              <CardContent>
-                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-accent-500 to-primary-500 mb-4" aria-hidden="true">
-                  <Library className="w-6 h-6 text-white" />
-                </div>
-                <CardTitle>Phrase Bank</CardTitle>
-                <p className="text-sm text-accent-600 dark:text-accent-400 font-medium mb-1">Banco de Frases</p>
-                <CardDescription>
-                  Essential phrases by situation
-                </CardDescription>
-              </CardContent>
-            </Card>
-          </Link>
-
-          <Link href="/quick-response">
-            <Card hover className="h-full border-2 border-dashed border-yellow-200 dark:border-yellow-800 hover:border-yellow-400 dark:hover:border-yellow-600">
-              <CardContent>
-                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-yellow-500 to-orange-500 mb-4" aria-hidden="true">
-                  <Zap className="w-6 h-6 text-white" />
-                </div>
-                <CardTitle>Quick Response</CardTitle>
-                <p className="text-sm text-yellow-600 dark:text-yellow-400 font-medium mb-1">Respuestas Rápidas</p>
-                <CardDescription>
-                  Timed drills for instant reactions
-                </CardDescription>
-              </CardContent>
-            </Card>
-          </Link>
-
-          <Link href="/inner-monologue">
-            <Card hover className="h-full border-2 border-dashed border-purple-200 dark:border-purple-800 hover:border-purple-400 dark:hover:border-purple-600">
-              <CardContent>
-                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-500 mb-4" aria-hidden="true">
-                  <Brain className="w-6 h-6 text-white" />
-                </div>
-                <CardTitle>Inner Monologue</CardTitle>
-                <p className="text-sm text-purple-600 dark:text-purple-400 font-medium mb-1">Monólogo Interior</p>
-                <CardDescription>
-                  Practice thinking in Spanish
-                </CardDescription>
-              </CardContent>
-            </Card>
-          </Link>
-
           <Link href="/scenarios">
             <Card hover className="h-full border-2 border-dashed border-teal-200 dark:border-teal-800 hover:border-teal-400 dark:hover:border-teal-600">
               <CardContent>
@@ -274,6 +204,21 @@ export default function Home() {
                 <p className="text-sm text-teal-600 dark:text-teal-400 font-medium mb-1">Simulaciones</p>
                 <CardDescription>
                   Immersive branching conversations
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </Link>
+
+          <Link href="/phrases">
+            <Card hover className="h-full border-2 border-dashed border-accent-200 dark:border-accent-800 hover:border-accent-400 dark:hover:border-accent-600">
+              <CardContent>
+                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-accent-500 to-primary-500 mb-4" aria-hidden="true">
+                  <Library className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Phrase Bank</CardTitle>
+                <p className="text-sm text-accent-600 dark:text-accent-400 font-medium mb-1">Banco de Frases</p>
+                <CardDescription>
+                  Essential phrases by situation
                 </CardDescription>
               </CardContent>
             </Card>
