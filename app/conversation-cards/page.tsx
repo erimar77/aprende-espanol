@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useGamification } from '@/context/GamificationContext';
+import { STORAGE_KEYS } from '@/lib/storage-keys';
 import {
   topicCards,
   whatWouldYouSay,
@@ -27,7 +28,7 @@ export default function ConversationCardsPage() {
 
   // Load progress from localStorage
   useEffect(() => {
-    const saved = localStorage.getItem('spanish_conversation_cards_completed');
+    const saved = localStorage.getItem(STORAGE_KEYS.CONVERSATION_CARDS_COMPLETED);
     if (saved) setCompletedCount(parseInt(saved, 10));
   }, []);
 
@@ -36,7 +37,7 @@ export default function ConversationCardsPage() {
   const handleComplete = (selfRating: 'good' | 'okay' | 'struggled') => {
     const newCount = completedCount + 1;
     setCompletedCount(newCount);
-    localStorage.setItem('spanish_conversation_cards_completed', String(newCount));
+    localStorage.setItem(STORAGE_KEYS.CONVERSATION_CARDS_COMPLETED, String(newCount));
 
     earnXP('exercise_complete', undefined, { type: 'conversation_card', tier, rating: selfRating });
     recordSkill('conversation', selfRating !== 'struggled');

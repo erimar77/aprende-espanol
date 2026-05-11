@@ -30,6 +30,7 @@ import {
   type QuickFirePrompt,
 } from '@/data/daily-phrases';
 import { speak } from '@/lib/speech';
+import { STORAGE_KEYS } from '@/lib/storage-keys';
 
 // ── Types ────────────────────────────────────────────────────────────────
 
@@ -45,7 +46,7 @@ function useNotifications() {
     if (typeof window !== 'undefined' && 'Notification' in window) {
       setPermission(Notification.permission);
     }
-    const saved = localStorage.getItem('spanish_daily_reminder');
+    const saved = localStorage.getItem(STORAGE_KEYS.DAILY_REMINDER);
     if (saved === 'true') setReminderEnabled(true);
   }, []);
 
@@ -55,7 +56,7 @@ function useNotifications() {
     setPermission(result);
     if (result === 'granted') {
       setReminderEnabled(true);
-      localStorage.setItem('spanish_daily_reminder', 'true');
+      localStorage.setItem(STORAGE_KEYS.DAILY_REMINDER, 'true');
       // Show confirmation
       new Notification('¡Perfecto! 🇪🇸', {
         body: "You'll get a daily reminder to practice Spanish.",
@@ -67,10 +68,10 @@ function useNotifications() {
   const toggleReminder = useCallback(() => {
     if (reminderEnabled) {
       setReminderEnabled(false);
-      localStorage.setItem('spanish_daily_reminder', 'false');
+      localStorage.setItem(STORAGE_KEYS.DAILY_REMINDER, 'false');
     } else if (permission === 'granted') {
       setReminderEnabled(true);
-      localStorage.setItem('spanish_daily_reminder', 'true');
+      localStorage.setItem(STORAGE_KEYS.DAILY_REMINDER, 'true');
     } else {
       requestPermission();
     }
@@ -87,7 +88,7 @@ function useDailyNotificationCheck(enabled: boolean) {
     if (Notification.permission !== 'granted') return;
 
     const checkAndNotify = () => {
-      const lastPractice = localStorage.getItem('spanish_last_daily_practice');
+      const lastPractice = localStorage.getItem(STORAGE_KEYS.LAST_DAILY_PRACTICE);
       const today = new Date().toISOString().slice(0, 10);
       if (lastPractice !== today) {
         // Haven't practiced today — show notification
@@ -592,7 +593,7 @@ export default function DailyPracticePage() {
   // Has practiced today?
   const [practicedToday, setPracticedToday] = useState(false);
   useEffect(() => {
-    const last = localStorage.getItem('spanish_last_daily_practice');
+    const last = localStorage.getItem(STORAGE_KEYS.LAST_DAILY_PRACTICE);
     const today = new Date().toISOString().slice(0, 10);
     if (last === today) setPracticedToday(true);
   }, []);
@@ -623,7 +624,7 @@ export default function DailyPracticePage() {
       recordSkill('translation', i < correct);
     }
     // Mark today as practiced
-    localStorage.setItem('spanish_last_daily_practice', new Date().toISOString().slice(0, 10));
+    localStorage.setItem(STORAGE_KEYS.LAST_DAILY_PRACTICE, new Date().toISOString().slice(0, 10));
     setPracticedToday(true);
     setStage('complete');
   };

@@ -562,12 +562,12 @@ export function getRecommendations(stats: Record<string, SkillStats>): Recommend
 
 // ── Storage ───────────────────────────────────────────────────────────
 
-const GAMIFICATION_KEY = 'spanish_gamification';
+import { STORAGE_KEYS } from './storage-keys';
 
 export function loadGamificationState(): GamificationState {
   if (typeof window === 'undefined') return DEFAULT_GAMIFICATION_STATE;
   try {
-    const raw = localStorage.getItem(GAMIFICATION_KEY);
+    const raw = localStorage.getItem(STORAGE_KEYS.GAMIFICATION);
     if (!raw) return DEFAULT_GAMIFICATION_STATE;
     const parsed = JSON.parse(raw);
     // Merge with defaults to handle schema evolution
@@ -580,7 +580,7 @@ export function loadGamificationState(): GamificationState {
 export function saveGamificationState(state: GamificationState): void {
   if (typeof window === 'undefined') return;
   try {
-    localStorage.setItem(GAMIFICATION_KEY, JSON.stringify(state));
+    localStorage.setItem(STORAGE_KEYS.GAMIFICATION, JSON.stringify(state));
   } catch (e) {
     console.error('Failed to save gamification state:', e);
   }
@@ -588,7 +588,7 @@ export function saveGamificationState(state: GamificationState): void {
 
 export function resetGamificationState(): GamificationState {
   if (typeof window !== 'undefined') {
-    localStorage.removeItem(GAMIFICATION_KEY);
+    localStorage.removeItem(STORAGE_KEYS.GAMIFICATION);
   }
   return DEFAULT_GAMIFICATION_STATE;
 }

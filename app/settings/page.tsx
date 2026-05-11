@@ -20,6 +20,7 @@ import {
 import Card, { CardContent, CardTitle, CardDescription } from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import { resetPremiumTTSCache } from '@/lib/speech';
+import { STORAGE_KEYS } from '@/lib/storage-keys';
 import { useTheme } from '@/context/ThemeContext';
 import { useProgress } from '@/context/ProgressContext';
 import {
@@ -168,7 +169,7 @@ export default function SettingsPage() {
 
   function loadLocalSettings() {
     try {
-      const stored = localStorage.getItem('learningSettings');
+      const stored = localStorage.getItem(STORAGE_KEYS.LEARNING_SETTINGS);
       if (stored) {
         setLocalSettings({ ...DEFAULT_LOCAL_SETTINGS, ...JSON.parse(stored) });
       }
@@ -179,7 +180,7 @@ export default function SettingsPage() {
 
   function saveLocalSettings(newSettings: LocalSettings) {
     setLocalSettings(newSettings);
-    localStorage.setItem('learningSettings', JSON.stringify(newSettings));
+    localStorage.setItem(STORAGE_KEYS.LEARNING_SETTINGS, JSON.stringify(newSettings));
     setMessage({ type: 'success', text: 'Settings saved!' });
     setTimeout(() => setMessage(null), 2000);
   }

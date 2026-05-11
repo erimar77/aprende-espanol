@@ -227,6 +227,8 @@ export interface FlashcardProgress {
 }
 
 export interface UserProgress {
+  /** Schema version. Bumped when UserProgress shape changes incompatibly. */
+  _version?: number;
   lessonsCompleted: string[];
   conversationsCompleted: string[];
   unlockedConversations: string[];

@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import { getTheme, setTheme as saveTheme } from '@/lib/storage';
+import { STORAGE_KEYS } from '@/lib/storage-keys';
 
 type Mode = 'light' | 'dark';
 type ColorScheme = 'default' | 'peru' | 'mexico' | 'colombia' | 'argentina';
@@ -28,7 +29,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
     // Load color scheme from localStorage
     try {
-      const savedScheme = localStorage.getItem('colorScheme') as ColorScheme;
+      const savedScheme = localStorage.getItem(STORAGE_KEYS.COLOR_SCHEME) as ColorScheme;
       if (savedScheme && ['default', 'peru', 'mexico', 'colombia', 'argentina'].includes(savedScheme)) {
         setColorSchemeState(savedScheme);
       }
@@ -53,7 +54,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     // Handle color scheme
     root.classList.remove('scheme-default', 'scheme-peru', 'scheme-mexico', 'scheme-colombia', 'scheme-argentina');
     root.classList.add(`scheme-${colorScheme}`);
-    localStorage.setItem('colorScheme', colorScheme);
+    localStorage.setItem(STORAGE_KEYS.COLOR_SCHEME, colorScheme);
   }, [theme, colorScheme, mounted]);
 
   const toggleTheme = () => {

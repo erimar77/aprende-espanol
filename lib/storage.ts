@@ -2,13 +2,10 @@
 
 import { UserProgress, FlashcardProgress } from './types';
 import { calculateSM2, binaryToQuality, getCardPriority, QualityRating } from './sm2';
-
-const STORAGE_KEYS = {
-  PROGRESS: 'spanish_learning_progress',
-  THEME: 'spanish_learning_theme',
-} as const;
+import { STORAGE_KEYS, PROGRESS_SCHEMA_VERSION } from './storage-keys';
 
 const DEFAULT_PROGRESS: UserProgress = {
+  _version: PROGRESS_SCHEMA_VERSION,
   lessonsCompleted: [],
   conversationsCompleted: [],
   unlockedConversations: ['conv001'], // First conversation always unlocked
@@ -18,13 +15,35 @@ const DEFAULT_PROGRESS: UserProgress = {
   lastActive: new Date().toISOString(),
 };
 
+/**
+ * Migrate a stored UserProgress payload to the current schema version.
+ * Currently a no-op for v0 → v1: legacy payloads predate the version field but
+ * are structurally compatible (we just removed unused counters in a prior
+ * change, and TypeScript ignores extra fields). Add migration branches below
+ * when the shape changes incompatibly, and bump PROGRESS_SCHEMA_VERSION.
+ */
+function migrateProgress(raw: unknown): UserProgress {
+  const data = (raw ?? {}) as Partial<UserProgress> & { _version?: number };
+  const fromVersion = data._version ?? 0;
+
+  // Future migration branches go here, gated on fromVersion.
+  // e.g. if (fromVersion < 2) { data = renameSomeField(data); }
+  void fromVersion;
+
+  return {
+    ...DEFAULT_PROGRESS,
+    ...data,
+    _version: PROGRESS_SCHEMA_VERSION,
+  };
+}
+
 export function getProgress(): UserProgress {
   if (typeof window === 'undefined') return DEFAULT_PROGRESS;
 
   try {
     const stored = localStorage.getItem(STORAGE_KEYS.PROGRESS);
     if (!stored) return DEFAULT_PROGRESS;
-    return JSON.parse(stored);
+    return migrateProgress(JSON.parse(stored));
   } catch {
     return DEFAULT_PROGRESS;
   }

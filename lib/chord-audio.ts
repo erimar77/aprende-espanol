@@ -1,6 +1,8 @@
 // Web Audio API chord playback engine
 // Synthesizes chord tones for guitar practice
 
+import { STORAGE_KEYS } from './storage-keys';
+
 // Note frequencies (Hz) for standard tuning reference
 const NOTE_FREQUENCIES: Record<string, number> = {
   'C2': 65.41, 'C#2': 69.30, 'D2': 73.42, 'D#2': 77.78, 'E2': 82.41, 'F2': 87.31,
@@ -59,7 +61,7 @@ export const DEFAULT_GUITAR_SETTINGS: GuitarSettings = {
 
 export function loadGuitarSettings(): GuitarSettings {
   try {
-    const stored = localStorage.getItem('guitarSettings');
+    const stored = localStorage.getItem(STORAGE_KEYS.GUITAR_SETTINGS);
     if (stored) {
       return { ...DEFAULT_GUITAR_SETTINGS, ...JSON.parse(stored) };
     }
@@ -70,7 +72,7 @@ export function loadGuitarSettings(): GuitarSettings {
 }
 
 export function saveGuitarSettings(settings: GuitarSettings) {
-  localStorage.setItem('guitarSettings', JSON.stringify(settings));
+  localStorage.setItem(STORAGE_KEYS.GUITAR_SETTINGS, JSON.stringify(settings));
 }
 
 // ============================================================

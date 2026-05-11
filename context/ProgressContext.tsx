@@ -43,6 +43,7 @@ const ProgressContext = createContext<ProgressContextType | undefined>(undefined
 
 export function ProgressProvider({ children }: { children: ReactNode }) {
   const [progress, setProgress] = useState<UserProgress>({
+    _version: 1,
     lessonsCompleted: [],
     conversationsCompleted: [],
     unlockedConversations: ['conv001'],
