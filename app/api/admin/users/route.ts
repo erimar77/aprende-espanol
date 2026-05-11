@@ -1,19 +1,6 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
-import { getUsers, getSessionByToken, getUserById } from '@/lib/db';
-
-// Helper to check if current user is admin
-async function isAdminRequest(): Promise<boolean> {
-  const cookieStore = await cookies();
-  const sessionToken = cookieStore.get('spanish_session')?.value;
-  if (!sessionToken) return false;
-
-  const session = await getSessionByToken(sessionToken);
-  if (!session) return false;
-
-  const user = await getUserById(session.userId);
-  return user?.role === 'ADMIN';
-}
+import { NextResponse } from 'next/server';
+import { getUsers } from '@/lib/db';
+import { isAdminRequest } from '@/lib/server-auth';
 
 // GET /api/admin/users - List all users
 export async function GET() {
@@ -24,8 +11,8 @@ export async function GET() {
 
   const users = await getUsers();
 
-  // Remove sensitive data
-  const safeUsers = users.map(({ providerId, ...user }) => user);
+  // Strip sensitive providerId before returning
+  const safeUsers = users.map(({ providerId: _providerId, ...user }) => user);
 
   return NextResponse.json(safeUsers);
 }

@@ -71,7 +71,7 @@ export function PracticeRenderer({
         <div className="flex gap-2">
           <input
             type="text"
-            value={submitted ? answer : undefined}
+            value={answer}
             onChange={(e) => setAnswer(e.target.value)}
             disabled={submitted}
             aria-label={step.variant === 'translate' ? 'Translate to Spanish' : 'Fill in the blank'}

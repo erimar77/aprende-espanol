@@ -1,24 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { getUserById, updateUser, deleteUser, getSessionByToken } from '@/lib/db';
+import { isAdminRequest } from '@/lib/server-auth';
 
 type UserUpdate = Partial<{
   approved: boolean;
   role: 'USER' | 'ADMIN';
 }>;
-
-// Helper to check if current user is admin
-async function isAdminRequest(): Promise<boolean> {
-  const cookieStore = await cookies();
-  const sessionToken = cookieStore.get('spanish_session')?.value;
-  if (!sessionToken) return false;
-
-  const session = await getSessionByToken(sessionToken);
-  if (!session) return false;
-
-  const user = await getUserById(session.userId);
-  return user?.role === 'ADMIN';
-}
 
 // GET /api/admin/users/[id] - Get specific user
 export async function GET(
@@ -37,8 +25,7 @@ export async function GET(
     return NextResponse.json({ error: 'User not found' }, { status: 404 });
   }
 
-  // Remove sensitive data
-  const { providerId, ...safeUser } = user;
+  const { providerId: _providerId, ...safeUser } = user;
   return NextResponse.json(safeUser);
 }
 
@@ -70,8 +57,7 @@ export async function PATCH(
     return NextResponse.json({ error: 'User not found' }, { status: 404 });
   }
 
-  // Remove sensitive data
-  const { providerId, ...safeUser } = updatedUser;
+  const { providerId: _providerId, ...safeUser } = updatedUser;
   return NextResponse.json(safeUser);
 }
 

@@ -1,21 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getSettings, updateSettings, getSessionByToken, getUserById } from '@/lib/db';
-import { cookies } from 'next/headers';
-
-const SESSION_COOKIE_NAME = 'spanish_session';
-
-// Check if user is admin
-async function isAdmin(): Promise<boolean> {
-  const cookieStore = await cookies();
-  const token = cookieStore.get(SESSION_COOKIE_NAME)?.value;
-  if (!token) return false;
-
-  const session = await getSessionByToken(token);
-  if (!session) return false;
-
-  const user = await getUserById(session.userId);
-  return user?.role === 'ADMIN';
-}
+import { getSettings, updateSettings } from '@/lib/db';
+import { isAdminRequest } from '@/lib/server-auth';
 
 // Safely mask an API key, showing last 4 chars (or **** if too short)
 function maskApiKey(key: string | null | undefined): string | null {
@@ -25,7 +10,7 @@ function maskApiKey(key: string | null | undefined): string | null {
 
 // GET /api/settings - Get current settings (admin only, returns masked API key)
 export async function GET() {
-  if (!await isAdmin()) {
+  if (!(await isAdminRequest())) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
@@ -41,7 +26,7 @@ export async function GET() {
 
 // PUT /api/settings - Update settings (admin only)
 export async function PUT(request: NextRequest) {
-  if (!await isAdmin()) {
+  if (!(await isAdminRequest())) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 

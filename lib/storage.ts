@@ -30,6 +30,9 @@ function migrateProgress(raw: unknown): UserProgress {
   // e.g. if (fromVersion < 2) { data = renameSomeField(data); }
   void fromVersion;
 
+  // TODO: drop legacy fields removed since v0 (e.g. totalWordsLearned,
+  // totalVerbsLearned). TypeScript ignores them at runtime so this is
+  // cosmetic — extra bytes carried forward in localStorage payloads.
   return {
     ...DEFAULT_PROGRESS,
     ...data,
