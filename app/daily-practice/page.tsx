@@ -31,89 +31,11 @@ import {
 } from '@/data/daily-phrases';
 import { speak } from '@/lib/speech';
 import { STORAGE_KEYS } from '@/lib/storage-keys';
+import { useNotifications, useDailyNotificationCheck } from '@/hooks/useNotifications';
 
 // ── Types ────────────────────────────────────────────────────────────────
 
 type Stage = 'intro' | 'challenge' | 'phrases' | 'quickfire' | 'complete';
-
-// ── Notification Helper ──────────────────────────────────────────────────
-
-function useNotifications() {
-  const [permission, setPermission] = useState<NotificationPermission>('default');
-  const [reminderEnabled, setReminderEnabled] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined' && 'Notification' in window) {
-      setPermission(Notification.permission);
-    }
-    const saved = localStorage.getItem(STORAGE_KEYS.DAILY_REMINDER);
-    if (saved === 'true') setReminderEnabled(true);
-  }, []);
-
-  const requestPermission = useCallback(async () => {
-    if (!('Notification' in window)) return;
-    const result = await Notification.requestPermission();
-    setPermission(result);
-    if (result === 'granted') {
-      setReminderEnabled(true);
-      localStorage.setItem(STORAGE_KEYS.DAILY_REMINDER, 'true');
-      // Show confirmation
-      new Notification('¡Perfecto! 🇪🇸', {
-        body: "You'll get a daily reminder to practice Spanish.",
-        icon: '/favicon.ico',
-      });
-    }
-  }, []);
-
-  const toggleReminder = useCallback(() => {
-    if (reminderEnabled) {
-      setReminderEnabled(false);
-      localStorage.setItem(STORAGE_KEYS.DAILY_REMINDER, 'false');
-    } else if (permission === 'granted') {
-      setReminderEnabled(true);
-      localStorage.setItem(STORAGE_KEYS.DAILY_REMINDER, 'true');
-    } else {
-      requestPermission();
-    }
-  }, [reminderEnabled, permission, requestPermission]);
-
-  return { permission, reminderEnabled, toggleReminder };
-}
-
-// ── Schedule notification check (runs daily) ─────────────────────────────
-
-function useDailyNotificationCheck(enabled: boolean) {
-  useEffect(() => {
-    if (!enabled || typeof window === 'undefined' || !('Notification' in window)) return;
-    if (Notification.permission !== 'granted') return;
-
-    const checkAndNotify = () => {
-      const lastPractice = localStorage.getItem(STORAGE_KEYS.LAST_DAILY_PRACTICE);
-      const today = new Date().toISOString().slice(0, 10);
-      if (lastPractice !== today) {
-        // Haven't practiced today — show notification
-        const hour = new Date().getHours();
-        if (hour >= 9 && hour <= 21) {
-          new Notification('¡Hora de practicar! 🇪🇸', {
-            body: 'Your daily Spanish practice is waiting. Just 5 minutes!',
-            icon: '/favicon.ico',
-            tag: 'daily-spanish-reminder',
-          });
-        }
-      }
-    };
-
-    // Check every 2 hours
-    const interval = setInterval(checkAndNotify, 2 * 60 * 60 * 1000);
-    // Also check once on mount (after a small delay)
-    const timeout = setTimeout(checkAndNotify, 5000);
-
-    return () => {
-      clearInterval(interval);
-      clearTimeout(timeout);
-    };
-  }, [enabled]);
-}
 
 // ── Stage 1: Micro-Challenge ─────────────────────────────────────────────
 
