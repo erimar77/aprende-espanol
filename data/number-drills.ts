@@ -47,17 +47,17 @@ export const cardinalNumbers: NumberWord[] = [
   { value: 13, spanish: 'trece', type: 'cardinal' },
   { value: 14, spanish: 'catorce', type: 'cardinal' },
   { value: 15, spanish: 'quince', type: 'cardinal' },
-  { value: 16, spanish: 'dieciseis', type: 'cardinal' },
+  { value: 16, spanish: 'dieciséis', type: 'cardinal' },
   { value: 17, spanish: 'diecisiete', type: 'cardinal' },
   { value: 18, spanish: 'dieciocho', type: 'cardinal' },
   { value: 19, spanish: 'diecinueve', type: 'cardinal' },
   { value: 20, spanish: 'veinte', type: 'cardinal' },
   { value: 21, spanish: 'veintiuno', type: 'cardinal' },
-  { value: 22, spanish: 'veintidos', type: 'cardinal' },
-  { value: 23, spanish: 'veintitres', type: 'cardinal' },
+  { value: 22, spanish: 'veintidós', type: 'cardinal' },
+  { value: 23, spanish: 'veintitrés', type: 'cardinal' },
   { value: 24, spanish: 'veinticuatro', type: 'cardinal' },
   { value: 25, spanish: 'veinticinco', type: 'cardinal' },
-  { value: 26, spanish: 'veintiseis', type: 'cardinal' },
+  { value: 26, spanish: 'veintiséis', type: 'cardinal' },
   { value: 27, spanish: 'veintisiete', type: 'cardinal' },
   { value: 28, spanish: 'veintiocho', type: 'cardinal' },
   { value: 29, spanish: 'veintinueve', type: 'cardinal' },
@@ -91,10 +91,10 @@ export const ordinalNumbers: NumberWord[] = [
   { value: 4, spanish: 'cuarto', type: 'ordinal' },
   { value: 5, spanish: 'quinto', type: 'ordinal' },
   { value: 6, spanish: 'sexto', type: 'ordinal' },
-  { value: 7, spanish: 'septimo', type: 'ordinal' },
+  { value: 7, spanish: 'séptimo', type: 'ordinal' },
   { value: 8, spanish: 'octavo', type: 'ordinal' },
   { value: 9, spanish: 'noveno', type: 'ordinal' },
-  { value: 10, spanish: 'decimo', type: 'ordinal' },
+  { value: 10, spanish: 'décimo', type: 'ordinal' },
 ];
 
 // Common time expressions
@@ -111,7 +111,7 @@ export const timeExpressions: TimeExpression[] = [
   { hour: 10, minute: 0, spanish: 'Son las diez', english: "It's ten o'clock" },
   { hour: 11, minute: 0, spanish: 'Son las once', english: "It's eleven o'clock" },
   { hour: 12, minute: 0, spanish: 'Son las doce', english: "It's twelve o'clock" },
-  { hour: 12, minute: 0, spanish: 'Es mediodia', english: "It's noon" },
+  { hour: 12, minute: 0, spanish: 'Es mediodía', english: "It's noon" },
   { hour: 0, minute: 0, spanish: 'Es medianoche', english: "It's midnight" },
   { hour: 1, minute: 15, spanish: 'Es la una y cuarto', english: "It's quarter past one" },
   { hour: 2, minute: 15, spanish: 'Son las dos y cuarto', english: "It's quarter past two" },
@@ -129,10 +129,10 @@ export const timeExpressions: TimeExpression[] = [
 export const daysOfWeek: DateWord[] = [
   { id: 'monday', spanish: 'lunes', english: 'Monday', type: 'day' },
   { id: 'tuesday', spanish: 'martes', english: 'Tuesday', type: 'day' },
-  { id: 'wednesday', spanish: 'miercoles', english: 'Wednesday', type: 'day' },
+  { id: 'wednesday', spanish: 'miércoles', english: 'Wednesday', type: 'day' },
   { id: 'thursday', spanish: 'jueves', english: 'Thursday', type: 'day' },
   { id: 'friday', spanish: 'viernes', english: 'Friday', type: 'day' },
-  { id: 'saturday', spanish: 'sabado', english: 'Saturday', type: 'day' },
+  { id: 'saturday', spanish: 'sábado', english: 'Saturday', type: 'day' },
   { id: 'sunday', spanish: 'domingo', english: 'Sunday', type: 'day' },
 ];
 
@@ -156,18 +156,18 @@ export const monthsOfYear: DateWord[] = [
 export const seasons: DateWord[] = [
   { id: 'spring', spanish: 'la primavera', english: 'spring', type: 'season' },
   { id: 'summer', spanish: 'el verano', english: 'summer', type: 'season' },
-  { id: 'fall', spanish: 'el otono', english: 'fall/autumn', type: 'season' },
+  { id: 'fall', spanish: 'el otoño', english: 'fall/autumn', type: 'season' },
   { id: 'winter', spanish: 'el invierno', english: 'winter', type: 'season' },
 ];
 
 // Pre-generated math problems
 export const mathProblems: MathProblem[] = [
-  { id: 'math1', num1: 2, num2: 3, operation: '+', answer: 5, questionSpanish: 'Dos mas tres son...' },
-  { id: 'math2', num1: 5, num2: 4, operation: '+', answer: 9, questionSpanish: 'Cinco mas cuatro son...' },
-  { id: 'math3', num1: 7, num2: 2, operation: '+', answer: 9, questionSpanish: 'Siete mas dos son...' },
-  { id: 'math4', num1: 8, num2: 6, operation: '+', answer: 14, questionSpanish: 'Ocho mas seis son...' },
-  { id: 'math5', num1: 10, num2: 5, operation: '+', answer: 15, questionSpanish: 'Diez mas cinco son...' },
-  { id: 'math6', num1: 15, num2: 10, operation: '+', answer: 25, questionSpanish: 'Quince mas diez son...' },
+  { id: 'math1', num1: 2, num2: 3, operation: '+', answer: 5, questionSpanish: 'Dos más tres son...' },
+  { id: 'math2', num1: 5, num2: 4, operation: '+', answer: 9, questionSpanish: 'Cinco más cuatro son...' },
+  { id: 'math3', num1: 7, num2: 2, operation: '+', answer: 9, questionSpanish: 'Siete más dos son...' },
+  { id: 'math4', num1: 8, num2: 6, operation: '+', answer: 14, questionSpanish: 'Ocho más seis son...' },
+  { id: 'math5', num1: 10, num2: 5, operation: '+', answer: 15, questionSpanish: 'Diez más cinco son...' },
+  { id: 'math6', num1: 15, num2: 10, operation: '+', answer: 25, questionSpanish: 'Quince más diez son...' },
   { id: 'math7', num1: 9, num2: 4, operation: '-', answer: 5, questionSpanish: 'Nueve menos cuatro son...' },
   { id: 'math8', num1: 12, num2: 7, operation: '-', answer: 5, questionSpanish: 'Doce menos siete son...' },
   { id: 'math9', num1: 20, num2: 8, operation: '-', answer: 12, questionSpanish: 'Veinte menos ocho son...' },
@@ -187,16 +187,16 @@ export interface PriceExpression {
 }
 
 export const priceExpressions: PriceExpression[] = [
-  { amount: 1.50, spanish: 'un euro con cincuenta centimos', english: '1.50 euros' },
-  { amount: 2.75, spanish: 'dos euros con setenta y cinco centimos', english: '2.75 euros' },
-  { amount: 5.00, spanish: 'cinco euros', english: '5.00 euros' },
-  { amount: 10.50, spanish: 'diez euros con cincuenta centimos', english: '10.50 euros' },
-  { amount: 15.25, spanish: 'quince euros con veinticinco centimos', english: '15.25 euros' },
-  { amount: 20.00, spanish: 'veinte euros', english: '20.00 euros' },
-  { amount: 25.99, spanish: 'veinticinco euros con noventa y nueve centimos', english: '25.99 euros' },
-  { amount: 50.00, spanish: 'cincuenta euros', english: '50.00 euros' },
-  { amount: 75.50, spanish: 'setenta y cinco euros con cincuenta centimos', english: '75.50 euros' },
-  { amount: 100.00, spanish: 'cien euros', english: '100.00 euros' },
+  { amount: 1.50, spanish: 'un sol con cincuenta céntimos', english: '1.50 soles' },
+  { amount: 2.75, spanish: 'dos soles con setenta y cinco céntimos', english: '2.75 soles' },
+  { amount: 5.00, spanish: 'cinco soles', english: '5.00 soles' },
+  { amount: 10.50, spanish: 'diez soles con cincuenta céntimos', english: '10.50 soles' },
+  { amount: 15.25, spanish: 'quince soles con veinticinco céntimos', english: '15.25 soles' },
+  { amount: 20.00, spanish: 'veinte soles', english: '20.00 soles' },
+  { amount: 25.99, spanish: 'veinticinco soles con noventa y nueve céntimos', english: '25.99 soles' },
+  { amount: 50.00, spanish: 'cincuenta soles', english: '50.00 soles' },
+  { amount: 75.50, spanish: 'setenta y cinco soles con cincuenta céntimos', english: '75.50 soles' },
+  { amount: 100.00, spanish: 'cien soles', english: '100.00 soles' },
 ];
 
 // Helper functions

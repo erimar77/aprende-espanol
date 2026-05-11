@@ -559,7 +559,7 @@ export const sentencePatterns: SentencePattern[] = [
     ],
     examples: [
       { spanish: 'Prefiero caminar en vez de tomar un taxi.', english: 'I prefer walking instead of taking a taxi.' },
-      { spanish: 'Prefiero el café en vez de el té.', english: 'I prefer coffee instead of tea.' },
+      { spanish: 'Prefiero el café en vez del té.', english: 'I prefer coffee instead of tea.' },
     ],
   },
 ];

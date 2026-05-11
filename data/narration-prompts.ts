@@ -161,7 +161,7 @@ export const narrationPrompts: NarrationPrompt[] = [
     ],
     connectors: [
       { spanish: 'el primer día', english: 'the first day', type: 'time' },
-      { spanish: 'cuándo', english: 'when', type: 'time' },
+      { spanish: 'cuando', english: 'when', type: 'time' },
       { spanish: 'entonces', english: 'then/so', type: 'sequence' },
       { spanish: 'más tarde', english: 'later', type: 'time' },
       { spanish: 'al final', english: 'at the end', type: 'sequence' },
@@ -210,7 +210,7 @@ export const narrationPrompts: NarrationPrompt[] = [
       { spanish: 'al final', english: 'in the end', type: 'sequence' },
       { spanish: 'mientras tanto', english: 'meanwhile', type: 'time' },
     ],
-    modelNarration: 'Un día, María está caminando por el parque cuándo ve un perro pequeño. El perro parece perdido y triste. María se acerca y ve que tiene un collar. El collar dice "Max" y tiene un número de teléfono. Entonces, María llama al número y habla con el dueño del perro. El dueño, Señor García, está muy preocupado por Max. Él viene al parque inmediatamente. Cuando Max ve a su dueño, está muy feliz y mueve la cola. Señor García le da las gracias a María por encontrar a su perro.',
+    modelNarration: 'Un día, María está caminando por el parque cuando ve un perro pequeño. El perro parece perdido y triste. María se acerca y ve que tiene un collar. El collar dice "Max" y tiene un número de teléfono. Entonces, María llama al número y habla con el dueño del perro. El dueño, Señor García, está muy preocupado por Max. Él viene al parque inmediatamente. Cuando Max ve a su dueño, está muy feliz y mueve la cola. Señor García le da las gracias a María por encontrar a su perro.',
     modelTranslation: 'One day, María is walking through the park when she sees a small dog. The dog looks lost and sad. María approaches and sees that it has a collar. The collar says "Max" and has a phone number. Then, María calls the number and speaks with the dog\'s owner. The owner, Mr. García, is very worried about Max. He comes to the park immediately. When Max sees his owner, he is very happy and wags his tail. Mr. García thanks María for finding his dog.',
   },
   {
@@ -249,11 +249,11 @@ export const narrationPrompts: NarrationPrompt[] = [
       { spanish: 'hoy', english: 'today', type: 'time' },
       { spanish: 'durante el día', english: 'during the day', type: 'time' },
       { spanish: 'pero', english: 'but', type: 'contrast' },
-      { spanish: 'cuándo', english: 'when', type: 'time' },
+      { spanish: 'cuando', english: 'when', type: 'time' },
       { spanish: 'de repente', english: 'suddenly', type: 'sequence' },
       { spanish: 'en realidad', english: 'in reality', type: 'contrast' },
     ],
-    modelNarration: 'Hoy es el cumpleaños de Laura. Durante el día, sus amigos no le dicen nada. Laura piensa que olvidan su cumpleaños y se siente triste. Después de las clases, vuelve a casa sola. Pero cuándo abre la puerta, de repente todos gritan: "¡Sorpresa!" Todos sus amigos están allí con un pastel grande, globos, y muchos regalos. En realidad, sus amigos planearon una fiesta sorpresa. Laura está muy feliz y emocionada. No olvidaron su cumpleaños, solo querían sorprenderla. Es la mejor fiesta de cumpleaños.',
+    modelNarration: 'Hoy es el cumpleaños de Laura. Durante el día, sus amigos no le dicen nada. Laura piensa que olvidan su cumpleaños y se siente triste. Después de las clases, vuelve a casa sola. Pero cuando abre la puerta, de repente todos gritan: "¡Sorpresa!" Todos sus amigos están allí con un pastel grande, globos, y muchos regalos. En realidad, sus amigos planearon una fiesta sorpresa. Laura está muy feliz y emocionada. No olvidaron su cumpleaños, solo querían sorprenderla. Es la mejor fiesta de cumpleaños.',
     modelTranslation: 'Today is Laura\'s birthday. During the day, her friends don\'t say anything to her. Laura thinks they forget her birthday and she feels sad. After classes, she returns home alone. But when she opens the door, suddenly everyone shouts: "Surprise!" All her friends are there with a big cake, balloons, and many gifts. In reality, her friends planned a surprise party. Laura is very happy and excited. They didn\'t forget her birthday, they just wanted to surprise her. It\'s the best birthday party.',
   },
   {
@@ -352,9 +352,9 @@ export const narrationPrompts: NarrationPrompt[] = [
     plotPoints: [
       { id: 'pp1', english: 'Sofía finds an old, mysterious library', spanishHint: 'encuentra una biblioteca antigua' },
       { id: 'pp2', english: 'The librarian gives her a special book', spanishHint: 'el bibliotecario le da un libro especial' },
-      { id: 'pp3', english: 'When she reads, the story comes to life around her', spanishHint: 'cuándo lee, la historia cobra vida' },
+      { id: 'pp3', english: 'When she reads, the story comes to life around her', spanishHint: 'cuando lee, la historia cobra vida' },
       { id: 'pp4', english: 'She visits a jungle with talking animals', spanishHint: 'visita una selva con animales que hablan' },
-      { id: 'pp5', english: 'The adventure ends when she closes the book', spanishHint: 'la aventura termina cuándo cierra el libro' },
+      { id: 'pp5', english: 'The adventure ends when she closes the book', spanishHint: 'la aventura termina cuando cierra el libro' },
       { id: 'pp6', english: 'She returns every week for new adventures', spanishHint: 'vuelve cada semana para nuevas aventuras' },
     ],
     usefulVocabulary: [
@@ -382,7 +382,7 @@ export const narrationPrompts: NarrationPrompt[] = [
       { spanish: 'desde entonces', english: 'since then', type: 'time' },
       { spanish: 'cada vez que', english: 'every time that', type: 'time' },
     ],
-    modelNarration: 'Un día, Sofía camina por una calle antigua y descubre una biblioteca que nunca había visto antes. Es muy vieja y misteriosa. Adentro, un bibliotecario amable le da un libro especial. Le dice: "Este libro es mágico. Cuando lo leas, la historia cobrará vida." Sofía no lo cree, pero cuándo empieza a leer sobre una selva, de repente está en una selva real. Hay árboles enormes y animales que hablan. Un mono le dice "¡Bienvenida!" La aventura es increíble, pero cuándo cierra el libro, vuelve a la biblioteca. Desde ese día, Sofía va a la biblioteca cada semana para vivir nuevas aventuras.',
+    modelNarration: 'Un día, Sofía camina por una calle antigua y descubre una biblioteca que nunca había visto antes. Es muy vieja y misteriosa. Adentro, un bibliotecario amable le da un libro especial. Le dice: "Este libro es mágico. Cuando lo leas, la historia cobrará vida." Sofía no lo cree, pero cuando empieza a leer sobre una selva, de repente está en una selva real. Hay árboles enormes y animales que hablan. Un mono le dice "¡Bienvenida!" La aventura es increíble, pero cuando cierra el libro, vuelve a la biblioteca. Desde ese día, Sofía va a la biblioteca cada semana para vivir nuevas aventuras.',
     modelTranslation: 'One day, Sofía walks down an old street and discovers a library she had never seen before. It\'s very old and mysterious. Inside, a kind librarian gives her a special book. He tells her: "This book is magical. When you read it, the story will come to life." Sofía doesn\'t believe it, but when she starts reading about a jungle, suddenly she\'s in a real jungle. There are enormous trees and animals that talk. A monkey says "Welcome!" The adventure is incredible, but when she closes the book, she returns to the library. Since that day, Sofía goes to the library every week to live new adventures.',
   },
 ];

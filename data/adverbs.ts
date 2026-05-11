@@ -89,7 +89,7 @@ export const adverbs: Word[] = [
   { id: 'adv077', spanish: 'algo', english: 'somewhat', category: 'quantity' },
   { id: 'adv078', spanish: 'totalmente', english: 'totally', category: 'quantity' },
 
-  // Affirmation/Negation - Afirmacion/Negacion
+  // Affirmation/Negation - Afirmación/Negación
   { id: 'adv079', spanish: 'sí', english: 'yes', category: 'affirmation', example: 'Sí, entiendo.', exampleTranslation: 'Yes, I understand.' },
   { id: 'adv080', spanish: 'no', english: 'no/not', category: 'affirmation' },
   { id: 'adv081', spanish: 'también', english: 'also/too', category: 'affirmation' },

@@ -23,7 +23,7 @@ export const wordRelations: Record<string, WordRelation> = {
   'delgado': { synonyms: ['flaco', 'esbelto', 'fino'], antonyms: ['gordo', 'grueso', 'obeso'] },
   'enorme': { synonyms: ['gigante', 'inmenso', 'colosal'], antonyms: ['diminuto', 'minúsculo', 'pequeño'] },
   'diminuto': { synonyms: ['minúsculo', 'pequeñito', 'microscópico'], antonyms: ['enorme', 'gigante', 'inmenso'] },
-  'mediaño': { synonyms: ['regular', 'intermedio'], antonyms: ['extremo'] },
+  'mediano': { synonyms: ['regular', 'intermedio'], antonyms: ['extremo'] },
 
   // ============================================
   // ADJECTIVES - Colors
@@ -33,7 +33,7 @@ export const wordRelations: Record<string, WordRelation> = {
   'negro': { antonyms: ['blanco'] },
   'blanco': { antonyms: ['negro'] },
   'dorado': { synonyms: ['áureo'] },
-  'plateado': { synonyms: ['argentádo'] },
+  'plateado': { synonyms: ['argentado'] },
 
   // ============================================
   // ADJECTIVES - Personality & Character
@@ -47,10 +47,10 @@ export const wordRelations: Record<string, WordRelation> = {
   'tonto': { synonyms: ['estúpido', 'bobo', 'necio'], antonyms: ['inteligente', 'listo', 'astuto'] },
   'trabajador': { synonyms: ['diligente', 'aplicado', 'laborioso'], antonyms: ['perezoso', 'vago', 'holgazán'] },
   'perezoso': { synonyms: ['vago', 'holgazán', 'ocioso'], antonyms: ['trabajador', 'diligente', 'activo'] },
-  'generoso': { synonyms: ['dadivoso', 'esplendido', 'altruista'], antonyms: ['tacáño', 'avaro', 'mezquino'] },
-  'tacáño': { synonyms: ['avaro', 'mezquino', 'cicatero'], antonyms: ['generoso', 'dadivoso', 'esplendido'] },
+  'generoso': { synonyms: ['dadivoso', 'espléndido', 'altruista'], antonyms: ['tacaño', 'avaro', 'mezquino'] },
+  'tacaño': { synonyms: ['avaro', 'mezquino', 'cicatero'], antonyms: ['generoso', 'dadivoso', 'espléndido'] },
   'honesto': { synonyms: ['sincero', 'recto', 'íntegro'], antonyms: ['deshonesto', 'mentiroso', 'falso'] },
-  'timido': { synonyms: ['vergonzoso', 'reservado', 'cohibido'], antonyms: ['atrevido', 'audaz', 'extrovertido'] },
+  'tímido': { synonyms: ['vergonzoso', 'reservado', 'cohibido'], antonyms: ['atrevido', 'audaz', 'extrovertido'] },
   'valiente': { synonyms: ['valeroso', 'audaz', 'intrépido'], antonyms: ['cobarde', 'miedoso', 'temeroso'] },
   'cobarde': { synonyms: ['miedoso', 'pusilánime', 'temeroso'], antonyms: ['valiente', 'audaz', 'valeroso'] },
   'serio': { synonyms: ['formal', 'solemne', 'grave'], antonyms: ['divertido', 'gracioso', 'bromista'] },
@@ -72,12 +72,12 @@ export const wordRelations: Record<string, WordRelation> = {
   'preocupado': { synonyms: ['inquieto', 'angustiado', 'ansioso'], antonyms: ['tranquilo', 'despreocupado', 'relajado'] },
   'sorprendido': { synonyms: ['asombrado', 'atónito', 'pasmado'], antonyms: ['indiferente'] },
   'asustado': { synonyms: ['aterrorizado', 'espantado', 'atemorizado'], antonyms: ['tranquilo', 'sereno', 'valiente'] },
-  'emocionado': { synonyms: ['entusiasmado', 'ilusiónado', 'exaltado'], antonyms: ['indiferente', 'apático', 'desanimado'] },
+  'emocionado': { synonyms: ['entusiasmado', 'ilusionado', 'exaltado'], antonyms: ['indiferente', 'apático', 'desanimado'] },
   'cansado': { synonyms: ['agotado', 'fatigado', 'exhausto'], antonyms: ['descansado', 'energético', 'fresco'] },
   'ocupado': { synonyms: ['atareado', 'activo'], antonyms: ['libre', 'desocupado', 'disponible'] },
   'confundido': { synonyms: ['perplejo', 'desconcertado', 'desorientado'], antonyms: ['seguro', 'claro', 'decidido'] },
   'seguro': { synonyms: ['confiado', 'cierto', 'convencido'], antonyms: ['inseguro', 'dudoso', 'incierto'] },
-  'orgulloso': { synonyms: ['satisfecho', 'ufaño'], antonyms: ['avergonzado', 'humilde'] },
+  'orgulloso': { synonyms: ['satisfecho', 'ufano'], antonyms: ['avergonzado', 'humilde'] },
   'avergonzado': { synonyms: ['apenado', 'sonrojado'], antonyms: ['orgulloso', 'satisfecho'] },
 
   // ============================================
@@ -87,13 +87,13 @@ export const wordRelations: Record<string, WordRelation> = {
   'bonito': { synonyms: ['lindo', 'hermoso', 'bello'], antonyms: ['feo', 'horrible', 'espantoso'] },
   'hermoso': { synonyms: ['bello', 'precioso', 'magnífico'], antonyms: ['feo', 'horrible', 'espantoso'] },
   'feo': { synonyms: ['horrible', 'espantoso', 'desagradable'], antonyms: ['bonito', 'hermoso', 'bello'] },
-  'joven': { synonyms: ['juvenil', 'mocito'], antonyms: ['viejo', 'anciaño', 'mayor'] },
-  'viejo': { synonyms: ['anciaño', 'mayor', 'antiguo'], antonyms: ['joven', 'nuevo', 'moderno'] },
+  'joven': { synonyms: ['juvenil', 'mocito'], antonyms: ['viejo', 'anciano', 'mayor'] },
+  'viejo': { synonyms: ['anciano', 'mayor', 'antiguo'], antonyms: ['joven', 'nuevo', 'moderno'] },
   'nuevo': { synonyms: ['reciente', 'moderno', 'fresco'], antonyms: ['viejo', 'antiguo', 'usado'] },
-  'fuerte': { synonyms: ['robusto', 'potente', 'vigoroso'], antonyms: ['debil', 'flojo', 'fragil'] },
-  'debil': { synonyms: ['flojo', 'fragil', 'endeble'], antonyms: ['fuerte', 'robusto', 'potente'] },
-  'saño': { synonyms: ['saludable', 'bien'], antonyms: ['enfermo', 'malo'] },
-  'enfermo': { synonyms: ['malo', 'doliente', 'indispuesto'], antonyms: ['saño', 'saludable'] },
+  'fuerte': { synonyms: ['robusto', 'potente', 'vigoroso'], antonyms: ['débil', 'flojo', 'frágil'] },
+  'débil': { synonyms: ['flojo', 'frágil', 'endeble'], antonyms: ['fuerte', 'robusto', 'potente'] },
+  'sano': { synonyms: ['saludable', 'bien'], antonyms: ['enfermo', 'malo'] },
+  'enfermo': { synonyms: ['malo', 'doliente', 'indispuesto'], antonyms: ['sano', 'saludable'] },
   'rubio': { antonyms: ['moreno', 'negro'] },
   'moreno': { antonyms: ['rubio', 'pálido'] },
 
@@ -109,7 +109,7 @@ export const wordRelations: Record<string, WordRelation> = {
   'perfecto': { synonyms: ['ideal', 'impecable', 'excelente'], antonyms: ['imperfecto', 'defectuoso'] },
   'excelente': { synonyms: ['magnífico', 'sobresaliente', 'estupendo'], antonyms: ['pésimo', 'terrible', 'malo'] },
   'terrible': { synonyms: ['horrible', 'espantoso', 'pésimo'], antonyms: ['excelente', 'maravilloso'] },
-  'normal': { synonyms: ['común', 'corriente', 'habitual'], antonyms: ['raro', 'extraño', 'añormal'] },
+  'normal': { synonyms: ['común', 'corriente', 'habitual'], antonyms: ['raro', 'extraño', 'anormal'] },
   'especial': { synonyms: ['singular', 'único', 'extraordinario'], antonyms: ['común', 'normal', 'corriente'] },
   'común': { synonyms: ['corriente', 'ordinario', 'habitual'], antonyms: ['raro', 'especial', 'único'] },
   'raro': { synonyms: ['extraño', 'inusual', 'peculiar'], antonyms: ['común', 'normal', 'frecuente'] },
@@ -124,53 +124,53 @@ export const wordRelations: Record<string, WordRelation> = {
   'cerrado': { synonyms: ['clausurado', 'tapado'], antonyms: ['abierto', 'destapado'] },
   'libre': { synonyms: ['independiente', 'suelto'], antonyms: ['ocupado', 'preso', 'atado'] },
   'disponible': { synonyms: ['accesible', 'libre'], antonyms: ['ocupado', 'no disponible'] },
-  'caro': { synonyms: ['costoso', 'valioso'], antonyms: ['barato', 'economico'] },
-  'barato': { synonyms: ['economico', 'asequible'], antonyms: ['caro', 'costoso'] },
+  'caro': { synonyms: ['costoso', 'valioso'], antonyms: ['barato', 'económico'] },
+  'barato': { synonyms: ['económico', 'asequible'], antonyms: ['caro', 'costoso'] },
   'favorito': { synonyms: ['preferido', 'predilecto'] },
-  'popular': { synonyms: ['conocido', 'celebre'], antonyms: ['desconocido', 'impopular'] },
-  'famoso': { synonyms: ['celebre', 'conocido', 'renombrado'], antonyms: ['desconocido', 'añonimo'] },
+  'popular': { synonyms: ['conocido', 'célebre'], antonyms: ['desconocido', 'impopular'] },
+  'famoso': { synonyms: ['célebre', 'conocido', 'renombrado'], antonyms: ['desconocido', 'anónimo'] },
 
   // ============================================
   // ADJECTIVES - Temperature & Sensations
   // ============================================
-  'caliente': { synonyms: ['ardiente', 'calido', 'hirviente'], antonyms: ['frío', 'helado', 'gelido'] },
-  'frío': { synonyms: ['helado', 'gelido', 'glacial'], antonyms: ['caliente', 'calido', 'tibio'] },
-  'tibio': { synonyms: ['templado', 'calido'], antonyms: ['frío', 'helado'] },
+  'caliente': { synonyms: ['ardiente', 'cálido', 'hirviente'], antonyms: ['frío', 'helado', 'gélido'] },
+  'frío': { synonyms: ['helado', 'gélido', 'glacial'], antonyms: ['caliente', 'cálido', 'tibio'] },
+  'tibio': { synonyms: ['templado', 'cálido'], antonyms: ['frío', 'helado'] },
   'fresco': { synonyms: ['refrescante', 'nuevo'], antonyms: ['caliente', 'viejo'] },
-  'seco': { synonyms: ['árido', 'desiértico'], antonyms: ['mojado', 'húmedo'] },
+  'seco': { synonyms: ['árido', 'desértico'], antonyms: ['mojado', 'húmedo'] },
   'mojado': { synonyms: ['húmedo', 'empapado'], antonyms: ['seco', 'árido'] },
   'suave': { synonyms: ['blando', 'tierno', 'delicado'], antonyms: ['duro', 'áspero', 'rígido'] },
   'duro': { synonyms: ['firme', 'resistente', 'rígido'], antonyms: ['blando', 'suave', 'tierno'] },
-  'limpio': { synonyms: ['aseado', 'pulcro', 'higienico'], antonyms: ['sucio', 'manchado', 'mugriento'] },
+  'limpio': { synonyms: ['aseado', 'pulcro', 'higiénico'], antonyms: ['sucio', 'manchado', 'mugriento'] },
   'sucio': { synonyms: ['manchado', 'mugriento', 'inmundo'], antonyms: ['limpio', 'aseado', 'pulcro'] },
 
   // ============================================
   // ADJECTIVES - Food & Taste
   // ============================================
   'delicioso': { synonyms: ['sabroso', 'exquisito', 'rico'], antonyms: ['asqueroso', 'horrible', 'malo'] },
-  'rico': { synonyms: ['sabroso', 'delicioso', 'exquisito'], antonyms: ['malo', 'insipido'] },
+  'rico': { synonyms: ['sabroso', 'delicioso', 'exquisito'], antonyms: ['malo', 'insípido'] },
   'dulce': { synonyms: ['azucarado', 'meloso'], antonyms: ['amargo', 'agrio', 'salado'] },
-  'salado': { synonyms: ['sazonado'], antonyms: ['dulce', 'insipido'] },
+  'salado': { synonyms: ['sazonado'], antonyms: ['dulce', 'insípido'] },
   'amargo': { synonyms: ['acre'], antonyms: ['dulce', 'azucarado'] },
-  'picante': { synonyms: ['condimentado'], antonyms: ['suave', 'insipido'] },
-  'agrio': { synonyms: ['acido', 'avinagrado'], antonyms: ['dulce'] },
+  'picante': { synonyms: ['condimentado'], antonyms: ['suave', 'insípido'] },
+  'agrio': { synonyms: ['ácido', 'avinagrado'], antonyms: ['dulce'] },
 
   // ============================================
   // ADJECTIVES - Speed & Time
   // ============================================
   'rápido': { synonyms: ['veloz', 'pronto', 'acelerado'], antonyms: ['lento', 'despacio', 'pausado'] },
   'lento': { synonyms: ['pausado', 'despacio', 'tardo'], antonyms: ['rápido', 'veloz', 'pronto'] },
-  'tempraño': { synonyms: ['pronto', 'adelantado'], antonyms: ['tarde', 'retrasado'] },
-  'tarde': { synonyms: ['retrasado', 'atrásado'], antonyms: ['tempraño', 'pronto'] },
-  'próximo': { synonyms: ['siguiente', 'cercaño'], antonyms: ['anterior', 'pasado'] },
+  'temprano': { synonyms: ['pronto', 'adelantado'], antonyms: ['tarde', 'retrasado'] },
+  'tarde': { synonyms: ['retrasado', 'atrasado'], antonyms: ['temprano', 'pronto'] },
+  'próximo': { synonyms: ['siguiente', 'cercano'], antonyms: ['anterior', 'pasado'] },
   'último': { synonyms: ['final', 'postrero'], antonyms: ['primero', 'inicial'] },
   'primero': { synonyms: ['inicial', 'principal'], antonyms: ['último', 'final'] },
 
   // ============================================
   // ADJECTIVES - Position & Quantity
   // ============================================
-  'cercaño': { synonyms: ['próximo', 'inmediato'], antonyms: ['lejaño', 'distante', 'remoto'] },
-  'lejaño': { synonyms: ['distante', 'remoto', 'apartado'], antonyms: ['cercaño', 'próximo'] },
+  'cercano': { synonyms: ['próximo', 'inmediato'], antonyms: ['lejano', 'distante', 'remoto'] },
+  'lejano': { synonyms: ['distante', 'remoto', 'apartado'], antonyms: ['cercano', 'próximo'] },
   'derecho': { synonyms: ['recto', 'directo'], antonyms: ['izquierdo', 'torcido'] },
   'izquierdo': { antonyms: ['derecho'] },
   'interior': { synonyms: ['interno', 'de adentro'], antonyms: ['exterior', 'externo'] },
@@ -203,8 +203,8 @@ export const wordRelations: Record<string, WordRelation> = {
   'querer': { synonyms: ['desear', 'anhelar', 'amar'], antonyms: ['rechazar', 'odiar'] },
   'llegar': { synonyms: ['arribar', 'alcanzar', 'venir'], antonyms: ['partir', 'salir', 'irse'] },
   'pasar': { synonyms: ['transcurrir', 'ocurrir', 'suceder'] },
-  'deber': { synonyms: ['tener qué'] },
-  'poner': { synonyms: ['colocar', 'situar', 'ubicar'], antonyms: ['quitar', 'sacár'] },
+  'deber': { synonyms: ['tener que'] },
+  'poner': { synonyms: ['colocar', 'situar', 'ubicar'], antonyms: ['quitar', 'sacar'] },
   'parecer': { synonyms: ['aparentar', 'lucir', 'verse'] },
   'quedar': { synonyms: ['permanecer', 'quedarse'] },
   'creer': { synonyms: ['pensar', 'opinar', 'considerar'], antonyms: ['dudar', 'desconfiar'] },
@@ -228,10 +228,10 @@ export const wordRelations: Record<string, WordRelation> = {
   'tratar': { synonyms: ['intentar', 'procurar'] },
   'mirar': { synonyms: ['observar', 'ver', 'contemplar'] },
   'contar': { synonyms: ['narrar', 'relatar', 'enumerar'] },
-  'empezar': { synonyms: ['comenzar', 'iniciar', 'principiar'], antonyms: ['terminar', 'acábar', 'finalizar'] },
-  'comenzar': { synonyms: ['empezar', 'iniciar', 'principiar'], antonyms: ['terminar', 'acábar', 'finalizar'] },
-  'terminar': { synonyms: ['acábar', 'finalizar', 'concluir'], antonyms: ['empezar', 'comenzar', 'iniciar'] },
-  'acábar': { synonyms: ['terminar', 'finalizar', 'concluir'], antonyms: ['empezar', 'comenzar'] },
+  'empezar': { synonyms: ['comenzar', 'iniciar', 'principiar'], antonyms: ['terminar', 'acabar', 'finalizar'] },
+  'comenzar': { synonyms: ['empezar', 'iniciar', 'principiar'], antonyms: ['terminar', 'acabar', 'finalizar'] },
+  'terminar': { synonyms: ['acabar', 'finalizar', 'concluir'], antonyms: ['empezar', 'comenzar', 'iniciar'] },
+  'acabar': { synonyms: ['terminar', 'finalizar', 'concluir'], antonyms: ['empezar', 'comenzar'] },
   'esperar': { synonyms: ['aguardar', 'desear'] },
   'buscar': { synonyms: ['indagar', 'rastrear', 'investigar'], antonyms: ['encontrar', 'hallar'] },
   'existir': { synonyms: ['ser', 'haber', 'vivir'] },
@@ -263,7 +263,7 @@ export const wordRelations: Record<string, WordRelation> = {
   'responder': { synonyms: ['contestar', 'replicar'], antonyms: ['preguntar'] },
   'amar': { synonyms: ['querer', 'adorar', 'estimar'], antonyms: ['odiar', 'detestar'] },
   'odiar': { synonyms: ['detestar', 'aborrecer', 'despreciar'], antonyms: ['amar', 'querer', 'adorar'] },
-  'ayudar': { synonyms: ['auxiliar', 'asistir', 'colaborar'], antonyms: ['perjudicar', 'danar'] },
+  'ayudar': { synonyms: ['auxiliar', 'asistir', 'colaborar'], antonyms: ['perjudicar', 'dañar'] },
   'trabajar': { synonyms: ['laborar', 'ocuparse'] },
   'jugar': { synonyms: ['divertirse', 'entretenerse'] },
   'correr': { synonyms: ['trotar', 'apresurarse'], antonyms: ['caminar', 'pasear'] },
@@ -289,8 +289,8 @@ export const wordRelations: Record<string, WordRelation> = {
   'pronto': { synonyms: ['enseguida', 'rápidamente'], antonyms: ['tarde'] },
   'todavía': { synonyms: ['aun'] },
   'ya': { synonyms: ['ahora mismo'] },
-  'nunca': { synonyms: ['jamas'], antonyms: ['siempre'] },
-  'siempre': { synonyms: ['constantemente', 'perpetuamente'], antonyms: ['nunca', 'jamas'] },
+  'nunca': { synonyms: ['jamás'], antonyms: ['siempre'] },
+  'siempre': { synonyms: ['constantemente', 'perpetuamente'], antonyms: ['nunca', 'jamás'] },
   'luego': { synonyms: ['después', 'posteriormente'], antonyms: ['antes'] },
   'entonces': { synonyms: ['luego', 'por tanto'] },
 
@@ -341,7 +341,7 @@ export const wordRelations: Record<string, WordRelation> = {
   'más': { antonyms: ['menos'] },
   'menos': { antonyms: ['más'] },
   'casi': { synonyms: ['aproximadamente'] },
-  'solo': { synonyms: ['unicamente', 'solamente'] },
+  'solo': { synonyms: ['únicamente', 'solamente'] },
   'totalmente': { synonyms: ['completamente', 'enteramente'], antonyms: ['parcialmente'] },
   'nada': { antonyms: ['todo', 'mucho'] },
   'algo': { synonyms: ['un poco'] },
@@ -349,12 +349,12 @@ export const wordRelations: Record<string, WordRelation> = {
   // ============================================
   // ADVERBS - Affirmation/Negation
   // ============================================
-  'si': { antonyms: ['no'] },
-  'no': { antonyms: ['si'] },
+  'sí': { antonyms: ['no'] },
+  'no': { antonyms: ['sí'] },
   'también': { synonyms: ['igualmente', 'además'], antonyms: ['tampoco'] },
   'tampoco': { antonyms: ['también'] },
-  'quizas': { synonyms: ['tal vez', 'probablemente', 'acáso'] },
-  'probablemente': { synonyms: ['posiblemente', 'quizas'] },
+  'quizás': { synonyms: ['tal vez', 'probablemente', 'acaso'] },
+  'probablemente': { synonyms: ['posiblemente', 'quizás'] },
   'seguramente': { synonyms: ['ciertamente', 'indudablemente'] },
   'realmente': { synonyms: ['verdaderamente', 'efectivamente'] },
 
@@ -362,11 +362,11 @@ export const wordRelations: Record<string, WordRelation> = {
   // NOUNS - Family
   // ============================================
   'padre': { synonyms: ['papá', 'progenitor'], antonyms: ['madre'] },
-  'madre': { synonyms: ['mama', 'progenitora'], antonyms: ['padre'] },
+  'madre': { synonyms: ['mamá', 'progenitora'], antonyms: ['padre'] },
   'hijo': { antonyms: ['hija'] },
   'hija': { antonyms: ['hijo'] },
-  'hermaño': { antonyms: ['hermana'] },
-  'hermana': { antonyms: ['hermaño'] },
+  'hermano': { antonyms: ['hermana'] },
+  'hermana': { antonyms: ['hermano'] },
   'abuelo': { antonyms: ['abuela'] },
   'abuela': { antonyms: ['abuelo'] },
   'tío': { antonyms: ['tía'] },
@@ -381,13 +381,13 @@ export const wordRelations: Record<string, WordRelation> = {
   'esposa': { synonyms: ['mujer'], antonyms: ['esposo'] },
   'suegro': { antonyms: ['suegra'] },
   'suegra': { antonyms: ['suegro'] },
-  'cunado': { antonyms: ['cunada'] },
-  'cunada': { antonyms: ['cunado'] },
+  'cuñado': { antonyms: ['cuñada'] },
+  'cuñada': { antonyms: ['cuñado'] },
   'padrino': { antonyms: ['madrina'] },
   'madrina': { antonyms: ['padrino'] },
   'niño': { synonyms: ['chico', 'muchacho'], antonyms: ['niña', 'adulto'] },
   'niña': { synonyms: ['chica', 'muchacha'], antonyms: ['niño', 'adulta'] },
-  'bebe': { synonyms: ['nene', 'criatura'] },
+  'bebé': { synonyms: ['nene', 'criatura'] },
 
   // ============================================
   // NOUNS - Food & Meals
@@ -396,7 +396,7 @@ export const wordRelations: Record<string, WordRelation> = {
   'desayuno': { antonyms: ['cena'] },
   'almuerzo': { synonyms: ['comida'] },
   'cena': { antonyms: ['desayuno'] },
-  'agua': { synonyms: ['liquido'] },
+  'agua': { synonyms: ['líquido'] },
   'café': { synonyms: ['cafecito'] },
   'cerveza': { synonyms: ['birra'] },
 
@@ -406,16 +406,16 @@ export const wordRelations: Record<string, WordRelation> = {
   'perro': { synonyms: ['can', 'chucho'], antonyms: ['gato'] },
   'gato': { synonyms: ['minino', 'felino'], antonyms: ['perro'] },
   'pájaro': { synonyms: ['ave'] },
-  'gallína': { antonyms: ['gallo'] },
-  'gallo': { antonyms: ['gallína'] },
+  'gallina': { antonyms: ['gallo'] },
+  'gallo': { antonyms: ['gallina'] },
   'león': { synonyms: ['rey de la selva'] },
-  'raton': { synonyms: ['ratoncito'] },
+  'ratón': { synonyms: ['ratoncito'] },
 
   // ============================================
   // NOUNS - Body Parts
   // ============================================
-  'cabeza': { synonyms: ['craneo'] },
-  'maño': { synonyms: ['palma'] },
+  'cabeza': { synonyms: ['cráneo'] },
+  'mano': { synonyms: ['palma'] },
   'pie': { synonyms: ['pata'] },
   'ojo': { synonyms: ['vista'] },
 
@@ -427,13 +427,13 @@ export const wordRelations: Record<string, WordRelation> = {
   'ciudad': { synonyms: ['urbe', 'metrópolis'], antonyms: ['campo', 'pueblo'] },
   'pueblo': { synonyms: ['aldea', 'villa'], antonyms: ['ciudad'] },
   'tienda': { synonyms: ['comercio', 'almacén'] },
-  'calle': { synonyms: ['via', 'avenida'] },
+  'calle': { synonyms: ['vía', 'avenida'] },
   'parque': { synonyms: ['jardín', 'plaza'] },
   'playa': { synonyms: ['costa', 'litoral'] },
   'montaña': { synonyms: ['cerro', 'monte'], antonyms: ['valle'] },
   'valle': { antonyms: ['montaña'] },
   'río': { synonyms: ['corriente', 'arroyo'] },
-  'mar': { synonyms: ['oceaño'] },
+  'mar': { synonyms: ['océano'] },
   'bosque': { synonyms: ['selva', 'floresta'] },
   'campo': { antonyms: ['ciudad'] },
 
@@ -447,16 +447,16 @@ export const wordRelations: Record<string, WordRelation> = {
   'mes': { synonyms: ['mensualidad'] },
   'año': { synonyms: ['anualidad'] },
   'primavera': { antonyms: ['otoño'] },
-  'veraño': { antonyms: ['invierno'] },
+  'verano': { antonyms: ['invierno'] },
   'otoño': { antonyms: ['primavera'] },
-  'invierno': { antonyms: ['veraño'] },
+  'invierno': { antonyms: ['verano'] },
 
   // ============================================
   // NOUNS - Weather
   // ============================================
   'sol': { antonyms: ['luna', 'lluvia'] },
   'luna': { antonyms: ['sol'] },
-  'lluvia': { synonyms: ['precipitacion'], antonyms: ['sol', 'sequía'] },
+  'lluvia': { synonyms: ['precipitación'], antonyms: ['sol', 'sequía'] },
   'nieve': { synonyms: ['nevada'] },
   'viento': { synonyms: ['brisa', 'aire'] },
   'tormenta': { synonyms: ['tempestad', 'temporal'] },
@@ -466,10 +466,10 @@ export const wordRelations: Record<string, WordRelation> = {
   // NOUNS - Emotions & Abstract
   // ============================================
   'amor': { synonyms: ['cariño', 'afecto', 'querer'], antonyms: ['odio'] },
-  'odio': { synonyms: ['rencor', 'aversion'], antonyms: ['amor', 'cariño'] },
+  'odio': { synonyms: ['rencor', 'aversión'], antonyms: ['amor', 'cariño'] },
   'felicidad': { synonyms: ['dicha', 'alegría', 'gozo'], antonyms: ['tristeza', 'infelicidad'] },
   'tristeza': { synonyms: ['pena', 'dolor', 'melancolía'], antonyms: ['felicidad', 'alegría'] },
-  'alegría': { synonyms: ['felicidad', 'gozo', 'jubilo'], antonyms: ['tristeza', 'pena'] },
+  'alegría': { synonyms: ['felicidad', 'gozo', 'júbilo'], antonyms: ['tristeza', 'pena'] },
   'miedo': { synonyms: ['temor', 'pavor', 'terror'], antonyms: ['valor', 'coraje'] },
   'sorpresa': { synonyms: ['asombro'] },
   'enojo': { synonyms: ['enfado', 'ira', 'rabia'], antonyms: ['calma', 'tranquilidad'] },
@@ -485,9 +485,9 @@ export const wordRelations: Record<string, WordRelation> = {
   'luz': { synonyms: ['claridad', 'luminosidad'], antonyms: ['oscuridad', 'sombra'] },
   'oscuridad': { synonyms: ['sombra', 'tinieblas'], antonyms: ['luz', 'claridad'] },
   'principio': { synonyms: ['inicio', 'comienzo', 'origen'], antonyms: ['fin', 'final'] },
-  'fin': { synonyms: ['final', 'terminó', 'conclusion'], antonyms: ['principio', 'inicio'] },
+  'fin': { synonyms: ['final', 'término', 'conclusión'], antonyms: ['principio', 'inicio'] },
   'pregunta': { synonyms: ['cuestión', 'interrogante'], antonyms: ['respuesta'] },
-  'respuesta': { synonyms: ['contestacion', 'replica'], antonyms: ['pregunta'] },
+  'respuesta': { synonyms: ['contestación', 'réplica'], antonyms: ['pregunta'] },
   'problema': { synonyms: ['dificultad', 'conflicto'], antonyms: ['solución'] },
   'solución': { synonyms: ['respuesta', 'remedio'], antonyms: ['problema'] },
   'entrada': { synonyms: ['acceso', 'ingreso'], antonyms: ['salida'] },
@@ -501,7 +501,7 @@ export const wordRelations: Record<string, WordRelation> = {
   'profesor': { synonyms: ['maestro', 'docente'], antonyms: ['profesora', 'alumno'] },
   'profesora': { synonyms: ['maestra', 'docente'], antonyms: ['profesor', 'alumna'] },
   'estudiante': { synonyms: ['alumno', 'aprendiz'] },
-  'alumno': { synonyms: ['estudiante', 'discipulo'], antonyms: ['profesor', 'maestro'] },
+  'alumno': { synonyms: ['estudiante', 'discípulo'], antonyms: ['profesor', 'maestro'] },
   'amigo': { synonyms: ['compañero', 'camarada'], antonyms: ['enemigo'] },
   'enemigo': { synonyms: ['adversario', 'rival'], antonyms: ['amigo'] },
 
@@ -509,9 +509,9 @@ export const wordRelations: Record<string, WordRelation> = {
   // NOUNS - Transportation
   // ============================================
   'coche': { synonyms: ['auto', 'carro', 'vehículo'] },
-  'autobus': { synonyms: ['bus', 'ómnibus', 'camión'] },
-  'avión': { synonyms: ['aeronave', 'aeroplaño'] },
-  'barco': { synonyms: ['nave', 'embarcacion', 'buque'] },
+  'autobús': { synonyms: ['bus', 'ómnibus', 'colectivo'] },
+  'avión': { synonyms: ['aeronave', 'aeroplano'] },
+  'barco': { synonyms: ['nave', 'embarcación', 'buque'] },
   'bicicleta': { synonyms: ['bici'] },
   'moto': { synonyms: ['motocicleta'] },
 
@@ -542,7 +542,7 @@ export const wordRelations: Record<string, WordRelation> = {
 // Helper function to get relations for a word
 export function getWordRelations(spanish: string): WordRelation | null {
   // Normalize the word (lowercase, remove accents for matching)
-  const normalized = spanish.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const normalized = spanish.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
 
   // Try exact match first
   if (wordRelations[spanish]) {
@@ -551,7 +551,7 @@ export function getWordRelations(spanish: string): WordRelation | null {
 
   // Try normalized match
   for (const [key, value] of Object.entries(wordRelations)) {
-    const normalizedKey = key.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const normalizedKey = key.normalize('NFD').replace(/[̀-ͯ]/g, '');
     if (normalizedKey === normalized) {
       return value;
     }
