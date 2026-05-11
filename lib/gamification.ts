@@ -488,7 +488,7 @@ export const SKILL_AREAS: Record<SkillArea, { label: string; labelSpanish: strin
   grammar:       { label: 'Grammar',       labelSpanish: 'Gramática',    icon: 'FileText',       href: '/grammar' },
   conjugation:   { label: 'Conjugation',   labelSpanish: 'Conjugación',  icon: 'Repeat',         href: '/verb-trainer' },
   listening:     { label: 'Listening',     labelSpanish: 'Escuchar',     icon: 'Headphones',     href: '/conversations' },
-  translation:   { label: 'Translation',   labelSpanish: 'Traducción',   icon: 'Languages',      href: '/practice' },
+  translation:   { label: 'Translation',   labelSpanish: 'Traducción',   icon: 'Languages',      href: '/numbers-time' },
   conversation:  { label: 'Conversation',  labelSpanish: 'Conversación', icon: 'MessageCircle',  href: '/conversations' },
   reading:       { label: 'Reading',       labelSpanish: 'Lectura',      icon: 'Book',           href: '/stories' },
 };

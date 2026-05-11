@@ -12,6 +12,13 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      { source: '/cultura', destination: '/culture', permanent: true },
+      { source: '/practice', destination: '/numbers-time', permanent: true },
+      { source: '/review', destination: '/flashcards', permanent: true },
+    ];
+  },
   async headers() {
     return [
       {

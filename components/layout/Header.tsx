@@ -27,7 +27,7 @@ const navigation: NavItem[] = [
       { name: 'Verbs', href: '/verbs', description: 'Conjugation patterns' },
       { name: 'Verb Trainer', href: '/verb-trainer', description: 'Practice verbs' },
       { name: 'Grammar', href: '/grammar', description: 'Grammar rules' },
-      { name: '🇵🇪 Cultura', href: '/cultura', description: 'Holidays & traditions' },
+      { name: '🇵🇪 Culture', href: '/culture', description: 'Holidays & traditions' },
     ],
   },
   {
@@ -45,7 +45,7 @@ const navigation: NavItem[] = [
     name: 'Practice',
     children: [
       { name: 'Flashcards', href: '/flashcards', description: 'Spaced repetition' },
-      { name: 'Numbers & Time', href: '/practice', description: 'Number & time drills' },
+      { name: 'Numbers & Time', href: '/numbers-time', description: 'Number & time drills' },
       { name: 'Describe', href: '/describe', description: 'Describe images' },
       { name: 'Narrate', href: '/narrate', description: 'Tell stories' },
       { name: 'Mad Libs', href: '/madlibs', description: 'Fill-in games' },
