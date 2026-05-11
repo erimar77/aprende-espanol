@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const { text } = await request.json();
+    const { text, voiceId: voiceIdFromBody } = await request.json();
 
     if (!text || typeof text !== 'string') {
       return NextResponse.json({ error: 'Text is required' }, { status: 400 });
@@ -45,8 +45,14 @@ export async function POST(request: NextRequest) {
       }, { status: 404 });
     }
 
-    // Get voice ID: env var first, then settings fallback, then default
-    const voiceId = process.env.ELEVENLABS_VOICE_ID || settings.elevenLabsVoiceId || DEFAULT_VOICE_ID;
+    // Voice precedence: explicit body override > env var > settings > hardcoded default.
+    // Letting the client pass a voiceId lets the Test button play the dropdown
+    // selection without having to save first.
+    const voiceId =
+      (typeof voiceIdFromBody === 'string' && voiceIdFromBody) ||
+      process.env.ELEVENLABS_VOICE_ID ||
+      settings.elevenLabsVoiceId ||
+      DEFAULT_VOICE_ID;
 
     // Call ElevenLabs API
     const response = await fetch(
@@ -72,13 +78,31 @@ export async function POST(request: NextRequest) {
     );
 
     if (!response.ok) {
-      const errorText = await response.text();
+      // ElevenLabs returns useful error JSON; surface it so the user can see
+      // why a voice failed (most common: voice not on the account's tier).
+      let elevenLabsError = '';
+      try {
+        const body = await response.text();
+        const parsed = JSON.parse(body);
+        elevenLabsError =
+          parsed?.detail?.message ||
+          parsed?.detail?.status ||
+          (typeof parsed?.detail === 'string' ? parsed.detail : '') ||
+          body.slice(0, 200);
+      } catch {
+        // body wasn't JSON; ignore
+      }
 
-      // Return fallback signal so client uses browser TTS
+      console.error(`ElevenLabs error ${response.status} for voice ${voiceId}: ${elevenLabsError}`);
+
       return NextResponse.json({
-        error: 'ElevenLabs API error',
-        useBrowserFallback: true
-      }, { status: 500 });
+        error: elevenLabsError
+          ? `ElevenLabs ${response.status}: ${elevenLabsError}`
+          : `ElevenLabs returned ${response.status}`,
+        voiceId,
+        status: response.status,
+        useBrowserFallback: true,
+      }, { status: 502 });
     }
 
     // Return the audio stream
@@ -91,9 +115,10 @@ export async function POST(request: NextRequest) {
       },
     });
   } catch (error) {
+    console.error('TTS route exception:', error);
     return NextResponse.json({
-      error: 'Internal server error',
-      useBrowserFallback: true
+      error: error instanceof Error ? error.message : 'Internal server error',
+      useBrowserFallback: true,
     }, { status: 500 });
   }
 }

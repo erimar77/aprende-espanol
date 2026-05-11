@@ -238,7 +238,13 @@ export default function SettingsPage() {
       const response = await fetch('/api/tts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: 'Hola, esta es una prueba de voz.' }),
+        // Send the voiceId from the dropdown so testing reflects the current
+        // selection — without this the server reads the previously-saved voice
+        // and the test sounds wrong until you Save first.
+        body: JSON.stringify({
+          text: 'Hola, esta es una prueba de voz.',
+          voiceId: ttsSettings.elevenLabsVoiceId,
+        }),
       });
 
       if (response.ok) {
@@ -250,10 +256,15 @@ export default function SettingsPage() {
         setMessage({ type: 'success', text: 'Voice test successful!' });
       } else {
         const data = await response.json();
+        // Surface the real ElevenLabs error (tier restriction, bad voice id,
+        // quota, etc.) instead of the generic "Voice test failed" message.
         setMessage({ type: 'error', text: data.error || 'Voice test failed' });
       }
-    } catch {
-      setMessage({ type: 'error', text: 'Failed to test voice' });
+    } catch (err) {
+      setMessage({
+        type: 'error',
+        text: err instanceof Error ? err.message : 'Failed to test voice',
+      });
     } finally {
       setTesting(false);
     }
