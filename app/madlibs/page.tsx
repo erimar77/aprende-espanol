@@ -11,7 +11,7 @@ import { useGamification } from '@/context/GamificationContext';
 type Phase = 'select' | 'fill' | 'story';
 
 export default function MadLibsPage() {
-  const { earnXP, recordSkill } = useGamification();
+  const { earnXP } = useGamification();
   const [phase, setPhase] = useState<Phase>('select');
   const [selectedStory, setSelectedStory] = useState<MadLibStory | null>(null);
   const [currentBlankIndex, setCurrentBlankIndex] = useState(0);
@@ -65,7 +65,6 @@ export default function MadLibsPage() {
       setPhase('story');
       if (!xpAwarded) {
         earnXP('exercise_complete', undefined, { type: 'madlibs' });
-        recordSkill('vocabulary', true);
         setXpAwarded(true);
       }
     }

@@ -598,9 +598,8 @@ export default function DailyPracticePage() {
   }, []);
 
   const handleChallengeComplete = () => {
-    const result = earnXP('exercise_complete', 20, { type: 'daily-challenge' });
+    earnXP('exercise_complete', 20, { type: 'daily-challenge' });
     setXpEarned((x) => x + 20);
-    recordSkill('conversation', true);
     setStage('phrases');
   };
 

@@ -27,3 +27,12 @@ out/
 
 # Misc
 *.log
+
+# Local file-based DB (contains secrets and live session tokens)
+data/db/*.json
+
+# Python venv (used by scripts/generate-worksheet.py via ReportLab)
+.venv/
+venv/
+__pycache__/
+*.pyc

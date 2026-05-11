@@ -9,7 +9,7 @@ import { thoughtPrompts, thoughtCategories, ThoughtPrompt } from '@/data/inner-m
 import { speak } from '@/lib/speech';
 
 export default function InnerMonologuePage() {
-  const { earnXP, recordSkill } = useGamification();
+  const { earnXP } = useGamification();
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [currentPrompt, setCurrentPrompt] = useState<ThoughtPrompt | null>(null);
   const [showStarters, setShowStarters] = useState(true);
@@ -45,9 +45,8 @@ export default function InnerMonologuePage() {
   useEffect(() => {
     if (currentPrompt && !practiceMode) {
       earnXP('exercise_complete', undefined, { type: 'inner-monologue' });
-      recordSkill('conversation', true);
     }
-  }, [currentPrompt, practiceMode, earnXP, recordSkill]);
+  }, [currentPrompt, practiceMode, earnXP]);
 
   const getCategoryInfo = (categoryId: string) => {
     return thoughtCategories.find(c => c.id === categoryId);

@@ -558,14 +558,14 @@ export const grammarLessons: GrammarLesson[] = [
       { type: 'heading', content: 'Use ESTAR for:' },
       { type: 'text', content: '- Location: Estoy en casa. (I am at home.)' },
       { type: 'text', content: '- Temporary states: Estoy cansado. (I am tired.)' },
-      { type: 'text', content: '- Emotions: Ella esta feliz. (She is happy.)' },
+      { type: 'text', content: '- Emotions: Ella está feliz. (She is happy.)' },
       { type: 'text', content: '- Actions in progress: Estoy comiendo. (I am eating.)' },
       { type: 'tip', content: 'Remember: SER = permanent/essential, ESTAR = temporary/changeable' },
     ],
     exercises: [
-      { id: 'ex010', type: 'multiple-choice', question: 'Complete: Yo ___ de Espana.', options: ['soy', 'estoy'], correctAnswer: 'soy', explanation: 'Origin uses SER.' },
+      { id: 'ex010', type: 'multiple-choice', question: 'Complete: Yo ___ de España.', options: ['soy', 'estoy'], correctAnswer: 'soy', explanation: 'Origin uses SER.' },
       { id: 'ex011', type: 'multiple-choice', question: 'Complete: El café ___ caliente.', options: ['es', 'está'], correctAnswer: 'está', explanation: 'Temperature is a temporary state, use ESTAR.' },
-      { id: 'ex012', type: 'multiple-choice', question: 'Complete: Mi hermano ___ medico.', options: ['es', 'esta'], correctAnswer: 'es', explanation: 'Profession uses SER.' },
+      { id: 'ex012', type: 'multiple-choice', question: 'Complete: Mi hermano ___ médico.', options: ['es', 'está'], correctAnswer: 'es', explanation: 'Profession uses SER.' },
     ],
     interactiveSteps: [
       {
@@ -587,7 +587,7 @@ export const grammarLessons: GrammarLesson[] = [
           },
           {
             speaker: 'Profesor',
-            text: 'Ves la diferencia? Soy es para identidad. Estoy es para ubicación.',
+            text: '¿Ves la diferencia? "Soy" es para identidad. "Estoy" es para ubicación.',
             translation: 'See the difference? Soy is for identity. Estoy is for location.',
             highlight: 'Soy, Estoy',
           },
@@ -1023,7 +1023,7 @@ export const grammarLessons: GrammarLesson[] = [
     order: 9,
     content: [
       { type: 'heading', content: 'Possessive Adjectives' },
-      { type: 'table', content: '', tableData: { headers: ['English', 'Spanish (singular)', 'Spanish (plural)'], rows: [['my', 'mi', 'mis'], ['your (informal)', 'tú', 'tus'], ['his/her/your (formal)', 'su', 'sus'], ['our', 'nuestro/a', 'nuestros/as'], ['their', 'su', 'sus']] } },
+      { type: 'table', content: '', tableData: { headers: ['English', 'Spanish (singular)', 'Spanish (plural)'], rows: [['my', 'mi', 'mis'], ['your (informal)', 'tu', 'tus'], ['his/her/your (formal)', 'su', 'sus'], ['our', 'nuestro/a', 'nuestros/as'], ['their', 'su', 'sus']] } },
       { type: 'example', content: '', spanishExample: 'Mi libro', englishTranslation: 'My book' },
       { type: 'example', content: '', spanishExample: 'Mis libros', englishTranslation: 'My books' },
       { type: 'example', content: '', spanishExample: 'Nuestra casa', englishTranslation: 'Our house' },
@@ -1037,7 +1037,7 @@ export const grammarLessons: GrammarLesson[] = [
   {
     id: 'gram010',
     title: 'Basic Negation',
-    titleSpanish: 'Negacion Basica',
+    titleSpanish: 'Negación Básica',
     description: 'How to form negative sentences',
     level: 'A1',
     order: 10,
@@ -1077,7 +1077,7 @@ export const grammarLessons: GrammarLesson[] = [
       { type: 'text', content: 'acostarse (to go to bed): Los niños se acuestan a las 9. (The children go to bed at 9.)' },
       { type: 'text', content: 'sentarse (to sit down): ¿Te sientas aquí? (Do you sit here?)' },
       { type: 'text', content: 'llamarse (to be called/named): Mi hermano se llama Juan. (My brother is called Juan.)' },
-      { type: 'example', content: '', spanishExample: 'Yo me despierpo a las 8 de la mañana.', englishTranslation: 'I wake up at 8 in the morning.' },
+      { type: 'example', content: '', spanishExample: 'Yo me despierto a las 8 de la mañana.', englishTranslation: 'I wake up at 8 in the morning.' },
       { type: 'example', content: '', spanishExample: 'Nos preparamos para salir.', englishTranslation: 'We prepare ourselves to leave.' },
       { type: 'tip', content: 'The reflexive pronoun must agree with the subject. Always place it before the conjugated verb in present tense.' },
     ],
@@ -1535,7 +1535,7 @@ export const grammarLessons: GrammarLesson[] = [
           },
           {
             speaker: 'Estudiante',
-            text: 'Soy Eric. ¿Dónde es mi clase?',
+            text: 'Soy Eric. ¿Dónde está mi clase?',
             translation: "I'm Eric. Where is my class?",
             highlight: '¿Dónde?',
           },

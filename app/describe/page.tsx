@@ -59,8 +59,11 @@ export default function DescribePage() {
   const handleShowFeedback = () => {
     setPhase('feedback');
     if (!xpAwarded) {
+      const used = getUsedVocabulary();
+      const targets = scene.vocabularyTargets.length;
+      const hitVocabHalf = targets > 0 && used.size / targets >= 0.5;
       earnXP('exercise_complete', undefined, { type: 'describe' });
-      recordSkill('vocabulary', true);
+      recordSkill('vocabulary', hitVocabHalf);
       setXpAwarded(true);
     }
   };
